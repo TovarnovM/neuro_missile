@@ -20,7 +20,7 @@ class MissileGym(object):
     def get_state(self):
         pass
 
-    def set_state(self):
+    def set_state(self, state):
         pass
 
     def render(self, **kwargs):
