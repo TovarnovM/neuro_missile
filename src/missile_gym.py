@@ -1,3 +1,5 @@
+# TODO реализовать метод
+
 class MissileGym(object):
     # set доступных сценариев для моделирования (различные поведения цели, различные варианты запуска и т.д.)
     scenario_names = {'scenario_1'}
@@ -9,9 +11,11 @@ class MissileGym(object):
         Arguments:
             scenario_name {str} -- имя сценария (должен совпадать с одним из scenario_names)
         """
+        # TODO реализовать метод
         pass
 
     def __init__(self, *args, **kwargs):
+        # TODO реализовать метод
         pass
 
     def reset(self):
@@ -20,16 +24,19 @@ class MissileGym(object):
 
         returns np.ndarray
         """
+        # TODO реализовать метод
         pass
 
     def get_observation(self):
         """Метод возвращает numpy-массив с наблюдаемыми раектой данными в текущем состоянии окружения
         """
+        # TODO реализовать метод
         pass
 
     def close(self):
         """Завершаем работу с окружением (если были открыты какие-то ресурсы, то закрываем их здесь)
         """
+        # TODO реализовать метод
         pass
 
     def step(self, action):
@@ -44,11 +51,13 @@ class MissileGym(object):
         Arguments:
             action {скорее всего int} -- действие агента на данном шаге
         """
+        # TODO реализовать метод
         pass
 
     def get_state(self):
         """метод, возвращающий numpy-массив, в котором хранится вся необходимая информация для воссоздания этого состояния
         """
+        # TODO реализовать метод
         pass
 
     def set_state(self, state):
@@ -59,38 +68,38 @@ class MissileGym(object):
         Arguments:
             state {np.ndarray} -- numpy-массив, в котором хранится вся необходимая информация для задания нового состояния
         """
+        # TODO реализовать метод
         pass
 
     def render(self, **kwargs):
         """Отрисовать (где угодно) окружение в текущем состоянии 
         """
+        # TODO реализовать метод
         pass
 
     @property
     def action_space(self):
         """Возвращает int'овый numpy-массив, элементы которого являются возможными действиями агента
         """
+        # TODO реализовать метод
         pass
 
     def action_sample(self):
         """Возвращает случайное возможное действие (int)
         """
+        # TODO реализовать метод
         pass
 
     @property
     def observation_space_high(self):
         """Возвращает numpy-массив размерности как и наблюдения агента с максимально возможными показаниями наблюдения агента 
         """
+        # TODO реализовать метод
         pass
 
     @property
     def observation_space_low(self):
         """Возвращает numpy-массив размерности как и наблюдения агента с минимальныо возможными показаниями наблюдения агента 
         """
+        # TODO реализовать метод
         pass
-
-if __name__ == "__main__":
-    import numpy as np
-
-    arr = np.array([1,2,3])
-    print(1)
