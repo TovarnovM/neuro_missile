@@ -24,7 +24,7 @@ def test_get_state1():
         env.reset()
         state1 = env.get_state()
         for i in range(np.random.randint(3,7)):
-            env.step(env.actione_sample())
+            env.step(env.action_sample())
         env.reset()
         state2 = env.get_state()
         assert state1 == approx(state2)
@@ -43,9 +43,9 @@ def test_getset_state():
         env = MissileGym.make(name)
         env.reset()
         for i in range(np.random.randint(3,7)):
-            env.step(env.actione_sample())
+            env.step(env.action_sample())
         state1 = env.get_state()
-        action1 = env.actione_sample()
+        action1 = env.action_sample()
         env.step(action1)
         state2 = env.get_state()
         env.set_state(state1)
@@ -59,7 +59,7 @@ def test_step_returns():
         env = MissileGym.make(name)
         env.reset()
         for i in range(np.random.randint(3,7)):
-            observation, reward, done, info = env.step(env.actione_sample())
+            observation, reward, done, info = env.step(env.action_sample())
             observation_high = env.observation_space_high
             observation_low = env.observation_space_low
             assert isinstance(observation, np.ndarray)
@@ -72,5 +72,24 @@ def test_step_returns():
             assert observation > observation_low
         env.close()
 
+def test_reset_returns():
+    for name in MissileGym.scenario_names:
+        env = MissileGym.make(name)
+        observation = env.reset()
+        assert isinstance(observation, np.ndarray)
+        env.close()
+
+def test_reset_returns2():
+    for name in MissileGym.scenario_names:
+        env = MissileGym.make(name)
+        observation = env.reset()
+        observation_high = env.observation_space_high
+        observation_low = env.observation_space_low
+        assert isinstance(observation, np.ndarray)
+        assert len(observation_high) == len(observation)
+        assert len(observation_low) == len(observation)
+        assert observation < observation_high
+        assert observation > observation_low
+        env.close()
 
 
