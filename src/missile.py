@@ -135,19 +135,32 @@ class Missile(object):
         else:
             return self.alpha
 
-    def set_init_cond(self, parameters_of_missile):
+
+    def __init__(self, **kwargs):
+        """Конструктор 
+        """
+        # TODO В зависимости от выбранной ММ определиться с выбором параметров, передаваемых в конструктор
+        # Это обязательно должны быть аэродинамические, массо- и тяговременные характеристики. Задаются в виде констант
+        # и объектов классов Interp1d и Interp2d
+        # Сюда НЕ НАДО передавать начальные параметры ракеты, начальная инициализация будет в методе set_init_cond()
+        pass
+
+    def set_init_cond(self, parametrs_of_missile):
         """Задает начальные параметры (положение, скорость, углы ...) и запоминает их для того,
         чтобы потом в них можно было вернуться при помощи reset()
         
         Arguments:
+
             parameters_of_missile 
         """
         self.state = parameters_of_missile
         self.state_0 = parameters_of_missile
 
+
     def reset(self):
         """Возвращает ракету в начальное состояние
         """
+
         self.set_state(self.state_0)
 
     def get_state(self):
@@ -168,6 +181,7 @@ class Missile(object):
         """
         return self.state_0
 
+
     def set_state(self, state):
         """Метод задания нового (может полностью отличающегося от текущего) состояния ракеты
 
@@ -176,6 +190,7 @@ class Missile(object):
         """
         self.state = np.array(state)
         self.state_0 = np.array(state)
+
 
     def _get_dydt(self, t, y):
         """Функция правых частей системы ОДУ динамики ракеты. 
@@ -218,6 +233,7 @@ class Missile(object):
             self.state = np.concatenate([self.od.y, [self.od.t]])
             self.od.integrate(self.od.t + dt)
 
+
     @property
     def action_space(self):
         """Возвращает int'овый numpy-массив, элементы которого являются возможными действиями агента
@@ -252,6 +268,7 @@ class Missile(object):
         """
         # TODO реализовать метод.
         pass   
+
     def get_summary(self):
         """Возвращает словарь с основными текущими параметрами и характеристиками ракеты в данный момент
         """
@@ -303,3 +320,4 @@ m.set_state(prev_state)
 m.step(-1, 10)
 prev_state = m.get_state()
 print(m.get_summary())
+
