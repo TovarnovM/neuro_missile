@@ -106,7 +106,13 @@ class Missile(object):
         self.m = Interp1d(self.t_Interp, np.vectorize(self._get_m)(self.t_Interp))
         self.Cx = Interp1d(self.alpha_Interp, np.vectorize(self._get_Cx)(self.alpha_Interp))
 
-        self.od = ode(self._get_dydt)
+        self.od = ode(self._get_dydt).set_integrator('dopri5') 
+
+        self.x = []
+        self.y = []
+        self.v = []
+        self.t = []
+        
         
     def _get_m(self, t):
         if t < self.t_st:
@@ -136,16 +142,7 @@ class Missile(object):
             return self.alpha
 
 
-    def __init__(self, **kwargs):
-        """Конструктор 
-        """
-        # TODO В зависимости от выбранной ММ определиться с выбором параметров, передаваемых в конструктор
-        # Это обязательно должны быть аэродинамические, массо- и тяговременные характеристики. Задаются в виде констант
-        # и объектов классов Interp1d и Interp2d
-        # Сюда НЕ НАДО передавать начальные параметры ракеты, начальная инициализация будет в методе set_init_cond()
-        pass
-
-    def set_init_cond(self, parametrs_of_missile):
+    def set_init_cond(self, parameters_of_missile):
         """Задает начальные параметры (положение, скорость, углы ...) и запоминает их для того,
         чтобы потом в них можно было вернуться при помощи reset()
         
@@ -153,8 +150,8 @@ class Missile(object):
 
             parameters_of_missile 
         """
-        self.state = parameters_of_missile
-        self.state_0 = parameters_of_missile
+        self.state = np.array(parameters_of_missile)
+        self.state_0 = np.array(parameters_of_missile)
 
 
     def reset(self):
@@ -189,7 +186,6 @@ class Missile(object):
             state - np.ndarray  (схож с вектором 'y' при интегрировании ode, но в векторе state еще должно быть t)
         """
         self.state = np.array(state)
-        self.state_0 = np.array(state)
 
 
     def _get_dydt(self, t, y):
@@ -222,17 +218,20 @@ class Missile(object):
             action {int} -- управляющее воздействие на протяжении шага
             tau {float} -- длина шага по времени (не путать с шагом интегрирования)
         """
-        r = self.od.set_integrator('dopri5') 
         r = self.od.set_initial_value( self.state[:-1], self.state[-1] )  
 
         self.action = action
+        self.t0 = self.state[-1]
         while self.od.successful() and self.od.y[2] >= 0 and\
-            self.P(self.state[-1]) > 0 and self.state_0[-1] + tau > self.state[-1]:
+            self.P(self.state[-1]) > 0 and self.t0 + tau > self.state[-1]:
+            self.v.append(self.state[0])
+            self.x.append(self.state[1])
+            self.y.append(self.state[2])
+            self.t.append(self.state[-1])
 
             self.alpha = self._get_alpha(self.action)
             self.state = np.concatenate([self.od.y, [self.od.t]])
             self.od.integrate(self.od.t + dt)
-
 
     @property
     def action_space(self):
@@ -283,41 +282,24 @@ class Missile(object):
             'alpha': self.alpha,
             'Cx': self.Cx(self.alpha)
         }
+    
+    def get_plot(self):
+        plt.figure(1)
+        plt.subplot(211)
+        plt.plot(self.x, self.y)
+        plt.ylabel('Y(X)')
+        plt.subplot(212)
+        plt.plot(self.t, self.v)
+        plt.ylabel('V(t)')
+        plt.show()
 
 dt = 0.001
 g = 9.81
 ro = 1.202
 
 
-m = Missile.get_needle()
-parameters_of_missile = Missile.get_standart_parameters_of_missile()
-m.set_init_cond(parameters_of_missile)
-m.step(1, 2)
-prev_state = m.get_state()
-print(m.get_summary())
-
-m.set_state(prev_state)
-m.step(1, 1)
-prev_state = m.get_state()
-print(m.get_summary())
-
-m.set_state(prev_state)
-m.step(-1, 2)
-prev_state = m.get_state()
-print(m.get_summary())
-
-m.set_state(prev_state)
-m.step(1, 2)
-prev_state = m.get_state()
-print(m.get_summary())
-
-m.set_state(prev_state)
-m.step(0, 1)
-prev_state = m.get_state()
-print(m.get_summary())
-
-m.set_state(prev_state)
-m.step(-1, 10)
-prev_state = m.get_state()
-print(m.get_summary())
-
+# m = Missile.get_needle()
+# parameters_of_missile = Missile.get_standart_parameters_of_missile()
+# m.set_init_cond(parameters_of_missile)
+# m.step(1, 2)
+# prev_state = m.get_state()
