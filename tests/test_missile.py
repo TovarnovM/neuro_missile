@@ -78,13 +78,10 @@ def test_vel():
     m.set_state(np.array([4, 0, 0, np.radians(0), 0]))
     assert (m.vel == np.array([4.0, 0.0])).all()
 
-def test_step(self, action, tau):
-    # TODO: add test
-    pass
-
-def test_x_axis(self):
-    # TODO: add test
-    pass
-def test_get_summary(self):
-    # TODO: add test
-    pass
+def test_step():
+    m = Missile.get_needle()
+    parameters_of_missile = Missile.get_standart_parameters_of_missile()
+    m.set_init_cond(parameters_of_missile)
+    m.step(-1, 1.2)
+    m.reset()
+    assert (m.get_state() == np.array([25, 0, 0, np.radians(30), 0])).all()

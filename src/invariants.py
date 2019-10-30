@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 import scipy.interpolate as interp
 
 # TODO реализовать 2do методы и оттестировать в test_invariants.py
@@ -26,7 +27,9 @@ class Interp1d(object):
         Arguments:
             fig, ax = plt.subplots()
         """
-        ax.plot(self.xs, self.fs)
+        fig = plt.figure()
+        plt.plot(self.xs, self.fs, 'k')
+        plt.show()
 
     def __call__(self, x):
         """Основной метод получения интерполированных данных
@@ -62,15 +65,14 @@ class Interp2d(object):
             raise AttributeError(f'Данные разных размеростей! xs{self.xs.shape} ys{self.ys.shape} fs{self.fs.shape}')
 
 
-    def plot(self, fig, ax, **kwargs):
+    def plot(self, x, y):
         """Отрисовать что там хранится
 
         Arguments:
             fig, ax = plt.subplots()
         """
-        # TODO подумаль, как лучше отрисовать на плоском графике
+        
         pass
-
     def __call__(self, x, y):
         """Основной метод получения интерполированных данных
         
