@@ -17,25 +17,25 @@ def test_missile_constructor():
 
 def test_get_standart_parameters_of_missile():
     parametrs_of_missile = Missile.get_standart_parameters_of_missile()
-    assert (parametrs_of_missile == np.array([25, 0, 0, np.radians(30), 0])).all()
+    assert parametrs_of_missile == approx(np.array([25, 0, 0, np.radians(30), 0]))
 
 def test_set_init_cond():
     m = Missile.get_needle()
     parameters_of_missile = Missile.get_standart_parameters_of_missile()
     m.set_init_cond(parameters_of_missile)
-    assert (m.get_state() == m.get_state_0()).all()
+    assert m.get_state() == approx(m.get_state_0())
 
 def test_get_state():
     m = Missile.get_needle()
     parameters_of_missile = Missile.get_standart_parameters_of_missile()
     m.set_init_cond(parameters_of_missile)
-    assert (m.get_state() == np.array([25, 0, 0, np.radians(30), 0])).all()
+    assert m.get_state() == approx(np.array([25, 0, 0, np.radians(30), 0]))
 
 def test_get_state_0():
     m = Missile.get_needle()
     parameters_of_missile = Missile.get_standart_parameters_of_missile()
     m.set_init_cond(parameters_of_missile)
-    assert (m.get_state_0() == np.array([25, 0, 0, np.radians(30), 0])).all()
+    assert m.get_state_0() == approx(np.array([25, 0, 0, np.radians(30), 0]))
 
 def test_set_state():
     m = Missile.get_needle()
@@ -43,7 +43,7 @@ def test_set_state():
     m.set_init_cond(parameters_of_missile)
     state = np.array([30, 1, 1, np.radians(45), 0])
     m.set_state(state)
-    assert (m.get_state() == state).all() and not (m.get_state_0() == m.get_state()).all()
+    assert m.get_state() == approx(state) and not m.get_state_0() == approx(m.get_state())
 
 def test_reset():
     m = Missile.get_needle()
@@ -52,12 +52,12 @@ def test_reset():
     state = np.array([30, 1, 1, np.radians(45), 0])
     m.set_state(state)
     m.reset()
-    assert (m.get_state() == parameters_of_missile).all()
+    assert m.get_state() == approx(parameters_of_missile)
 
 
 def test_action_space():
     m = Missile.get_needle()
-    assert (m.action_space == np.array([-1, 0, 1])).all()
+    assert m.action_space == approx(np.array([-1, 0, 1]))
 
 def test_action_sample():
     m = Missile.get_needle()
@@ -69,14 +69,14 @@ def test_pos():
     parameters_of_missile = Missile.get_standart_parameters_of_missile()
     m.set_init_cond(parameters_of_missile)
     m.set_state(np.array([1, 2, 3, 4, 5]))
-    assert (m.get_state()[1:3] == m.pos).all()
+    assert m.get_state()[1:3] == approx(m.pos)
 
 def test_vel():
     m = Missile.get_needle()
     parameters_of_missile = Missile.get_standart_parameters_of_missile()
     m.set_init_cond(parameters_of_missile)
     m.set_state(np.array([4, 0, 0, np.radians(0), 0]))
-    assert (m.vel == np.array([4.0, 0.0])).all()
+    assert m.vel == approx(np.array([4.0, 0.0]))
 
 def test_step():
     m = Missile.get_needle()
@@ -84,4 +84,4 @@ def test_step():
     m.set_init_cond(parameters_of_missile)
     m.step(-1, 1.2)
     m.reset()
-    assert (m.get_state() == np.array([25, 0, 0, np.radians(30), 0])).all()
+    assert m.get_state() == approx(np.array([25, 0, 0, np.radians(30), 0]))

@@ -101,7 +101,7 @@ class Missile(object):
 
         self.t_Interp = np.arange(0.0, 14.0, 0.01)
         self.alpha_Interp = np.arange(-self.alphamax, self.alphamax, 0.01)
-
+        
         self.P = Interp1d(self.t_Interp, np.vectorize(self._get_P)(self.t_Interp))
         self.m = Interp1d(self.t_Interp, np.vectorize(self._get_m)(self.t_Interp))
         self.Cx = Interp1d(self.alpha_Interp, np.vectorize(self._get_Cx)(self.alpha_Interp))
