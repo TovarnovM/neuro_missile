@@ -5,7 +5,7 @@ import sys
 import numpy as np
 from pytest import approx
 
-wd = os.path.abspath(__file__) # os.path.dirname(os.path.dirname(os.getcwd()))
+wd = os.path.abspath(__file__)
 wd = os.path.dirname(os.path.dirname(wd))
 sys.path.append(wd+"/src/")
 
@@ -82,6 +82,9 @@ def test_step():
     m = Missile.get_needle()
     parameters_of_missile = Missile.get_standart_parameters_of_missile()
     m.set_init_cond(parameters_of_missile)
-    m.step(-1, 1.2)
-    m.reset()
-    assert m.get_state() == approx(np.array([25, 0, 0, np.radians(30), 0]))
+    m.step(1, 1)
+    m.step(0, 1)
+    m.step(-1, 1)
+    state = m.get_state()
+    assert state == approx(np.array([88.48271373, 148.07413746, 78.54580254, 0.30156225, 3.002]))
+

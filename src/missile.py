@@ -101,13 +101,15 @@ class Missile(object):
 
         self.t_Interp = np.arange(0.0, 14.0, 0.01)
         self.alpha_Interp = np.arange(-self.alphamax, self.alphamax, 0.01)
-        
+        # TODO Вынести в get_needle()
         self.P = Interp1d(self.t_Interp, np.vectorize(self._get_P)(self.t_Interp))
         self.m = Interp1d(self.t_Interp, np.vectorize(self._get_m)(self.t_Interp))
+        # TODO Заменить на Interp2d
         self.Cx = Interp1d(self.alpha_Interp, np.vectorize(self._get_Cx)(self.alpha_Interp))
 
         self.od = ode(self._get_dydt).set_integrator('dopri5') 
 
+        # TODO удалить переменные
         self.x = []
         self.y = []
         self.v = []
@@ -218,7 +220,7 @@ class Missile(object):
             action {int} -- управляющее воздействие на протяжении шага
             tau {float} -- длина шага по времени (не путать с шагом интегрирования)
         """
-        r = self.od.set_initial_value( self.state[:-1], self.state[-1] )  
+        self.od.set_initial_value( self.state[:-1], self.state[-1] )  
 
         self.action = action
         self.t0 = self.state[-1]
@@ -282,8 +284,8 @@ class Missile(object):
             'alpha': self.alpha,
             'Cx': self.Cx(self.alpha)
         }
-    
     def get_plot(self):
+        # TODO удалить метод.
         plt.figure(1)
         plt.subplot(211)
         plt.plot(self.x, self.y)
@@ -293,13 +295,9 @@ class Missile(object):
         plt.ylabel('V(t)')
         plt.show()
 
+# TODO вынести в константы.
 dt = 0.001
 g = 9.81
 ro = 1.202
 
 
-# m = Missile.get_needle()
-# parameters_of_missile = Missile.get_standart_parameters_of_missile()
-# m.set_init_cond(parameters_of_missile)
-# m.step(1, 2)
-# prev_state = m.get_state()

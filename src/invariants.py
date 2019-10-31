@@ -1,8 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib import cm
 import scipy.interpolate as interp
-
-# TODO реализовать 2do методы и оттестировать в test_invariants.py
 
 class Interp1d(object):
     """Класс, превращающий набор точек (x,f) в непрерывную функцию f(x), путем 
@@ -65,14 +64,21 @@ class Interp2d(object):
             raise AttributeError(f'Данные разных размеростей! xs{self.xs.shape} ys{self.ys.shape} fs{self.fs.shape}')
 
 
-    def plot(self, x, y):
+    def plot(self):
         """Отрисовать что там хранится
 
         Arguments:
             fig, ax = plt.subplots()
         """
-        
-        pass
+        fig = plt.figure()
+        ax = fig.gca(projection='3d')
+        surf = ax.plot_surface(self.xss, self.yss, self.fs, cmap=cm.RdYlBu_r,
+                            linewidth=0, antialiased=False)
+
+        fig.colorbar(surf, shrink=0.5, aspect=5)
+        plt.show()
+
+
     def __call__(self, x, y):
         """Основной метод получения интерполированных данных
         
