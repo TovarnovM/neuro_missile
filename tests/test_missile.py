@@ -86,5 +86,4 @@ def test_step():
     m.step(0, 1)
     m.step(-1, 1)
     state = m.get_state()
-    assert state == approx(np.array([88.48271373, 148.07413746, 78.54580254, 0.30156225, 3.002]))
-
+    assert state == approx(np.array([88.48376902, 148.07475323, 78.54616487, 0.30156329, 3.002]))

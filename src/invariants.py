@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import cm
 import scipy.interpolate as interp
+from mpl_toolkits.mplot3d import Axes3D
 
 class Interp1d(object):
     """Класс, превращающий набор точек (x,f) в непрерывную функцию f(x), путем 
@@ -53,13 +54,12 @@ class Interp2d(object):
             ys {iterable} -- ординаты интерполируемой функции, len=M
             fs - матрица N x M со значениями функции в соответствующих точках 
         """
+        
         self.xs = np.array(xs)
         self.ys = np.array(ys)
         self.xss, self.yss = np.meshgrid(self.xs, self.ys)
-        self.fs = fs(self.xss, self.yss)
-
+        self.fs = fs(self.xss, self.yss)        
         self.func_inter = interp.Rbf(self.xss, self.yss, self.fs, function='cubic', smooth=0)
-
         if self.xs.size * self.ys.size != self.fs.size:
             raise AttributeError(f'Данные разных размеростей! xs{self.xs.shape} ys{self.ys.shape} fs{self.fs.shape}')
 
@@ -70,6 +70,7 @@ class Interp2d(object):
         Arguments:
             fig, ax = plt.subplots()
         """
+
         fig = plt.figure()
         ax = fig.gca(projection='3d')
         surf = ax.plot_surface(self.xss, self.yss, self.fs, cmap=cm.RdYlBu_r,

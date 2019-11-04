@@ -41,6 +41,7 @@ class Missile(object):
         G_st = w_st / t_st
         G_mr = w_mr / t_mr
         
+
         constants_of_the_rocket = {
             "mu_st": mu_st,
             "mu_mr": mu_mr,
@@ -77,6 +78,11 @@ class Missile(object):
     def __init__(self, *args, **kwargs):
         """Конструктор 
         """
+        
+        self.dt = 0.001
+        self.g = 9.81
+        self.ro = 1.202
+
         self.mu_st = kwargs.get("mu_st", 0)
         self.mu_mr = kwargs.get("mu_mr", 0)
         self.t_st = kwargs.get("t_st", 0)
@@ -93,28 +99,21 @@ class Missile(object):
         self.speed_change_alpha = kwargs.get("speed_change_alpha", 0)
         self.J = kwargs.get("J", 0)
         self.xi = kwargs.get("xi", 0)
-        self.Cx0 = kwargs.get("Cx0", 0)
-        self.Cya = kwargs.get("Cya", 0)
         self.betta = kwargs.get("betta", 0)
         self.K_eff = kwargs.get("K_eff", 0)
+
         self.alpha = kwargs.get("alpha_0", 0)
+        self.Cx0 = kwargs.get("Cx0", 0)
+        self.Cya = kwargs.get("Cya", 0)
 
         self.t_Interp = np.arange(0.0, 14.0, 0.01)
-        self.alpha_Interp = np.arange(-self.alphamax, self.alphamax, 0.01)
-        # TODO Вынести в get_needle()
+        self.alpha_Interp = np.linspace(-self.alphamax, self.alphamax, 30)
+
         self.P = Interp1d(self.t_Interp, np.vectorize(self._get_P)(self.t_Interp))
         self.m = Interp1d(self.t_Interp, np.vectorize(self._get_m)(self.t_Interp))
-        # TODO Заменить на Interp2d
-        self.Cx = Interp1d(self.alpha_Interp, np.vectorize(self._get_Cx)(self.alpha_Interp))
+        self.Cx = Interp2d(self.alpha_Interp, self.Cx0, self._get_Cx)
 
         self.od = ode(self._get_dydt).set_integrator('dopri5') 
-
-        # TODO удалить переменные
-        self.x = []
-        self.y = []
-        self.v = []
-        self.t = []
-        
         
     def _get_m(self, t):
         if t < self.t_st:
@@ -132,8 +131,8 @@ class Missile(object):
         else:
             return 0
 
-    def _get_Cx(self, alpha):
-        return self.Cx0 + self.Cya * alpha / 57.3
+    def _get_Cx(self, alpha, Cx0):
+        return Cx0 + self.Cya * alpha / 57.3
 
     def _get_alpha(self, signal):
         if signal == 1 and self.alpha <= self.alphamax:
@@ -142,7 +141,6 @@ class Missile(object):
             return self.alpha - self.speed_change_alpha
         else:
             return self.alpha
-
 
     def set_init_cond(self, parameters_of_missile):
         """Задает начальные параметры (положение, скорость, углы ...) и запоминает их для того,
@@ -159,7 +157,6 @@ class Missile(object):
     def reset(self):
         """Возвращает ракету в начальное состояние
         """
-
         self.set_state(self.state_0)
 
     def get_state(self):
@@ -205,10 +202,10 @@ class Missile(object):
         alpha = self._get_alpha(self.action)
 
         return np.array([
-            ( self.P(t) * np.cos(np.radians(alpha)) - ro * v ** 2 / 2 * self.Sm * self.Cx(alpha) - self.m(t) * g * np.sin(Q) ) / self.m(t),
+            ( self.P(t) * np.cos(np.radians(alpha)) - self.ro * v ** 2 / 2 * self.Sm * self.Cx(alpha, self.Cx0) - self.m(t) * self.g * np.sin(Q) ) / self.m(t),
             v * np.cos(Q),
             v * np.sin(Q),
-            ( alpha * ( self.Cya * ro * v ** 2 / 2 * self.Sm * (1 + self.xi) + self.P(t) / 57.3) / ( self.m(t) * g ) - np.cos(Q)) * g / v
+            ( alpha * ( self.Cya * self.ro * v ** 2 / 2 * self.Sm * (1 + self.xi) + self.P(t) / 57.3) / ( self.m(t) * self.g ) - np.cos(Q)) * self.g / v
         ]) 
 
     def step(self, action, tau):
@@ -226,14 +223,10 @@ class Missile(object):
         self.t0 = self.state[-1]
         while self.od.successful() and self.od.y[2] >= 0 and\
             self.P(self.state[-1]) > 0 and self.t0 + tau > self.state[-1]:
-            self.v.append(self.state[0])
-            self.x.append(self.state[1])
-            self.y.append(self.state[2])
-            self.t.append(self.state[-1])
 
             self.alpha = self._get_alpha(self.action)
             self.state = np.concatenate([self.od.y, [self.od.t]])
-            self.od.integrate(self.od.t + dt)
+            self.od.integrate(self.od.t + self.dt)
 
     @property
     def action_space(self):
@@ -267,8 +260,10 @@ class Missile(object):
         """Свойство, возвращающее текущий нормированный вектор центральной оси ракеты в виде numpy массива из двух элементов 
         np.array([Axi_x, Axi_y])
         """
-        # TODO реализовать метод.
-        pass   
+        x = self.state[1]
+        y = self.state[2]
+        Q = self.state[3] * 180 / np.pi 
+        return np.array([x * np.cos(Q  + self.alpha), y * np.sin(Q + self.alpha)])
 
     def get_summary(self):
         """Возвращает словарь с основными текущими параметрами и характеристиками ракеты в данный момент
@@ -282,22 +277,5 @@ class Missile(object):
             'm': self.m(self.state[4]),
             'P': self.P(self.state[4]),
             'alpha': self.alpha,
-            'Cx': self.Cx(self.alpha)
+            'Cx': self.Cx(self.alpha, self.Cx0)
         }
-    def get_plot(self):
-        # TODO удалить метод.
-        plt.figure(1)
-        plt.subplot(211)
-        plt.plot(self.x, self.y)
-        plt.ylabel('Y(X)')
-        plt.subplot(212)
-        plt.plot(self.t, self.v)
-        plt.ylabel('V(t)')
-        plt.show()
-
-# TODO вынести в константы.
-dt = 0.001
-g = 9.81
-ro = 1.202
-
-
