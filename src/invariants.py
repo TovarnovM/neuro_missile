@@ -1,6 +1,8 @@
 import numpy as np
-
-# TODO реализовать 2do методы и оттестировать в test_invariants.py
+import matplotlib.pyplot as plt
+from matplotlib import cm
+import scipy.interpolate as interp
+from mpl_toolkits.mplot3d import Axes3D
 
 class Interp1d(object):
     """Класс, превращающий набор точек (x,f) в непрерывную функцию f(x), путем 
@@ -25,7 +27,9 @@ class Interp1d(object):
         Arguments:
             fig, ax = plt.subplots()
         """
-        ax.plot(self.xs, self.fs)
+        fig = plt.figure()
+        plt.plot(self.xs, self.fs, 'k')
+        plt.show()
 
     def __call__(self, x):
         """Основной метод получения интерполированных данных
@@ -50,18 +54,31 @@ class Interp2d(object):
             ys {iterable} -- ординаты интерполируемой функции, len=M
             fs - матрица N x M со значениями функции в соответствующих точках 
         """
-        # TODO найти подходящий инструмент для двумерной интерполяции
-        # TODO сделать проверку размерностей
-        pass
+        
+        self.xs = np.array(xs)
+        self.ys = np.array(ys)
+        self.xss, self.yss = np.meshgrid(self.xs, self.ys)
+        self.fs = fs(self.xss, self.yss)        
+        self.func_inter = interp.Rbf(self.xss, self.yss, self.fs, function='cubic', smooth=0)
+        if self.xs.size * self.ys.size != self.fs.size:
+            raise AttributeError(f'Данные разных размеростей! xs{self.xs.shape} ys{self.ys.shape} fs{self.fs.shape}')
 
-    def plot(self, fig, ax, **kwargs):
+
+    def plot(self):
         """Отрисовать что там хранится
 
         Arguments:
             fig, ax = plt.subplots()
         """
-        # TODO подумаль, как лучше отрисовать на плоском графике
-        pass
+
+        fig = plt.figure()
+        ax = fig.gca(projection='3d')
+        surf = ax.plot_surface(self.xss, self.yss, self.fs, cmap=cm.RdYlBu_r,
+                            linewidth=0, antialiased=False)
+
+        fig.colorbar(surf, shrink=0.5, aspect=5)
+        plt.show()
+
 
     def __call__(self, x, y):
         """Основной метод получения интерполированных данных
@@ -72,5 +89,4 @@ class Interp2d(object):
 
         returns  - ордината точки
         """
-        # TODO __call__
-        pass
+        return self.func_inter(x, y)
