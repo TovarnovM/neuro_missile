@@ -9,6 +9,18 @@ class Interp1d(object):
     линейной интерполяции между этими точками. Будет использоваться для 
     аэродинамических и массо-тяговременных характеристик ркеты типа P(t), m(t), и т.д.
     """
+
+    @classmethod
+    def simple_constant(cls, value):
+        """Создает простую заглушку, возвращающую одно и то же число
+        
+        Arguments:
+            value {[type]} -- значения для возврата
+        """
+        x=[0,1]
+        y=[value, value]
+        return cls(x,y)
+
     def __init__(self, xs, fs):
         """Конструктор класса 
         
@@ -46,6 +58,19 @@ class Interp2d(object):
     """Класс, похожий на предыдущий, но интерполирует он не одномерные а двумерные точки
     Что-то типа f(x, y), использовать для 
     """
+    @classmethod
+    def simple_constant(cls, value):
+        """Создает простую заглушку, возвращающую одно и то же число
+        
+        Arguments:
+            value {[type]} -- значения для возврата
+        """
+        x=[0,1]
+        y=[0,1]
+        z=[[value, value], [value, value]]
+        return cls(x,y,z)
+
+
     def __init__(self, xs, ys, fs):
         """Конструктор класса 
         
@@ -57,9 +82,10 @@ class Interp2d(object):
         
         self.xs = np.array(xs)
         self.ys = np.array(ys)
-        self.xss, self.yss = np.meshgrid(self.xs, self.ys)
-        self.fs = fs(self.xss, self.yss)        
-        self.func_inter = interp.Rbf(self.xss, self.yss, self.fs, function='cubic', smooth=0)
+        # self.xss, self.yss = np.meshgrid(self.xs, self.ys)
+        # self.fs = fs(self.xss, self.yss)    
+        self.fs = np.array(fs)
+        self.func_inter = interp.RectBivariateSpline(self.xs, self.ys, self.fs, kx=1, ky=1) # обчыная линейная интерполяция
         if self.xs.size * self.ys.size != self.fs.size:
             raise AttributeError(f'Данные разных размеростей! xs{self.xs.shape} ys{self.ys.shape} fs{self.fs.shape}')
 
@@ -89,4 +115,28 @@ class Interp2d(object):
 
         returns  - ордината точки
         """
-        return self.func_inter(x, y)
+        return self.func_inter(x, y)[0,0]
+
+if __name__ == "__main__":
+    x1 = np.array([1,2,3])
+    x2 = np.array([2,3,3.5])
+    y = np.array([[3,3,4],[3,2,3],[1,2,3]])
+    i2 = Interp2d(x1, x2, y)
+
+    print(i2(1.5,2.5))
+    fig = plt.figure()
+    ax = fig.gca(projection='3d')
+    x = np.linspace(-1,4, 100)
+    y = np.linspace(0, 5, 100)
+    X, Y = np.meshgrid(x, y)
+    Z = np.zeros_like(X)
+    for i in range(X.shape[0]):
+        for j in range(X.shape[1]):
+            Z[i,j] = i2(X[i,j], Y[i,j])
+    surf = ax.plot_surface(X, Y, Z, cmap=cm.RdYlBu_r,
+                        linewidth=0, antialiased=False)
+
+    fig.colorbar(surf, shrink=0.5, aspect=5)
+    plt.show()
+   
+    
