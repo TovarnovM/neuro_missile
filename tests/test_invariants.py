@@ -22,5 +22,15 @@ def test_Interp2d():
     yy = np.arange(-5, 5, 0.5)
     def f(x, y):
         return x**2 + y**2
-    FF = Interp2d(xx, yy, f)
+    zz = f(*np.meshgrid(xx, yy))
+    FF = Interp2d(xx, yy, zz)
     assert 0 == approx(FF(0,0))
+
+
+def test_constantInterp1d():
+    f = Interp1d.simple_constant(2)
+    assert f(10) == approx(2)
+
+def test_constantInterp2d():
+    f = Interp2d.simple_constant(2)
+    assert f(10,100) == approx(2)

@@ -15,9 +15,6 @@ def test_missile_constructor():
     m = Missile.get_needle()
     assert m is not None
 
-def test_get_standart_parameters_of_missile():
-    parametrs_of_missile = Missile.get_standart_parameters_of_missile()
-    assert parametrs_of_missile == approx(np.array([25, 0, 0, np.radians(30), 0]))
 
 def test_set_init_cond():
     m = Missile.get_needle()
@@ -25,25 +22,6 @@ def test_set_init_cond():
     m.set_init_cond(parameters_of_missile)
     assert m.get_state() == approx(m.get_state_0())
 
-def test_get_state():
-    m = Missile.get_needle()
-    parameters_of_missile = Missile.get_standart_parameters_of_missile()
-    m.set_init_cond(parameters_of_missile)
-    assert m.get_state() == approx(np.array([25, 0, 0, np.radians(30), 0]))
-
-def test_get_state_0():
-    m = Missile.get_needle()
-    parameters_of_missile = Missile.get_standart_parameters_of_missile()
-    m.set_init_cond(parameters_of_missile)
-    assert m.get_state_0() == approx(np.array([25, 0, 0, np.radians(30), 0]))
-
-def test_set_state():
-    m = Missile.get_needle()
-    parameters_of_missile = Missile.get_standart_parameters_of_missile()
-    m.set_init_cond(parameters_of_missile)
-    state = np.array([30, 1, 1, np.radians(45), 0])
-    m.set_state(state)
-    assert m.get_state() == approx(state) and not m.get_state_0() == approx(m.get_state())
 
 def test_reset():
     m = Missile.get_needle()
@@ -83,7 +61,15 @@ def test_step():
     parameters_of_missile = Missile.get_standart_parameters_of_missile()
     m.set_init_cond(parameters_of_missile)
     m.step(1, 1)
+    state1 = m.get_state()
+
     m.step(0, 1)
     m.step(-1, 1)
-    state = m.get_state()
-    assert state == approx(np.array([88.48376902, 148.07475323, 78.54616487, 0.30156329, 3.002]))
+    state2 = m.get_state()
+    
+    m.set_state(state1)
+    m.step(0, 1)
+    m.step(-1, 1)
+    state3 = m.get_state()
+
+    assert state2== approx(state3)
