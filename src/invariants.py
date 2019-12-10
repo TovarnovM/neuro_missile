@@ -117,6 +117,32 @@ class Interp2d(object):
         """
         return self.func_inter(x, y)[0,0]
 
+class InterpVec(object):
+    """Класс служит для подномерной интерполяции векторов
+
+    """
+    def __init__(self, tups):
+        """Конструктор
+        
+        Arguments:
+            tups {list} -- список кортежей [(время, (x,y)), (время, (x,y)), ...]
+            или [(время, [x,y]), (время, [x,y]), ...]
+            или [(время, np.array([x,y])), (время, np.array([x,y])), ...]
+        """
+        # TODO сделать его
+        pass
+
+    def __call__(self, t):
+        """Возвращает интерполированное значение вектора
+        
+        Arguments:
+            t {float} -- время
+
+        returns {np.ndarray} - вектор
+        """
+        pass
+
+
 if __name__ == "__main__":
     x1 = np.array([1,2,3])
     x2 = np.array([2,3,3.5])

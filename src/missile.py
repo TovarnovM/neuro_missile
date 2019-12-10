@@ -240,6 +240,19 @@ class Missile(object):
             y[4] = self.alpha_targeting
         return y
 
+    def get_action_parallel_guidance(self, target):
+        """Метод, возвращающий аналог action'a, соответствующий идельному методу параллельного сближения
+        
+        Arguments:
+            target {object} -- ссылка на цель. Обязательно должен иметь два свойства: pos->np.ndarray и vel->np.ndarray. 
+                               Эти свойства аналогичны свойствам этого класса. pos возвращает координату цели, vel -- скорость
+        
+        returns {float} -- [-1; 1] аналог action'a, только не int, а float. Если умножить его на self.alphamax, то получится
+                           потребный угол атаки для обеспечения метода параллельного сближения
+        """
+        # TODO реализовать метод
+        pass
+
     def step(self, action, tau):
         """Моделирует динамику ракеты за шаг по времени tau. 
         На протяжении tau управляющее воздействие на ракету постоянно (action)
@@ -359,6 +372,84 @@ class Missile(object):
             'Cx': self.Cx,
             'Cy': self.Cya * self.alpha
         }
+
+
+class MissileTarget(object):
+    @staticmethod
+    def get_standart_parameters_of_target():
+        """Возвращает словарь (или что там принимает метод set_init_cond) для стандартного начального состояния цели
+        [np.ndarray] -- [x, y, t]
+        """
+        # TODO return np.array([1025, 1000, 0])   
+        pass
+
+    def __init__(self, *args, **kwargs):
+        """Конструктор 
+        """
+        self.vel_interp = kwargs['vel_interp'] # type() == invariants.InterpVec
+
+    def set_init_cond(self, parameters_of_target=None):
+        """Задает начальные параметры (положение) и запоминает их для того,
+        чтобы потом в них можно было вернуться при помощи reset()
+    
+        """
+        if parameters_of_target is None:
+            parameters_of_target = self.get_standart_parameters_of_target()
+        self.state = np.array(parameters_of_target)
+        self.state_0 = np.array(parameters_of_target)
+
+    def reset(self):
+        """Возвращает цель в начальное состояние
+        """
+        self.set_state(self.state_0)
+
+    def get_state(self):
+        """Метод получения вектора со всеми параметрами системы 
+        (схож с вектором 'y' при интегрировании ode, но в векторе state еще должно быть t)
+        
+        Returns:
+            [np.ndarray] -- [x, y, t]
+                            [м, м, с]
+        """
+        return self.state
+    
+    def get_state_0(self):
+        """Метод получения вектора со всеми параметрами системы 
+        (схож с вектором 'y' при интегрировании ode, но в векторе state еще должно быть t)
+        
+        Returns:
+            [np.ndarray] -- [x, y, t]
+                            [м, м, с]
+        """
+        return self.state_0
+
+    def step(self, tau):
+        """Моделирует кинематику цели за шаг по времени tau. 
+        Меняет внутреннее состояние цели на момент окончания шага
+        
+        Arguments:
+            tau {float} -- длина шага по времени (не путать с шагом интегрирования)
+        """
+        pass
+
+    @property
+    def pos(self):
+        """Свойство, возвращающее текущее положение ц.м. цели в виде numpy массива из двух элементов 
+        np.array([x,y])
+        """
+        return self.state[:2]
+
+    @property
+    def vel(self):
+        """Свойство, возвращающее текущий вектор скорости цели в виде numpy массива из двух элементов 
+        np.array([Vx, Vy])
+        """
+        return self.vel_interp(self.t)
+
+    @property
+    def t(self):
+        return self.state[-1]
+    
 
 if __name__ == "__main__":
     m = Missile.get_needle()
