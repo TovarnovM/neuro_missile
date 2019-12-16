@@ -1,5 +1,6 @@
 import random
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.integrate import ode
 from invariants import Interp1d, Interp2d 
@@ -29,44 +30,19 @@ class Missile(object):
         returns Missile
         """
         m0 = 11.8
-        d = 0.127
-        mu_st = 0.27
-        mu_mr = 0.39
-        t_st = 6.0
-        t_mr = 3.0
+        d = 0.072
+        t_st = 4.531
+        t_mr = 8.125
         
         Sm = np.pi * d ** 2 / 4
-        w_st = mu_st * m0
-        w_mr = mu_mr * (m0 - w_st)
+        w_st = 3.24
+        w_mr = 1.357
         G_st = w_st / t_st
         G_mr = w_mr / t_mr
         
+        P_st = 1787
+        P_mr = 454
         J = 2300
-
-        # constants_of_the_rocket = {  # было
-        #     "mu_st": mu_st,
-        #     "mu_mr": mu_mr,
-        #     "t_st": t_st,
-        #     "t_mr": t_mr,
-        #     "w_st": w_st,
-        #     "w_mr": w_mr,
-        #     "G_st": G_st,
-        #     "G_mr": G_mr,
-        #     "Sm": Sm,
-        #     "m0": m0,
-        #     "d": d,
-        #     "alphamax": 15,
-        #     "speed_change_alpha": 0.1,
-        #     "J": 1900,
-        #     "xi": 2,
-        #     "Cx0": 0.35,
-        #     "Cya": 0.04,
-        #     "betta": 1.9,
-        #     "K_eff": 0.3,
-        #     "alpha_0": 7
-        # }
-
-        K_eff = 1
 
         @np.vectorize
         def _get_m(t):
@@ -80,9 +56,9 @@ class Missile(object):
         @np.vectorize
         def _get_P(t):
             if t < t_st:
-                return K_eff * G_st * J
+                return P_st
             elif t_st <= t < t_mr + t_st:
-                return K_eff * G_mr * J
+                return P_mr
             else:
                 return 0
 
@@ -90,9 +66,16 @@ class Missile(object):
         m_itr = Interp1d(ts, _get_m(ts))
         P_itr = Interp1d(ts, _get_P(ts))
 
-        Cx0_itr2 = Interp2d.simple_constant(0.35)
-        Cya_itr = Interp1d.simple_constant(0.04)
+        df = pd.read_csv('constants/aerodynamic.csv')
+        df = df[df['D'] == 0]
 
+        alpha_from_csv = np.unique(df['A'].to_numpy())
+        M_from_csv = np.array(np.unique(df['M'].to_numpy()))
+        Cx_from_csv = np.array(np.split(df['Cx'].to_numpy(), alpha_from_csv.size))
+        Cya_from_csv = np.array(np.split(df['Cya'].to_numpy(), alpha_from_csv.size))
+
+        Cya_itr = Interp2d(alpha_from_csv, M_from_csv, Cya_from_csv)
+        Cx_itr = Interp2d(alpha_from_csv, M_from_csv, Cx_from_csv)
 
         # TODO сделать нормальную таблицу плотности воздуха и скорости звука из https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D0%BD%D0%B0%D1%8F_%D0%B0%D1%82%D0%BC%D0%BE%D1%81%D1%84%D0%B5%D1%80%D0%B0
         ro_itr = Interp1d.simple_constant(1.204)   
@@ -105,8 +88,8 @@ class Missile(object):
             alphamax=15,   # максимальный угол атаки [градусы]
             speed_change_alpha=30,  # скорость изменения угола атаки [градусы / с]
             xi=0.1,           # коэффициент, характеризующий структуру подъёмной силы аэродинамической схемы ракеты [] TODO уточнить его
-            Cx0_itr2=Cx0_itr2, # интерполятор определения коэффициента лобового сопротивления ракеты от угла атаки [градусы] и от числа маха
-            Cya_itr=Cya_itr, # интерполятор определения коэффициента подъемной силы ракеты в полускоростной СК от числа маха
+            Cx_itr=Cx_itr,              # интерполятор определения коэффициента лобового сопротивления ракеты от угла атаки [градусы] и от числа маха
+            Cya_itr=Cya_itr,
             ro_itr=ro_itr,   # интерполятор определения плотности атмосферы [кг/м^3] от высоты [м] 
             a_itr=a_itr      # интерполятор определения скорости звука воздуха [м/с] от высоты [м] 
         )
@@ -132,18 +115,17 @@ class Missile(object):
         self.speed_change_alpha = kwargs["speed_change_alpha"]
         self.xi = kwargs["xi"]
 
-        self.Cx0_itr2 = kwargs["Cx0_itr2"]
-        self.Cya_itr = kwargs["Cya_itr"]
 
         self.P_itr = kwargs["P_itr"]
         self.m_itr = kwargs["m_itr"]
 
+        self.Cx_itr = kwargs["Cx_itr"]
+        self.Cya_itr = kwargs["Cya_itr"]
         self.ro_itr = kwargs['ro_itr']
         self.a_itr = kwargs['a_itr']
 
         self.alpha_targeting = 0
         
-
     def set_init_cond(self, parameters_of_missile=None):
         """Задает начальные параметры (положение, скорость, углы ...) и запоминает их для того,
         чтобы потом в них можно было вернуться при помощи reset()
@@ -156,7 +138,6 @@ class Missile(object):
             parameters_of_missile = self.get_standart_parameters_of_missile()
         self.state = np.array(parameters_of_missile)
         self.state_0 = np.array(parameters_of_missile)
-
 
     def reset(self):
         """Возвращает ракету в начальное состояние
@@ -183,7 +164,6 @@ class Missile(object):
         """
         return self.state_0
 
-
     def set_state(self, state):
         """Метод задания нового (может полностью отличающегося от текущего) состояния ракеты
 
@@ -193,7 +173,6 @@ class Missile(object):
                             [м/с, м, м, радианы, градусы, с]
         """
         self.state = np.array(state)
-
 
     def _get_dydt(self, t, y):
         """Функция правых частей системы ОДУ динамики ракеты. 
@@ -215,8 +194,8 @@ class Missile(object):
         ro = self.ro_itr(y)
         a = self.a_itr(y)
         M = v/a
-        Cya = self.Cya_itr(M)
-        Cx = self.Cx0_itr2(alpha, M) + Cya * alpha / 57.3
+        Cya = self.Cya_itr(alpha, M)
+        Cx = self.Cx_itr(alpha, M)
 
         alpha_diff = self.alpha_targeting - alpha
         dalpha = 0                       if abs(alpha_diff) < 1e-6 else \
@@ -350,11 +329,11 @@ class Missile(object):
 
     @property
     def Cya(self):
-        return self.Cya_itr(self.M)  
+        return self.Cya_itr(self.alpha, self.M)  
 
     @property
     def Cx(self):
-        return self.Cx0_itr2(self.alpha, self.M) + self.Cya * self.alpha / 57.3
+        return self.Cx_itr(self.alpha, self.M)
 
     def get_summary(self):
         """Возвращает словарь с основными текущими параметрами и характеристиками ракеты в данный момент
@@ -369,8 +348,8 @@ class Missile(object):
             'm': self.m_itr(self.t),
             'P': self.P_itr(self.t),
             'alpha': self.alpha,
-            'Cx': self.Cx,
-            'Cy': self.Cya * self.alpha
+            'Cx': self.Cx_itr(self.alpha, self.M),
+            'Cya': self.Cya_itr(self.alpha, self.M)
         }
 
 
@@ -379,9 +358,8 @@ class MissileTarget(object):
     def get_standart_parameters_of_target():
         """Возвращает словарь (или что там принимает метод set_init_cond) для стандартного начального состояния цели
         [np.ndarray] -- [x, y, t]
-        """
-        # TODO return np.array([1025, 1000, 0])   
-        pass
+        """ 
+        return np.array([1025, 1000, 0]) 
 
     def __init__(self, *args, **kwargs):
         """Конструктор 
@@ -402,6 +380,16 @@ class MissileTarget(object):
         """Возвращает цель в начальное состояние
         """
         self.set_state(self.state_0)
+
+    def set_state(self, state):
+        """Метод задания нового (может полностью отличающегося от текущего) состояния цели
+
+        Arguments:
+            [np.ndarray] -- [x, y, t]
+                            [м, м, с]
+        """
+        self.state = np.array(state)
+
 
     def get_state(self):
         """Метод получения вектора со всеми параметрами системы 
@@ -472,4 +460,5 @@ if __name__ == "__main__":
     plt.grid()
     plt.legend()
     plt.show()
+
 

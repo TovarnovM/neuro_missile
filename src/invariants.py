@@ -81,9 +81,7 @@ class Interp2d(object):
         """
         
         self.xs = np.array(xs)
-        self.ys = np.array(ys)
-        # self.xss, self.yss = np.meshgrid(self.xs, self.ys)
-        # self.fs = fs(self.xss, self.yss)    
+        self.ys = np.array(ys) 
         self.fs = np.array(fs)
         self.func_inter = interp.RectBivariateSpline(self.xs, self.ys, self.fs, kx=1, ky=1) # обчыная линейная интерполяция
         if self.xs.size * self.ys.size != self.fs.size:
