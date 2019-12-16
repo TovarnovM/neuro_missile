@@ -229,8 +229,18 @@ class Missile(object):
         returns {float} -- [-1; 1] аналог action'a, только не int, а float. Если умножить его на self.alphamax, то получится
                            потребный угол атаки для обеспечения метода параллельного сближения
         """
-        # TODO реализовать метод
+        # TODO: Проверить 
+        # xc, yc = target.pos
+        # vc = target.vel
+        # Qc = target.Qc
+
+        # v, x, y = self.state
+        # fi = np.arctan((xc - x) / (yc - y))
+        # real_Q  = fi - np.arcsin(vc / v * (np.sin(fi - Qc)))
+        
+        # return self.Q / real_Q
         pass
+
 
     def step(self, action, tau):
         """Моделирует динамику ракеты за шаг по времени tau. 
