@@ -510,27 +510,28 @@ class Target(object):
 if __name__ == "__main__":
     t = Target.get_target()
     t.set_init_cond()
-    t.step(3)
 
     m = Missile.get_needle()
     m.set_init_cond()
 
-    m.get_action_parallel_guidance(t)
-    # summaries = [m.get_summary()]
-    # tau = 0.1
-    # for _ in range(10):
-    #     act = m.action_sample()
-    #     for i in range(20):    
-    #         m.step(act, tau)
-    #         summaries.append(m.get_summary())
+    
+    summaries = [m.get_summary()]
+    tau = 0.1
+    for _ in range(10):
+        k = m.get_action_parallel_guidance(t)
+        act = m.action_sample() * k
+        for i in range(20):    
+            m.step(act, tau)
+            t.step(tau)
+            summaries.append(m.get_summary())
 
-    # ts = [s['t'] for s in summaries]
-    # for k in summaries[0]:
-    #     if k == 't':
-    #         continue
-    #     data = [s[k] for s in summaries]
-    #     plt.plot(ts, data, label=k)
-    # plt.grid()
-    # plt.legend()
-    # plt.show()
+    ts = [s['t'] for s in summaries]
+    for k in summaries[0]:
+        if k == 't':
+            continue
+        data = [s[k] for s in summaries]
+        plt.plot(ts, data, label=k)
+    plt.grid()
+    plt.legend()
+    plt.show()
 
