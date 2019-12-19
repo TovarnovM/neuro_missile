@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.integrate import ode
-from invariants import Interp1d, Interp2d 
+from invariants import Interp1d, Interp2d, InterpVec 
 
 class Missile(object):
     """Класс ракета, которая которая летает в двухмерном пространстве в поле силы тяжести и которой можно управлять) 
@@ -42,7 +42,7 @@ class Missile(object):
         
         P_st = 1787
         P_mr = 454
-        J = 2300
+        J = 2500
 
         @np.vectorize
         def _get_m(t):
@@ -229,18 +229,35 @@ class Missile(object):
         returns {float} -- [-1; 1] аналог action'a, только не int, а float. Если умножить его на self.alphamax, то получится
                            потребный угол атаки для обеспечения метода параллельного сближения
         """
-        # TODO: Проверить 
-        # xc, yc = target.pos
-        # vc = target.vel
-        # Qc = target.Qc
+        xc, yc = target.pos
+        Qc = target.Q
+        vc = target.v
 
-        # v, x, y = self.state
-        # fi = np.arctan((xc - x) / (yc - y))
-        # real_Q  = fi - np.arcsin(vc / v * (np.sin(fi - Qc)))
-        
-        # return self.Q / real_Q
-        pass
+        v, x, y, Q, alpha, t = self.state
 
+        # Угол между линией визирования и горизонтом [рад]
+        fi = np.arctan((yc - y) / (xc - x))
+        # Линия визирования
+        r = np.sqrt((yc - y) ** 2 + (xc - x) ** 2)
+        # Угол между линией визирования и вектором скорости [рад]
+        nu_c = Qc - fi
+        nu = Q - fi
+        dfi_dt = (vc * np.sin(nu_c) - v * np.sin(nu)) / r 
+
+        am = 1 # Коэффициент быстродействия
+        dny = 1 # Запас по перегрузке
+
+        P = self.P_itr(t)
+        m = self.m_itr(t)
+        ro = self.ro_itr(y)
+        a = self.a_itr(y)
+        M = v/a
+        Cya = self.Cya_itr(alpha, M)
+
+        alpha_req = ((v * am * dfi_dt / self.g + np.cos(Q) + dny) *  m * self.g) \
+            / (Cya * ro * v ** 2 / 2 * self.Sm * (1 + self.xi) + P / 57.3)
+
+        return alpha_req / self.alphamax
 
     def step(self, action, tau):
         """Моделирует динамику ракеты за шаг по времени tau. 
@@ -362,8 +379,33 @@ class Missile(object):
             'Cya': self.Cya_itr(self.alpha, self.M)
         }
 
+class Target(object):
+    @classmethod
+    def get_target(cls):
+        velocity_vectors = [
+            (0,[100,12]),
+            (2,[100,41]),
+            (4,[96,60]),
+            (6,[90,50]),
+            (8,[89,33]),
+            (10,[90,10]),
+            (12,[95,0]),
+            (14,[105,21]),
+            (16,[125,37]),
+            (18,[110,60]),
+            (20,[90,50]),
+            (22,[85,44]),
+            (24,[75,31]),
+            (26,[20,61]),
+            (28,[75,31]),
+            (30,[75,31]),
+            (32,[75,31])
+        ]
 
-class MissileTarget(object):
+        vel_interp = InterpVec(velocity_vectors)
+        target = cls(vel_interp = vel_interp)
+        return target
+
     @staticmethod
     def get_standart_parameters_of_target():
         """Возвращает словарь (или что там принимает метод set_init_cond) для стандартного начального состояния цели
@@ -400,7 +442,6 @@ class MissileTarget(object):
         """
         self.state = np.array(state)
 
-
     def get_state(self):
         """Метод получения вектора со всеми параметрами системы 
         (схож с вектором 'y' при интегрировании ode, но в векторе state еще должно быть t)
@@ -428,7 +469,10 @@ class MissileTarget(object):
         Arguments:
             tau {float} -- длина шага по времени (не путать с шагом интегрирования)
         """
-        pass
+        x, y, current_time = self.state
+        t = current_time + tau
+        vx, vy = self.vel_interp(t)
+        self.set_state([x + vx, y + vy, t])
 
     @property
     def pos(self):
@@ -448,27 +492,45 @@ class MissileTarget(object):
     def t(self):
         return self.state[-1]
     
+    @property
+    def Q(self):
+        """Свойство, возвращающее угол тангажа
+        Returns:
+            Q {float} -- [рад]
+        """
+        vx, vy = self.vel_interp(self.t)
+        return np.arctan(vy / vx)
+
+    @property
+    def v(self):
+        vx, vy = self.vel_interp(self.t)
+        return np.sqrt(vx ** 2 + vy ** 2)
+
 
 if __name__ == "__main__":
+    t = Target.get_target()
+    t.set_init_cond()
+    t.step(3)
+
     m = Missile.get_needle()
     m.set_init_cond()
 
-    summaries = [m.get_summary()]
-    tau = 0.1
-    for _ in range(10):
-        act = m.action_sample()
-        for i in range(20):    
-            m.step(act, tau)
-            summaries.append(m.get_summary())
+    m.get_action_parallel_guidance(t)
+    # summaries = [m.get_summary()]
+    # tau = 0.1
+    # for _ in range(10):
+    #     act = m.action_sample()
+    #     for i in range(20):    
+    #         m.step(act, tau)
+    #         summaries.append(m.get_summary())
 
-    ts = [s['t'] for s in summaries]
-    for k in summaries[0]:
-        if k == 't':
-            continue
-        data = [s[k] for s in summaries]
-        plt.plot(ts, data, label=k)
-    plt.grid()
-    plt.legend()
-    plt.show()
-
+    # ts = [s['t'] for s in summaries]
+    # for k in summaries[0]:
+    #     if k == 't':
+    #         continue
+    #     data = [s[k] for s in summaries]
+    #     plt.plot(ts, data, label=k)
+    # plt.grid()
+    # plt.legend()
+    # plt.show()
 

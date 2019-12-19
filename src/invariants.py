@@ -127,18 +127,21 @@ class InterpVec(object):
             или [(время, [x,y]), (время, [x,y]), ...]
             или [(время, np.array([x,y])), (время, np.array([x,y])), ...]
         """
-        # TODO сделать его
-        pass
+        self.ts = list(map(lambda x: x[0], tups))
+        self.vector_velocity = list(map(lambda x: x[1], tups))
+
+        self.func_inter = interp.interp1d(self.ts, self.vector_velocity, axis=0)
 
     def __call__(self, t):
         """Возвращает интерполированное значение вектора
-        
         Arguments:
             t {float} -- время
-
         returns {np.ndarray} - вектор
         """
-        pass
+        if (max(self.ts) < t or min(self.ts) > t):
+            raise AttributeError(f'Значение {t} выходит из диапазона [{min(self.ts)}, {max(self.ts)}]')
+
+        return np.array(self.func_inter(t))
 
 
 if __name__ == "__main__":
