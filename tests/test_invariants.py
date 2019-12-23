@@ -9,7 +9,7 @@ wd = os.path.abspath(__file__)
 wd = os.path.dirname(os.path.dirname(wd))
 sys.path.append(wd+"/src/")
 
-from invariants import Interp1d, Interp2d
+from invariants import Interp1d, Interp2d, InterpVec
 
 def test_Interp1d():
     x = np.arange(0, 50, 1)
@@ -34,3 +34,11 @@ def test_constantInterp1d():
 def test_constantInterp2d():
     f = Interp2d.simple_constant(2)
     assert f(10,100) == approx(2)
+
+def test_constantInterpVec():
+    data = [(-1,(2,3)), (0,[0,0]), (2, (3,4))]
+    iv = InterpVec(data)
+    assert iv(-0.5) == approx([1,1.5])
+    assert iv(1) == approx([1.5,2])
+    assert iv(-10) == approx([2,3])
+    assert iv(10) == approx([3,4])

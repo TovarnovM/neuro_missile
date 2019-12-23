@@ -4,6 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.integrate import ode
 from invariants import Interp1d, Interp2d, InterpVec 
+from math import *
 
 class Missile(object):
     """Класс ракета, которая которая летает в двухмерном пространстве в поле силы тяжести и которой можно управлять) 
@@ -217,6 +218,11 @@ class Missile(object):
             y[4] = -self.alphamax
         elif abs(y[4] - self.alpha_targeting) < 1e-6:
             y[4] = self.alpha_targeting
+        if y[3] < -180 or y[3] > 180: # Q
+            y[3] = y[3] % (2*pi)
+            y[3] = (y[3] + 2*pi) % (2*pi)
+            if y[3] > pi:
+                y[3] -= 2*pi
         return y
 
     def get_action_parallel_guidance(self, target):
@@ -375,6 +381,7 @@ class Missile(object):
             'm': self.m_itr(self.t),
             'P': self.P_itr(self.t),
             'alpha': self.alpha,
+            'alpha_targeting': self. alpha_targeting,
             'Cx': self.Cx_itr(self.alpha, self.M),
             'Cya': self.Cya_itr(self.alpha, self.M)
         }
@@ -404,6 +411,8 @@ class Target(object):
 
         vel_interp = InterpVec(velocity_vectors)
         target = cls(vel_interp = vel_interp)
+        parameters_of_target = cls.get_standart_parameters_of_target()
+        target.set_init_cond(parameters_of_target=parameters_of_target)
         return target
 
     @staticmethod
@@ -471,6 +480,7 @@ class Target(object):
         """
         x, y, current_time = self.state
         t = current_time + tau
+        # TODO можно и поточнее)
         vx, vy = self.vel_interp(t)
         self.set_state([x + vx, y + vy, t])
 

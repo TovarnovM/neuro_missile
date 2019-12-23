@@ -130,7 +130,7 @@ class InterpVec(object):
         self.ts = list(map(lambda x: x[0], tups))
         self.vector_velocity = list(map(lambda x: x[1], tups))
 
-        self.func_inter = interp.interp1d(self.ts, self.vector_velocity, axis=0)
+        self.func_inter = interp.interp1d(self.ts, self.vector_velocity, axis=0, bounds_error=False, fill_value=(self.vector_velocity[0], self.vector_velocity[-1]))
 
     def __call__(self, t):
         """Возвращает интерполированное значение вектора
@@ -138,8 +138,8 @@ class InterpVec(object):
             t {float} -- время
         returns {np.ndarray} - вектор
         """
-        if (max(self.ts) < t or min(self.ts) > t):
-            raise AttributeError(f'Значение {t} выходит из диапазона [{min(self.ts)}, {max(self.ts)}]')
+        # if (max(self.ts) < t or min(self.ts) > t):
+        #     raise AttributeError(f'Значение {t} выходит из диапазона [{min(self.ts)}, {max(self.ts)}]')
 
         return np.array(self.func_inter(t))
 
