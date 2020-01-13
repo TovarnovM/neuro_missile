@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 from missile import Missile, Target
 
 
@@ -127,10 +128,36 @@ class MissileGym(object):
         self.prev_observation[:] = state[self._miss_state_len+self._trg_state_len:]
 
     def render(self, **kwargs):
-        """Отрисовать (где угодно) окружение в текущем состоянии 
+        """Отрисовать окружение в текущем состоянии 
         """
-        # TODO реализовать метод
-        pass
+        fig = plt.gcf()
+        fig.show()
+        fig.canvas.draw()
+        vm, xm, ym, Qm, alpha, t = gym.get_state()[0:6]
+        P = self.missile.get_summary()['P']
+        xt, yt = gym.get_state()[6:8]
+        plt.subplot(2, 1, 1)
+        plt.plot(xm, ym, 'b.', xt, yt, 'r.', markersize=1)
+        plt.title('Полет ракеты и цели')
+
+        plt.subplot(2, 3, 4)
+        plt.plot(t, P, 'r.', markersize=1)
+        plt.xlabel('t, с')
+        plt.ylabel('P, Н')
+
+        plt.subplot(2, 3, 5)
+        plt.plot(t, vm, 'r.', markersize=1)
+        plt.xlabel('t, сек')
+        plt.ylabel('V, м/с')
+
+        plt.subplot(2, 3, 6)
+        plt.plot(t, alpha, 'r.', markersize=1)
+        plt.xlabel('t, с')
+        plt.ylabel(r'$\alpha$, град')
+
+        plt.pause(0.001)
+        fig.canvas.draw()
+        # TODO: Добавить сохранение
 
     @property
     def action_space(self):
@@ -204,3 +231,15 @@ class MissileGym(object):
             # -self.missile.alphamax,
             -180
         ])
+
+if __name__ == "__main__":
+    gym = MissileGym.make('standart')
+    actions = [1,1,-1,-1,1,1,1,1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,0,0,0,0,0,0,0,0,0]
+    for _ in range(300):
+        gym.render()
+        action = gym.action_sample() 
+        gym.step(action)
+
+    # for action in actions:
+    #     gym.render()
+    #     gym.step(action)
