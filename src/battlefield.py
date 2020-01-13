@@ -4,7 +4,7 @@ from missile import Missile, Target
 
 
 
-class MissileGym(object):
+class Battlefield(object):
     # set доступных сценариев для моделирования (различные поведения цели, различные варианты запуска и т.д.)
     scenario_names = {'standart'}
 
@@ -25,7 +25,6 @@ class MissileGym(object):
             return cls(missile=missile, target=target)
 
         
-
     def __init__(self, *args, **kwargs):
         self.missile = kwargs['missile']
         self.target = kwargs['target']
@@ -78,12 +77,6 @@ class MissileGym(object):
         mpos1, tpos1 = self.missile.pos, self.target.pos
         reward, done, info = self.get_reward_done_info(mpos0, tpos0, mpos1, tpos1)
         return obs, reward, done, info
-
-
-    def step_with_guidance(self):
-        action_parallel_guidance = self.missile.get_action_parallel_guidance(self.target)
-        self.step(action_parallel_guidance)
-
 
     def get_normal_reward(self, mpos0, tpos0, mpos1, tpos1):
         r0 = np.linalg.norm(tpos0-mpos0)
@@ -237,3 +230,15 @@ class MissileGym(object):
             # -self.missile.alphamax,
             -180
         ])
+
+if __name__ == "__main__":
+    gym = MissileGym.make('standart')
+    actions = [1,1,-1,-1,1,1,1,1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,0,0,0,0,0,0,0,0,0]
+    # for _ in range(300):
+    #     gym.render()
+    #     action = gym.action_sample() 
+    #     gym.step(action)
+
+    for action in actions:
+        gym.render()
+        gym.step(action)
