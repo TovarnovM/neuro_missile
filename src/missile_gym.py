@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from missile import Missile, Target
-
+from invariants import Interp1d
 
 
 class MissileGym(object):
@@ -24,18 +24,16 @@ class MissileGym(object):
             missile.set_init_cond(parameters_of_missile=mparams)
             return cls(missile=missile, target=target)
 
-        
-
     def __init__(self, *args, **kwargs):
+        self.point_solution = np.array([])
         self.missile = kwargs['missile']
         self.target = kwargs['target']
-        self._tau = kwargs.get('tau', 0.1) 
-        self.t_max = kwargs.get('t_max', 60) 
+        self._tau = kwargs.get('tau', 1/30) 
+        self.t_max = kwargs.get('t_max', 20) 
         self._miss_state_len = self.missile.get_state().shape[0]
         self._trg_state_len = self.target.get_state().shape[0]
         self.prev_observation=self.get_current_observation()
-
-        
+ 
     def reset(self):
         """Возвращает наше окружение в начальное состояние.
         Метод возвращает начальное наблюдение (observation)
@@ -50,7 +48,6 @@ class MissileGym(object):
     def get_observation(self):
         return np.concatenate([self.prev_observation, self.get_current_observation()])
          
-
     def close(self):
         """Завершаем работу с окружением (если были открыты какие-то ресурсы, то закрываем их здесь)
         """
@@ -73,17 +70,17 @@ class MissileGym(object):
         mpos0, tpos0 = self.missile.pos, self.target.pos
         self.missile.step(action, self._tau)
         self.target.step(self._tau)
-        
+
         obs = self.get_observation()
         mpos1, tpos1 = self.missile.pos, self.target.pos
+
         reward, done, info = self.get_reward_done_info(mpos0, tpos0, mpos1, tpos1)
         return obs, reward, done, info
 
-
     def step_with_guidance(self):
         action_parallel_guidance = self.missile.get_action_parallel_guidance(self.target)
-        self.step(action_parallel_guidance)
-
+        obs, reward, done, info = self.step(action_parallel_guidance)
+        return obs, reward, done, info
 
     def get_normal_reward(self, mpos0, tpos0, mpos1, tpos1):
         r0 = np.linalg.norm(tpos0-mpos0)
@@ -107,10 +104,32 @@ class MissileGym(object):
             return 0, True, info
         return self.get_normal_reward(mpos0, tpos0, mpos1, tpos1), False, info
 
+    def _r(self, mpos0, tpos0, mpos1, tpos1, r_kill):
+        xm0, ym0 = mpos0
+        xm1, ym1 = mpos1
+        xt0, yt0 = tpos0
+        xt1, yt1 = tpos1
+
+        flag = False
+        times = np.linspace(0.0, 1.0, 20)
+        for t in times:
+            dx = (xt0 - xm0) * (1 - t) + (xt1 - xm1) * t
+            dy = (yt0 - ym0) * (1 - t) + (yt1 - ym1) * t
+            r = np.sqrt(dx ** 2 + dy ** 2)
+            if r < r_kill:
+                flag = True
+        return flag
+
     def is_hit(self, mpos0, tpos0, mpos1, tpos1):
-        if np.linalg.norm(mpos1 - tpos1) < 15:
+        r0 = np.linalg.norm(mpos0 - tpos0)
+        r1 = np.linalg.norm(mpos1 - tpos1)
+
+        r_kill = self.missile.r_kill
+        if r1 > r0 and (r0 < 30 or r1 < 30):
+            return self._r(mpos0, tpos0, mpos1, tpos1, r_kill)
+        if r1 < r_kill:
             return True
-        # TODO рассмотреть случай попадания во время step
+
         return False
 
     def get_state(self):
@@ -119,7 +138,6 @@ class MissileGym(object):
         mis_state = self.missile.get_state()
         trg_state = self.target.get_state()
         return np.concatenate([mis_state, trg_state, self.prev_observation])
-
 
     def set_state(self, state):
         """метод, задающий новое состояние (state) окружения.
@@ -133,37 +151,113 @@ class MissileGym(object):
         self.target.set_state(state[self._miss_state_len:self._miss_state_len+self._trg_state_len])
         self.prev_observation[:] = state[self._miss_state_len+self._trg_state_len:]
 
-    def render(self, **kwargs):
+    def render_all_trajectory(self, **kwargs):
         """Отрисовать окружение в текущем состоянии 
         """
+        reward = kwargs['reward']
         fig = plt.gcf()
         fig.show()
         fig.canvas.draw()
-        vm, xm, ym, Qm, alpha, t = gym.get_state()[0:6]
+        vm, xm, ym, Qm, alpha, t = self.get_state()[0:6]
         P = self.missile.get_summary()['P']
-        xt, yt = gym.get_state()[6:8]
-        plt.subplot(2, 1, 1)
+        xt, yt = self.get_state()[6:8]
+        vx, vy = self.missile.vel[:]
+        vxt, vyt = self.target.vel
+        vt = self.target.v
+        Qt = self.target.Q
+        npt = self.target.np
+        npm = self.missile.np
+
+        r = np.sqrt((xt - xm) ** 2 + (yt - ym) ** 2)
+
+        plt.subplot(5, 1, 1)
+
+        plt.plot([xm, xt], [ym, yt], linestyle='-', color="#dddddd")
+        plt.plot([xm, xt], [ym, ym], color="#e2e2e2")
+
+        plt.plot([xm, vx + xm], [ym,ym],  color="#92a8d1", label='Векторы V, Vx и Vy ракеты')
+        plt.plot([xm, xm], [ym,vy + ym],  color="#92a8d1")
+        plt.plot([xm, vx + xm], [ym,vy + ym],  color="#92a8d1")
+
+        plt.plot([xt, vxt + xt], [yt,yt],  color="#eea29a", label='Векторы V, Vx и Vy цели')
+        plt.plot([xt, xt], [yt,vyt + yt],  color="#eea29a")
+        plt.plot([xt, vxt + xt], [yt,vyt + yt],  color="#eea29a")
+
         plt.plot(xm, ym, 'b.', xt, yt, 'r.', markersize=1)
         plt.title('Полет ракеты и цели')
 
-        plt.subplot(2, 3, 4)
-        plt.plot(t, P, 'r.', markersize=1)
+        plt.subplot(5, 2, 3)
+        plt.plot(t, reward, 'r.', markersize=1)
+        plt.xlabel('t, сек')
+        plt.ylabel('reward')
+        
+        plt.subplot(5, 2, 4)
+        plt.plot(t, r, 'r.', markersize=1)
         plt.xlabel('t, с')
-        plt.ylabel('P, Н')
+        plt.ylabel(r'r, м')
 
-        plt.subplot(2, 3, 5)
+        plt.subplot(5, 2, 5)
         plt.plot(t, vm, 'r.', markersize=1)
         plt.xlabel('t, сек')
-        plt.ylabel('V, м/с')
-
-        plt.subplot(2, 3, 6)
-        plt.plot(t, alpha, 'r.', markersize=1)
+        plt.ylabel('Vm, м/с')
+        
+        plt.subplot(5, 2, 6)
+        plt.plot(t, vt, 'r.', markersize=1)
         plt.xlabel('t, с')
-        plt.ylabel(r'$\alpha$, град')
+        plt.ylabel('Vt, м/с')
+
+        plt.subplot(5, 2, 7)
+        plt.plot(t, Qm * 180 / np.pi, 'r.', markersize=1)
+        plt.xlabel('t, с')
+        plt.ylabel('Qm, рад')
+
+        plt.subplot(5, 2, 8)
+        plt.plot(t, Qt * 180 / np.pi, 'r.', markersize=1)
+        plt.xlabel('t, с')
+        plt.ylabel('Qt, рад')
+
+        plt.subplot(5, 2, 9)
+        plt.plot(t, npm, 'r.', markersize=1)
+        plt.xlabel('t, с')
+        plt.ylabel('npm, рад')
+
+        plt.subplot(5, 2, 10)
+        plt.plot(t, npt, 'r.', markersize=1)
+        plt.xlabel('t, с')
+        plt.ylabel('npt, рад')
 
         plt.pause(0.001)
         fig.canvas.draw()
         # TODO: Добавить сохранение
+
+    def render(self, **kwargs):
+        """Отрисовать окружение в текущем состоянии 
+        """
+        fig = kwargs['fig']
+        ax = kwargs['ax']
+
+        vm, xm, ym = self.get_state()[0:3]
+        xt, yt = self.get_state()[6:8]
+
+        vx, vy = self.missile.vel[:]
+        vxt, vyt = self.target.vel
+
+        ax.plot([xm, vx + xm], [ym,ym],  color="#92a8d1", label='Векторы V, Vx и Vy ракеты')
+        ax.plot([xm, xm], [ym,vy + ym],  color="#92a8d1")
+        ax.plot([xm, vx + xm], [ym,vy + ym],  color="#92a8d1")
+
+        ax.plot([xt, vxt + xt], [yt,yt],  color="#eea29a", label='Векторы V, Vx и Vy цели')
+        ax.plot([xt, xt], [yt,vyt + yt],  color="#eea29a")
+        ax.plot([xt, vxt + xt], [yt,vyt + yt],  color="#eea29a")
+
+        ax.plot([xm, xt], [ym, yt], linestyle='-', color="#dddddd", label='Линия визирования')
+        ax.plot(xm, ym, 'b.',  markersize=3, label='Ракета')
+        ax.plot(xt, yt, 'r.',  markersize=3, label='Цель')
+
+        legend = ax.legend(loc='lower right', fontsize='medium')
+
+        plt.title('Полет ракеты и цели')
+        plt.show()
 
     @property
     def action_space(self):
@@ -237,3 +331,14 @@ class MissileGym(object):
             # -self.missile.alphamax,
             -180
         ])
+
+if __name__ == "__main__":
+    gym = MissileGym.make('standart')
+    done = False
+    reward = 0
+    while not done:
+        if reward > 0.4: 
+            fig, ax = plt.subplots()
+            gym.render(fig = fig, ax = ax)
+        obs, reward, done, info = gym.step_with_guidance()
+    print(info['done_reason'])
