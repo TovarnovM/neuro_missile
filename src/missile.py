@@ -4,6 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.integrate import ode
 from invariants import Interp1d, Interp2d, InterpVec 
+from constants.scenarios import scenarios
 from math import *
 
 class Missile(object):
@@ -21,7 +22,6 @@ class Missile(object):
     Класс является мутабельным и представляет состояние ракеты на текущий момент времени. Класс не хранит историю 
     изменений сових параметров
     """
-    # TODO сделать описание ММ ракеты для РПЗ (в ворде)
 
     @classmethod
     def get_needle(cls):
@@ -63,11 +63,11 @@ class Missile(object):
             else:
                 return 0
 
-        ts = np.linspace(0, t_st+t_mr+0.5, 100)
+        ts = np.linspace(0, t_st + t_mr + 0.5, 100)
         m_itr = Interp1d(ts, _get_m(ts))
         P_itr = Interp1d(ts, _get_P(ts))
 
-        df = pd.read_csv('constants/aerodynamic.csv')
+        df = pd.read_csv('src/constants/aerodynamic.csv')
         df = df[df['D'] == 0]
 
         alpha_from_csv = np.unique(df['A'].to_numpy())
@@ -92,7 +92,8 @@ class Missile(object):
             Cx_itr=Cx_itr,              # интерполятор определения коэффициента лобового сопротивления ракеты от угла атаки [градусы] и от числа маха
             Cya_itr=Cya_itr,
             ro_itr=ro_itr,   # интерполятор определения плотности атмосферы [кг/м^3] от высоты [м] 
-            a_itr=a_itr      # интерполятор определения скорости звука воздуха [м/с] от высоты [м] 
+            a_itr=a_itr,      # интерполятор определения скорости звука воздуха [м/с] от высоты [м] 
+            r_kill=15
         )
         return missile
 
@@ -124,6 +125,7 @@ class Missile(object):
         self.Cya_itr = kwargs["Cya_itr"]
         self.ro_itr = kwargs['ro_itr']
         self.a_itr = kwargs['a_itr']
+        self.r_kill = kwargs['r_kill']
 
         self.alpha_targeting = 0
         
@@ -219,8 +221,8 @@ class Missile(object):
         elif abs(y[4] - self.alpha_targeting) < 1e-6:
             y[4] = self.alpha_targeting
         if y[3] < -180 or y[3] > 180: # Q
-            y[3] = y[3] % (2*pi)
-            y[3] = (y[3] + 2*pi) % (2*pi)
+            y[3] = y[3] % (2 * pi)
+            y[3] = (y[3] + 2 * pi) % (2 * pi)
             if y[3] > pi:
                 y[3] -= 2*pi
         return y
@@ -235,26 +237,12 @@ class Missile(object):
         returns {float} -- [-1; 1] аналог action'a, только не int, а float. Если умножить его на self.alphamax, то получится
                            потребный угол атаки для обеспечения метода параллельного сближения
         """
+
         xc, yc = target.pos
         Qc = target.Q
         vc = target.v
 
         v, x, y, Q, alpha, t = self.state
-
-        # Угол между линией визирования и горизонтом [рад]
-        fi = np.arctan((yc - y) / (xc - x))
-
-        
-        # Линия визирования
-        r = np.sqrt((yc - y) ** 2 + (xc - x) ** 2)
-        # Угол между линией визирования и вектором скорости [рад]
-        nu_c = Qc - fi
-        nu = Q - fi
-        dfi_dt = (vc * np.sin(nu_c) - v * np.sin(nu)) / r 
-
-        am = 1 # Коэффициент быстродействия
-        dny = 1 # Запас по перегрузке
-
         P = self.P_itr(t)
         m = self.m_itr(t)
         ro = self.ro_itr(y)
@@ -262,8 +250,23 @@ class Missile(object):
         M = v/a
         Cya = self.Cya_itr(alpha, M)
 
-        alpha_req = ((v * am * dfi_dt / self.g + np.cos(Q) + dny) *  m * self.g) \
-            / (Cya * ro * v ** 2 / 2 * self.Sm * (1 + self.xi) + P / 57.3)
+        # Угол между линией визирования и горизонтом [рад]
+        fi = np.arctan((yc - y) / (xc - x))
+        # Линия визирования
+        r = np.sqrt((yc - y) ** 2 + (xc - x) ** 2)
+
+        # Угол между линией визирования и вектором скорости [рад]
+        nu_c = Qc - fi
+        nu = Q - fi
+
+        dfi_dt = (vc * np.sin(nu_c) - v * np.sin(nu)) / r 
+
+        am = 1 # Коэффициент быстродействия
+        dny = 6 # Запас по перегрузке
+
+        dQ_dt = am * dfi_dt
+        nya = v * dQ_dt / self.g + np.cos(Q) + dny
+        alpha_req = (nya *  m * self.g) / (Cya * ro * v ** 2 / 2 * self.Sm * (1 + self.xi) + P / 57.3)
 
         return alpha_req / self.alphamax
 
@@ -276,7 +279,9 @@ class Missile(object):
             action {int} -- управляющее воздействие на протяжении шага
             tau {float} -- длина шага по времени (не путать с шагом интегрирования)
         """
+        
         self.alpha_targeting = self.alphamax * action
+
         y = self._validate_y(self.state[:-1])
         t = self.state[-1]  
         t_end = t + tau
@@ -289,11 +294,11 @@ class Missile(object):
                 dt = t_end - t
                 flag = False
             k1 = self._get_dydt(t, y)
-            k2 = self._get_dydt(t+0.5*dt, self._validate_y(y+0.5*dt*k1))
-            k3 = self._get_dydt(t+0.5*dt, self._validate_y(y+0.5*dt*k2))
-            k4 = self._get_dydt(t+dt, self._validate_y(y+dt*k3))
+            k2 = self._get_dydt(t + 0.5 * dt, self._validate_y(y + 0.5 * dt * k1))
+            k3 = self._get_dydt(t + 0.5 * dt, self._validate_y(y + 0.5 * dt * k2))
+            k4 = self._get_dydt(t + dt, self._validate_y(y+dt*k3))
             t += dt
-            y = self._validate_y(y + dt/6*(k1+2*k2+2*k3+k4))
+            y = self._validate_y(y + dt / 6 * (k1 + 2 * k2 + 2 * k3 + k4))
         self.set_state(np.append(y,t))
 
     @property
@@ -387,12 +392,19 @@ class Missile(object):
             'Cx': self.Cx_itr(self.alpha, self.M),
             'Cya': self.Cya_itr(self.alpha, self.M)
         }
+    
+    @property
+    def np(self):
+        v = self.v
+        x, y = self.pos
+        r = np.sqrt(x ** 2 + y ** 2)
+        # TODO: Fix radius
+        return v ** 2 / r / self.g
 
 class Target(object):
     @classmethod
     def get_target(cls):
-
-        velocity_vectors = scenarios['SUCCESS'][0]
+        velocity_vectors = scenarios['SUCCESS'][2]
 
         vel_interp = InterpVec(velocity_vectors)
         target = cls(vel_interp = vel_interp)
@@ -405,11 +417,13 @@ class Target(object):
         """Возвращает словарь (или что там принимает метод set_init_cond) для стандартного начального состояния цели
         [np.ndarray] -- [x, y, t]
         """ 
-        return np.array([1700, 1000, 0]) 
+        return np.array([20, 1000, 0]) 
 
     def __init__(self, *args, **kwargs):
         """Конструктор 
         """
+        self.g = kwargs.get('g', 9.81)
+        self.dt = kwargs.get('dt', 0.001)
         self.vel_interp = kwargs['vel_interp'] # type() == invariants.InterpVec
 
     def set_init_cond(self, parameters_of_target=None):
@@ -463,11 +477,20 @@ class Target(object):
         Arguments:
             tau {float} -- длина шага по времени (не путать с шагом интегрирования)
         """
-        x, y, current_time = self.state
-        t = current_time + tau
-        # TODO можно и поточнее)
-        vx, vy = self.vel_interp(t)
-        self.set_state([x + vx, y + vy, t])
+        x, y, t = self.state
+        t_end = t + tau
+        flag = True
+        while flag:
+            if t_end - t > self.dt:
+                dt = self.dt 
+            else:
+                dt = t_end - t
+                flag = False
+            t += dt
+            vx, vy = self.vel_interp(t)
+            x += vx * dt
+            y += vy * dt
+        self.set_state([x, y, t])
 
     @property
     def pos(self):
@@ -501,183 +524,14 @@ class Target(object):
         vx, vy = self.vel_interp(self.t)
         return np.sqrt(vx ** 2 + vy ** 2)
 
-scenarios = {
-    'SUCCESS': [
-        [
-            (0,[20,12]),
-            (2,[22,5]),
-            (4,[21,0]),
-            (6,[19,-1]),
-            (8,[22,2]),
-            (10,[20,10]),
-            (12,[50,0]),
-            (14,[25,11]),
-            (16,[25,4]),
-            (18,[30,6]),
-            (20,[20,9]),
-            (22,[35,5]),
-            (24,[25,0]),
-            (26,[40,-6]),
-            (28,[55,-10]),
-            (30,[60,-3]),
-            (32,[40,-1])
-        ],
-        [
-            (0,[20,12]),
-            (2,[28,5]),
-            (4,[24,0]),
-            (6,[26,-1]),
-            (8,[20,2]),
-            (10,[20,10]),
-            (12,[20,0]),
-            (14,[25,11]),
-            (16,[20,4]),
-            (18,[25,6]),
-            (20,[25,9]),
-            (22,[25,5]),
-            (24,[20,0]),
-            (26,[25,-6]),
-            (28,[20,-10]),
-            (30,[20,-3]),
-            (32,[20,-1])
-        ],
-        [
-            (0,[30,12]),
-            (2,[38,5]),
-            (4,[34,10]),
-            (6,[36,9]),
-            (8,[30,2]),
-            (10,[30,0]),
-            (12,[30,0]),
-            (14,[35,-2]),
-            (16,[30,-4]),
-            (18,[35,-6]),
-            (20,[35,-10]),
-            (22,[35,-15]),
-            (24,[30,-10]),
-            (26,[35,-6]),
-            (28,[30,-10]),
-            (30,[30,-3]),
-            (32,[30,-1])
-        ],
-        [
-            (0,[30,12]),
-            (2,[38,-5]),
-            (4,[34,10]),
-            (6,[36,-9]),
-            (8,[30,2]),
-            (10,[30,0]),
-            (12,[30,0]),
-            (14,[35,-2]),
-            (16,[30,4]),
-            (18,[35,-6]),
-            (20,[35,10]),
-            (22,[35,-15]),
-            (24,[30,10]),
-            (26,[35,-6]),
-            (28,[30,10]),
-            (30,[30,-3]),
-            (32,[30,1])
-        ]
-    ],
-    'FAIL': [
-        [
-            (0,[30,12]),
-            (2,[42,5]),
-            (4,[51,0]),
-            (6,[29,-6]),
-            (8,[32,-5]),
-            (10,[30,0]),
-            (12,[50,0]),
-            (14,[45,3]),
-            (16,[45,5]),
-            (18,[40,1]),
-            (20,[40,5]),
-            (22,[45,9]),
-            (24,[45,4]),
-            (26,[40,0]),
-            (28,[55,-1]),
-            (30,[60,-3]),
-            (32,[40,-1])
-        ],
-        [
-            (0,[10,12]),
-            (2,[42,5]),
-            (4,[21,0]),
-            (6,[29,6]),
-            (8,[32,15]),
-            (10,[40,20]),
-            (12,[-36,10]),
-            (14,[-30,-3]),
-            (16,[-25,-5]),
-            (18,[-10,-8]),
-            (20,[0,-10]),
-            (22,[-3,-7]),
-            (24,[-5,-4]),
-            (26,[-10,-3]),
-            (28,[-5,-1]),
-            (30,[0,0]),
-            (32,[2,5])
-        ],
-        [
-            (0,[30,12]),
-            (2,[38,5]),
-            (4,[34,0]),
-            (6,[36,-1]),
-            (8,[30,2]),
-            (10,[30,10]),
-            (12,[30,0]),
-            (14,[35,11]),
-            (16,[30,4]),
-            (18,[35,6]),
-            (20,[35,9]),
-            (22,[35,5]),
-            (24,[30,0]),
-            (26,[35,-6]),
-            (28,[30,-10]),
-            (30,[30,-3]),
-            (32,[30,-1])
-        ],
-        [
-            (0,[-10,-12]),
-            (2,[-18,-5]),
-            (4,[-14,-10]),
-            (6,[-16,-9]),
-            (8,[-10,-2]),
-            (10,[-10,0]),
-            (12,[-10,0]),
-            (14,[-15,-2]),
-            (16,[-10,-4]),
-            (18,[-15,-6]),
-            (20,[-15,-10]),
-            (22,[-15,-15]),
-            (24,[-10,-10]),
-            (26,[-15,-6]),
-            (28,[-10,-10]),
-            (30,[-10,-3]),
-            (32,[-10,-1])
-        ],
-        [
-            (0,[10,12]),
-            (2,[38,5]),
-            (4,[14,10]),
-            (6,[16,9]),
-            (8,[30,2]),
-            (10,[10,0]),
-            (12,[30,0]),
-            (14,[15,2]),
-            (16,[30,4]),
-            (18,[15,6]),
-            (20,[35,10]),
-            (22,[15,15]),
-            (24,[30,10]),
-            (26,[15,-6]),
-            (28,[30,-10]),
-            (30,[10,-3]),
-            (32,[30,1])
-        ]
-    ]
-}
+    @property
+    def np(self):
+        v = self.v
+        x, y = self.pos
+        r = np.sqrt(x ** 2 + y ** 2)
+        # TODO: Fix radius
+        return v ** 2 / r / self.g
+
 
 if __name__ == "__main__":
     t = Target.get_target()
