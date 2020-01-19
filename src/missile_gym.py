@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 from missile import Missile, Target
 from invariants import Interp1d
 
@@ -256,8 +255,6 @@ class MissileGym(object):
 
         legend = ax.legend(loc='lower right', fontsize='medium')
 
-        plt.title('Полет ракеты и цели')
-        plt.show()
 
     @property
     def action_space(self):
@@ -333,6 +330,7 @@ class MissileGym(object):
         ])
 
 if __name__ == "__main__":
+    import matplotlib.pyplot as plt
     gym = MissileGym.make('standart')
     done = False
     reward = 0
@@ -340,5 +338,7 @@ if __name__ == "__main__":
         if reward > 0.4: 
             fig, ax = plt.subplots()
             gym.render(fig = fig, ax = ax)
+            plt.title('Полет ракеты и цели')
+            plt.show()
         obs, reward, done, info = gym.step_with_guidance()
     print(info['done_reason'])
