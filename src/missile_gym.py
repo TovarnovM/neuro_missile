@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 from missile import Missile, Target
 
 
@@ -78,6 +79,12 @@ class MissileGym(object):
         reward, done, info = self.get_reward_done_info(mpos0, tpos0, mpos1, tpos1)
         return obs, reward, done, info
 
+
+    def step_with_guidance(self):
+        action_parallel_guidance = self.missile.get_action_parallel_guidance(self.target)
+        self.step(action_parallel_guidance)
+
+
     def get_normal_reward(self, mpos0, tpos0, mpos1, tpos1):
         r0 = np.linalg.norm(tpos0-mpos0)
         r1 = np.linalg.norm(self.missile.pos - self.target.pos)
@@ -127,10 +134,36 @@ class MissileGym(object):
         self.prev_observation[:] = state[self._miss_state_len+self._trg_state_len:]
 
     def render(self, **kwargs):
-        """Отрисовать (где угодно) окружение в текущем состоянии 
+        """Отрисовать окружение в текущем состоянии 
         """
-        # TODO реализовать метод
-        pass
+        fig = plt.gcf()
+        fig.show()
+        fig.canvas.draw()
+        vm, xm, ym, Qm, alpha, t = gym.get_state()[0:6]
+        P = self.missile.get_summary()['P']
+        xt, yt = gym.get_state()[6:8]
+        plt.subplot(2, 1, 1)
+        plt.plot(xm, ym, 'b.', xt, yt, 'r.', markersize=1)
+        plt.title('Полет ракеты и цели')
+
+        plt.subplot(2, 3, 4)
+        plt.plot(t, P, 'r.', markersize=1)
+        plt.xlabel('t, с')
+        plt.ylabel('P, Н')
+
+        plt.subplot(2, 3, 5)
+        plt.plot(t, vm, 'r.', markersize=1)
+        plt.xlabel('t, сек')
+        plt.ylabel('V, м/с')
+
+        plt.subplot(2, 3, 6)
+        plt.plot(t, alpha, 'r.', markersize=1)
+        plt.xlabel('t, с')
+        plt.ylabel(r'$\alpha$, град')
+
+        plt.pause(0.001)
+        fig.canvas.draw()
+        # TODO: Добавить сохранение
 
     @property
     def action_space(self):
