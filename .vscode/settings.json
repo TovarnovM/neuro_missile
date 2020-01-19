@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "env_neuro_missile\\Scripts\\python.exe"
+    "python.pythonPath": "env_neuro_missile\\Scripts\\python.exe",
+    "python.envFile": "${workspaceFolder}/.env"
 }
