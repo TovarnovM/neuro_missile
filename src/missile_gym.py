@@ -23,6 +23,10 @@ class MissileGym(object):
             missile.set_init_cond(parameters_of_missile=mparams)
             return cls(missile=missile, target=target)
 
+    @classmethod
+    def make_stupid_scenario(cls, trg_pos, trg_h_vel):
+        pass
+
     def __init__(self, *args, **kwargs):
         self.point_solution = np.array([])
         self.missile = kwargs['missile']
@@ -241,17 +245,17 @@ class MissileGym(object):
         vx, vy = self.missile.vel[:]
         vxt, vyt = self.target.vel
 
-        ax.plot([xm, vx + xm], [ym,ym],  color="#92a8d1", label='Векторы V, Vx и Vy ракеты')
-        ax.plot([xm, xm], [ym,vy + ym],  color="#92a8d1")
-        ax.plot([xm, vx + xm], [ym,vy + ym],  color="#92a8d1")
+        # ax.plot([xm, vx + xm], [ym,ym],  color="#92a8d1", label='Векторы V, Vx и Vy ракеты')
+        # ax.plot([xm, xm], [ym,vy + ym],  color="#92a8d1")
+        ax.plot([xm, vx + xm], [ym,vy + ym],  color="#92a8d1", label=r'$\vec{V}$ ракеты')
 
-        ax.plot([xt, vxt + xt], [yt,yt],  color="#eea29a", label='Векторы V, Vx и Vy цели')
-        ax.plot([xt, xt], [yt,vyt + yt],  color="#eea29a")
-        ax.plot([xt, vxt + xt], [yt,vyt + yt],  color="#eea29a")
+        # ax.plot([xt, vxt + xt], [yt,yt],  color="#eea29a", label='Векторы V, Vx и Vy цели')
+        # ax.plot([xt, xt], [yt,vyt + yt],  color="#eea29a")
+        ax.plot([xt, vxt + xt], [yt,vyt + yt],  color="#eea29a", label=r'$\vec{V}$ цели')
 
-        ax.plot([xm, xt], [ym, yt], linestyle='-', color="#dddddd", label='Линия визирования')
-        ax.plot(xm, ym, 'b.',  markersize=3, label='Ракета')
-        ax.plot(xt, yt, 'r.',  markersize=3, label='Цель')
+        ax.plot([xm, xt], [ym, yt], linestyle='--', color="#dddddd", label='Линия визирования')
+        ax.plot(xm, ym, 'b.',  markersize=10, label='Ракета')
+        ax.plot(xt, yt, 'r.',  markersize=10, label='Цель')
 
         legend = ax.legend(loc='lower right', fontsize='medium')
 
@@ -328,6 +332,7 @@ class MissileGym(object):
             # -self.missile.alphamax,
             -180
         ])
+
 
 if __name__ == "__main__":
     import matplotlib.pyplot as plt
