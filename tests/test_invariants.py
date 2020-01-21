@@ -35,10 +35,18 @@ def test_constantInterp2d():
     f = Interp2d.simple_constant(2)
     assert f(10,100) == approx(2)
 
-def test_constantInterpVec():
+def test_InterpVec():
     data = [(-1,(2,3)), (0,[0,0]), (2, (3,4))]
     iv = InterpVec(data)
     assert iv(-0.5) == approx([1,1.5])
     assert iv(1) == approx([1.5,2])
     assert iv(-10) == approx([2,3])
     assert iv(10) == approx([3,4])
+
+def test_constantInterpVec():
+    data = [(-1,(2,3))]
+    iv = InterpVec(data)
+    assert iv(-0.5) == approx([2,3])
+    assert iv(1) == approx([2,3])
+    assert iv(-10) == approx([2,3])
+    assert iv(10) == approx([2,3])

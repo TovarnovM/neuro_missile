@@ -6,6 +6,7 @@ from scipy.integrate import ode
 from invariants import Interp1d, Interp2d, InterpVec 
 from constants.scenarios import scenarios
 from math import *
+import os
 
 class Missile(object):
     """Класс ракета, которая которая летает в двухмерном пространстве в поле силы тяжести и которой можно управлять) 
@@ -67,7 +68,10 @@ class Missile(object):
         m_itr = Interp1d(ts, _get_m(ts))
         P_itr = Interp1d(ts, _get_P(ts))
 
-        df = pd.read_csv('constants/aerodynamic.csv')
+        wd = os.path.abspath(__file__)
+        wd = os.path.dirname(wd)
+        fp = os.path.join(wd, 'constants/aerodynamic.csv')
+        df = pd.read_csv(fp)
         df = df[df['D'] == 0]
 
         alpha_from_csv = np.unique(df['A'].to_numpy())
@@ -86,8 +90,8 @@ class Missile(object):
             m_itr=m_itr,   # масса [кг] ракеты от времени [с]
             P_itr=P_itr,   # тяга [Н] ракеты от времени [с]
             Sm=Sm,         # площадь миделя [м^2] (к оторой относятся аэро коэффициенты)
-            alphamax=15,   # максимальный угол атаки [градусы]
-            speed_change_alpha=30,  # скорость изменения угола атаки [градусы / с]
+            alphamax=10,   # максимальный угол атаки [градусы]
+            speed_change_alpha=90,  # скорость изменения угола атаки [градусы / с]
             xi=0.1,           # коэффициент, характеризующий структуру подъёмной силы аэродинамической схемы ракеты [] TODO уточнить его
             Cx_itr=Cx_itr,              # интерполятор определения коэффициента лобового сопротивления ракеты от угла атаки [градусы] и от числа маха
             Cya_itr=Cya_itr,
@@ -104,6 +108,29 @@ class Missile(object):
             [np.ndarray] -- [v, x, y, Q, alpha, t]
         """
         return np.array([25, 0, 0, np.radians(30), 0, 0])    
+
+    @classmethod
+    def get_parameters_of_missile_to_meeting_target(cls, trg_pos, trg_vel, missile_pos=None, missile_vel_abs=500.0):
+        """Возвращает состоняие ракеты, которая нацелена на мгновенную точку встречи с целью
+        
+        Arguments:
+            trg_vel {tuple/list/np.ndarray} -- вектор скорости цели
+            trg_pos {tuple/list/np.ndarray} -- положение цели
+        
+        Keyword Arguments:
+            my_pos {tuple/list/np.ndarray} -- начальное положение ракеты, если не указано, то (0,0) (default: {None})
+            my_vel_abs {float} -- средняя скорость ракеты (default: {500})
+        
+        Returns:
+            [np.ndarray] -- [v, x, y, Q, alpha, t]
+        """
+        trg_vel = np.array(trg_vel)
+        trg_pos = np.array(trg_pos)
+        missile_pos = np.array(missile_pos) if missile_pos else np.array([0, 0])
+        suc, meeting_point = cls.get_instant_meeting_point(trg_pos, trg_vel, missile_vel_abs, missile_pos)
+        vis = meeting_point - missile_pos
+        Q = np.arctan2(vis[1], vis[0])
+        return np.array([25, missile_pos[0], missile_pos[1], Q, 0, 0]) 
     
     def __init__(self, *args, **kwargs):
         """Конструктор 
@@ -250,19 +277,24 @@ class Missile(object):
         M = v/a
         Cya = self.Cya_itr(alpha, M)
 
+        vis = target.pos - self.pos
         # Угол между линией визирования и горизонтом [рад]
-        fi = np.arctan((yc - y) / (xc - x))
+        fi = np.arctan2(vis[1], vis[0])
         # Линия визирования
-        r = np.sqrt((yc - y) ** 2 + (xc - x) ** 2)
+        r = np.linalg.norm(vis)
 
-        # Угол между линией визирования и вектором скорости [рад]
-        nu_c = Qc - fi
-        nu = Q - fi
+        vel_c_otn = target.vel - self.vel
+        vis1 = vis / r
+        vel_c_otn_tau = vis1 * np.dot(vis1, vel_c_otn)
+        vel_c_otn_n = vel_c_otn - vel_c_otn_tau
 
-        dfi_dt = (vc * np.sin(nu_c) - v * np.sin(nu)) / r 
+        dfi_dt = copysign(np.linalg.norm(vel_c_otn_n)/r, np.cross(vis1, vel_c_otn_n))
 
-        am = 1 # Коэффициент быстродействия
-        dny = 6 # Запас по перегрузке
+        # if v < vc:
+        #     dfi_dt = 0
+
+        am = 10 # Коэффициент быстродействия
+        dny = 1 # Запас по перегрузке
 
         dQ_dt = am * dfi_dt
         nya = v * dQ_dt / self.g + np.cos(Q) + dny
@@ -392,7 +424,8 @@ class Missile(object):
             'Cya': self.Cya_itr(self.alpha, self.M)
         }
     
-    def get_instant_meeting_point(self, trg_pos, trg_vel, my_vel_abs=None, my_pos=None):
+    @classmethod
+    def get_instant_meeting_point(cls, trg_pos, trg_vel, my_vel_abs, my_pos):
         """Метод нахождения мгновенной точки встречи ракеты с целью (с координатой trg_pos и скоростью trg_vel)
         
         Arguments:
@@ -400,21 +433,20 @@ class Missile(object):
             trg_vel {tuple/np.ndarray} -- скорость цели
         
         Keyword Arguments:
-            my_vel_abs {float} -- скорость ракеты, если None, то берется текущая скорость ракеты (default: {None})
-            my_pos {tuple/np.ndarray} -- положение ракеты, если None, то берется текущее положение ракеты (default: {None})
+            my_vel_abs {float} -- скорость ракеты
+            my_pos {tuple/np.ndarray} -- положение ракеты
 
         retuns (bool, np.ndarray) - (успех/неуспех, координата точки)
         """
         trg_pos = np.array(trg_pos)
         trg_vel = np.array(trg_vel)
 
-        my_vel_abs = np.array(my_vel_abs) if my_vel_abs is not None else self.v
-        my_pos = np.array(my_pos) if my_pos is not None else self.pos
+        my_pos = np.array(my_pos) 
 
         vis = trg_pos - my_pos
         vis1 = vis / np.linalg.norm(vis)
 
-        trg_vel_tau = np.dot(trg_vel, vis1)
+        trg_vel_tau = np.dot(trg_vel, vis1) * vis1
         trg_vel_n = trg_vel - trg_vel_tau
         trg_vel_n1 = trg_vel_n / np.linalg.norm(trg_vel_n)
 
@@ -429,17 +461,32 @@ class Missile(object):
             return False, trg_pos
 
         t = np.linalg.norm(vis) / np.linalg.norm(vel_close)
-        return True, trg_vel * t
+        return True, trg_pos + trg_vel * t
+
+    def rotate_to_point(self, point):
+        point = np.array(point)
+        vis = point - self.pos
+        Q = np.arctan2(vis[1], vis[0])
+        self.state[3] = Q
 
 
 class Target(object):
     @classmethod
-    def get_target(cls):
-        velocity_vectors = scenarios['SUCCESS'][1]
+    def get_target(cls, scenario_name='SUCCESS', scenario_i=1):
+        velocity_vectors = scenarios[scenario_name][scenario_i]
 
         vel_interp = InterpVec(velocity_vectors)
         target = cls(vel_interp = vel_interp)
         parameters_of_target = cls.get_standart_parameters_of_target()
+        target.set_init_cond(parameters_of_target=parameters_of_target)
+        return target
+
+    @classmethod
+    def get_simple_target(cls, pos, vel):
+        velocity_vectors = [[0, np.array(vel)]]
+        vel_interp = InterpVec(velocity_vectors)
+        target = cls(vel_interp = vel_interp)
+        parameters_of_target = np.array([pos[0], pos[1], 0])
         target.set_init_cond(parameters_of_target=parameters_of_target)
         return target
 
@@ -548,7 +595,7 @@ class Target(object):
             Q {float} -- [рад]
         """
         vx, vy = self.vel_interp(self.t)
-        return np.arctan(vy / vx)
+        return np.arctan2(vy, vx)
 
     @property
     def v(self):
@@ -563,14 +610,6 @@ class Target(object):
     @property
     def y(self):
         return self.pos[1]
-
-    @property
-    def np(self):
-        v = self.v
-        x, y = self.pos
-        r = np.sqrt(x ** 2 + y ** 2)
-        # TODO: Fix radius
-        return v ** 2 / r / self.g
 
     def get_summary(self):
         """Возвращает словарь с основными текущими параметрами и характеристиками ракеты в данный момент

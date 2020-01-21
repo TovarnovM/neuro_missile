@@ -127,6 +127,10 @@ class InterpVec(object):
             или [(время, [x,y]), (время, [x,y]), ...]
             или [(время, np.array([x,y])), (время, np.array([x,y])), ...]
         """
+        if len(tups) == 1:
+            result = np.array(tups[0][1])
+            self.func_inter = lambda t: result
+            return
         self.ts = list(map(lambda x: x[0], tups))
         self.vector_velocity = list(map(lambda x: x[1], tups))
 
@@ -142,6 +146,8 @@ class InterpVec(object):
         #     raise AttributeError(f'Значение {t} выходит из диапазона [{min(self.ts)}, {max(self.ts)}]')
 
         return np.array(self.func_inter(t))
+
+    
 
 
 if __name__ == "__main__":

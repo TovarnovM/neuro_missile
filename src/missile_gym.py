@@ -19,13 +19,20 @@ class MissileGym(object):
         if scenario_name == 'standart':
             target = Target.get_target()
             missile = Missile.get_needle()
-            mparams = Missile.get_standart_parameters_of_missile()
+            mparams = Missile.get_parameters_of_missile_to_meeting_target(target.pos, target.vel)
             missile.set_init_cond(parameters_of_missile=mparams)
             return cls(missile=missile, target=target)
 
     @classmethod
-    def make_stupid_scenario(cls, trg_pos, trg_h_vel):
-        pass
+    def make_simple_scenario(cls, trg_pos, trg_vel, missile_pos=None, missile_vel_abs=500.0):
+        trg_pos = np.array(trg_pos)
+        trg_vel = np.array(trg_vel)
+
+        target = Target.get_simple_target(trg_pos, trg_vel)
+        missile = Missile.get_needle()
+        mparams = Missile.get_parameters_of_missile_to_meeting_target(target.pos, target.vel, missile_pos, missile_vel_abs)
+        missile.set_init_cond(parameters_of_missile=mparams)
+        return cls(missile=missile, target=target)
 
     def __init__(self, *args, **kwargs):
         self.point_solution = np.array([])
@@ -336,6 +343,7 @@ class MissileGym(object):
 
 if __name__ == "__main__":
     import matplotlib.pyplot as plt
+    MissileGym.make_simple_scenario((1000, 1000), (300, 0))
     gym = MissileGym.make('standart')
     done = False
     reward = 0
