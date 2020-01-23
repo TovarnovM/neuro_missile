@@ -245,7 +245,7 @@ class Missile(object):
             y[4] = self.alphamax
         elif y[4] < -self.alphamax:
             y[4] = -self.alphamax
-        elif abs(y[4] - self.alpha_targeting) < 1e-6:
+        elif abs(y[4] - self.alpha_targeting) < 1e-4:
             y[4] = self.alpha_targeting
         if y[3] < -180 or y[3] > 180: # Q
             y[3] = y[3] % (2 * pi)

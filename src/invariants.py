@@ -97,12 +97,24 @@ class Interp2d(object):
 
         fig = plt.figure()
         ax = fig.gca(projection='3d')
-        surf = ax.plot_surface(self.xss, self.yss, self.fs, cmap=cm.RdYlBu_r,
-                            linewidth=0, antialiased=False)
+        XS, YS = np.meshgrid(self.xs, self.ys)
+        ZS = np.zeros_like(XS)
+        for i in range(XS.shape[0]):
+            for j in range(XS.shape[1]):
+                ZS[i,j] = self(XS[i,j], YS[i,j])
+        surf = ax.plot_surface(XS, YS, ZS, cmap=cm.RdYlBu_r,
+                        linewidth=0, antialiased=False)
 
         fig.colorbar(surf, shrink=0.5, aspect=5)
         plt.show()
 
+    def plot2d(self):
+        for y in self.ys:
+            f = [self(x, y) for x in self.xs]
+            plt.plot(self.xs, f, label=f'{y}')
+        plt.grid()
+        plt.legend()
+    plt.show()
 
     def __call__(self, x, y):
         """Основной метод получения интерполированных данных
