@@ -76,8 +76,11 @@ class Missile(object):
 
         alpha_from_csv = np.unique(df['A'].to_numpy())
         M_from_csv = np.array(np.unique(df['M'].to_numpy()))
-        Cx_from_csv = np.array(np.split(df['Cx'].to_numpy(), alpha_from_csv.size))
-        Cya_from_csv = np.array(np.split(df['Cya'].to_numpy(), alpha_from_csv.size))
+        Cx_from_csv = np.array(np.split(df['Cxa'].to_numpy(), M_from_csv.size)).T
+        Cya_from_csv = np.array(np.split(df['Cy'].to_numpy(), M_from_csv.size)).T
+        Cya_from_csv = np.array([cy / a for a, cy in zip(alpha_from_csv, Cya_from_csv)])
+
+
 
         Cya_itr = Interp2d(alpha_from_csv, M_from_csv, Cya_from_csv)
         Cx_itr = Interp2d(alpha_from_csv, M_from_csv, Cx_from_csv)
