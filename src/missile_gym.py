@@ -31,6 +31,9 @@ class MissileGym(object):
         target = Target.get_simple_target(trg_pos, trg_vel)
         missile = Missile.get_needle()
         mparams = Missile.get_parameters_of_missile_to_meeting_target(target.pos, target.vel, missile_pos, missile_vel_abs)
+        suc, meeting_point = Missile.get_instant_meeting_point(target.pos, target.vel, missile_vel_abs, missile_pos if missile_pos is not None else (0,0))
+        print(suc, meeting_point)
+        print(mparams)
         missile.set_init_cond(parameters_of_missile=mparams)
         return cls(missile=missile, target=target)
 
@@ -83,27 +86,47 @@ class MissileGym(object):
 
         obs = self.get_observation()
         mpos1, tpos1 = self.missile.pos, self.target.pos
-
-        reward, done, info = self.get_reward_done_info(mpos0, tpos0, mpos1, tpos1)
+        mvel1, tvel1 = self.missile.vel, self.target.vel
+        reward, done, info = self.get_reward_done_info(mpos0, tpos0, mpos1, tpos1, tvel1, mvel1)
         return obs, reward, done, info
 
     def step_with_guidance(self):
-        action_parallel_guidance = self.missile.get_action_parallel_guidance(self.target)
+        if self.missile.v > self.target.v:
+            action_parallel_guidance = self.missile.get_action_parallel_guidance(self.target)
+        else:
+            action_parallel_guidance = self.missile.get_action_chaise_guidance(self.target)
+        # if -0.5 <= action_parallel_guidance <= 0.5:
+        #     action_parallel_guidance = 0
+        # elif action_parallel_guidance < -0.5:
+        #     action_parallel_guidance = -1
+        # else:
+        #     action_parallel_guidance = 1
         obs, reward, done, info = self.step(action_parallel_guidance)
         return obs, reward, done, info
 
     def get_normal_reward(self, mpos0, tpos0, mpos1, tpos1):
-        r0 = np.linalg.norm(tpos0-mpos0)
-        r1 = np.linalg.norm(self.missile.pos - self.target.pos)
-        return (r0-r1)/r1
+        r0 = np.linalg.norm(tpos0 - mpos0)
+        r1 = np.linalg.norm(tpos1 - mpos1)
+        return (r0-r1)/r0
 
-    def get_reward_done_info(self, mpos0, tpos0, mpos1, tpos1):
+    def get_new_reward(self, mpos0, tpos0, mpos1, tpos1, tvel1, mvel1):
+        r_norm = 10*self.get_normal_reward(mpos0, tpos0, mpos1, tpos1)
+        suc, p = Missile.get_instant_meeting_point(tpos1, tvel1, np.linalg.norm(mvel1), mpos1)
+        
+        p = p - mpos1
+        p1 = p / np.linalg.norm(p)
+        v1 = mvel1 / np.linalg.norm(mvel1)
+        r2 = p1 @ v1
+        return 5*(r2**7 +r_norm - 1)
+        # Missile.get_instant_meeting_point(tpos1, )
+
+    def get_reward_done_info(self, mpos0, tpos0, mpos1, tpos1, tvel1, mvel1):
         info = {}
         if mpos1[1] < 0: # мы упали
             info['done_reason'] = 'мы упали'
             info['t'] = self.missile.t
             info['distance_to_target'] = np.linalg.norm(mpos1 - tpos1)
-            return 0, True, info
+            return -200, True, info
         if self.is_hit(mpos0, tpos0, mpos1, tpos1):
             info['done_reason'] = 'мы попали'
             info['t'] = self.missile.t
@@ -112,9 +135,10 @@ class MissileGym(object):
             info['done_reason'] = 'слишком долго'
             info['t'] = self.missile.t
             return 0, True, info
-        return self.get_normal_reward(mpos0, tpos0, mpos1, tpos1), False, info
+        return self.get_new_reward(mpos0, tpos0, mpos1, tpos1, tvel1, mvel1), False, info
 
-    def _r(self, mpos0, tpos0, mpos1, tpos1, r_kill):
+    @staticmethod
+    def _r(mpos0, tpos0, mpos1, tpos1, r_kill):
         xm0, ym0 = mpos0
         xm1, ym1 = mpos1
         xt0, yt0 = tpos0
@@ -130,17 +154,38 @@ class MissileGym(object):
                 flag = True
         return flag
 
+    @staticmethod
+    def _r1(mpos0, tpos0, mpos1, tpos1, r_kill):
+        xm0, ym0 = mpos0
+        xm1, ym1 = mpos1
+        xt0, yt0 = tpos0
+        xt1, yt1 = tpos1
+
+        X_1 = xm1-xm0-xt1+xt0
+        Y_1 = ym1-ym0-yt1+yt0
+        A = X_1**2 + Y_1**2
+        B = 2*X_1*(xm0+xt0) + 2*Y_1*(ym0+yt0)
+        C = (xm0+xt0)**2 + (ym0+yt0)**2
+
+        r0 = C
+        r1 = A + B + C
+
+        r_0 = B
+        r_1 = 2*A + B
+        if r_0 * r_1 >= 0:
+            return min(r0, r1) <= r_kill**2
+        t_0 = -B / (2*A)
+        r_t0 = A * t_0**2 + B * t_0 + C
+        return min(r0, r1, r_t0) <= r_kill**2
+
     def is_hit(self, mpos0, tpos0, mpos1, tpos1):
         r0 = np.linalg.norm(mpos0 - tpos0)
         r1 = np.linalg.norm(mpos1 - tpos1)
 
         r_kill = self.missile.r_kill
-        if r1 > r0 and (r0 < 30 or r1 < 30):
-            return self._r(mpos0, tpos0, mpos1, tpos1, r_kill)
-        if r1 < r_kill:
+        if min(r1, r0) < r_kill:
             return True
-
-        return False
+        return MissileGym._r1(mpos0, tpos0, mpos1, tpos1, r_kill)
 
     def get_state(self):
         """метод, возвращающий numpy-массив, в котором хранится вся необходимая информация для воссоздания этого состояния
@@ -264,7 +309,7 @@ class MissileGym(object):
         ax.plot(xm, ym, 'b.',  markersize=10, label='Ракета')
         ax.plot(xt, yt, 'r.',  markersize=10, label='Цель')
 
-        legend = ax.legend(loc='lower right', fontsize='medium')
+        legend = ax.legend(fontsize='medium')
 
 
     @property
@@ -300,13 +345,15 @@ class MissileGym(object):
         1 - etta - угол, между осью ракеты и линией визирования, градусы, -180..+180 
         2 - v    - скорость ракеты, м/с, 0..1000
         3 - Q    - угол тангажа, градусы, -180..+180
+        4 - alpha
         """        
         t = self.missile.t
         etta = self._get_etta()
         v = self.missile.v
         # alpha_targeting = self.missile.alpha_targeting  3 - alpha_targeting - угол атаки, к которому стремится ракета, градусы, -alphamax..+alphamax 
         Q = np.degrees(self.missile.Q)
-        return np.array([t, etta, v, Q])
+        alpha = self.missile.alpha
+        return np.array([t, etta, v, Q, alpha])
 
     def get_current_observation(self):
         """Метод возвращает numpy-массив с НОРМИРОВАННЫМИ [0..1] наблюдаемыми раектой данными в текущем состоянии окружения
@@ -325,7 +372,8 @@ class MissileGym(object):
             180.0,
             1000,
             # self.missile.alphamax,
-            180
+            180,
+            self.missile.alphamax
         ])
 
     @property
@@ -337,7 +385,8 @@ class MissileGym(object):
             -180.0,
             0,
             # -self.missile.alphamax,
-            -180
+            -180,
+            -self.missile.alphamax
         ])
 
 

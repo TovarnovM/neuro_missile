@@ -94,7 +94,7 @@ class Missile(object):
             P_itr=P_itr,   # тяга [Н] ракеты от времени [с]
             Sm=Sm,         # площадь миделя [м^2] (к оторой относятся аэро коэффициенты)
             alphamax=15,   # максимальный угол атаки [градусы]
-            speed_change_alpha=90,  # скорость изменения угола атаки [градусы / с]
+            speed_change_alpha=360,  # скорость изменения угола атаки [градусы / с]
             xi=0.1,           # коэффициент, характеризующий структуру подъёмной силы аэродинамической схемы ракеты [] TODO уточнить его
             Cx_itr=Cx_itr,              # интерполятор определения коэффициента лобового сопротивления ракеты от угла атаки [градусы] и от числа маха
             Cya_itr=Cya_itr,
@@ -257,12 +257,14 @@ class Missile(object):
                 y[3] -= 2*pi
         return y
 
-    def get_action_parallel_guidance(self, target):
+    def get_action_parallel_guidance(self, target, am=10, dny=1 ):
         """Метод, возвращающий аналог action'a, соответствующий идельному методу параллельного сближения
         
         Arguments:
             target {object} -- ссылка на цель. Обязательно должен иметь два свойства: pos->np.ndarray и vel->np.ndarray. 
                                Эти свойства аналогичны свойствам этого класса. pos возвращает координату цели, vel -- скорость
+            am -- Коэффициент быстродействия
+            dny --  Запас по перегрузке
         
         returns {float} -- [-1; 1] аналог action'a, только не int, а float. Если умножить его на self.alphamax, то получится
                            потребный угол атаки для обеспечения метода параллельного сближения
@@ -293,13 +295,41 @@ class Missile(object):
 
         dfi_dt = copysign(np.linalg.norm(vel_c_otn_n)/r, np.cross(vis1, vel_c_otn_n))
 
-        # if v < vc:
-        #     dfi_dt = 0
-
-        am = 10 # Коэффициент быстродействия
-        dny = 1 # Запас по перегрузке
-
         dQ_dt = am * dfi_dt
+        nya = v * dQ_dt / self.g + np.cos(Q) + dny
+        alpha_req = (nya *  m * self.g) / (Cya * ro * v ** 2 / 2 * self.Sm * (1 + self.xi) + P / 57.3)
+
+        return alpha_req / self.alphamax
+
+    def get_action_chaise_guidance(self, target, t_corr=1/30, dny=1):
+        """Метод, возвращающий аналог action'a, соответствующий идельному методу чистой погони
+        
+        Arguments:
+            target {object} -- ссылка на цель. Обязательно должен иметь два свойства: pos->np.ndarray и vel->np.ndarray. 
+                               Эти свойства аналогичны свойствам этого класса. pos возвращает координату цели, vel -- скорость
+        
+        returns {float} -- [-1; 1] аналог action'a, только не int, а float. Если умножить его на self.alphamax, то получится
+                           потребный угол атаки для обеспечения метода параллельного сближения
+        """
+
+        xc, yc = target.pos
+        Qc = target.Q
+        vc = target.v
+
+        v, x, y, Q, alpha, t = self.state
+        P = self.P_itr(t)
+        m = self.m_itr(t)
+        ro = self.ro_itr(y)
+        a = self.a_itr(y)
+        M = v/a
+        Cya = self.Cya_itr(alpha, M)
+
+        vis = target.pos + vc*t_corr - self.pos
+        # Угол между линией визирования и горизонтом [рад]
+        fi2 = np.arctan2(vis[1], vis[0])
+        fi1 = Q
+
+        dQ_dt = (fi2-fi1)/t_corr
         nya = v * dQ_dt / self.g + np.cos(Q) + dny
         alpha_req = (nya *  m * self.g) / (Cya * ro * v ** 2 / 2 * self.Sm * (1 + self.xi) + P / 57.3)
 
@@ -427,8 +457,8 @@ class Missile(object):
             'Cya': self.Cya_itr(self.alpha, self.M)
         }
     
-    @classmethod
-    def get_instant_meeting_point(cls, trg_pos, trg_vel, my_vel_abs, my_pos):
+    @staticmethod
+    def get_instant_meeting_point(trg_pos, trg_vel, my_vel_abs, my_pos):
         """Метод нахождения мгновенной точки встречи ракеты с целью (с координатой trg_pos и скоростью trg_vel)
         
         Arguments:
