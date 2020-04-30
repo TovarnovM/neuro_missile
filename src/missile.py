@@ -37,14 +37,14 @@ class Missile(object):
         t_mr = 8.125
         
         Sm = np.pi * d ** 2 / 4
-        w_st = 3.24
-        w_mr = 1.357
+        w_st = 0.10574
+        w_mr = 4.18077
         G_st = w_st / t_st
         G_mr = w_mr / t_mr
         
-        P_st = 1787
-        P_mr = 454
-        J = 2500
+        P_st = 1044
+        P_mr = 246
+        J = 2700
 
         @np.vectorize
         def _get_m(t):
@@ -76,9 +76,8 @@ class Missile(object):
 
         alpha_from_csv = np.unique(df['A'].to_numpy())
         M_from_csv = np.array(np.unique(df['M'].to_numpy()))
-        Cx_from_csv = np.array(np.split(df['Cxa'].to_numpy(), M_from_csv.size)).T
-        Cya_from_csv = np.array(np.split(df['Cy'].to_numpy(), M_from_csv.size)).T
-        Cya_from_csv = np.array([cy / a for a, cy in zip(alpha_from_csv, Cya_from_csv)])
+        Cx_from_csv = np.array(np.split(df['Cx'].to_numpy(), M_from_csv.size)).T
+        Cya_from_csv = np.array(np.split(df['Cya'].to_numpy(), M_from_csv.size)).T
 
 
 
