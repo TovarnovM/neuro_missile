@@ -31,10 +31,10 @@ class Missile(object):
 
         returns Missile
         """
-        m0 = 11.8
+        m0 = 10.8
         d = 0.072
-        t_st = 4.531
-        t_mr = 8.125
+        t_st = 0.49
+        t_mr = 45.87
         
         Sm = np.pi * d ** 2 / 4
         w_st = 0.10574
@@ -668,7 +668,7 @@ if __name__ == "__main__":
     for _ in range(10):
         k = m.get_action_parallel_guidance(t)
         act = m.action_sample() * k
-        for i in range(20):    
+        for i in range(40):    
             m.step(act, tau)
             t.step(tau)
             summaries.append(m.get_summary())
