@@ -79,9 +79,10 @@ class Missile(object):
         Cx_from_csv = np.array(np.split(df['Cx'].to_numpy(), M_from_csv.size)).T
         Cya_from_csv = np.array(np.split(df['Cya'].to_numpy(), M_from_csv.size)).T
 
-
-
-        Cya_itr = Interp2d(alpha_from_csv, M_from_csv, Cya_from_csv)
+        M_for_Cya = np.array([0.6,0.9,1.1,1.5,2.0])
+        Cya_from_mathcad = np.array([0.306,0.341,0.246,0.246,0.218])
+        Cya_itr = Interp1d(M_for_Cya, Cya_from_mathcad)
+        
         Cx_itr = Interp2d(alpha_from_csv, M_from_csv, Cx_from_csv)
 
         ro_itr = Interp1d(
@@ -231,7 +232,7 @@ class Missile(object):
         ro = self.ro_itr(y)
         a = self.a_itr(y)
         M = v/a
-        Cya = self.Cya_itr(alpha, M)
+        Cya = self.Cya_itr(M)
         Cx = self.Cx_itr(alpha, M)
 
         alpha_diff = self.alpha_targeting - alpha
@@ -284,7 +285,7 @@ class Missile(object):
         ro = self.ro_itr(y)
         a = self.a_itr(y)
         M = v/a
-        Cya = self.Cya_itr(alpha, M)
+        Cya = self.Cya_itr(M)
 
         vis = target.pos - self.pos
         # Угол между линией визирования и горизонтом [рад]
@@ -326,7 +327,7 @@ class Missile(object):
         ro = self.ro_itr(y)
         a = self.a_itr(y)
         M = v/a
-        Cya = self.Cya_itr(alpha, M)
+        Cya = self.Cya_itr(M)
 
         vis = target.pos + vc*t_corr - self.pos
         # Угол между линией визирования и горизонтом [рад]
@@ -438,7 +439,7 @@ class Missile(object):
 
     @property
     def Cya(self):
-        return self.Cya_itr(self.alpha, self.M)  
+        return self.Cya_itr(self.M)  
 
     @property
     def Cx(self):
@@ -458,7 +459,7 @@ class Missile(object):
             'alpha': self.alpha,
             'alpha_targeting': self. alpha_targeting,
             'Cx': self.Cx_itr(self.alpha, self.M),
-            'Cya': self.Cya_itr(self.alpha, self.M)
+            'Cya': self.Cya_itr(self.M)
         }
     
     @staticmethod
