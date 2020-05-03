@@ -31,19 +31,19 @@ class Missile(object):
 
         returns Missile
         """
-        m0 = 10.8
+        m0 = 11.8
         d = 0.072
-        t_st = 0.49
-        t_mr = 45.87
+        t_st = 4.5
+        t_mr = 8.2
         
         Sm = np.pi * d ** 2 / 4
-        w_st = 0.10574
-        w_mr = 4.18077
+        w_st = 3.24
+        w_mr = 1.357
         G_st = w_st / t_st
         G_mr = w_mr / t_mr
         
-        P_st = 1044
-        P_mr = 246
+        P_st = 1787
+        P_mr = 456
         J = 2700
 
         @np.vectorize
@@ -84,9 +84,14 @@ class Missile(object):
         Cya_itr = Interp2d(alpha_from_csv, M_from_csv, Cya_from_csv)
         Cx_itr = Interp2d(alpha_from_csv, M_from_csv, Cx_from_csv)
 
-        # TODO сделать нормальную таблицу плотности воздуха и скорости звука из https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D0%BD%D0%B0%D1%8F_%D0%B0%D1%82%D0%BC%D0%BE%D1%81%D1%84%D0%B5%D1%80%D0%B0
-        ro_itr = Interp1d.simple_constant(1.204)   
-        a_itr = Interp1d.simple_constant(340)   
+        ro_itr = Interp1d(
+            [0,    50,   100,  200,  300,  500,  1000, 2000, 3000, 5000, 8000, 1000, 12000,15000,20000],
+            [1.225,1.219,1.213,1.202,1.190,1.167,1.112,1.007,0.909,0.736,0.526,0.414,0.312,0.195,0.089]
+        )
+        a_itr = Interp1d(
+            [0,     50,   100,   200,   300,   400,   500,   600,   700,   800,   900,   1000,  5000,  10000, 20000],
+            [340.29,340.1,339.91,339.53,339.14,338.76,338.38,337.98,337.60,337.21,336.82,336.43,320.54,299.53,295.07]
+        ) 
 
         missile = cls(
             m_itr=m_itr,   # масса [кг] ракеты от времени [с]
