@@ -5,7 +5,7 @@ from invariants import Interp1d
 
 class MissileGym(object):
     # set доступных сценариев для моделирования (различные поведения цели, различные варианты запуска и т.д.)
-    scenario_names = {'standart'}
+    scenario_names = {'standart', 'sc_simple_1', 'sc_simple_2', 'sc_simple_3'}
 
     @classmethod
     def make(cls, scenario_name):
@@ -22,6 +22,12 @@ class MissileGym(object):
             mparams = Missile.get_parameters_of_missile_to_meeting_target(target.pos, target.vel)
             missile.set_init_cond(parameters_of_missile=mparams)
             return cls(missile=missile, target=target)
+        if scenario_name == 'sc_simple_1':
+            return cls.make_simple_scenario((1000,1000), (-200,0), missile_vel_abs=1.0)
+        if scenario_name == 'sc_simple_2':
+            return cls.make_simple_scenario((1000,2000), (-300,0), missile_vel_abs=1.0)
+        if scenario_name == 'sc_simple_3':
+            return cls.make_simple_scenario((2000,1000), (-500,0), missile_vel_abs=1.0)
 
     @classmethod
     def make_simple_scenario(cls, trg_pos, trg_vel, missile_pos=None, missile_vel_abs=500.0):
@@ -32,8 +38,8 @@ class MissileGym(object):
         missile = Missile.get_needle()
         mparams = Missile.get_parameters_of_missile_to_meeting_target(target.pos, target.vel, missile_pos, missile_vel_abs)
         suc, meeting_point = Missile.get_instant_meeting_point(target.pos, target.vel, missile_vel_abs, missile_pos if missile_pos is not None else (0,0))
-        print(suc, meeting_point)
-        print(mparams)
+        # print(suc, meeting_point)
+        # print(mparams)
         missile.set_init_cond(parameters_of_missile=mparams)
         return cls(missile=missile, target=target)
 
@@ -42,7 +48,7 @@ class MissileGym(object):
         self.missile = kwargs['missile']
         self.target = kwargs['target']
         self._tau = kwargs.get('tau', 1/30) 
-        self.t_max = kwargs.get('t_max', 20) 
+        self.t_max = kwargs.get('t_max', 14) 
         self._miss_state_len = self.missile.get_state().shape[0]
         self._trg_state_len = self.target.get_state().shape[0]
         self.prev_observation=self.get_current_observation()
@@ -131,10 +137,19 @@ class MissileGym(object):
             info['done_reason'] = 'мы попали'
             info['t'] = self.missile.t
             return 999, True, info
+        if self.is_wrong_way(mpos1, mvel1, tpos1):
+            info['done_reason'] = 'потеряли из виду'
+            info['t'] = self.missile.t
+            info['distance_to_target'] = np.linalg.norm(mpos1 - tpos1)
+            return -200, True, info
         if self.missile.t > self.t_max:
             info['done_reason'] = 'слишком долго'
             info['t'] = self.missile.t
-            return 0, True, info
+            return -200, True, info
+        if self.missile.t > 10 and self.missile.v < 340:
+            info['done_reason'] = 'слишком долго и медленно'
+            info['t'] = self.missile.t
+            return -200, True, info
         return self.get_new_reward(mpos0, tpos0, mpos1, tpos1, tvel1, mvel1), False, info
 
     @staticmethod
@@ -186,6 +201,15 @@ class MissileGym(object):
         if min(r1, r0) < r_kill:
             return True
         return MissileGym._r1(mpos0, tpos0, mpos1, tpos1, r_kill)
+
+    def is_wrong_way(self, mpos, mvel, tpos):
+        vis_n = (tpos-mpos)
+        d = np.linalg.norm(vis_n)
+        if d < 200:
+            return False # Если мы уже достаточно близко к цели, то не проверяем, куда мы смотрим (авось поподем)
+        vis_n /= d
+        mis_axis = self.missile.x_axis
+        return mvel @ vis_n < 0.78 # угол ежду осью ракеты и линией визирования меньше 38 градусов 
 
     def get_state(self):
         """метод, возвращающий numpy-массив, в котором хранится вся необходимая информация для воссоздания этого состояния

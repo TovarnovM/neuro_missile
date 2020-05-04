@@ -33,7 +33,7 @@ class Interp1d(object):
         if self.xs.shape != self.fs.shape:
             raise AttributeError(f'Данные разных размеростей! xs{self.xs.shape}  fs{self.fs.shape}')
 
-    def plot(self, fig, ax, **kwargs):
+    def plot(self):
         """Отрисовать что там хранится
 
         Arguments:
