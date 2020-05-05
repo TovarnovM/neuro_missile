@@ -508,13 +508,14 @@ class Missile(object):
 
 class Target(object):
     @classmethod
-    def get_target(cls, scenario_name='SUCCESS', scenario_i=1):
-        velocity_vectors = scenarios[scenario_name][scenario_i]
+    def get_target(cls, scenario_name='SUCCESS', scenario_i=0):
+        velocity_vectors = scenarios[scenario_name][scenario_i]['trg_vels']
+        x, y = scenarios[scenario_name][scenario_i]['trg_pos_0']
 
+      
         vel_interp = InterpVec(velocity_vectors)
         target = cls(vel_interp = vel_interp)
-        parameters_of_target = cls.get_standart_parameters_of_target()
-        target.set_init_cond(parameters_of_target=parameters_of_target)
+        target.set_init_cond(parameters_of_target=np.array([x,y,0]))
         return target
 
     @classmethod
@@ -546,7 +547,7 @@ class Target(object):
     
         """
         if parameters_of_target is None:
-            parameters_of_target = self.get_standart_parameters_of_target()
+          parameters_of_target = self.get_standart_parameters_of_target()
         self.state = np.array(parameters_of_target)
         self.state_0 = np.array(parameters_of_target)
 
@@ -602,7 +603,7 @@ class Target(object):
                 flag = False
             t += dt
             vx, vy = self.vel_interp(t)
-            x += vx * dt
+            x += vx * dt 
             y += vy * dt
         self.set_state([x, y, t])
 
@@ -641,8 +642,8 @@ class Target(object):
     @property
     def x(self):
         return self.pos[0]
-
     
+
     @property
     def y(self):
         return self.pos[1]
@@ -661,7 +662,6 @@ class Target(object):
 
 if __name__ == "__main__":
     t = Target.get_target()
-    t.set_init_cond()
 
     m = Missile.get_needle()
     m.set_init_cond()
@@ -687,3 +687,4 @@ if __name__ == "__main__":
     plt.legend()
     plt.show()
 
+    
