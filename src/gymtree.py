@@ -264,7 +264,7 @@ class Node:
 
     def get_transaction(self):
         if self.parent:
-            return self.parent.obs, self.reward, self.get_action4transaction(), self.obs, self.done
+            return self.parent.obs, self.get_action4transaction(), self.reward, self.obs, self.done
 
     def produce_node(self, action):
         return self.owner.produce_node(self, action)
