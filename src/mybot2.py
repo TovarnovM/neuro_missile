@@ -9,55 +9,53 @@ from torch.utils import data
 from missile_gym import MissileGym
 from gymtree import GymTree
 from tqdm import tqdm
+from torch.utils.data import DataLoader
+from gymtree import Node, GymTree
 
 class DatasetAllScenarios(data.Dataset):
+    trees = {}
+
     @classmethod
-    def train_test(cls, test_portion=-1):
+    def load(cls):
         state_memory = []
         new_state_memory = []
         action_mem = []
         reward_memory = []
         terminal_memory = []
 
+        saves_dir = os.path.join(os.path.dirname(__file__), 'saves')
         for scenario_name in MissileGym.scenario_names:
-            tree_file = f'saves/{scenario_name}.bin'
+            tree_file = os.path.join(saves_dir, f'{scenario_name}.bin')
             if os.path.isfile(tree_file):
                 gym = MissileGym.make(scenario_name)
                 tree = GymTree(gym)
                 tree.reset()
-                print(f'Loading {tree_file}')
+                print(f'Loading {tree_file}...')
                 tree.load_from_file(tree_file)
-                for state, action, reward, state_, done in tqdm(list(tree.transaction_iter())):
+                cls.trees[scenario_name] = {
+                    'tree': tree,
+                    'file': tree_file
+                }
+                for state, action, reward, state_, done in tree.transaction_iter():
                     state_memory.append(state)
                     new_state_memory.append(state_)
                     action_mem.append(action)
                     reward_memory.append(reward)
                     terminal_memory.append(done)
-                break
         
         state_memory = np.array(state_memory, dtype=np.float32)
         new_state_memory = np.array(new_state_memory, dtype=np.float32)
-        action_mem = np.array(action_mem, dtype=np.int32)
+        action_mem = np.array(action_mem, dtype=np.int64)
         reward_memory = np.array(reward_memory, dtype=np.float32)
         terminal_memory = np.array(terminal_memory, dtype=np.bool)
 
-        if test_portion < 0:
-            return cls(state_memory, new_state_memory, action_mem, 
+        return cls(state_memory, new_state_memory, action_mem, 
                    reward_memory, terminal_memory)
 
-
-        n_all = len(state_memory)
-        indeces = np.random.permutation(n_all)
-        n_test = int(n_all*test_portion)
-        i_test = indeces[:n_test]
-        i_train = indeces[n_test:]
-
-        train_set = cls(state_memory[i_train], new_state_memory[i_train], action_mem[i_train], 
-                   reward_memory[i_train], terminal_memory[i_train])
-        test_set  = cls(state_memory[i_test], new_state_memory[i_test], action_mem[i_test], 
-                   reward_memory[i_test], terminal_memory[i_test])
-
-        return train_set, test_set
+    @classmethod
+    def save(cls):
+        for d in cls.trees.values():
+            d['tree'].save_to_file(d['file'])
                
     def __init__(self, 
                 state_memory,
@@ -68,9 +66,10 @@ class DatasetAllScenarios(data.Dataset):
 
         self.state_memory = T.tensor(state_memory)
         self.new_state_memory = T.tensor(new_state_memory)
-        self.action_mem = T.tensor(action_mem)
+        self.action_mem = T.tensor(action_mem, dtype=T.long)
         self.reward_memory = T.tensor(reward_memory)
         self.terminal_memory = T.tensor(terminal_memory)
+        print('Dataset loaded!')
 
     def __getitem__(self, index):
         return self.state_memory[index], self.action_mem[index], self.reward_memory[index], self.new_state_memory[index], self.terminal_memory[index]
@@ -79,7 +78,7 @@ class DatasetAllScenarios(data.Dataset):
         return len(self.reward_memory)
 
 class NeuroMissileNet2(nn.Module):
-    GPU_ACTIVATE = False
+    GPU_ACTIVATE = True
 
     @classmethod
     def from_dict(cls, d):
@@ -95,7 +94,8 @@ class NeuroMissileNet2(nn.Module):
                 state_env_shape,
                 fc1_n,
                 fc2_n,
-                fc3_n):
+                fc3_n,
+                fc4_n):
         super().__init__()
         self._lr = lr
         self.n_actions = n_actions
@@ -103,12 +103,14 @@ class NeuroMissileNet2(nn.Module):
         self.fc1_n = fc1_n
         self.fc2_n = fc2_n
         self.fc3_n = fc3_n
+        self.fc4_n = fc4_n
 
         self.fc1 = nn.Linear(state_env_shape, fc1_n)
         self.fc2 = nn.Linear(fc1_n, fc2_n)
         self.fc3 = nn.Linear(fc2_n, fc3_n)
-        self.fc_act = nn.Linear(fc3_n, n_actions)
-        self.fc_val = nn.Linear(fc3_n, 1)
+        self.fc4 = nn.Linear(fc3_n, fc4_n)
+        self.fc_act = nn.Linear(fc4_n, n_actions)
+        self.fc_val = nn.Linear(fc4_n, 1)
         
         self.optimizer = optim.Adam(self.parameters(), lr=self._lr)
         self.loss = nn.MSELoss()
@@ -130,6 +132,7 @@ class NeuroMissileNet2(nn.Module):
         x = F.relu(self.fc1(x.to(self.device)))
         x = F.relu(self.fc2(x))
         x = F.relu(self.fc3(x))
+        x = F.relu(self.fc4(x))
         act = self.fc_act(x)
         val = self.fc_val(x)
         return val, act
@@ -142,7 +145,8 @@ class NeuroMissileNet2(nn.Module):
                 state_env_shape=self.state_env_shape,
                 fc1_n=self.fc1_n,
                 fc2_n=self.fc2_n,
-                fc3_n=self.fc3_n),
+                fc3_n=self.fc3_n,
+                fc4_n=self.fc4_n),
             'state_dict': self.state_dict(),
             'optimizer_dict': self.optimizer.state_dict() }
 
@@ -176,8 +180,8 @@ class Agent2(object):
 
     @lr.setter
     def lr(self, value):
-        self.q_eval.lr = lr
-        self.q_next.lr = lr
+        self.q_eval.lr = value
+        self.q_next.lr = value
 
     def choose_action(self, observation):
         observation = T.tensor(observation, dtype=T.float32)
@@ -190,20 +194,8 @@ class Agent2(object):
     def replace_target_network(self, forced=False):
         if self.learn_step_counter % self.replace_target_cnt == 0 or forced:
             self.q_next.load_state_dict(self.q_eval.state_dict())
-    
-    def decrement_epsilon(self):
-        self.epsilon = self.epsilon - self.eps_dec if self.epsilon > self.eps_min \
-                  else self.eps_min
 
-    def save_models(self):
-        self.q_eval.save_checkpoint()
-        self.q_next.save_checkpoint()
-
-    def load_models(self):
-        self.q_eval.load_checkpoint()
-        self.q_next.load_checkpoint()
-
-    def learn(self, states, actions, rewards, states_, dones):
+    def learn(self, states, actions, rewards, states_, dones, return_errors=True):
         self.q_eval.optimizer.zero_grad()
         self.replace_target_network() 
         batch_size = len(dones)
@@ -212,9 +204,7 @@ class Agent2(object):
         rewards = rewards.to(self.q_eval.device)
         dones = dones.to(self.q_eval.device)
 
-        indeces = T.arange(batch_size, dtype=T.int32)
-        print(indeces)
-        print(actions)
+        indeces = T.arange(batch_size, dtype=T.long)
 
         V_s, A_s = self.q_eval.forward(states)
         V_s_, A_s_ = self.q_next.forward(states_)
@@ -234,8 +224,157 @@ class Agent2(object):
         q_target = rewards + self.gamma*q_next[indeces, max_actions]
 
         loss = self.q_eval.loss(q_target, q_pred).to(self.q_eval.device)
-        errors = ((q_target-q_pred)**2).cpu().detach().numpy()
         loss.backward()
         self.q_eval.optimizer.step()
         self.learn_step_counter += 1
-        return errors
+        if return_errors:
+            errors = ((q_target-q_pred)**2).cpu().detach().numpy()
+            return errors
+
+
+class MissileCoach:
+    __dataset = None
+    num_workers = 4
+    
+    @classmethod
+    def get_dataset(cls):
+        if cls.__dataset is None:
+            print('loading dataset')
+            cls.__dataset = DatasetAllScenarios.load()
+        return cls.__dataset
+
+    @classmethod
+    def from_dict(cls, d):
+        return cls(**d)
+
+    @classmethod
+    def create_new(cls, fc1_n, fc2_n, fc3_n, fc4_n, gamma, replace, batch_size, lr_min, lr_max, lr_epoch_cycle):
+        agent_dict = {
+            'gamma': gamma,
+            'replace': replace,
+            'q_eval_dict': {
+                'constructor': {
+                    'lr': lr_max,
+                    'n_actions': 3,
+                    'state_env_shape': cls.get_dataset()[0][0].shape[0], # 10
+                    'fc1_n': fc1_n,
+                    'fc2_n': fc2_n,
+                    'fc3_n': fc2_n,
+                    'fc4_n': fc3_n 
+                }
+            }
+        }
+        agent = Agent2.from_dict(agent_dict)
+        agent_dict = agent.to_dict()
+        return cls(agent_dict, batch_size, lr_min, lr_max, lr_epoch_cycle, [], agent_dict, 0)
+        
+
+    def __init__(self, agent_dict, batch_size, lr_min, lr_max, lr_epoch_cycle,
+                 history, best_agent_dict, epoch):
+        self.agent: Agent2 = Agent2.from_dict(agent_dict)
+        self.batch_size = batch_size
+        self.lr_min = lr_min
+        self.lr_max = lr_max
+        self.lr_epoch_cycle = lr_epoch_cycle
+        self.dataloader = DataLoader(self.get_dataset(), batch_size=batch_size, 
+            shuffle=True, pin_memory=True, num_workers=self.num_workers)
+        self.history = history
+        self.best_agent_dict = best_agent_dict
+        self.epoch = epoch
+
+    def calc_lr(self):
+        t = (self.epoch % self.lr_epoch_cycle) / self.lr_epoch_cycle
+        self.agent.lr = (1-t) * self.lr_max + t * self.lr_min
+
+    def make_traect(self, node: Node):
+        ts = []
+        alphas = []
+        xs_missile = []
+        ys_missile = []
+        xs_target = []
+        ys_target = []
+        while not node.done:
+            node.make_current()
+            ts.append(node.owner.gym.missile.t)
+            alphas.append(node.owner.gym.missile.alpha)
+            x, y = node.owner.gym.missile.pos
+            xs_missile.append(x)
+            ys_missile.append(y)
+            x, y = node.owner.gym.target.pos
+            xs_target.append(x)
+            ys_target.append(y)
+
+            action = self.agent.choose_action(node.obs)
+            node = node.produce_node(action)
+        is_hit = node.reward > 600
+        return is_hit, np.asarray(ts), np.asarray(alphas), np.asarray(xs_missile), \
+                np.asarray(ys_missile), np.asarray(xs_target), np.asarray(ys_target)  
+    
+    def make_epoch(self, tqdm_=True):
+        self.calc_lr()
+        iterator = tqdm(self.dataloader) if tqdm_ else self.dataloader
+        err_sum = 0
+        for states, actions, rewards, states_, dones in iterator:
+            errors = self.agent.learn(states, actions, rewards, states_, dones, return_errors=True)
+            err_sum += np.sum(errors)
+        error = err_sum / len(self.get_dataset())
+        self.history.append(
+            {
+                'epoch': self.epoch,
+                'error': error,
+                'lr': self.agent.lr
+            })
+        self.epoch += 1
+
+    def to_dict(self):
+        return {
+            'agent_dict': self.agent.to_dict(),
+            'batch_size': self.batch_size,
+            'lr_min': self.lr_min,
+            'lr_max': self.lr_max,
+            'lr_epoch_cycle': self.lr_epoch_cycle,
+            'history': self.history,
+            'best_agent_dict': self.best_agent_dict,
+            'epoch': self.epoch }
+
+
+def main2():
+    mc = MissileCoach()
+    print(mc.get_dataset())
+    print(mc.get_dataset())
+    mc2 = MissileCoach()
+    print(mc2.get_dataset())
+    
+
+def main():
+    
+    from tqdm import tqdm
+
+    dataset = DatasetAllScenarios.train_test(-1)
+
+    d = {
+        'gamma': 0.9,
+        'replace': 500,
+        'q_eval_dict': {
+            'constructor': {
+                'lr': 0.00025,
+                'n_actions': 3,
+                'state_env_shape': dataset[0][0].shape[0], # 10
+                'fc1_n': 64,
+                'fc2_n': 128,
+                'fc3_n': 128,
+                'fc4_n': 64 
+            }
+        }
+    }
+    agent = Agent2.from_dict(d)
+    dataloader = DataLoader(dataset, batch_size=512, shuffle=True, pin_memory=True, num_workers=4)
+
+    for states, actions, rewards, states_, dones in tqdm(dataloader):
+        agent.learn(states, actions, rewards, states_, dones)
+        
+
+
+if __name__ == "__main__":
+    main2()
+
