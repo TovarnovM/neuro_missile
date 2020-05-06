@@ -196,6 +196,7 @@ class GymTree:
                 segments.append((p1, p2))
                 colors.append(col1)
         lc = mc.LineCollection(segments, colors=colors)
+        
         ax.add_collection(lc)
         ax.autoscale()
 

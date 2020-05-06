@@ -5,7 +5,9 @@ from invariants import Interp1d
 
 class MissileGym(object):
     # set доступных сценариев для моделирования (различные поведения цели, различные варианты запуска и т.д.)
-    scenario_names = {'standart', 'sc_simple_1', 'sc_simple_2', 'sc_simple_3'}
+    scenario_names = {'standart', 'sc_simple_1', 'sc_simple_2', 'sc_simple_3',
+        'Chengdu_1', 'Chengdu_2', 'Refale_1', 'Refale_2', 'RaptorF_1', 'RaptorF_2', 'Cy-57_1',
+        'success_1', 'success_2', 'success_3', 'success_4', 'success_5', 'fail_1', 'fail_2', 'fail_3'}
 
     @classmethod
     def make(cls, scenario_name):
@@ -16,18 +18,65 @@ class MissileGym(object):
         """
         if scenario_name not in cls.scenario_names:
             raise AttributeError(f'Ошибка ! нет такого сценария "{scenario_name}", есть только {cls.scenario_names}')
-        if scenario_name == 'standart':
+        elif scenario_name == 'standart':
             target = Target.get_target()
             missile = Missile.get_needle()
-            mparams = Missile.get_parameters_of_missile_to_meeting_target(target.pos, target.vel)
-            missile.set_init_cond(parameters_of_missile=mparams)
-            return cls(missile=missile, target=target)
-        if scenario_name == 'sc_simple_1':
+        elif scenario_name == 'sc_simple_1':
             return cls.make_simple_scenario((1000,1000), (-200,0), missile_vel_abs=1.0)
-        if scenario_name == 'sc_simple_2':
+        elif scenario_name == 'sc_simple_2':
             return cls.make_simple_scenario((1000,2000), (-300,0), missile_vel_abs=1.0)
-        if scenario_name == 'sc_simple_3':
+        elif scenario_name == 'sc_simple_3':
             return cls.make_simple_scenario((2000,1000), (-500,0), missile_vel_abs=1.0)
+        elif scenario_name == 'Chengdu_1':
+            target = Target.get_target(scenario_name='scenario_Chengdu_J_10', scenario_i=0)
+            missile = Missile.get_needle()
+        elif scenario_name == 'Chengdu_2':
+            target = Target.get_target(scenario_name='scenario_Chengdu_J_10', scenario_i=1)
+            missile = Missile.get_needle()
+        elif scenario_name == 'Refale_1':
+            target = Target.get_target(scenario_name='scenario_Refale', scenario_i=0)
+            missile = Missile.get_needle()
+        elif scenario_name == 'Refale_2':
+            target = Target.get_target(scenario_name='scenario_Refale', scenario_i=1)
+            missile = Missile.get_needle()
+        elif scenario_name == 'RaptorF_1':
+            target = Target.get_target(scenario_name='scenario_RaptorF-22', scenario_i=0)
+            missile = Missile.get_needle()
+        elif scenario_name == 'RaptorF_2':
+            target = Target.get_target(scenario_name='scenario_RaptorF-22', scenario_i=1)
+            missile = Missile.get_needle()
+        elif scenario_name == 'Cy-57_1':
+            target = Target.get_target(scenario_name='scenario_Cy-57', scenario_i=0)
+            missile = Missile.get_needle()
+        elif scenario_name == 'success_1':
+            target = Target.get_target(scenario_name='SUCCESS', scenario_i=1)
+            missile = Missile.get_needle()
+        elif scenario_name == 'success_2':
+            target = Target.get_target(scenario_name='SUCCESS', scenario_i=2)
+            missile = Missile.get_needle()
+        elif scenario_name == 'success_3':
+            target = Target.get_target(scenario_name='SUCCESS', scenario_i=3)
+            missile = Missile.get_needle()
+        elif scenario_name == 'success_4':
+            target = Target.get_target(scenario_name='SUCCESS', scenario_i=4)
+            missile = Missile.get_needle()
+        elif scenario_name == 'success_5':
+            target = Target.get_target(scenario_name='SUCCESS', scenario_i=5)
+            missile = Missile.get_needle()
+        elif scenario_name == 'fail_1':
+            target = Target.get_target(scenario_name='FAIL', scenario_i=0)
+            missile = Missile.get_needle()
+        elif scenario_name == 'fail_2':
+            target = Target.get_target(scenario_name='FAIL', scenario_i=1)
+            missile = Missile.get_needle()
+        elif scenario_name == 'fail_3':
+            target = Target.get_target(scenario_name='FAIL', scenario_i=2)
+            missile = Missile.get_needle()
+
+        mparams = Missile.get_parameters_of_missile_to_meeting_target(target.pos, target.vel)
+        missile.set_init_cond(parameters_of_missile=mparams)
+        return cls(missile=missile, target=target)
+
 
     @classmethod
     def make_simple_scenario(cls, trg_pos, trg_vel, missile_pos=None, missile_vel_abs=500.0):

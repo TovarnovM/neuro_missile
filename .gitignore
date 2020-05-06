@@ -108,4 +108,4 @@ env_neuro*
 .vscode
 src/*.bin
 
-scr/dask-worker-space
+*/dask-worker-space*
