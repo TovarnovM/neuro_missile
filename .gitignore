@@ -106,3 +106,6 @@ venv.bak/
 env_neuro*
 
 .vscode
+src/*.bin
+
+*/dask-worker-space*

@@ -31,20 +31,20 @@ class Missile(object):
 
         returns Missile
         """
-        m0 = 11.8
+        m0 = 10.6
         d = 0.072
-        t_st = 4.531
-        t_mr = 8.125
+        t_st = 2.7
+        t_mr = 7
         
         Sm = np.pi * d ** 2 / 4
-        w_st = 3.24
-        w_mr = 1.357
+        w_st = 3.01
+        w_mr = 3.557
         G_st = w_st / t_st
         G_mr = w_mr / t_mr
         
-        P_st = 1787
-        P_mr = 454
-        J = 2500
+        P_st = 2787
+        P_mr = 1354
+        J = 2700
 
         @np.vectorize
         def _get_m(t):
@@ -76,31 +76,36 @@ class Missile(object):
 
         alpha_from_csv = np.unique(df['A'].to_numpy())
         M_from_csv = np.array(np.unique(df['M'].to_numpy()))
-        Cx_from_csv = np.array(np.split(df['Cxa'].to_numpy(), M_from_csv.size)).T
-        Cya_from_csv = np.array(np.split(df['Cy'].to_numpy(), M_from_csv.size)).T
-        Cya_from_csv = np.array([cy / a for a, cy in zip(alpha_from_csv, Cya_from_csv)])
+        Cx_from_csv = np.array(np.split(df['Cx'].to_numpy(), M_from_csv.size)).T
+        Cya_from_csv = np.array(np.split(df['Cya'].to_numpy(), M_from_csv.size)).T
 
-
-
-        Cya_itr = Interp2d(alpha_from_csv, M_from_csv, Cya_from_csv)
+        M_for_Cya = np.array([0.6,0.9,1.1,1.5,2.0])
+        Cya_from_mathcad = np.array([0.306,0.341,0.246,0.246,0.218])
+        Cya_itr = Interp1d(M_for_Cya, Cya_from_mathcad)
+        
         Cx_itr = Interp2d(alpha_from_csv, M_from_csv, Cx_from_csv)
 
-        # TODO сделать нормальную таблицу плотности воздуха и скорости звука из https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D0%BD%D0%B0%D1%8F_%D0%B0%D1%82%D0%BC%D0%BE%D1%81%D1%84%D0%B5%D1%80%D0%B0
-        ro_itr = Interp1d.simple_constant(1.204)   
-        a_itr = Interp1d.simple_constant(340)   
+        ro_itr = Interp1d(
+            [0,    50,   100,  200,  300,  500,  1000, 2000, 3000, 5000, 8000, 10000,12000,15000,20000],
+            [1.225,1.219,1.213,1.202,1.190,1.167,1.112,1.007,0.909,0.736,0.526,0.414,0.312,0.195,0.089]
+        )
+        a_itr = Interp1d(
+            [0,     50,   100,   200,   300,   400,   500,   600,   700,   800,   900,   1000,  5000,  10000, 20000],
+            [340.29,340.1,339.91,339.53,339.14,338.76,338.38,337.98,337.60,337.21,336.82,336.43,320.54,299.53,295.07]
+        ) 
 
         missile = cls(
             m_itr=m_itr,   # масса [кг] ракеты от времени [с]
             P_itr=P_itr,   # тяга [Н] ракеты от времени [с]
             Sm=Sm,         # площадь миделя [м^2] (к оторой относятся аэро коэффициенты)
             alphamax=15,   # максимальный угол атаки [градусы]
-            speed_change_alpha=360,  # скорость изменения угола атаки [градусы / с]
+            speed_change_alpha=86,  # скорость изменения угола атаки [градусы / с]
             xi=0.1,           # коэффициент, характеризующий структуру подъёмной силы аэродинамической схемы ракеты [] TODO уточнить его
             Cx_itr=Cx_itr,              # интерполятор определения коэффициента лобового сопротивления ракеты от угла атаки [градусы] и от числа маха
             Cya_itr=Cya_itr,
             ro_itr=ro_itr,   # интерполятор определения плотности атмосферы [кг/м^3] от высоты [м] 
             a_itr=a_itr,      # интерполятор определения скорости звука воздуха [м/с] от высоты [м] 
-            r_kill=15
+            r_kill=20
         )
         return missile
 
@@ -227,7 +232,7 @@ class Missile(object):
         ro = self.ro_itr(y)
         a = self.a_itr(y)
         M = v/a
-        Cya = self.Cya_itr(alpha, M)
+        Cya = self.Cya_itr(M)
         Cx = self.Cx_itr(alpha, M)
 
         alpha_diff = self.alpha_targeting - alpha
@@ -280,7 +285,7 @@ class Missile(object):
         ro = self.ro_itr(y)
         a = self.a_itr(y)
         M = v/a
-        Cya = self.Cya_itr(alpha, M)
+        Cya = self.Cya_itr(M)
 
         vis = target.pos - self.pos
         # Угол между линией визирования и горизонтом [рад]
@@ -322,7 +327,7 @@ class Missile(object):
         ro = self.ro_itr(y)
         a = self.a_itr(y)
         M = v/a
-        Cya = self.Cya_itr(alpha, M)
+        Cya = self.Cya_itr(M)
 
         vis = target.pos + vc*t_corr - self.pos
         # Угол между линией визирования и горизонтом [рад]
@@ -398,11 +403,9 @@ class Missile(object):
         """Свойство, возвращающее текущий нормированный вектор центральной оси ракеты в виде numpy массива из двух элементов 
         np.array([Axi_x, Axi_y])
         """
-        x = self.x
-        y = self.y
         Q = self.Q
         alpha = np.radians(self.alpha)
-        return np.array([x * np.cos(Q  + alpha), y * np.sin(Q + alpha)])
+        return np.array([np.cos(Q  + alpha), np.sin(Q + alpha)])
 
     @property
     def v(self):
@@ -434,7 +437,7 @@ class Missile(object):
 
     @property
     def Cya(self):
-        return self.Cya_itr(self.alpha, self.M)  
+        return self.Cya_itr(self.M)  
 
     @property
     def Cx(self):
@@ -454,7 +457,7 @@ class Missile(object):
             'alpha': self.alpha,
             'alpha_targeting': self. alpha_targeting,
             'Cx': self.Cx_itr(self.alpha, self.M),
-            'Cya': self.Cya_itr(self.alpha, self.M)
+            'Cya': self.Cya_itr(self.M)
         }
     
     @staticmethod
@@ -505,13 +508,14 @@ class Missile(object):
 
 class Target(object):
     @classmethod
-    def get_target(cls, scenario_name='SUCCESS', scenario_i=1):
-        velocity_vectors = scenarios[scenario_name][scenario_i]
+    def get_target(cls, scenario_name='SUCCESS', scenario_i=0):
+        velocity_vectors = scenarios[scenario_name][scenario_i]['trg_vels']
+        x, y = scenarios[scenario_name][scenario_i]['trg_pos_0']
 
+      
         vel_interp = InterpVec(velocity_vectors)
         target = cls(vel_interp = vel_interp)
-        parameters_of_target = cls.get_standart_parameters_of_target()
-        target.set_init_cond(parameters_of_target=parameters_of_target)
+        target.set_init_cond(parameters_of_target=np.array([x,y,0]))
         return target
 
     @classmethod
@@ -543,7 +547,7 @@ class Target(object):
     
         """
         if parameters_of_target is None:
-            parameters_of_target = self.get_standart_parameters_of_target()
+          parameters_of_target = self.get_standart_parameters_of_target()
         self.state = np.array(parameters_of_target)
         self.state_0 = np.array(parameters_of_target)
 
@@ -599,7 +603,7 @@ class Target(object):
                 flag = False
             t += dt
             vx, vy = self.vel_interp(t)
-            x += vx * dt
+            x += vx * dt 
             y += vy * dt
         self.set_state([x, y, t])
 
@@ -638,8 +642,8 @@ class Target(object):
     @property
     def x(self):
         return self.pos[0]
-
     
+
     @property
     def y(self):
         return self.pos[1]
@@ -658,7 +662,6 @@ class Target(object):
 
 if __name__ == "__main__":
     t = Target.get_target()
-    t.set_init_cond()
 
     m = Missile.get_needle()
     m.set_init_cond()
@@ -669,7 +672,7 @@ if __name__ == "__main__":
     for _ in range(10):
         k = m.get_action_parallel_guidance(t)
         act = m.action_sample() * k
-        for i in range(20):    
+        for i in range(40):    
             m.step(act, tau)
             t.step(tau)
             summaries.append(m.get_summary())
@@ -684,3 +687,4 @@ if __name__ == "__main__":
     plt.legend()
     plt.show()
 
+    
