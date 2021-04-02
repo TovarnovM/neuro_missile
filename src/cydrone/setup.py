@@ -21,7 +21,7 @@ except:
 from setuptools import setup, Extension
 from Cython.Build import cythonize
 
-compiler_directives = {"language_level": 3, "embedsignature": True, "boundscheck": False, "wraparound": False, "cdivision": True, 'nonecheck': False}
+compiler_directives = {"language_level": 3, "embedsignature": True, "boundscheck": False, "wraparound": False, "cdivision": True, 'nonecheck': False, 'initializedcheck':False}
 ext = Extension("drone", ["drone.pyx"], language="c++", include_dirs=[np.get_include()])
 setup(
     name='Hello cydrone app',
