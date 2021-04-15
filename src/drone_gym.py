@@ -1,7 +1,7 @@
 import numpy as np
 from cydrone.drone import Drone2d
 from easyvec import Vec2, Mat2
-from scipy.optimize import minimize
+from scipy.optimize import minimize, Bounds, minimize_scalar
 
 
 
@@ -9,33 +9,55 @@ from scipy.optimize import minimize
 class DroneGym:
     @classmethod
     def make(cls, name):
-        drone = Drone2d.get_DJI()
+        def drone_foo(**kwargs):
+            drone = Drone2d.get_DJI()
+            d = drone.to_dict()
+            if vel := kwargs.get('vel'):
+                d['vel'] = vel
+            else:
+                d['vel'] = Vec2.random((-1, 1), (-0.5,2))
+            
+            if alpha := kwargs.get('alpha'):
+                d['alpha'] = alpha
+            else:
+                d['alpha'] = np.random.uniform(-10, 10) * 3.14 / 180
+            
+            if omega := kwargs.get('omega'):
+                d['omega'] = omega
+            else:
+                d['omega'] = np.random.uniform(-0.01, 0.01)
+
+            drone.from_dict(d)
+            return drone
+
+        def pos0_pos_trg_foo(**kwargs):
+            pos0 = kwargs.get('pos0',       Vec2.random((-4000, 0),(4000, 2500)))
+            pos_trg = kwargs.get('pos_trg', Vec2.random((-4000, 1000),(4000, 1500)))
+            return pos0, pos_trg
+
+
         return cls(
-            drone=drone, 
-            pos0=Vec2(-2000, 20), 
-            pos_trg=Vec2(2000,1500), 
-            vel_trg_len=1.0
+            drone_foo=drone_foo, 
+            pos0_pos_trg_foo=pos0_pos_trg_foo,
+            vel_trg_len=1.0,
+            xy_bounds = ((-5000, 5000), (-10, 3000))
         )
 
-    def __init__(self, drone: Drone2d, pos0: Vec2, pos_trg: Vec2, vel_trg_len: float, **kwargs):
+    def __init__(self, drone_foo, pos0_pos_trg_foo, vel_trg_len: float, **kwargs):
         self.time_curr = 0.0
-        self.drone = drone
-        self.drone.from_dict(dict(
-            t=self.time_curr,
-            pos = pos0,
-            vel=(0,0),
-            alpha=0,
-            omega=0
-        ))
-        self.pos_trg = pos_trg.copy()
+        self.drone = None 
+        self.drone_foo = drone_foo
+
+        self.pos_trg = None
+        self.pos0_pos_trg_foo = pos0_pos_trg_foo
+
         self.vel_trg_len = vel_trg_len
-        self.state0 = self.drone.to_numpy()
 
         self.tau = kwargs.get('tau', 0.25)
         self.n_4_step = kwargs.get('n_4_step', 10)
         self.vel_max = kwargs.get('vel_max', 33.0)
         self.omega_max = kwargs.get('omega_max', 23.0)
-        self.a_trg_max = kwargs.get('a_trg_max', 13.0)
+        self.a_trg_max = kwargs.get('a_trg_max', 3.0)
         self.trg_radius =  kwargs.get('trg_radius', 0.7)
         self.xy_bounds = kwargs.get('xy_bounds', ((-5000, 5000), (-10, 3000)))
         self.obs_min = np.array(kwargs.get('obs_max', 
@@ -50,8 +72,17 @@ class DroneGym:
         self.drone.from_numpy(state)
         self.time_curr = self.drone.t
 
-    def reset(self):
-        self.set_state(self.state0)
+    def reset(self, **kwargs):
+        self.drone = self.drone_foo(**kwargs)
+        self.pos0, self.pos_trg = self.pos0_pos_trg_foo(**kwargs)
+
+        self.pos0 = Vec2.from_list(self.pos0)
+        self.pos_trg = Vec2.from_list(self.pos_trg)
+
+        d = self.drone.to_dict()
+        d['pos'] = self.pos0
+        self.drone.from_dict(d)
+
         self.history = []
         return self.get_observ()
 
@@ -92,42 +123,77 @@ class DroneGym:
 
     def get_delta_t_alpha(self):
         try:
-            def denorm(x, drone, pos_trg, vel_trg_len, a_max):
-                delta_t, alpha_trg = x
-                vA = drone.vel
-                t1 = (pos_trg-drone.pos).len() / (0.5 * (vel_trg_len + vA.len()))
-                delta_t = delta_t * t1
-                return delta_t, alpha_trg
+            D = self.pos_trg-self.drone.pos
+            some = (self.drone.vel.len() + self.drone.vel * D.norm()) / 2 + self.vel_trg_len
 
-            def minim_foo(x, drone, pos_trg, vel_trg_len, a_max, v_max):
-                delta_t, alpha_trg = denorm(x, drone, pos_trg, vel_trg_len, a_max)
-                if delta_t < 1e-6:
-                    return 1e10
-                vA = drone.vel
-                vel_trg = Vec2(vel_trg_len, 0).rotate(alpha_trg)
-                vmin ,vmax, amax = drone.get_vmin_vmax_amax(delta_t, pos_trg, vel_trg)
+            delta_t = (self.pos_trg-self.drone.pos).len() / some
+
+            def minim_t_alpha(alpha_trg):
+                vel_trg = Vec2(self.vel_trg_len, 0).rotate(alpha_trg)
+                vmin ,vmax, amax = self.drone.get_vmin_vmax_amax(delta_t, self.pos_trg, vel_trg)
                 shtraf = 0
-                vminAD = min(vA.len(), vel_trg_len) * 0.5
-                vmaxAD = max(vA.len(), vel_trg_len, v_max) 
-                if vmin < vminAD:
-                    shtraf += 10
-                if vmax > vmaxAD:
-                    shtraf += 10
-                if amax > a_max:
-                    shtraf += 30
-                return delta_t * (shtraf + 1) + shtraf
+                if vmax > self.vel_max:
+                    shtraf += 10000
+                if amax > self.a_trg_max:
+                    shtraf += 10000
+                return amax + shtraf
             
-            res = minimize(
-                minim_foo, 
-                (1,0), 
-                args=(self.drone, self.pos_trg, self.vel_trg_len, self.a_trg_max, self.vel_max),
-                method='Nelder-Mead', 
-                options={
-                    'maxfev': 100,
-                    'initial_simplex': np.array([[1,0], [2.5, -1], [0.5, 1]])
-                    }
-                )
-            delta_t, alpha = denorm(res.x, self.drone, self.pos_trg, self.vel_trg_len, self.a_trg_max)
+            res = minimize_scalar(minim_t_alpha, bounds=(-np.pi, np.pi), method='bounded')
+
+            alpha = res.x
+            vel_trg = Vec2(self.vel_trg_len, 0).rotate(alpha)
+
+            def minim_t(t):
+                vmin ,vmax, amax = self.drone.get_vmin_vmax_amax(t, self.pos_trg, vel_trg)
+                shtraf = 0
+                if vmax > self.vel_max:
+                    shtraf += 10000
+                if amax > self.a_trg_max:
+                    shtraf += 10000
+                return t + shtraf
+            
+            res = minimize_scalar(minim_t, bounds=(0.01, 3000), method='bounded')
+            delta_t = res.x
+            # def minim_foo(x, drone, pos_trg, vel_trg_len, a_max, v_max):
+            #     delta_t, alpha_trg = denorm(x, drone, pos_trg, vel_trg_len, a_max, v_max)
+            #     if delta_t < 1e-6:
+            #         return np.nan
+            #     vA = drone.vel
+            #     vel_trg = Vec2(vel_trg_len, 0).rotate(alpha_trg)
+            #     vmin ,vmax, amax = drone.get_vmin_vmax_amax(delta_t, pos_trg, vel_trg)
+            #     shtraf = 0
+            #     vminAD = min(vA.len(), vel_trg_len) * 0.5
+            #     vmaxAD = max(vA.len(), vel_trg_len, v_max) 
+            #     if vmin < vminAD:
+            #         shtraf += 300
+            #         return np.nan
+            #     if vmax > vmaxAD:
+            #         shtraf += 300
+            #         return np.nan
+            #     if amax > a_max:
+            #         shtraf += 300
+            #         return np.nan
+            #     return delta_t
+            
+            # initial_simplex = []
+            # while len(initial_simplex)<3:
+            #     x = np.random.uniform((0.1,-np.pi),(10,np.pi))
+            #     if not np.isnan(minim_foo(x, self.drone, self.pos_trg, self.vel_trg_len, self.a_trg_max, self.vel_max)):
+            #         break
+            #     initial_simplex.append(x)
+
+            # res = minimize(
+            #     minim_foo, 
+            #     (1,0), 
+            #     args=(self.drone, self.pos_trg, self.vel_trg_len, self.a_trg_max, self.vel_max),
+            #     method='Nelder-Mead', 
+            #     options={
+            #         'maxfev': 200,
+            #         'initial_simplex': initial_simplex
+            #         }
+            #     )
+
+            # delta_t, alpha = denorm(res.x, self.drone, self.pos_trg, self.vel_trg_len, self.a_trg_max, self.vel_max)
             return delta_t, alpha
         except Exception as e:
             print(f'При подсчете get_delta_t была ошибка {e}')
@@ -138,18 +204,20 @@ class DroneGym:
         drone_pos = self.drone.pos
         if (drone_pos - self.pos_trg).len() < self.trg_radius:
             if self.drone.vel.len() <= self.vel_trg_len:
-                return True, 100, {'result': 'success'}
+                return True, 300, {'result': 'success'}
         if drone_pos.y < self.xy_bounds[1][0] or drone_pos.y > self.xy_bounds[1][1]:
-            return True, -100, {'result': 'out of Y bounds'}
+            return True, -300, {'result': 'out of Y bounds'}
         if drone_pos.x < self.xy_bounds[0][0] or drone_pos.x > self.xy_bounds[0][1]:
-            return True, -100, {'result': 'out of X bounds'}
+            return True, -300, {'result': 'out of X bounds'}
         if abs(self.drone.omega) > self.omega_max:
-            return True, -100, {'result': f'omega too mutch {self.drone.omega}'}
+            return True, -300, {'result': f'omega too mutch {self.drone.omega}'}
         return False, 0, {}
 
 
     def step(self, actions):
         """observation_, reward, done, info
+
+        
 
         :param action: [description]
         :type action: [type]
@@ -164,6 +232,10 @@ class DroneGym:
         delta_t1, alpha = self.get_delta_t_alpha()
 
         reward = delta_t0 - delta_t1
+        if reward > 7:
+            reward = 1
+        if reward < -7:
+            reward = -1
         observation_ = self.get_observ()
         done, add_reward, info = self.is_done()
         reward += add_reward
