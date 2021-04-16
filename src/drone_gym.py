@@ -2,6 +2,7 @@ import numpy as np
 from cydrone.drone import Drone2d
 from easyvec import Vec2, Mat2
 from scipy.optimize import minimize, Bounds, minimize_scalar
+from gym.spaces.box import Box
 
 
 
@@ -58,14 +59,17 @@ class DroneGym:
         self.vel_max = kwargs.get('vel_max', 33.0)
         self.omega_max = kwargs.get('omega_max', 23.0)
         self.a_trg_max = kwargs.get('a_trg_max', 3.0)
-        self.trg_radius =  kwargs.get('trg_radius', 0.7)
+        self.trg_radius =  kwargs.get('trg_radius', 5.7)
         self.xy_bounds = kwargs.get('xy_bounds', ((-5000, 5000), (-10, 3000)))
-        self.obs_min = np.array(kwargs.get('obs_max', 
+        self.obs_min = np.array(kwargs.get('obs_min', 
             (self.xy_bounds[1][0], -np.pi, -np.pi, 0, -np.pi, 0, -self.omega_max) ))
         self.obs_max = np.array(kwargs.get('obs_max', 
             (self.xy_bounds[1][1], np.pi, np.pi, self.xy_bounds[0][1] - self.xy_bounds[0][0], np.pi, self.vel_max, self.omega_max) ))
         self.history = []
         self.record_history = False
+
+        self.action_space = Box(0,1, shape=(2,))
+        self.antiflip = kwargs.get('antiflip', True)
 
 
     def set_state(self, state):
@@ -204,20 +208,23 @@ class DroneGym:
         drone_pos = self.drone.pos
         if (drone_pos - self.pos_trg).len() < self.trg_radius:
             if self.drone.vel.len() <= self.vel_trg_len:
-                return True, 300, {'result': 'success'}
+                return True, 100, {'result': 'success'}
+        alpha = self.drone.alpha
+        if self.antiflip and abs(alpha) > np.pi * 0.75:
+            return True, -100, {'result': 'flip over'}
         if drone_pos.y < self.xy_bounds[1][0] or drone_pos.y > self.xy_bounds[1][1]:
-            return True, -300, {'result': 'out of Y bounds'}
+            return True, -100, {'result': 'out of Y bounds'}
         if drone_pos.x < self.xy_bounds[0][0] or drone_pos.x > self.xy_bounds[0][1]:
-            return True, -300, {'result': 'out of X bounds'}
+            return True, -100, {'result': 'out of X bounds'}
         if abs(self.drone.omega) > self.omega_max:
-            return True, -300, {'result': f'omega too mutch {self.drone.omega}'}
+            return True, -100, {'result': f'omega too mutch {self.drone.omega}'}
         return False, 0, {}
 
 
     def step(self, actions):
         """observation_, reward, done, info
 
-        
+
 
         :param action: [description]
         :type action: [type]
@@ -276,14 +283,14 @@ class DroneGym:
             ax.plot(points[:,0], points[:,1], **drone_kw)
 
             if actions is not None:
-                F1 = np.array([0, L * actions[0]])
+                F1 = np.array([0, L * (actions[0] * 0.5 + 0.5)])
                 F1 =  F1 @ M_rot
                 F01 =  np.array([-L, 0]) @M_rot + pos
                 actions_kw = {'width': 0.05 * L, 'color': 'red'}
                 actions_kw = dict(actions_kw, **kwargs.get('actions_kw', {}))
                 ax.arrow(F01[0], F01[1], F1[0], F1[1], **actions_kw)
 
-                F2 = np.array([0, L * actions[1]])
+                F2 = np.array([0, L * (actions[1]* 0.5 + 0.5)])
                 F2 =  F2 @ M_rot
                 F02 = np.array([L, 0]) @ M_rot + pos
                 ax.arrow(F02[0], F02[1], F2[0], F2[1], **actions_kw)     

@@ -102,11 +102,13 @@ cdef class Drone2d:
 
     cpdef void step(self, double F1, double F2, double tau=0.1, int n=10):
         """
-        F1 [0, 1]
-        F2 [0, 1]
+        F1 [-1, 1]
+        F2 [-1, 1]
         """
         cdef double dt = tau / n
         cdef size_t i, j
+        F1 = 0.5*F1 + 0.5
+        F2 = 0.5*F2 + 0.5
         # print(f'before {np.array(self.state)}')
         for i in range(n):
             self.fill_dy(self.t, self.state, F1, F2, self.tmp1) # k1
