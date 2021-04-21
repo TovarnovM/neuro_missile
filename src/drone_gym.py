@@ -62,11 +62,11 @@ class DroneGym:
         self.vel_trg_foo = vel_trg_foo
         self.vel_trg = None
 
-        self.tau = kwargs.get('tau', 1/25)
-        self.n_4_step = kwargs.get('n_4_step', 4)
+        self.tau = kwargs.get('tau', 0.2)
+        self.n_4_step = kwargs.get('n_4_step', 10)
         self.vel_max = kwargs.get('vel_max', 33.0)
         self.omega_max = kwargs.get('omega_max', 23.0)
-        self.a_max = kwargs.get('a_max', 4.0)
+        self.a_max = kwargs.get('a_max', 15.0)
         self.trg_radius = kwargs.get('trg_radius', 13)
         self.xy_bounds = kwargs.get('xy_bounds', ((-5000, 5000), (-10, 3000)))
         self.obs_min = np.array(kwargs.get('obs_min', 
@@ -220,12 +220,12 @@ class DroneGym:
         self.time_curr = self.drone.t
         delta_t1 = self.get_delta_t()
 
-        reward = (delta_t0 - delta_t1)*100
+        reward = (delta_t0 - delta_t1)*30
         
-        # if reward > 10:
-        #     reward = 1
-        # if reward < -10:
-        #     reward = -1
+        if reward > 7:
+            reward = 7
+        if reward < -7:
+            reward = -7
         observation_ = self.get_observ()
         done, add_reward, info = self.is_done()
         reward += add_reward
