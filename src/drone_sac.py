@@ -7,24 +7,28 @@ from sac_networks import ActorNetwork, CriticNetwork, ValueNetwork
 
 class Agent():
     def __init__(self, alpha=0.0003, beta=0.0003, input_dims=[8],
-            env=None, gamma=0.99, n_actions=2, max_size=1000000, tau=0.005,
+            action_space_high=None, gamma=0.99, n_actions=2, max_size=1000000, tau=0.005,
             layer1_size=256, layer2_size=256, batch_size=256, reward_scale=2):
         self.gamma = gamma
+        self.input_dims = input_dims
         self.tau = tau
         self.memory = ReplayBuffer(max_size, input_dims, n_actions)
         self.batch_size = batch_size
         self.n_actions = n_actions
+        self.reward_scale = reward_scale
 
         self.actor = ActorNetwork(alpha, input_dims, n_actions=n_actions,
-                    name='actor', max_action=env.action_space.high)
+                    name='actor', max_action=action_space_high,
+                    fc1_dims=layer1_size, fc2_dims=layer2_size)
         self.critic_1 = CriticNetwork(beta, input_dims, n_actions=n_actions,
-                    name='critic_1')
+                    name='critic_1', fc1_dims=layer1_size, fc2_dims=layer2_size)
         self.critic_2 = CriticNetwork(beta, input_dims, n_actions=n_actions,
-                    name='critic_2')
-        self.value = ValueNetwork(beta, input_dims, name='value')
-        self.target_value = ValueNetwork(beta, input_dims, name='target_value')
-
-        self.scale = reward_scale
+                    name='critic_2', fc1_dims=layer1_size, fc2_dims=layer2_size)
+        self.value = ValueNetwork(beta, input_dims, name='value', 
+                    fc1_dims=layer1_size, fc2_dims=layer2_size)
+        self.target_value = ValueNetwork(beta, input_dims, name='target_value',
+                    fc1_dims=layer1_size, fc2_dims=layer2_size)
+        
         self.update_network_parameters(tau=1)
 
     def choose_action(self, observation):
@@ -113,7 +117,7 @@ class Agent():
 
         self.critic_1.optimizer.zero_grad()
         self.critic_2.optimizer.zero_grad()
-        q_hat = self.scale*reward + self.gamma*value_
+        q_hat = self.reward_scale*reward + self.gamma*value_
         q1_old_policy = self.critic_1.forward(state, action).view(-1)
         q2_old_policy = self.critic_2.forward(state, action).view(-1)
         critic_1_loss = 0.5 * F.mse_loss(q1_old_policy, q_hat)
@@ -125,4 +129,22 @@ class Agent():
         self.critic_2.optimizer.step()
 
         self.update_network_parameters()
+
+    def to_dict(self):
+        return {
+            'actor': self.actor.state_dict(),
+            'value': self.value.state_dict(),
+            'target_value': self.target_value.state_dict(),
+            'critic_1': self.critic_1.state_dict(),
+            'critic_2': self.critic_2.state_dict()
+        }
+
+    def from_dict(self, d):
+        self.actor.load_state_dict(d['actor'])
+        self.value.load_state_dict(d['value'])
+        self.target_value.load_state_dict(d['target_value'])
+        self.critic_1.load_state_dict(d['critic_1'])
+        self.critic_2.load_state_dict(d['critic_2'])
+    
+
 
