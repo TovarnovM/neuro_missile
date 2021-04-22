@@ -8,7 +8,7 @@ import numpy as np
 
 class CriticNetwork(nn.Module):
     def __init__(self, beta, input_dims, n_actions, fc1_dims=256, fc2_dims=256,
-            name='critic', chkpt_dir='tmp/sac'):
+            name='critic', chkpt_dir='tmp/sac', device_name=None):
         super(CriticNetwork, self).__init__()
         self.input_dims = input_dims
         self.fc1_dims = fc1_dims
@@ -23,8 +23,8 @@ class CriticNetwork(nn.Module):
         self.q = nn.Linear(self.fc2_dims, 1)
 
         self.optimizer = optim.Adam(self.parameters(), lr=beta)
-        self.device = T.device('cuda:0' if T.cuda.is_available() else 'cpu')
-
+        self.device_name = device_name if device_name is not None else 'cuda:0' if T.cuda.is_available() else 'cpu'
+        self.device = T.device(self.device_name)
         self.to(self.device)
 
     def forward(self, state, action):
@@ -43,9 +43,13 @@ class CriticNetwork(nn.Module):
     def load_checkpoint(self):
         self.load_state_dict(T.load(self.checkpoint_file))
 
+    def change_lr(self, lr):
+        for param_group in self.optimizer.param_groups:
+            param_group['lr'] = lr
+
 class ValueNetwork(nn.Module):
     def __init__(self, beta, input_dims, fc1_dims=256, fc2_dims=256,
-            name='value', chkpt_dir='tmp/sac'):
+            name='value', chkpt_dir='tmp/sac', device_name=None):
         super(ValueNetwork, self).__init__()
         self.input_dims = input_dims
         self.fc1_dims = fc1_dims
@@ -59,7 +63,8 @@ class ValueNetwork(nn.Module):
         self.v = nn.Linear(self.fc2_dims, 1)
 
         self.optimizer = optim.Adam(self.parameters(), lr=beta)
-        self.device = T.device('cuda:0' if T.cuda.is_available() else 'cpu')
+        self.device_name = device_name if device_name is not None else 'cuda:0' if T.cuda.is_available() else 'cpu'
+        self.device = T.device(self.device_name)
 
         self.to(self.device)
 
@@ -79,9 +84,13 @@ class ValueNetwork(nn.Module):
     def load_checkpoint(self):
         self.load_state_dict(T.load(self.checkpoint_file))
 
+    def change_lr(self, lr):
+        for param_group in self.optimizer.param_groups:
+            param_group['lr'] = lr
+
 class ActorNetwork(nn.Module):
     def __init__(self, alpha, input_dims, max_action, fc1_dims=256, 
-            fc2_dims=256, n_actions=2, name='actor', chkpt_dir='tmp/sac'):
+            fc2_dims=256, n_actions=2, name='actor', chkpt_dir='tmp/sac', device_name=None):
         super(ActorNetwork, self).__init__()
         self.input_dims = input_dims
         self.fc1_dims = fc1_dims
@@ -99,9 +108,15 @@ class ActorNetwork(nn.Module):
         self.sigma = nn.Linear(self.fc2_dims, self.n_actions)
 
         self.optimizer = optim.Adam(self.parameters(), lr=alpha)
-        self.device = T.device('cuda:0' if T.cuda.is_available() else 'cpu')
+
+        self.device_name = device_name if device_name is not None else 'cuda:0' if T.cuda.is_available() else 'cpu'
+        self.device = T.device(self.device_name)
 
         self.to(self.device)
+
+    def change_lr(self, lr):
+        for param_group in self.optimizer.param_groups:
+            param_group['lr'] = lr
 
     def forward(self, state):
         prob = self.fc1(state)
@@ -118,6 +133,7 @@ class ActorNetwork(nn.Module):
 
     def sample_normal(self, state, reparameterize=True):
         mu, sigma = self.forward(state)
+        # print(mu, sigma)
         probabilities = Normal(mu, sigma)
 
         if reparameterize:

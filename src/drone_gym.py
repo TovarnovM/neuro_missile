@@ -1,5 +1,7 @@
 import numpy as np
-from cydrone.drone import Drone2d
+import sys 
+sys.path.append(r'D:\neuro_missile\src\cydrone')
+from drone import Drone2d
 from easyvec import Vec2, Mat2
 from scipy.optimize import minimize, Bounds, minimize_scalar, root_scalar
 from gym.spaces.box import Box
@@ -9,8 +11,8 @@ from gym.spaces.box import Box
 
 class DroneGym:
     @classmethod
-    def make(cls, name):
-        def drone_foo(**kwargs):
+    def make(cls, **kwargs):
+        def drone_foo():
             drone = Drone2d.get_DJI()
             d = drone.to_dict()
             if vel := kwargs.get('vel'):
@@ -31,12 +33,12 @@ class DroneGym:
             drone.from_dict(d)
             return drone
 
-        def pos0_pos_trg_foo(**kwargs):
+        def pos0_pos_trg_foo():
             pos0 = kwargs.get('pos0',       Vec2.random((-4000, 0),(4000, 2500)))
             pos_trg = kwargs.get('pos_trg', Vec2.random((-4000, 1000),(4000, 1500)))
             return pos0, pos_trg
 
-        def vel_trg_foo(**kwargs):
+        def vel_trg_foo():
             if vel_trg := kwargs.get('vel_trg'):
                 return vel_trg
             vel_trg_alpha = kwargs.get('vel_trg_alpha', np.random.uniform(-1, 1) * np.pi)
@@ -62,11 +64,11 @@ class DroneGym:
         self.vel_trg_foo = vel_trg_foo
         self.vel_trg = None
 
-        self.tau = kwargs.get('tau', 0.2)
-        self.n_4_step = kwargs.get('n_4_step', 10)
+        self.tau = kwargs.get('tau', 0.1)
+        self.n_4_step = kwargs.get('n_4_step', 8)
         self.vel_max = kwargs.get('vel_max', 33.0)
         self.omega_max = kwargs.get('omega_max', 23.0)
-        self.a_max = kwargs.get('a_max', 15.0)
+        self.a_max = kwargs.get('a_max', 7.0)
         self.trg_radius = kwargs.get('trg_radius', 13)
         self.xy_bounds = kwargs.get('xy_bounds', ((-5000, 5000), (-10, 3000)))
         self.obs_min = np.array(kwargs.get('obs_min', 
@@ -100,14 +102,14 @@ class DroneGym:
         self.drone.from_numpy(state)
         self.time_curr = self.drone.t
 
-    def reset(self, **kwargs):
-        self.drone = self.drone_foo(**kwargs)
-        self.pos0, self.pos_trg = self.pos0_pos_trg_foo(**kwargs)
+    def reset(self):
+        self.drone = self.drone_foo()
+        self.pos0, self.pos_trg = self.pos0_pos_trg_foo()
 
         self.pos0 = Vec2.from_list(self.pos0)
         self.pos_trg = Vec2.from_list(self.pos_trg)
 
-        self.vel_trg = Vec2.from_list(self.vel_trg_foo(**kwargs))
+        self.vel_trg = Vec2.from_list(self.vel_trg_foo())
 
         d = self.drone.to_dict()
         d['pos'] = self.pos0
@@ -184,7 +186,11 @@ class DroneGym:
                 drone_vel = self.drone.vel
                 dir_diff = -(drone_vel.norm() * self.vel_trg.norm() -1)  # 0 .. 2                
                 vel_diff = (self.vel_trg - drone_vel).len() / self.vel_trg.len() # 0 .. 2+
-                final_reward = 200 - 50*pos_diff - 100*dir_diff - 100*vel_diff
+
+                r_pos = 20 * (1-pos_diff)
+                r_dir = 20 * (2-dir_diff)
+                r_vel = 5 * (4 - vel_diff)
+                final_reward = r_pos + r_dir + r_vel
                 return True, final_reward, {
                     'result': 'success', 
                     'final_reward': final_reward, 
@@ -220,7 +226,8 @@ class DroneGym:
         self.time_curr = self.drone.t
         delta_t1 = self.get_delta_t()
 
-        reward = (delta_t0 - delta_t1)*30
+        reward = (delta_t0 - delta_t1)
+        
         
         if reward > 7:
             reward = 7
