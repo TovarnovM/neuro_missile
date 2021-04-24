@@ -6294,7 +6294,2271 @@ static PyObject *__pyx_pf_5drone_7Drone2d_5omega___get__(struct __pyx_obj_5drone
   goto __pyx_L0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">314</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">315</span>: </pre>
-<pre class="cython line score-22" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">316</span>: <span class="k">cpdef</span> <span class="kt">real</span> <span class="nf">test</span><span class="p">(</span><span class="nb">int</span> <span class="n">a</span><span class="p">):</span></pre>
+<pre class="cython line score-0">&#xA0;<span class="">316</span>: </pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">317</span>: <span class="k">cdef</span> <span class="k">class</span> <span class="nf">Missile2d</span><span class="p">:</span></pre>
+<pre class='cython code score-0 '>struct __pyx_obj_5drone_Missile2d {
+  PyObject_HEAD
+  struct __pyx_vtabstruct_5drone_Missile2d *__pyx_vtab;
+  double vel_len;
+  double ay;
+  double alpha;
+  __Pyx_memviewslice state;
+  __Pyx_memviewslice tmp1;
+  __Pyx_memviewslice tmp2;
+  __Pyx_memviewslice tmp3;
+  __Pyx_memviewslice tmp4;
+};
+/* … */
+struct __pyx_vtabstruct_5drone_Missile2d {
+  void (*fill_dy)(struct __pyx_obj_5drone_Missile2d *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  void (*step)(struct __pyx_obj_5drone_Missile2d *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch, struct __pyx_opt_args_5drone_9Missile2d_step *__pyx_optional_args);
+  PyObject *(*to_dict)(struct __pyx_obj_5drone_Missile2d *, int __pyx_skip_dispatch);
+  void (*from_dict)(struct __pyx_obj_5drone_Missile2d *, PyObject *, int __pyx_skip_dispatch);
+};
+static struct __pyx_vtabstruct_5drone_Missile2d *__pyx_vtabptr_5drone_Missile2d;
+
+</pre><pre class="cython line score-63" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">318</span>:     <span class="k">cdef</span> <span class="kr">public</span> <span class="kt">double</span> <span class="nf">vel_len</span><span class="p">,</span> <span class="nf">ay</span><span class="p">,</span> <span class="nf">alpha</span></pre>
+<pre class='cython code score-63 '>/* Python wrapper */
+static PyObject *__pyx_pw_5drone_9Missile2d_7vel_len_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_5drone_9Missile2d_7vel_len_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_9Missile2d_7vel_len___get__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self));
+
+  /* function exit code */
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5drone_9Missile2d_7vel_len___get__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__get__", 0);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
+  __pyx_t_1 = <span class='py_c_api'>PyFloat_FromDouble</span>(__pyx_v_self-&gt;vel_len);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 318, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_1);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.vel_len.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_XGIVEREF</span>(__pyx_r);
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static int __pyx_pw_5drone_9Missile2d_7vel_len_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_5drone_9Missile2d_7vel_len_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+  int __pyx_r;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__set__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_9Missile2d_7vel_len_2__set__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self), ((PyObject *)__pyx_v_value));
+
+  /* function exit code */
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static int __pyx_pf_5drone_9Missile2d_7vel_len_2__set__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v_value) {
+  int __pyx_r;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__set__", 0);
+  __pyx_t_1 = __pyx_<span class='py_c_api'>PyFloat_AsDouble</span>(__pyx_v_value); if (unlikely((__pyx_t_1 == (double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 318, __pyx_L1_error)</span>
+  __pyx_v_self-&gt;vel_len = __pyx_t_1;
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.vel_len.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5drone_9Missile2d_2ay_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_5drone_9Missile2d_2ay_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_9Missile2d_2ay___get__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self));
+
+  /* function exit code */
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5drone_9Missile2d_2ay___get__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__get__", 0);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
+  __pyx_t_1 = <span class='py_c_api'>PyFloat_FromDouble</span>(__pyx_v_self-&gt;ay);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 318, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_1);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.ay.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_XGIVEREF</span>(__pyx_r);
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static int __pyx_pw_5drone_9Missile2d_2ay_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_5drone_9Missile2d_2ay_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+  int __pyx_r;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__set__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_9Missile2d_2ay_2__set__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self), ((PyObject *)__pyx_v_value));
+
+  /* function exit code */
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static int __pyx_pf_5drone_9Missile2d_2ay_2__set__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v_value) {
+  int __pyx_r;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__set__", 0);
+  __pyx_t_1 = __pyx_<span class='py_c_api'>PyFloat_AsDouble</span>(__pyx_v_value); if (unlikely((__pyx_t_1 == (double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 318, __pyx_L1_error)</span>
+  __pyx_v_self-&gt;ay = __pyx_t_1;
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.ay.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5drone_9Missile2d_5alpha_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_5drone_9Missile2d_5alpha_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_9Missile2d_5alpha___get__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self));
+
+  /* function exit code */
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5drone_9Missile2d_5alpha___get__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__get__", 0);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
+  __pyx_t_1 = <span class='py_c_api'>PyFloat_FromDouble</span>(__pyx_v_self-&gt;alpha);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 318, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_1);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.alpha.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_XGIVEREF</span>(__pyx_r);
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static int __pyx_pw_5drone_9Missile2d_5alpha_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_5drone_9Missile2d_5alpha_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+  int __pyx_r;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__set__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_9Missile2d_5alpha_2__set__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self), ((PyObject *)__pyx_v_value));
+
+  /* function exit code */
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static int __pyx_pf_5drone_9Missile2d_5alpha_2__set__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v_value) {
+  int __pyx_r;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__set__", 0);
+  __pyx_t_1 = __pyx_<span class='py_c_api'>PyFloat_AsDouble</span>(__pyx_v_value); if (unlikely((__pyx_t_1 == (double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 318, __pyx_L1_error)</span>
+  __pyx_v_self-&gt;alpha = __pyx_t_1;
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.alpha.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+</pre><pre class="cython line score-40" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">319</span>:     <span class="k">cdef</span> <span class="kr">public</span> <span class="kt">double</span>[<span class="p">:]</span> <span class="n">state</span><span class="p">,</span> <span class="n">tmp1</span><span class="p">,</span> <span class="n">tmp2</span><span class="p">,</span> <span class="n">tmp3</span><span class="p">,</span> <span class="n">tmp4</span></pre>
+<pre class='cython code score-40 '>/* Python wrapper */
+static PyObject *__pyx_pw_5drone_9Missile2d_5state_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_5drone_9Missile2d_5state_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_9Missile2d_5state___get__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self));
+
+  /* function exit code */
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5drone_9Missile2d_5state___get__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__get__", 0);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
+  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_self-&gt;state, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);;<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 319, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_1);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.state.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_XGIVEREF</span>(__pyx_r);
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static int __pyx_pw_5drone_9Missile2d_5state_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_5drone_9Missile2d_5state_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+  int __pyx_r;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__set__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_9Missile2d_5state_2__set__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self), ((PyObject *)__pyx_v_value));
+
+  /* function exit code */
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static int __pyx_pf_5drone_9Missile2d_5state_2__set__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v_value) {
+  int __pyx_r;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__set__", 0);
+  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyObject_to_MemoryviewSlice_ds_double</span>(__pyx_v_value, PyBUF_WRITABLE);<span class='error_goto'> if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 319, __pyx_L1_error)</span>
+  __PYX_XDEC_MEMVIEW(&amp;__pyx_v_self-&gt;state, 0);
+  __pyx_v_self-&gt;state = __pyx_t_1;
+  __pyx_t_1.memview = NULL;
+  __pyx_t_1.data = NULL;
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __PYX_XDEC_MEMVIEW(&amp;__pyx_t_1, 1);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.state.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5drone_9Missile2d_4tmp1_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_5drone_9Missile2d_4tmp1_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_9Missile2d_4tmp1___get__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self));
+
+  /* function exit code */
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5drone_9Missile2d_4tmp1___get__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__get__", 0);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
+  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_self-&gt;tmp1, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);;<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 319, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_1);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.tmp1.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_XGIVEREF</span>(__pyx_r);
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static int __pyx_pw_5drone_9Missile2d_4tmp1_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_5drone_9Missile2d_4tmp1_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+  int __pyx_r;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__set__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_9Missile2d_4tmp1_2__set__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self), ((PyObject *)__pyx_v_value));
+
+  /* function exit code */
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static int __pyx_pf_5drone_9Missile2d_4tmp1_2__set__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v_value) {
+  int __pyx_r;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__set__", 0);
+  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyObject_to_MemoryviewSlice_ds_double</span>(__pyx_v_value, PyBUF_WRITABLE);<span class='error_goto'> if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 319, __pyx_L1_error)</span>
+  __PYX_XDEC_MEMVIEW(&amp;__pyx_v_self-&gt;tmp1, 0);
+  __pyx_v_self-&gt;tmp1 = __pyx_t_1;
+  __pyx_t_1.memview = NULL;
+  __pyx_t_1.data = NULL;
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __PYX_XDEC_MEMVIEW(&amp;__pyx_t_1, 1);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.tmp1.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5drone_9Missile2d_4tmp2_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_5drone_9Missile2d_4tmp2_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_9Missile2d_4tmp2___get__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self));
+
+  /* function exit code */
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5drone_9Missile2d_4tmp2___get__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__get__", 0);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
+  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_self-&gt;tmp2, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);;<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 319, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_1);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.tmp2.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_XGIVEREF</span>(__pyx_r);
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static int __pyx_pw_5drone_9Missile2d_4tmp2_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_5drone_9Missile2d_4tmp2_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+  int __pyx_r;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__set__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_9Missile2d_4tmp2_2__set__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self), ((PyObject *)__pyx_v_value));
+
+  /* function exit code */
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static int __pyx_pf_5drone_9Missile2d_4tmp2_2__set__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v_value) {
+  int __pyx_r;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__set__", 0);
+  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyObject_to_MemoryviewSlice_ds_double</span>(__pyx_v_value, PyBUF_WRITABLE);<span class='error_goto'> if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 319, __pyx_L1_error)</span>
+  __PYX_XDEC_MEMVIEW(&amp;__pyx_v_self-&gt;tmp2, 0);
+  __pyx_v_self-&gt;tmp2 = __pyx_t_1;
+  __pyx_t_1.memview = NULL;
+  __pyx_t_1.data = NULL;
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __PYX_XDEC_MEMVIEW(&amp;__pyx_t_1, 1);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.tmp2.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5drone_9Missile2d_4tmp3_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_5drone_9Missile2d_4tmp3_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_9Missile2d_4tmp3___get__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self));
+
+  /* function exit code */
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5drone_9Missile2d_4tmp3___get__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__get__", 0);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
+  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_self-&gt;tmp3, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);;<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 319, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_1);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.tmp3.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_XGIVEREF</span>(__pyx_r);
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static int __pyx_pw_5drone_9Missile2d_4tmp3_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_5drone_9Missile2d_4tmp3_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+  int __pyx_r;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__set__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_9Missile2d_4tmp3_2__set__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self), ((PyObject *)__pyx_v_value));
+
+  /* function exit code */
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static int __pyx_pf_5drone_9Missile2d_4tmp3_2__set__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v_value) {
+  int __pyx_r;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__set__", 0);
+  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyObject_to_MemoryviewSlice_ds_double</span>(__pyx_v_value, PyBUF_WRITABLE);<span class='error_goto'> if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 319, __pyx_L1_error)</span>
+  __PYX_XDEC_MEMVIEW(&amp;__pyx_v_self-&gt;tmp3, 0);
+  __pyx_v_self-&gt;tmp3 = __pyx_t_1;
+  __pyx_t_1.memview = NULL;
+  __pyx_t_1.data = NULL;
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __PYX_XDEC_MEMVIEW(&amp;__pyx_t_1, 1);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.tmp3.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5drone_9Missile2d_4tmp4_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_5drone_9Missile2d_4tmp4_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_9Missile2d_4tmp4___get__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self));
+
+  /* function exit code */
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5drone_9Missile2d_4tmp4___get__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__get__", 0);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
+  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_self-&gt;tmp4, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);;<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 319, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_1);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.tmp4.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_XGIVEREF</span>(__pyx_r);
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static int __pyx_pw_5drone_9Missile2d_4tmp4_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_5drone_9Missile2d_4tmp4_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+  int __pyx_r;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__set__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_9Missile2d_4tmp4_2__set__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self), ((PyObject *)__pyx_v_value));
+
+  /* function exit code */
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static int __pyx_pf_5drone_9Missile2d_4tmp4_2__set__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v_value) {
+  int __pyx_r;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__set__", 0);
+  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyObject_to_MemoryviewSlice_ds_double</span>(__pyx_v_value, PyBUF_WRITABLE);<span class='error_goto'> if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 319, __pyx_L1_error)</span>
+  __PYX_XDEC_MEMVIEW(&amp;__pyx_v_self-&gt;tmp4, 0);
+  __pyx_v_self-&gt;tmp4 = __pyx_t_1;
+  __pyx_t_1.memview = NULL;
+  __pyx_t_1.data = NULL;
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __PYX_XDEC_MEMVIEW(&amp;__pyx_t_1, 1);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.tmp4.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+</pre><pre class="cython line score-0">&#xA0;<span class="">320</span>:     <span class="c"># [0, 1, 2,     3]</span></pre>
+<pre class="cython line score-0">&#xA0;<span class="">321</span>:     <span class="c"># [x, y, theta, t]</span></pre>
+<pre class="cython line score-0">&#xA0;<span class="">322</span>: </pre>
+<pre class="cython line score-36" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">323</span>:     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vel_len</span><span class="p">,</span> <span class="n">ay</span><span class="p">,</span> <span class="n">alpha</span><span class="p">):</span></pre>
+<pre class='cython code score-36 '>/* Python wrapper */
+static int __pyx_pw_5drone_9Missile2d_1__init__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_5drone_9Missile2d_1__init__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_vel_len = 0;
+  PyObject *__pyx_v_ay = 0;
+  PyObject *__pyx_v_alpha = 0;
+  int __pyx_r;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__init__ (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&amp;__pyx_n_s_vel_len,&amp;__pyx_n_s_ay,&amp;__pyx_n_s_alpha,0};
+    PyObject* values[3] = {0,0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = <span class='py_macro_api'>PyTuple_GET_SIZE</span>(__pyx_args);
+      switch (pos_args) {
+        case  3: values[2] = <span class='py_macro_api'>PyTuple_GET_ITEM</span>(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
+        case  2: values[1] = <span class='py_macro_api'>PyTuple_GET_ITEM</span>(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = <span class='py_macro_api'>PyTuple_GET_ITEM</span>(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = <span class='py_c_api'>PyDict_Size</span>(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = <span class='pyx_c_api'>__Pyx_PyDict_GetItemStr</span>(__pyx_kwds, __pyx_n_s_vel_len)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = <span class='pyx_c_api'>__Pyx_PyDict_GetItemStr</span>(__pyx_kwds, __pyx_n_s_ay)) != 0)) kw_args--;
+        else {
+          <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("__init__", 1, 3, 3, 1); <span class='error_goto'>__PYX_ERR(0, 323, __pyx_L3_error)</span>
+        }
+        CYTHON_FALLTHROUGH;
+        case  2:
+        if (likely((values[2] = <span class='pyx_c_api'>__Pyx_PyDict_GetItemStr</span>(__pyx_kwds, __pyx_n_s_alpha)) != 0)) kw_args--;
+        else {
+          <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("__init__", 1, 3, 3, 2); <span class='error_goto'>__PYX_ERR(0, 323, __pyx_L3_error)</span>
+        }
+      }
+      if (unlikely(kw_args &gt; 0)) {
+        if (unlikely(<span class='pyx_c_api'>__Pyx_ParseOptionalKeywords</span>(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 323, __pyx_L3_error)</span>
+      }
+    } else if (<span class='py_macro_api'>PyTuple_GET_SIZE</span>(__pyx_args) != 3) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = <span class='py_macro_api'>PyTuple_GET_ITEM</span>(__pyx_args, 0);
+      values[1] = <span class='py_macro_api'>PyTuple_GET_ITEM</span>(__pyx_args, 1);
+      values[2] = <span class='py_macro_api'>PyTuple_GET_ITEM</span>(__pyx_args, 2);
+    }
+    __pyx_v_vel_len = values[0];
+    __pyx_v_ay = values[1];
+    __pyx_v_alpha = values[2];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("__init__", 1, 3, 3, <span class='py_macro_api'>PyTuple_GET_SIZE</span>(__pyx_args)); <span class='error_goto'>__PYX_ERR(0, 323, __pyx_L3_error)</span>
+  __pyx_L3_error:;
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5drone_9Missile2d___init__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self), __pyx_v_vel_len, __pyx_v_ay, __pyx_v_alpha);
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+
+  /* function exit code */
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static int __pyx_pf_5drone_9Missile2d___init__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v_vel_len, PyObject *__pyx_v_ay, PyObject *__pyx_v_alpha) {
+  long __pyx_v_n;
+  int __pyx_r;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__init__", 0);
+/* … */
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_2);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_3);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_4);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_5);
+  __PYX_XDEC_MEMVIEW(&amp;__pyx_t_6, 1);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+</pre><pre class="cython line score-10" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">324</span>:         <span class="bp">self</span><span class="o">.</span><span class="n">vel_len</span> <span class="o">=</span> <span class="n">vel_len</span></pre>
+<pre class='cython code score-10 '>  __pyx_t_1 = __pyx_<span class='py_c_api'>PyFloat_AsDouble</span>(__pyx_v_vel_len); if (unlikely((__pyx_t_1 == (double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 324, __pyx_L1_error)</span>
+  __pyx_v_self-&gt;vel_len = __pyx_t_1;
+</pre><pre class="cython line score-10" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">325</span>:         <span class="bp">self</span><span class="o">.</span><span class="n">ay</span> <span class="o">=</span> <span class="n">ay</span></pre>
+<pre class='cython code score-10 '>  __pyx_t_1 = __pyx_<span class='py_c_api'>PyFloat_AsDouble</span>(__pyx_v_ay); if (unlikely((__pyx_t_1 == (double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 325, __pyx_L1_error)</span>
+  __pyx_v_self-&gt;ay = __pyx_t_1;
+</pre><pre class="cython line score-10" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">326</span>:         <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha</span></pre>
+<pre class='cython code score-10 '>  __pyx_t_1 = __pyx_<span class='py_c_api'>PyFloat_AsDouble</span>(__pyx_v_alpha); if (unlikely((__pyx_t_1 == (double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 326, __pyx_L1_error)</span>
+  __pyx_v_self-&gt;alpha = __pyx_t_1;
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">327</span>:         <span class="n">n</span> <span class="o">=</span> <span class="mf">4</span></pre>
+<pre class='cython code score-0 '>  __pyx_v_n = 4;
+</pre><pre class="cython line score-25" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">328</span>:         <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span></pre>
+<pre class='cython code score-25 '>  <span class='pyx_c_api'>__Pyx_GetModuleGlobalName</span>(__pyx_t_3, __pyx_n_s_np);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 328, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
+  __pyx_t_4 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(__pyx_t_3, __pyx_n_s_zeros);<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 328, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_4);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = <span class='pyx_c_api'>__Pyx_PyInt_From_long</span>(__pyx_v_n);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 328, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
+  __pyx_t_5 = NULL;
+  if (CYTHON_UNPACK_METHODS &amp;&amp; unlikely(<span class='py_c_api'>PyMethod_Check</span>(__pyx_t_4))) {
+    __pyx_t_5 = <span class='py_macro_api'>PyMethod_GET_SELF</span>(__pyx_t_4);
+    if (likely(__pyx_t_5)) {
+      PyObject* function = <span class='py_macro_api'>PyMethod_GET_FUNCTION</span>(__pyx_t_4);
+      <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_5);
+      <span class='pyx_macro_api'>__Pyx_INCREF</span>(function);
+      <span class='pyx_macro_api'>__Pyx_DECREF_SET</span>(__pyx_t_4, function);
+    }
+  }
+  __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_t_3) : <span class='pyx_c_api'>__Pyx_PyObject_CallOneArg</span>(__pyx_t_4, __pyx_t_3);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
+  if (unlikely(!__pyx_t_2)) <span class='error_goto'>__PYX_ERR(0, 328, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_6 = <span class='pyx_c_api'>__Pyx_PyObject_to_MemoryviewSlice_ds_double</span>(__pyx_t_2, PyBUF_WRITABLE);<span class='error_goto'> if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 328, __pyx_L1_error)</span>
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+  __PYX_XDEC_MEMVIEW(&amp;__pyx_v_self-&gt;state, 0);
+  __pyx_v_self-&gt;state = __pyx_t_6;
+  __pyx_t_6.memview = NULL;
+  __pyx_t_6.data = NULL;
+</pre><pre class="cython line score-25" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">329</span>:         <span class="bp">self</span><span class="o">.</span><span class="n">tmp1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span></pre>
+<pre class='cython code score-25 '>  <span class='pyx_c_api'>__Pyx_GetModuleGlobalName</span>(__pyx_t_4, __pyx_n_s_np);<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 329, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_4);
+  __pyx_t_3 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(__pyx_t_4, __pyx_n_s_zeros);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 329, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_4 = <span class='pyx_c_api'>__Pyx_PyInt_From_long</span>(__pyx_v_n);<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 329, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_4);
+  __pyx_t_5 = NULL;
+  if (CYTHON_UNPACK_METHODS &amp;&amp; unlikely(<span class='py_c_api'>PyMethod_Check</span>(__pyx_t_3))) {
+    __pyx_t_5 = <span class='py_macro_api'>PyMethod_GET_SELF</span>(__pyx_t_3);
+    if (likely(__pyx_t_5)) {
+      PyObject* function = <span class='py_macro_api'>PyMethod_GET_FUNCTION</span>(__pyx_t_3);
+      <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_5);
+      <span class='pyx_macro_api'>__Pyx_INCREF</span>(function);
+      <span class='pyx_macro_api'>__Pyx_DECREF_SET</span>(__pyx_t_3, function);
+    }
+  }
+  __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_5, __pyx_t_4) : <span class='pyx_c_api'>__Pyx_PyObject_CallOneArg</span>(__pyx_t_3, __pyx_t_4);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_4); __pyx_t_4 = 0;
+  if (unlikely(!__pyx_t_2)) <span class='error_goto'>__PYX_ERR(0, 329, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_6 = <span class='pyx_c_api'>__Pyx_PyObject_to_MemoryviewSlice_ds_double</span>(__pyx_t_2, PyBUF_WRITABLE);<span class='error_goto'> if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 329, __pyx_L1_error)</span>
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+  __PYX_XDEC_MEMVIEW(&amp;__pyx_v_self-&gt;tmp1, 0);
+  __pyx_v_self-&gt;tmp1 = __pyx_t_6;
+  __pyx_t_6.memview = NULL;
+  __pyx_t_6.data = NULL;
+</pre><pre class="cython line score-25" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">330</span>:         <span class="bp">self</span><span class="o">.</span><span class="n">tmp2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span></pre>
+<pre class='cython code score-25 '>  <span class='pyx_c_api'>__Pyx_GetModuleGlobalName</span>(__pyx_t_3, __pyx_n_s_np);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 330, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
+  __pyx_t_4 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(__pyx_t_3, __pyx_n_s_zeros);<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 330, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_4);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = <span class='pyx_c_api'>__Pyx_PyInt_From_long</span>(__pyx_v_n);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 330, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
+  __pyx_t_5 = NULL;
+  if (CYTHON_UNPACK_METHODS &amp;&amp; unlikely(<span class='py_c_api'>PyMethod_Check</span>(__pyx_t_4))) {
+    __pyx_t_5 = <span class='py_macro_api'>PyMethod_GET_SELF</span>(__pyx_t_4);
+    if (likely(__pyx_t_5)) {
+      PyObject* function = <span class='py_macro_api'>PyMethod_GET_FUNCTION</span>(__pyx_t_4);
+      <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_5);
+      <span class='pyx_macro_api'>__Pyx_INCREF</span>(function);
+      <span class='pyx_macro_api'>__Pyx_DECREF_SET</span>(__pyx_t_4, function);
+    }
+  }
+  __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_t_3) : <span class='pyx_c_api'>__Pyx_PyObject_CallOneArg</span>(__pyx_t_4, __pyx_t_3);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
+  if (unlikely(!__pyx_t_2)) <span class='error_goto'>__PYX_ERR(0, 330, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_6 = <span class='pyx_c_api'>__Pyx_PyObject_to_MemoryviewSlice_ds_double</span>(__pyx_t_2, PyBUF_WRITABLE);<span class='error_goto'> if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 330, __pyx_L1_error)</span>
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+  __PYX_XDEC_MEMVIEW(&amp;__pyx_v_self-&gt;tmp2, 0);
+  __pyx_v_self-&gt;tmp2 = __pyx_t_6;
+  __pyx_t_6.memview = NULL;
+  __pyx_t_6.data = NULL;
+</pre><pre class="cython line score-25" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">331</span>:         <span class="bp">self</span><span class="o">.</span><span class="n">tmp3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span></pre>
+<pre class='cython code score-25 '>  <span class='pyx_c_api'>__Pyx_GetModuleGlobalName</span>(__pyx_t_4, __pyx_n_s_np);<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 331, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_4);
+  __pyx_t_3 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(__pyx_t_4, __pyx_n_s_zeros);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 331, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_4 = <span class='pyx_c_api'>__Pyx_PyInt_From_long</span>(__pyx_v_n);<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 331, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_4);
+  __pyx_t_5 = NULL;
+  if (CYTHON_UNPACK_METHODS &amp;&amp; unlikely(<span class='py_c_api'>PyMethod_Check</span>(__pyx_t_3))) {
+    __pyx_t_5 = <span class='py_macro_api'>PyMethod_GET_SELF</span>(__pyx_t_3);
+    if (likely(__pyx_t_5)) {
+      PyObject* function = <span class='py_macro_api'>PyMethod_GET_FUNCTION</span>(__pyx_t_3);
+      <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_5);
+      <span class='pyx_macro_api'>__Pyx_INCREF</span>(function);
+      <span class='pyx_macro_api'>__Pyx_DECREF_SET</span>(__pyx_t_3, function);
+    }
+  }
+  __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_5, __pyx_t_4) : <span class='pyx_c_api'>__Pyx_PyObject_CallOneArg</span>(__pyx_t_3, __pyx_t_4);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_4); __pyx_t_4 = 0;
+  if (unlikely(!__pyx_t_2)) <span class='error_goto'>__PYX_ERR(0, 331, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_6 = <span class='pyx_c_api'>__Pyx_PyObject_to_MemoryviewSlice_ds_double</span>(__pyx_t_2, PyBUF_WRITABLE);<span class='error_goto'> if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 331, __pyx_L1_error)</span>
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+  __PYX_XDEC_MEMVIEW(&amp;__pyx_v_self-&gt;tmp3, 0);
+  __pyx_v_self-&gt;tmp3 = __pyx_t_6;
+  __pyx_t_6.memview = NULL;
+  __pyx_t_6.data = NULL;
+</pre><pre class="cython line score-25" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">332</span>:         <span class="bp">self</span><span class="o">.</span><span class="n">tmp4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span></pre>
+<pre class='cython code score-25 '>  <span class='pyx_c_api'>__Pyx_GetModuleGlobalName</span>(__pyx_t_3, __pyx_n_s_np);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 332, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
+  __pyx_t_4 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(__pyx_t_3, __pyx_n_s_zeros);<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 332, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_4);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = <span class='pyx_c_api'>__Pyx_PyInt_From_long</span>(__pyx_v_n);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 332, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
+  __pyx_t_5 = NULL;
+  if (CYTHON_UNPACK_METHODS &amp;&amp; unlikely(<span class='py_c_api'>PyMethod_Check</span>(__pyx_t_4))) {
+    __pyx_t_5 = <span class='py_macro_api'>PyMethod_GET_SELF</span>(__pyx_t_4);
+    if (likely(__pyx_t_5)) {
+      PyObject* function = <span class='py_macro_api'>PyMethod_GET_FUNCTION</span>(__pyx_t_4);
+      <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_5);
+      <span class='pyx_macro_api'>__Pyx_INCREF</span>(function);
+      <span class='pyx_macro_api'>__Pyx_DECREF_SET</span>(__pyx_t_4, function);
+    }
+  }
+  __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_t_3) : <span class='pyx_c_api'>__Pyx_PyObject_CallOneArg</span>(__pyx_t_4, __pyx_t_3);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
+  if (unlikely(!__pyx_t_2)) <span class='error_goto'>__PYX_ERR(0, 332, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_6 = <span class='pyx_c_api'>__Pyx_PyObject_to_MemoryviewSlice_ds_double</span>(__pyx_t_2, PyBUF_WRITABLE);<span class='error_goto'> if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 332, __pyx_L1_error)</span>
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+  __PYX_XDEC_MEMVIEW(&amp;__pyx_v_self-&gt;tmp4, 0);
+  __pyx_v_self-&gt;tmp4 = __pyx_t_6;
+  __pyx_t_6.memview = NULL;
+  __pyx_t_6.data = NULL;
+</pre><pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">333</span>:         <span class="bp">self</span><span class="o">.</span><span class="n">t</span> <span class="o">=</span> <span class="mf">0</span></pre>
+<pre class='cython code score-2 '>  if (<span class='pyx_c_api'>__Pyx_PyObject_SetAttrStr</span>(((PyObject *)__pyx_v_self), __pyx_n_s_t, __pyx_int_0) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 333, __pyx_L1_error)</span>
+</pre><pre class="cython line score-0">&#xA0;<span class="">334</span>: </pre>
+<pre class="cython line score-87" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">335</span>:     <span class="k">cpdef</span> <span class="kt">void</span> <span class="nf">fill_dy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Vec2</span> <span class="n">aim</span><span class="p">,</span> <span class="n">double</span><span class="p">[:]</span> <span class="n">dy</span><span class="p">):</span></pre>
+<pre class='cython code score-87 '>static PyObject *__pyx_pw_5drone_9Missile2d_3fill_dy(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static void __pyx_f_5drone_9Missile2d_fill_dy(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_aim, __Pyx_memviewslice __pyx_v_dy, int __pyx_skip_dispatch) {
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_pos = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_vel = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_r_vis = 0;
+  double __pyx_v_angle;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("fill_dy", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely((Py_TYPE(((PyObject *)__pyx_v_self))-&gt;tp_dictoffset != 0) || (Py_TYPE(((PyObject *)__pyx_v_self))-&gt;tp_flags &amp; (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))) {
+    #if CYTHON_USE_DICT_VERSIONS &amp;&amp; CYTHON_USE_PYTYPE_LOOKUP &amp;&amp; CYTHON_USE_TYPE_SLOTS
+    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
+      PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      #endif
+      __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(((PyObject *)__pyx_v_self), __pyx_n_s_fill_dy);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 335, __pyx_L1_error)</span>
+      <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_5drone_9Missile2d_3fill_dy)) {
+        __pyx_t_3 = __pyx_memoryview_fromslice(__pyx_v_dy, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);;<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 335, __pyx_L1_error)</span>
+        <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
+        <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_1);
+        __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
+        __pyx_t_6 = 0;
+        if (CYTHON_UNPACK_METHODS &amp;&amp; unlikely(<span class='py_c_api'>PyMethod_Check</span>(__pyx_t_4))) {
+          __pyx_t_5 = <span class='py_macro_api'>PyMethod_GET_SELF</span>(__pyx_t_4);
+          if (likely(__pyx_t_5)) {
+            PyObject* function = <span class='py_macro_api'>PyMethod_GET_FUNCTION</span>(__pyx_t_4);
+            <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_5);
+            <span class='pyx_macro_api'>__Pyx_INCREF</span>(function);
+            <span class='pyx_macro_api'>__Pyx_DECREF_SET</span>(__pyx_t_4, function);
+            __pyx_t_6 = 1;
+          }
+        }
+        #if CYTHON_FAST_PYCALL
+        if (<span class='py_c_api'>PyFunction_Check</span>(__pyx_t_4)) {
+          PyObject *__pyx_temp[3] = {__pyx_t_5, ((PyObject *)__pyx_v_aim), __pyx_t_3};
+          __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyFunction_FastCall</span>(__pyx_t_4, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 335, __pyx_L1_error)</span>
+          <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
+          <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+          <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
+        } else
+        #endif
+        #if CYTHON_FAST_PYCCALL
+        if (<span class='pyx_c_api'>__Pyx_PyFastCFunction_Check</span>(__pyx_t_4)) {
+          PyObject *__pyx_temp[3] = {__pyx_t_5, ((PyObject *)__pyx_v_aim), __pyx_t_3};
+          __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyCFunction_FastCall</span>(__pyx_t_4, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 335, __pyx_L1_error)</span>
+          <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
+          <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+          <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
+        } else
+        #endif
+        {
+          __pyx_t_7 = <span class='py_c_api'>PyTuple_New</span>(2+__pyx_t_6);<span class='error_goto'> if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 335, __pyx_L1_error)</span>
+          <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_7);
+          if (__pyx_t_5) {
+            <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_5); <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_7, 0, __pyx_t_5); __pyx_t_5 = NULL;
+          }
+          <span class='pyx_macro_api'>__Pyx_INCREF</span>(((PyObject *)__pyx_v_aim));
+          <span class='refnanny'>__Pyx_GIVEREF</span>(((PyObject *)__pyx_v_aim));
+          <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_7, 0+__pyx_t_6, ((PyObject *)__pyx_v_aim));
+          <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_3);
+          <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_7, 1+__pyx_t_6, __pyx_t_3);
+          __pyx_t_3 = 0;
+          __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyObject_Call</span>(__pyx_t_4, __pyx_t_7, NULL);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 335, __pyx_L1_error)</span>
+          <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+          <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_7); __pyx_t_7 = 0;
+        }
+        <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_4); __pyx_t_4 = 0;
+        <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+        <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
+        goto __pyx_L0;
+      }
+      #if CYTHON_USE_DICT_VERSIONS &amp;&amp; CYTHON_USE_PYTYPE_LOOKUP &amp;&amp; CYTHON_USE_TYPE_SLOTS
+      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
+      if (unlikely(__pyx_type_dict_guard != __pyx_tp_dict_version)) {
+        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+      }
+      #endif
+      <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
+      #if CYTHON_USE_DICT_VERSIONS &amp;&amp; CYTHON_USE_PYTYPE_LOOKUP &amp;&amp; CYTHON_USE_TYPE_SLOTS
+    }
+    #endif
+  }
+/* … */
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_1);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_2);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_3);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_4);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_5);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_7);
+  <span class='pyx_c_api'>__Pyx_WriteUnraisable</span>("drone.Missile2d.fill_dy", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 0);
+  __pyx_L0:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>((PyObject *)__pyx_v_pos);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>((PyObject *)__pyx_v_vel);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>((PyObject *)__pyx_v_r_vis);
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5drone_9Missile2d_3fill_dy(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_5drone_9Missile2d_2fill_dy[] = "Missile2d.fill_dy(self, Vec2 aim, double[:] dy) -&gt; void";
+static PyObject *__pyx_pw_5drone_9Missile2d_3fill_dy(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_aim = 0;
+  __Pyx_memviewslice __pyx_v_dy = { 0, 0, { 0 }, { 0 }, { 0 } };
+  PyObject *__pyx_r = 0;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("fill_dy (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&amp;__pyx_n_s_aim,&amp;__pyx_n_s_dy,0};
+    PyObject* values[2] = {0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = <span class='py_macro_api'>PyTuple_GET_SIZE</span>(__pyx_args);
+      switch (pos_args) {
+        case  2: values[1] = <span class='py_macro_api'>PyTuple_GET_ITEM</span>(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = <span class='py_macro_api'>PyTuple_GET_ITEM</span>(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = <span class='py_c_api'>PyDict_Size</span>(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = <span class='pyx_c_api'>__Pyx_PyDict_GetItemStr</span>(__pyx_kwds, __pyx_n_s_aim)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = <span class='pyx_c_api'>__Pyx_PyDict_GetItemStr</span>(__pyx_kwds, __pyx_n_s_dy)) != 0)) kw_args--;
+        else {
+          <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("fill_dy", 1, 2, 2, 1); <span class='error_goto'>__PYX_ERR(0, 335, __pyx_L3_error)</span>
+        }
+      }
+      if (unlikely(kw_args &gt; 0)) {
+        if (unlikely(<span class='pyx_c_api'>__Pyx_ParseOptionalKeywords</span>(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "fill_dy") &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 335, __pyx_L3_error)</span>
+      }
+    } else if (<span class='py_macro_api'>PyTuple_GET_SIZE</span>(__pyx_args) != 2) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = <span class='py_macro_api'>PyTuple_GET_ITEM</span>(__pyx_args, 0);
+      values[1] = <span class='py_macro_api'>PyTuple_GET_ITEM</span>(__pyx_args, 1);
+    }
+    __pyx_v_aim = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[0]);
+    __pyx_v_dy = <span class='pyx_c_api'>__Pyx_PyObject_to_MemoryviewSlice_ds_double</span>(values[1], PyBUF_WRITABLE);<span class='error_goto'> if (unlikely(!__pyx_v_dy.memview)) __PYX_ERR(0, 335, __pyx_L3_error)</span>
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("fill_dy", 1, 2, 2, <span class='py_macro_api'>PyTuple_GET_SIZE</span>(__pyx_args)); <span class='error_goto'>__PYX_ERR(0, 335, __pyx_L3_error)</span>
+  __pyx_L3_error:;
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.fill_dy", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_aim), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "aim", 0))) <span class='error_goto'>__PYX_ERR(0, 335, __pyx_L1_error)</span>
+  __pyx_r = __pyx_pf_5drone_9Missile2d_2fill_dy(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self), __pyx_v_aim, __pyx_v_dy);
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = NULL;
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5drone_9Missile2d_2fill_dy(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_aim, __Pyx_memviewslice __pyx_v_dy) {
+  PyObject *__pyx_r = NULL;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("fill_dy", 0);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
+  __pyx_t_1 = __Pyx_void_to_None(__pyx_f_5drone_9Missile2d_fill_dy(__pyx_v_self, __pyx_v_aim, __pyx_v_dy, 1));<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 335, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_1);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.fill_dy", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __PYX_XDEC_MEMVIEW(&amp;__pyx_v_dy, 1);
+  <span class='refnanny'>__Pyx_XGIVEREF</span>(__pyx_r);
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+</pre><pre class="cython line score-20" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">336</span>:         <span class="k">cdef</span> <span class="kt">Vec2</span> <span class="nf">pos</span> <span class="o">=</span> <span class="n">Vec2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="mf">1</span><span class="p">])</span></pre>
+<pre class='cython code score-20 '>  __pyx_t_8 = 0;
+  __pyx_t_1 = <span class='py_c_api'>PyFloat_FromDouble</span>((*((double *) ( /* dim=0 */ (__pyx_v_self-&gt;state.data + __pyx_t_8 * __pyx_v_self-&gt;state.strides[0]) ))));<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 336, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  __pyx_t_8 = 1;
+  __pyx_t_2 = <span class='py_c_api'>PyFloat_FromDouble</span>((*((double *) ( /* dim=0 */ (__pyx_v_self-&gt;state.data + __pyx_t_8 * __pyx_v_self-&gt;state.strides[0]) ))));<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 336, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+  __pyx_t_4 = <span class='py_c_api'>PyTuple_New</span>(2);<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 336, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_4);
+  <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_1);
+  <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_4, 0, __pyx_t_1);
+  <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_2);
+  <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_4, 1, __pyx_t_2);
+  __pyx_t_1 = 0;
+  __pyx_t_2 = 0;
+  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyObject_Call</span>(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_4, NULL);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 336, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_v_pos = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2);
+  __pyx_t_2 = 0;
+</pre><pre class="cython line score-17" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">337</span>:         <span class="k">cdef</span> <span class="kt">Vec2</span> <span class="nf">vel</span> <span class="o">=</span> <span class="n">Vec2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vel_len</span><span class="p">,</span> <span class="mf">0</span><span class="p">)</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="mf">2</span><span class="p">])</span></pre>
+<pre class='cython code score-17 '>  __pyx_t_2 = <span class='py_c_api'>PyFloat_FromDouble</span>(__pyx_v_self-&gt;vel_len);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 337, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+  __pyx_t_4 = <span class='py_c_api'>PyTuple_New</span>(2);<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 337, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_4);
+  <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_2);
+  <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_4, 0, __pyx_t_2);
+  <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_int_0);
+  <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_int_0);
+  <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_4, 1, __pyx_int_0);
+  __pyx_t_2 = 0;
+  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyObject_Call</span>(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_4, NULL);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 337, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_8 = 2;
+  __pyx_t_4 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2)-&gt;__pyx_vtab)-&gt;rotate(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2), (*((double *) ( /* dim=0 */ (__pyx_v_self-&gt;state.data + __pyx_t_8 * __pyx_v_self-&gt;state.strides[0]) ))), 0, NULL));<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 337, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_4);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_v_vel = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_4);
+  __pyx_t_4 = 0;
+</pre><pre class="cython line score-0">&#xA0;<span class="">338</span>: </pre>
+<pre class="cython line score-1" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">339</span>:         <span class="k">cdef</span> <span class="kt">Vec2</span> <span class="nf">r_vis</span> <span class="o">=</span> <span class="n">aim</span><span class="o">.</span><span class="n">sub_vec</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span></pre>
+<pre class='cython code score-1 '>  __pyx_t_4 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)__pyx_v_aim-&gt;__pyx_vtab)-&gt;sub_vec(__pyx_v_aim, __pyx_v_pos, 0));<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 339, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_4);
+  __pyx_t_2 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_4)-&gt;__pyx_vtab)-&gt;norm(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_4), 0));<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 339, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_v_r_vis = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2);
+  __pyx_t_2 = 0;
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">340</span>:         <span class="k">cdef</span> <span class="kt">double</span> <span class="nf">angle</span> <span class="o">=</span> <span class="n">vel</span><span class="o">.</span><span class="n">angle_to</span><span class="p">(</span><span class="n">r_vis</span><span class="p">)</span></pre>
+<pre class='cython code score-0 '>  __pyx_v_angle = ((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)__pyx_v_vel-&gt;__pyx_vtab)-&gt;angle_to(__pyx_v_vel, __pyx_v_r_vis, 0, NULL);
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">341</span>:         <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">3</span> <span class="o">*</span> <span class="mf">3.14</span><span class="o">/</span> <span class="mf">180</span><span class="p">:</span></pre>
+<pre class='cython code score-0 '>  __pyx_t_9 = ((fabs(__pyx_v_angle) &lt; ((3.0 * 3.14) / 180.0)) != 0);
+  if (__pyx_t_9) {
+/* … */
+    goto __pyx_L3;
+  }
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">342</span>:             <span class="n">dy</span><span class="p">[</span><span class="mf">2</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0</span></pre>
+<pre class='cython code score-0 '>    __pyx_t_8 = 2;
+    *((double *) ( /* dim=0 */ (__pyx_v_dy.data + __pyx_t_8 * __pyx_v_dy.strides[0]) )) = 0.0;
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">343</span>:         <span class="k">elif</span> <span class="n">angle</span> <span class="o">&gt;</span> <span class="mf">0</span><span class="p">:</span></pre>
+<pre class='cython code score-0 '>  __pyx_t_9 = ((__pyx_v_angle &gt; 0.0) != 0);
+  if (__pyx_t_9) {
+/* … */
+  }
+  __pyx_L3:;
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">344</span>:             <span class="n">dy</span><span class="p">[</span><span class="mf">2</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ay</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">vel_len</span></pre>
+<pre class='cython code score-0 '>    __pyx_t_8 = 2;
+    *((double *) ( /* dim=0 */ (__pyx_v_dy.data + __pyx_t_8 * __pyx_v_dy.strides[0]) )) = (__pyx_v_self-&gt;ay / __pyx_v_self-&gt;vel_len);
+</pre><pre class="cython line score-0">&#xA0;<span class="">345</span>: </pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">346</span>:         <span class="n">dy</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">vel</span><span class="o">.</span><span class="n">x</span>                    <span class="c"># dx = vx</span></pre>
+<pre class='cython code score-0 '>  __pyx_t_10 = __pyx_v_vel-&gt;x;
+  __pyx_t_8 = 0;
+  *((double *) ( /* dim=0 */ (__pyx_v_dy.data + __pyx_t_8 * __pyx_v_dy.strides[0]) )) = __pyx_t_10;
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">347</span>:         <span class="n">dy</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">vel</span><span class="o">.</span><span class="n">y</span>                    <span class="c"># dy = vy</span></pre>
+<pre class='cython code score-0 '>  __pyx_t_10 = __pyx_v_vel-&gt;y;
+  __pyx_t_8 = 1;
+  *((double *) ( /* dim=0 */ (__pyx_v_dy.data + __pyx_t_8 * __pyx_v_dy.strides[0]) )) = __pyx_t_10;
+</pre><pre class="cython line score-0">&#xA0;<span class="">348</span>: </pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">349</span>:         <span class="n">dy</span><span class="p">[</span><span class="mf">3</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1</span>   <span class="c"># dt</span></pre>
+<pre class='cython code score-0 '>  __pyx_t_8 = 3;
+  *((double *) ( /* dim=0 */ (__pyx_v_dy.data + __pyx_t_8 * __pyx_v_dy.strides[0]) )) = 1.0;
+</pre><pre class="cython line score-0">&#xA0;<span class="">350</span>:         <span class="c"># print(f&#39;rho={rho} F_coeff={F_coeff} F1={F1} F2={F2} V={V} F_Cx={F_Cx} F_Cx_x={F_Cx_x} F_Cx_y={F_Cx_y} F_x={F_x} F_y={F_y}&#39;)</span></pre>
+<pre class="cython line score-0">&#xA0;<span class="">351</span>: </pre>
+<pre class="cython line score-124" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">352</span>:     <span class="k">cpdef</span> <span class="kt">void</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Vec2</span> <span class="n">drone_pos</span><span class="p">,</span> <span class="n">Vec2</span> <span class="n">drone_vel</span><span class="p">,</span> <span class="n">double</span> <span class="n">tau</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="nb">int</span> <span class="n">n</span><span class="o">=</span><span class="mf">10</span><span class="p">):</span></pre>
+<pre class='cython code score-124 '>static PyObject *__pyx_pw_5drone_9Missile2d_5step(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static void __pyx_f_5drone_9Missile2d_step(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_drone_pos, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_drone_vel, int __pyx_skip_dispatch, struct __pyx_opt_args_5drone_9Missile2d_step *__pyx_optional_args) {
+  double __pyx_v_tau = ((double)0.1);
+  int __pyx_v_n = ((int)10);
+  double __pyx_v_dt;
+  size_t __pyx_v_i;
+  size_t __pyx_v_j;
+  double __pyx_v_t;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_aim = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_drone_pos_t = 0;
+  double __pyx_v_fly_time;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("step", 0);
+  if (__pyx_optional_args) {
+    if (__pyx_optional_args-&gt;__pyx_n &gt; 0) {
+      __pyx_v_tau = __pyx_optional_args-&gt;tau;
+      if (__pyx_optional_args-&gt;__pyx_n &gt; 1) {
+        __pyx_v_n = __pyx_optional_args-&gt;n;
+      }
+    }
+  }
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely((Py_TYPE(((PyObject *)__pyx_v_self))-&gt;tp_dictoffset != 0) || (Py_TYPE(((PyObject *)__pyx_v_self))-&gt;tp_flags &amp; (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))) {
+    #if CYTHON_USE_DICT_VERSIONS &amp;&amp; CYTHON_USE_PYTYPE_LOOKUP &amp;&amp; CYTHON_USE_TYPE_SLOTS
+    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
+      PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      #endif
+      __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(((PyObject *)__pyx_v_self), __pyx_n_s_step);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 352, __pyx_L1_error)</span>
+      <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_5drone_9Missile2d_5step)) {
+        __pyx_t_3 = <span class='py_c_api'>PyFloat_FromDouble</span>(__pyx_v_tau);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 352, __pyx_L1_error)</span>
+        <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
+        __pyx_t_4 = <span class='pyx_c_api'>__Pyx_PyInt_From_int</span>(__pyx_v_n);<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 352, __pyx_L1_error)</span>
+        <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_4);
+        <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_1);
+        __pyx_t_5 = __pyx_t_1; __pyx_t_6 = NULL;
+        __pyx_t_7 = 0;
+        if (CYTHON_UNPACK_METHODS &amp;&amp; unlikely(<span class='py_c_api'>PyMethod_Check</span>(__pyx_t_5))) {
+          __pyx_t_6 = <span class='py_macro_api'>PyMethod_GET_SELF</span>(__pyx_t_5);
+          if (likely(__pyx_t_6)) {
+            PyObject* function = <span class='py_macro_api'>PyMethod_GET_FUNCTION</span>(__pyx_t_5);
+            <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_6);
+            <span class='pyx_macro_api'>__Pyx_INCREF</span>(function);
+            <span class='pyx_macro_api'>__Pyx_DECREF_SET</span>(__pyx_t_5, function);
+            __pyx_t_7 = 1;
+          }
+        }
+        #if CYTHON_FAST_PYCALL
+        if (<span class='py_c_api'>PyFunction_Check</span>(__pyx_t_5)) {
+          PyObject *__pyx_temp[5] = {__pyx_t_6, ((PyObject *)__pyx_v_drone_pos), ((PyObject *)__pyx_v_drone_vel), __pyx_t_3, __pyx_t_4};
+          __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyFunction_FastCall</span>(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 4+__pyx_t_7);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 352, __pyx_L1_error)</span>
+          <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_6); __pyx_t_6 = 0;
+          <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+          <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
+          <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_4); __pyx_t_4 = 0;
+        } else
+        #endif
+        #if CYTHON_FAST_PYCCALL
+        if (<span class='pyx_c_api'>__Pyx_PyFastCFunction_Check</span>(__pyx_t_5)) {
+          PyObject *__pyx_temp[5] = {__pyx_t_6, ((PyObject *)__pyx_v_drone_pos), ((PyObject *)__pyx_v_drone_vel), __pyx_t_3, __pyx_t_4};
+          __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyCFunction_FastCall</span>(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 4+__pyx_t_7);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 352, __pyx_L1_error)</span>
+          <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_6); __pyx_t_6 = 0;
+          <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+          <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
+          <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_4); __pyx_t_4 = 0;
+        } else
+        #endif
+        {
+          __pyx_t_8 = <span class='py_c_api'>PyTuple_New</span>(4+__pyx_t_7);<span class='error_goto'> if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 352, __pyx_L1_error)</span>
+          <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_8);
+          if (__pyx_t_6) {
+            <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_6); <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_8, 0, __pyx_t_6); __pyx_t_6 = NULL;
+          }
+          <span class='pyx_macro_api'>__Pyx_INCREF</span>(((PyObject *)__pyx_v_drone_pos));
+          <span class='refnanny'>__Pyx_GIVEREF</span>(((PyObject *)__pyx_v_drone_pos));
+          <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_8, 0+__pyx_t_7, ((PyObject *)__pyx_v_drone_pos));
+          <span class='pyx_macro_api'>__Pyx_INCREF</span>(((PyObject *)__pyx_v_drone_vel));
+          <span class='refnanny'>__Pyx_GIVEREF</span>(((PyObject *)__pyx_v_drone_vel));
+          <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_8, 1+__pyx_t_7, ((PyObject *)__pyx_v_drone_vel));
+          <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_3);
+          <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_8, 2+__pyx_t_7, __pyx_t_3);
+          <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_4);
+          <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_8, 3+__pyx_t_7, __pyx_t_4);
+          __pyx_t_3 = 0;
+          __pyx_t_4 = 0;
+          __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyObject_Call</span>(__pyx_t_5, __pyx_t_8, NULL);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 352, __pyx_L1_error)</span>
+          <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+          <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_8); __pyx_t_8 = 0;
+        }
+        <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
+        <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+        <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
+        goto __pyx_L0;
+      }
+      #if CYTHON_USE_DICT_VERSIONS &amp;&amp; CYTHON_USE_PYTYPE_LOOKUP &amp;&amp; CYTHON_USE_TYPE_SLOTS
+      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
+      if (unlikely(__pyx_type_dict_guard != __pyx_tp_dict_version)) {
+        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+      }
+      #endif
+      <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
+      #if CYTHON_USE_DICT_VERSIONS &amp;&amp; CYTHON_USE_PYTYPE_LOOKUP &amp;&amp; CYTHON_USE_TYPE_SLOTS
+    }
+    #endif
+  }
+/* … */
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_1);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_2);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_3);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_4);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_5);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_6);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_8);
+  <span class='pyx_c_api'>__Pyx_WriteUnraisable</span>("drone.Missile2d.step", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 0);
+  __pyx_L0:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>((PyObject *)__pyx_v_aim);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>((PyObject *)__pyx_v_drone_pos_t);
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5drone_9Missile2d_5step(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_5drone_9Missile2d_4step[] = "Missile2d.step(self, Vec2 drone_pos, Vec2 drone_vel, double tau=0.1, int n=10) -&gt; void";
+static PyObject *__pyx_pw_5drone_9Missile2d_5step(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_drone_pos = 0;
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_drone_vel = 0;
+  double __pyx_v_tau;
+  int __pyx_v_n;
+  PyObject *__pyx_r = 0;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("step (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&amp;__pyx_n_s_drone_pos,&amp;__pyx_n_s_drone_vel,&amp;__pyx_n_s_tau,&amp;__pyx_n_s_n,0};
+    PyObject* values[4] = {0,0,0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = <span class='py_macro_api'>PyTuple_GET_SIZE</span>(__pyx_args);
+      switch (pos_args) {
+        case  4: values[3] = <span class='py_macro_api'>PyTuple_GET_ITEM</span>(__pyx_args, 3);
+        CYTHON_FALLTHROUGH;
+        case  3: values[2] = <span class='py_macro_api'>PyTuple_GET_ITEM</span>(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
+        case  2: values[1] = <span class='py_macro_api'>PyTuple_GET_ITEM</span>(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = <span class='py_macro_api'>PyTuple_GET_ITEM</span>(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = <span class='py_c_api'>PyDict_Size</span>(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = <span class='pyx_c_api'>__Pyx_PyDict_GetItemStr</span>(__pyx_kwds, __pyx_n_s_drone_pos)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = <span class='pyx_c_api'>__Pyx_PyDict_GetItemStr</span>(__pyx_kwds, __pyx_n_s_drone_vel)) != 0)) kw_args--;
+        else {
+          <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("step", 0, 2, 4, 1); <span class='error_goto'>__PYX_ERR(0, 352, __pyx_L3_error)</span>
+        }
+        CYTHON_FALLTHROUGH;
+        case  2:
+        if (kw_args &gt; 0) {
+          PyObject* value = <span class='pyx_c_api'>__Pyx_PyDict_GetItemStr</span>(__pyx_kwds, __pyx_n_s_tau);
+          if (value) { values[2] = value; kw_args--; }
+        }
+        CYTHON_FALLTHROUGH;
+        case  3:
+        if (kw_args &gt; 0) {
+          PyObject* value = <span class='pyx_c_api'>__Pyx_PyDict_GetItemStr</span>(__pyx_kwds, __pyx_n_s_n);
+          if (value) { values[3] = value; kw_args--; }
+        }
+      }
+      if (unlikely(kw_args &gt; 0)) {
+        if (unlikely(<span class='pyx_c_api'>__Pyx_ParseOptionalKeywords</span>(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "step") &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 352, __pyx_L3_error)</span>
+      }
+    } else {
+      switch (<span class='py_macro_api'>PyTuple_GET_SIZE</span>(__pyx_args)) {
+        case  4: values[3] = <span class='py_macro_api'>PyTuple_GET_ITEM</span>(__pyx_args, 3);
+        CYTHON_FALLTHROUGH;
+        case  3: values[2] = <span class='py_macro_api'>PyTuple_GET_ITEM</span>(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
+        case  2: values[1] = <span class='py_macro_api'>PyTuple_GET_ITEM</span>(__pyx_args, 1);
+        values[0] = <span class='py_macro_api'>PyTuple_GET_ITEM</span>(__pyx_args, 0);
+        break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+    }
+    __pyx_v_drone_pos = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[0]);
+    __pyx_v_drone_vel = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[1]);
+    if (values[2]) {
+      __pyx_v_tau = __pyx_<span class='py_c_api'>PyFloat_AsDouble</span>(values[2]); if (unlikely((__pyx_v_tau == (double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 352, __pyx_L3_error)</span>
+    } else {
+      __pyx_v_tau = ((double)0.1);
+    }
+    if (values[3]) {
+      __pyx_v_n = <span class='pyx_c_api'>__Pyx_PyInt_As_int</span>(values[3]); if (unlikely((__pyx_v_n == (int)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 352, __pyx_L3_error)</span>
+    } else {
+      __pyx_v_n = ((int)10);
+    }
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  <span class='pyx_c_api'>__Pyx_RaiseArgtupleInvalid</span>("step", 0, 2, 4, <span class='py_macro_api'>PyTuple_GET_SIZE</span>(__pyx_args)); <span class='error_goto'>__PYX_ERR(0, 352, __pyx_L3_error)</span>
+  __pyx_L3_error:;
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.step", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_drone_pos), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "drone_pos", 0))) <span class='error_goto'>__PYX_ERR(0, 352, __pyx_L1_error)</span>
+  if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_drone_vel), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "drone_vel", 0))) <span class='error_goto'>__PYX_ERR(0, 352, __pyx_L1_error)</span>
+  __pyx_r = __pyx_pf_5drone_9Missile2d_4step(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self), __pyx_v_drone_pos, __pyx_v_drone_vel, __pyx_v_tau, __pyx_v_n);
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = NULL;
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5drone_9Missile2d_4step(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_drone_pos, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_drone_vel, double __pyx_v_tau, int __pyx_v_n) {
+  PyObject *__pyx_r = NULL;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("step", 0);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
+  __pyx_t_1.__pyx_n = 2;
+  __pyx_t_1.tau = __pyx_v_tau;
+  __pyx_t_1.n = __pyx_v_n;
+  __pyx_vtabptr_5drone_Missile2d-&gt;step(__pyx_v_self, __pyx_v_drone_pos, __pyx_v_drone_vel, 1, &amp;__pyx_t_1); 
+  __pyx_t_2 = __Pyx_void_to_None(NULL);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 352, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+  __pyx_r = __pyx_t_2;
+  __pyx_t_2 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_2);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.step", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_XGIVEREF</span>(__pyx_r);
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+/* … */
+struct __pyx_opt_args_5drone_9Missile2d_step {
+  int __pyx_n;
+  double tau;
+  int n;
+};
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">353</span>:         <span class="k">cdef</span> <span class="kt">double</span> <span class="nf">dt</span> <span class="o">=</span> <span class="n">tau</span> <span class="o">/</span> <span class="n">n</span></pre>
+<pre class='cython code score-0 '>  __pyx_v_dt = (__pyx_v_tau / ((double)__pyx_v_n));
+</pre><pre class="cython line score-0">&#xA0;<span class="">354</span>:         <span class="k">cdef</span> <span class="kt">size_t</span> <span class="nf">i</span><span class="p">,</span> <span class="nf">j</span></pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">355</span>:         <span class="k">cdef</span> <span class="kt">double</span> <span class="nf">t</span> <span class="o">=</span> <span class="mf">0</span></pre>
+<pre class='cython code score-0 '>  __pyx_v_t = 0.0;
+</pre><pre class="cython line score-0">&#xA0;<span class="">356</span>:         <span class="k">cdef</span> <span class="kt">Vec2</span> <span class="nf">aim</span><span class="p">,</span> <span class="nf">drone_pos_t</span></pre>
+<pre class="cython line score-0">&#xA0;<span class="">357</span>:         <span class="k">cdef</span> <span class="kt">double</span> <span class="nf">fly_time</span></pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">358</span>:         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span></pre>
+<pre class='cython code score-0 '>  __pyx_t_7 = __pyx_v_n;
+  __pyx_t_9 = __pyx_t_7;
+  for (__pyx_t_10 = 0; __pyx_t_10 &lt; __pyx_t_9; __pyx_t_10+=1) {
+    __pyx_v_i = __pyx_t_10;
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">359</span>:             <span class="n">t</span> <span class="o">=</span> <span class="n">dt</span> <span class="o">*</span> <span class="n">i</span></pre>
+<pre class='cython code score-0 '>    __pyx_v_t = (__pyx_v_dt * __pyx_v_i);
+</pre><pre class="cython line score-20" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">360</span>:             <span class="n">drone_pos_t</span> <span class="o">=</span> <span class="n">drone_pos</span> <span class="o">+</span> <span class="n">t</span> <span class="o">*</span> <span class="n">drone_vel</span></pre>
+<pre class='cython code score-20 '>    __pyx_t_1 = <span class='py_c_api'>PyFloat_FromDouble</span>(__pyx_v_t);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 360, __pyx_L1_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+    __pyx_t_2 = <span class='py_c_api'>PyNumber_Multiply</span>(__pyx_t_1, ((PyObject *)__pyx_v_drone_vel));<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 360, __pyx_L1_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_1 = <span class='py_c_api'>PyNumber_Add</span>(((PyObject *)__pyx_v_drone_pos), __pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 360, __pyx_L1_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+    if (!(likely(((__pyx_t_1) == Py_None) || likely(<span class='pyx_c_api'>__Pyx_TypeTest</span>(__pyx_t_1, __pyx_ptype_7easyvec_7vectors_Vec2))))) <span class='error_goto'>__PYX_ERR(0, 360, __pyx_L1_error)</span>
+    <span class='pyx_macro_api'>__Pyx_XDECREF_SET</span>(__pyx_v_drone_pos_t, ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1));
+    __pyx_t_1 = 0;
+</pre><pre class="cython line score-47" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">361</span>:             <span class="n">fly_time</span> <span class="o">=</span> <span class="p">(</span><span class="n">drone_pos_t</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span><span class="o">.</span><span class="n">vel</span><span class="p">()</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">vel_len</span></pre>
+<pre class='cython code score-47 '>    __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(((PyObject *)__pyx_v_self), __pyx_n_s_pos);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 361, __pyx_L1_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+    __pyx_t_5 = <span class='py_c_api'>PyNumber_Subtract</span>(((PyObject *)__pyx_v_drone_pos_t), __pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 361, __pyx_L1_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_5);
+    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+    __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(__pyx_t_5, __pyx_n_s_vel);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 361, __pyx_L1_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
+    __pyx_t_5 = NULL;
+    if (CYTHON_UNPACK_METHODS &amp;&amp; likely(<span class='py_c_api'>PyMethod_Check</span>(__pyx_t_2))) {
+      __pyx_t_5 = <span class='py_macro_api'>PyMethod_GET_SELF</span>(__pyx_t_2);
+      if (likely(__pyx_t_5)) {
+        PyObject* function = <span class='py_macro_api'>PyMethod_GET_FUNCTION</span>(__pyx_t_2);
+        <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_5);
+        <span class='pyx_macro_api'>__Pyx_INCREF</span>(function);
+        <span class='pyx_macro_api'>__Pyx_DECREF_SET</span>(__pyx_t_2, function);
+      }
+    }
+    __pyx_t_1 = (__pyx_t_5) ? <span class='pyx_c_api'>__Pyx_PyObject_CallOneArg</span>(__pyx_t_2, __pyx_t_5) : <span class='pyx_c_api'>__Pyx_PyObject_CallNoArg</span>(__pyx_t_2);
+    <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
+    if (unlikely(!__pyx_t_1)) <span class='error_goto'>__PYX_ERR(0, 361, __pyx_L1_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+    __pyx_t_2 = <span class='py_c_api'>PyFloat_FromDouble</span>(__pyx_v_self-&gt;vel_len);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 361, __pyx_L1_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+    __pyx_t_5 = <span class='pyx_c_api'>__Pyx_PyNumber_Divide</span>(__pyx_t_1, __pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 361, __pyx_L1_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_5);
+    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
+    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+    __pyx_t_11 = __pyx_<span class='py_c_api'>PyFloat_AsDouble</span>(__pyx_t_5); if (unlikely((__pyx_t_11 == (double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 361, __pyx_L1_error)</span>
+    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
+    __pyx_v_fly_time = __pyx_t_11;
+</pre><pre class="cython line score-20" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">362</span>:             <span class="n">aim</span> <span class="o">=</span> <span class="n">drone_pos_t</span> <span class="o">+</span> <span class="n">fly_time</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">*</span> <span class="n">drone_vel</span></pre>
+<pre class='cython code score-20 '>    __pyx_t_5 = <span class='py_c_api'>PyFloat_FromDouble</span>((__pyx_v_fly_time * __pyx_v_self-&gt;alpha));<span class='error_goto'> if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 362, __pyx_L1_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_5);
+    __pyx_t_2 = <span class='py_c_api'>PyNumber_Multiply</span>(__pyx_t_5, ((PyObject *)__pyx_v_drone_vel));<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 362, __pyx_L1_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
+    __pyx_t_5 = <span class='py_c_api'>PyNumber_Add</span>(((PyObject *)__pyx_v_drone_pos_t), __pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 362, __pyx_L1_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_5);
+    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+    if (!(likely(((__pyx_t_5) == Py_None) || likely(<span class='pyx_c_api'>__Pyx_TypeTest</span>(__pyx_t_5, __pyx_ptype_7easyvec_7vectors_Vec2))))) <span class='error_goto'>__PYX_ERR(0, 362, __pyx_L1_error)</span>
+    <span class='pyx_macro_api'>__Pyx_XDECREF_SET</span>(__pyx_v_aim, ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_5));
+    __pyx_t_5 = 0;
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">363</span>:             <span class="bp">self</span><span class="o">.</span><span class="n">fill_dy</span><span class="p">(</span><span class="n">aim</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tmp1</span><span class="p">)</span> <span class="c"># k1</span></pre>
+<pre class='cython code score-0 '>    ((struct __pyx_vtabstruct_5drone_Missile2d *)__pyx_v_self-&gt;__pyx_vtab)-&gt;fill_dy(__pyx_v_self, __pyx_v_aim, __pyx_v_self-&gt;tmp1, 0);
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">364</span>:             <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tmp1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mf">0</span><span class="p">]):</span></pre>
+<pre class='cython code score-0 '>    __pyx_t_12 = (__pyx_v_self-&gt;tmp1.shape[0]);
+    __pyx_t_13 = __pyx_t_12;
+    for (__pyx_t_14 = 0; __pyx_t_14 &lt; __pyx_t_13; __pyx_t_14+=1) {
+      __pyx_v_j = __pyx_t_14;
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">365</span>:                 <span class="bp">self</span><span class="o">.</span><span class="n">tmp1</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">dt</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">tmp1</span><span class="p">[</span><span class="n">j</span><span class="p">]</span></pre>
+<pre class='cython code score-0 '>      __pyx_t_15 = __pyx_v_j;
+      __pyx_t_16 = __pyx_v_j;
+      __pyx_t_17 = __pyx_v_j;
+      *((double *) ( /* dim=0 */ (__pyx_v_self-&gt;tmp1.data + __pyx_t_17 * __pyx_v_self-&gt;tmp1.strides[0]) )) = ((*((double *) ( /* dim=0 */ (__pyx_v_self-&gt;state.data + __pyx_t_15 * __pyx_v_self-&gt;state.strides[0]) ))) + ((0.5 * __pyx_v_dt) * (*((double *) ( /* dim=0 */ (__pyx_v_self-&gt;tmp1.data + __pyx_t_16 * __pyx_v_self-&gt;tmp1.strides[0]) )))));
+    }
+</pre><pre class="cython line score-0">&#xA0;<span class="">366</span>: </pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">367</span>:             <span class="n">t</span> <span class="o">=</span> <span class="n">dt</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">dt</span></pre>
+<pre class='cython code score-0 '>    __pyx_v_t = ((__pyx_v_dt * __pyx_v_i) + (0.5 * __pyx_v_dt));
+</pre><pre class="cython line score-20" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">368</span>:             <span class="n">drone_pos_t</span> <span class="o">=</span> <span class="n">drone_pos</span> <span class="o">+</span> <span class="n">t</span> <span class="o">*</span> <span class="n">drone_vel</span></pre>
+<pre class='cython code score-20 '>    __pyx_t_5 = <span class='py_c_api'>PyFloat_FromDouble</span>(__pyx_v_t);<span class='error_goto'> if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 368, __pyx_L1_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_5);
+    __pyx_t_2 = <span class='py_c_api'>PyNumber_Multiply</span>(__pyx_t_5, ((PyObject *)__pyx_v_drone_vel));<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 368, __pyx_L1_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
+    __pyx_t_5 = <span class='py_c_api'>PyNumber_Add</span>(((PyObject *)__pyx_v_drone_pos), __pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 368, __pyx_L1_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_5);
+    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+    if (!(likely(((__pyx_t_5) == Py_None) || likely(<span class='pyx_c_api'>__Pyx_TypeTest</span>(__pyx_t_5, __pyx_ptype_7easyvec_7vectors_Vec2))))) <span class='error_goto'>__PYX_ERR(0, 368, __pyx_L1_error)</span>
+    <span class='pyx_macro_api'>__Pyx_DECREF_SET</span>(__pyx_v_drone_pos_t, ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_5));
+    __pyx_t_5 = 0;
+</pre><pre class="cython line score-47" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">369</span>:             <span class="n">fly_time</span> <span class="o">=</span> <span class="p">(</span><span class="n">drone_pos_t</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span><span class="o">.</span><span class="n">vel</span><span class="p">()</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">vel_len</span></pre>
+<pre class='cython code score-47 '>    __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(((PyObject *)__pyx_v_self), __pyx_n_s_pos);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 369, __pyx_L1_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+    __pyx_t_1 = <span class='py_c_api'>PyNumber_Subtract</span>(((PyObject *)__pyx_v_drone_pos_t), __pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 369, __pyx_L1_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+    __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(__pyx_t_1, __pyx_n_s_vel);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 369, __pyx_L1_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_1 = NULL;
+    if (CYTHON_UNPACK_METHODS &amp;&amp; likely(<span class='py_c_api'>PyMethod_Check</span>(__pyx_t_2))) {
+      __pyx_t_1 = <span class='py_macro_api'>PyMethod_GET_SELF</span>(__pyx_t_2);
+      if (likely(__pyx_t_1)) {
+        PyObject* function = <span class='py_macro_api'>PyMethod_GET_FUNCTION</span>(__pyx_t_2);
+        <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_1);
+        <span class='pyx_macro_api'>__Pyx_INCREF</span>(function);
+        <span class='pyx_macro_api'>__Pyx_DECREF_SET</span>(__pyx_t_2, function);
+      }
+    }
+    __pyx_t_5 = (__pyx_t_1) ? <span class='pyx_c_api'>__Pyx_PyObject_CallOneArg</span>(__pyx_t_2, __pyx_t_1) : <span class='pyx_c_api'>__Pyx_PyObject_CallNoArg</span>(__pyx_t_2);
+    <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
+    if (unlikely(!__pyx_t_5)) <span class='error_goto'>__PYX_ERR(0, 369, __pyx_L1_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_5);
+    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+    __pyx_t_2 = <span class='py_c_api'>PyFloat_FromDouble</span>(__pyx_v_self-&gt;vel_len);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 369, __pyx_L1_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+    __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyNumber_Divide</span>(__pyx_t_5, __pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 369, __pyx_L1_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
+    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+    __pyx_t_11 = __pyx_<span class='py_c_api'>PyFloat_AsDouble</span>(__pyx_t_1); if (unlikely((__pyx_t_11 == (double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 369, __pyx_L1_error)</span>
+    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_v_fly_time = __pyx_t_11;
+</pre><pre class="cython line score-20" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">370</span>:             <span class="n">aim</span> <span class="o">=</span> <span class="n">drone_pos_t</span> <span class="o">+</span> <span class="n">fly_time</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">*</span> <span class="n">drone_vel</span></pre>
+<pre class='cython code score-20 '>    __pyx_t_1 = <span class='py_c_api'>PyFloat_FromDouble</span>((__pyx_v_fly_time * __pyx_v_self-&gt;alpha));<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 370, __pyx_L1_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+    __pyx_t_2 = <span class='py_c_api'>PyNumber_Multiply</span>(__pyx_t_1, ((PyObject *)__pyx_v_drone_vel));<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 370, __pyx_L1_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_1 = <span class='py_c_api'>PyNumber_Add</span>(((PyObject *)__pyx_v_drone_pos_t), __pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 370, __pyx_L1_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+    if (!(likely(((__pyx_t_1) == Py_None) || likely(<span class='pyx_c_api'>__Pyx_TypeTest</span>(__pyx_t_1, __pyx_ptype_7easyvec_7vectors_Vec2))))) <span class='error_goto'>__PYX_ERR(0, 370, __pyx_L1_error)</span>
+    <span class='pyx_macro_api'>__Pyx_DECREF_SET</span>(__pyx_v_aim, ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1));
+    __pyx_t_1 = 0;
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">371</span>:             <span class="bp">self</span><span class="o">.</span><span class="n">fill_dy</span><span class="p">(</span><span class="n">aim</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tmp2</span><span class="p">)</span> <span class="c"># k2</span></pre>
+<pre class='cython code score-0 '>    ((struct __pyx_vtabstruct_5drone_Missile2d *)__pyx_v_self-&gt;__pyx_vtab)-&gt;fill_dy(__pyx_v_self, __pyx_v_aim, __pyx_v_self-&gt;tmp2, 0);
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">372</span>:             <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mf">0</span><span class="p">]):</span></pre>
+<pre class='cython code score-0 '>    __pyx_t_12 = (__pyx_v_self-&gt;state.shape[0]);
+    __pyx_t_13 = __pyx_t_12;
+    for (__pyx_t_14 = 0; __pyx_t_14 &lt; __pyx_t_13; __pyx_t_14+=1) {
+      __pyx_v_j = __pyx_t_14;
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">373</span>:                 <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">dt</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">tmp2</span><span class="p">[</span><span class="n">j</span><span class="p">]</span></pre>
+<pre class='cython code score-0 '>      __pyx_t_16 = __pyx_v_j;
+      __pyx_t_15 = __pyx_v_j;
+      __pyx_t_17 = __pyx_v_j;
+      *((double *) ( /* dim=0 */ (__pyx_v_self-&gt;state.data + __pyx_t_17 * __pyx_v_self-&gt;state.strides[0]) )) = ((*((double *) ( /* dim=0 */ (__pyx_v_self-&gt;state.data + __pyx_t_16 * __pyx_v_self-&gt;state.strides[0]) ))) + (__pyx_v_dt * (*((double *) ( /* dim=0 */ (__pyx_v_self-&gt;tmp2.data + __pyx_t_15 * __pyx_v_self-&gt;tmp2.strides[0]) )))));
+    }
+</pre><pre class="cython line score-17" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">374</span>:             <span class="bp">self</span><span class="o">.</span><span class="n">t</span> <span class="o">+=</span> <span class="n">dt</span></pre>
+<pre class='cython code score-17 '>    __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(((PyObject *)__pyx_v_self), __pyx_n_s_t);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 374, __pyx_L1_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+    __pyx_t_2 = <span class='py_c_api'>PyFloat_FromDouble</span>(__pyx_v_dt);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 374, __pyx_L1_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+    __pyx_t_5 = <span class='py_c_api'>PyNumber_InPlaceAdd</span>(__pyx_t_1, __pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 374, __pyx_L1_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_5);
+    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
+    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+    if (<span class='pyx_c_api'>__Pyx_PyObject_SetAttrStr</span>(((PyObject *)__pyx_v_self), __pyx_n_s_t, __pyx_t_5) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 374, __pyx_L1_error)</span>
+    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
+</pre><pre class="cython line score-13" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">375</span>:             <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="mf">3</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">t</span></pre>
+<pre class='cython code score-13 '>    __pyx_t_5 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(((PyObject *)__pyx_v_self), __pyx_n_s_t);<span class='error_goto'> if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 375, __pyx_L1_error)</span>
+    <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_5);
+    __pyx_t_11 = __pyx_<span class='py_c_api'>PyFloat_AsDouble</span>(__pyx_t_5); if (unlikely((__pyx_t_11 == (double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 375, __pyx_L1_error)</span>
+    <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
+    __pyx_t_18 = 3;
+    *((double *) ( /* dim=0 */ (__pyx_v_self-&gt;state.data + __pyx_t_18 * __pyx_v_self-&gt;state.strides[0]) )) = __pyx_t_11;
+  }
+</pre><pre class="cython line score-0">&#xA0;<span class="">376</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">377</span>: </pre>
+<pre class="cython line score-43" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">378</span>:     <span class="k">cpdef</span> <span class="kt">dict</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre>
+<pre class='cython code score-43 '>static PyObject *__pyx_pw_5drone_9Missile2d_7to_dict(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_f_5drone_9Missile2d_to_dict(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, int __pyx_skip_dispatch) {
+  PyObject *__pyx_v_res = 0;
+  PyObject *__pyx_r = NULL;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("to_dict", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely((Py_TYPE(((PyObject *)__pyx_v_self))-&gt;tp_dictoffset != 0) || (Py_TYPE(((PyObject *)__pyx_v_self))-&gt;tp_flags &amp; (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))) {
+    #if CYTHON_USE_DICT_VERSIONS &amp;&amp; CYTHON_USE_PYTYPE_LOOKUP &amp;&amp; CYTHON_USE_TYPE_SLOTS
+    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
+      PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      #endif
+      __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(((PyObject *)__pyx_v_self), __pyx_n_s_to_dict);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 378, __pyx_L1_error)</span>
+      <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_5drone_9Missile2d_7to_dict)) {
+        <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
+        <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_1);
+        __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
+        if (CYTHON_UNPACK_METHODS &amp;&amp; unlikely(<span class='py_c_api'>PyMethod_Check</span>(__pyx_t_3))) {
+          __pyx_t_4 = <span class='py_macro_api'>PyMethod_GET_SELF</span>(__pyx_t_3);
+          if (likely(__pyx_t_4)) {
+            PyObject* function = <span class='py_macro_api'>PyMethod_GET_FUNCTION</span>(__pyx_t_3);
+            <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_4);
+            <span class='pyx_macro_api'>__Pyx_INCREF</span>(function);
+            <span class='pyx_macro_api'>__Pyx_DECREF_SET</span>(__pyx_t_3, function);
+          }
+        }
+        __pyx_t_2 = (__pyx_t_4) ? <span class='pyx_c_api'>__Pyx_PyObject_CallOneArg</span>(__pyx_t_3, __pyx_t_4) : <span class='pyx_c_api'>__Pyx_PyObject_CallNoArg</span>(__pyx_t_3);
+        <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_4); __pyx_t_4 = 0;
+        if (unlikely(!__pyx_t_2)) <span class='error_goto'>__PYX_ERR(0, 378, __pyx_L1_error)</span>
+        <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+        <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
+        if (!(likely(<span class='py_c_api'>PyDict_CheckExact</span>(__pyx_t_2))||((__pyx_t_2) == Py_None)||(<span class='py_c_api'>PyErr_Format</span>(PyExc_TypeError, "Expected %.16s, got %.200s", "dict", Py_TYPE(__pyx_t_2)-&gt;tp_name), 0))) <span class='error_goto'>__PYX_ERR(0, 378, __pyx_L1_error)</span>
+        __pyx_r = ((PyObject*)__pyx_t_2);
+        __pyx_t_2 = 0;
+        <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
+        goto __pyx_L0;
+      }
+      #if CYTHON_USE_DICT_VERSIONS &amp;&amp; CYTHON_USE_PYTYPE_LOOKUP &amp;&amp; CYTHON_USE_TYPE_SLOTS
+      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
+      if (unlikely(__pyx_type_dict_guard != __pyx_tp_dict_version)) {
+        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+      }
+      #endif
+      <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
+      #if CYTHON_USE_DICT_VERSIONS &amp;&amp; CYTHON_USE_PYTYPE_LOOKUP &amp;&amp; CYTHON_USE_TYPE_SLOTS
+    }
+    #endif
+  }
+/* … */
+  /* function exit code */
+  __pyx_L1_error:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_1);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_2);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_3);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_4);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.to_dict", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_v_res);
+  <span class='refnanny'>__Pyx_XGIVEREF</span>(__pyx_r);
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5drone_9Missile2d_7to_dict(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_5drone_9Missile2d_6to_dict[] = "Missile2d.to_dict(self) -&gt; dict";
+static PyObject *__pyx_pw_5drone_9Missile2d_7to_dict(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("to_dict (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_9Missile2d_6to_dict(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self));
+
+  /* function exit code */
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5drone_9Missile2d_6to_dict(struct __pyx_obj_5drone_Missile2d *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("to_dict", 0);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
+  __pyx_t_1 = __pyx_f_5drone_9Missile2d_to_dict(__pyx_v_self, 1);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 378, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_1);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.to_dict", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_XGIVEREF</span>(__pyx_r);
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+</pre><pre class="cython line score-0">&#xA0;<span class="">379</span>:         <span class="k">cdef</span> <span class="kt">dict</span> <span class="nf">res</span> <span class="o">=</span> <span class="p">{</span></pre>
+<pre class="cython line score-10" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">380</span>:             <span class="s">&#39;t&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="p">,</span></pre>
+<pre class='cython code score-10 '>  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyDict_NewPresized</span>(4);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 380, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(((PyObject *)__pyx_v_self), __pyx_n_s_t);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 380, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+  if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_1, __pyx_n_u_t, __pyx_t_2) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 380, __pyx_L1_error)</span>
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+</pre><pre class="cython line score-26" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">381</span>:             <span class="s">&#39;pos&#39;</span><span class="p">:</span> <span class="n">Vec2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="mf">1</span><span class="p">]),</span></pre>
+<pre class='cython code score-26 '>  __pyx_t_5 = 0;
+  __pyx_t_2 = <span class='py_c_api'>PyFloat_FromDouble</span>((*((double *) ( /* dim=0 */ (__pyx_v_self-&gt;state.data + __pyx_t_5 * __pyx_v_self-&gt;state.strides[0]) ))));<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 381, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+  __pyx_t_5 = 1;
+  __pyx_t_3 = <span class='py_c_api'>PyFloat_FromDouble</span>((*((double *) ( /* dim=0 */ (__pyx_v_self-&gt;state.data + __pyx_t_5 * __pyx_v_self-&gt;state.strides[0]) ))));<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 381, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
+  __pyx_t_4 = <span class='py_c_api'>PyTuple_New</span>(2);<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 381, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_4);
+  <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_2);
+  <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_4, 0, __pyx_t_2);
+  <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_3);
+  <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_4, 1, __pyx_t_3);
+  __pyx_t_2 = 0;
+  __pyx_t_3 = 0;
+  __pyx_t_3 = <span class='pyx_c_api'>__Pyx_PyObject_Call</span>(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_4, NULL);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 381, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_4); __pyx_t_4 = 0;
+  if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_1, __pyx_n_u_pos, __pyx_t_3) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 380, __pyx_L1_error)</span>
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
+</pre><pre class="cython line score-8" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">382</span>:             <span class="s">&#39;vel&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">vel</span><span class="p">,</span></pre>
+<pre class='cython code score-8 '>  __pyx_t_3 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(((PyObject *)__pyx_v_self), __pyx_n_s_vel);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 382, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
+  if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_1, __pyx_n_u_vel, __pyx_t_3) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 380, __pyx_L1_error)</span>
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
+</pre><pre class="cython line score-11" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">383</span>:             <span class="s">&#39;theta&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="mf">2</span><span class="p">]</span></pre>
+<pre class='cython code score-11 '>  __pyx_t_5 = 2;
+  __pyx_t_3 = <span class='py_c_api'>PyFloat_FromDouble</span>((*((double *) ( /* dim=0 */ (__pyx_v_self-&gt;state.data + __pyx_t_5 * __pyx_v_self-&gt;state.strides[0]) ))));<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 383, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
+  if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_1, __pyx_n_u_theta, __pyx_t_3) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 380, __pyx_L1_error)</span>
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_v_res = ((PyObject*)__pyx_t_1);
+  __pyx_t_1 = 0;
+</pre><pre class="cython line score-0">&#xA0;<span class="">384</span>:         <span class="p">}</span></pre>
+<pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">385</span>:         <span class="k">return</span> <span class="n">res</span></pre>
+<pre class='cython code score-2 '>  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
+  <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_v_res);
+  __pyx_r = __pyx_v_res;
+  goto __pyx_L0;
+</pre><pre class="cython line score-0">&#xA0;<span class="">386</span>: </pre>
+<pre class="cython line score-32" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">387</span>:     <span class="k">cpdef</span> <span class="kt">void</span> <span class="nf">from_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">dict</span> <span class="n">state_dict</span><span class="p">):</span></pre>
+<pre class='cython code score-32 '>static PyObject *__pyx_pw_5drone_9Missile2d_9from_dict(PyObject *__pyx_v_self, PyObject *__pyx_v_state_dict); /*proto*/
+static void __pyx_f_5drone_9Missile2d_from_dict(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v_state_dict, int __pyx_skip_dispatch) {
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("from_dict", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely((Py_TYPE(((PyObject *)__pyx_v_self))-&gt;tp_dictoffset != 0) || (Py_TYPE(((PyObject *)__pyx_v_self))-&gt;tp_flags &amp; (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))) {
+    #if CYTHON_USE_DICT_VERSIONS &amp;&amp; CYTHON_USE_PYTYPE_LOOKUP &amp;&amp; CYTHON_USE_TYPE_SLOTS
+    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
+      PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      #endif
+      __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(((PyObject *)__pyx_v_self), __pyx_n_s_from_dict);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 387, __pyx_L1_error)</span>
+      <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_5drone_9Missile2d_9from_dict)) {
+        <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_1);
+        __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
+        if (CYTHON_UNPACK_METHODS &amp;&amp; unlikely(<span class='py_c_api'>PyMethod_Check</span>(__pyx_t_3))) {
+          __pyx_t_4 = <span class='py_macro_api'>PyMethod_GET_SELF</span>(__pyx_t_3);
+          if (likely(__pyx_t_4)) {
+            PyObject* function = <span class='py_macro_api'>PyMethod_GET_FUNCTION</span>(__pyx_t_3);
+            <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_4);
+            <span class='pyx_macro_api'>__Pyx_INCREF</span>(function);
+            <span class='pyx_macro_api'>__Pyx_DECREF_SET</span>(__pyx_t_3, function);
+          }
+        }
+        __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, __pyx_v_state_dict) : <span class='pyx_c_api'>__Pyx_PyObject_CallOneArg</span>(__pyx_t_3, __pyx_v_state_dict);
+        <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_4); __pyx_t_4 = 0;
+        if (unlikely(!__pyx_t_2)) <span class='error_goto'>__PYX_ERR(0, 387, __pyx_L1_error)</span>
+        <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+        <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
+        <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+        <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
+        goto __pyx_L0;
+      }
+      #if CYTHON_USE_DICT_VERSIONS &amp;&amp; CYTHON_USE_PYTYPE_LOOKUP &amp;&amp; CYTHON_USE_TYPE_SLOTS
+      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
+      if (unlikely(__pyx_type_dict_guard != __pyx_tp_dict_version)) {
+        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+      }
+      #endif
+      <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
+      #if CYTHON_USE_DICT_VERSIONS &amp;&amp; CYTHON_USE_PYTYPE_LOOKUP &amp;&amp; CYTHON_USE_TYPE_SLOTS
+    }
+    #endif
+  }
+/* … */
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_1);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_2);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_3);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_4);
+  <span class='pyx_c_api'>__Pyx_WriteUnraisable</span>("drone.Missile2d.from_dict", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 0);
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5drone_9Missile2d_9from_dict(PyObject *__pyx_v_self, PyObject *__pyx_v_state_dict); /*proto*/
+static char __pyx_doc_5drone_9Missile2d_8from_dict[] = "Missile2d.from_dict(self, dict state_dict) -&gt; void";
+static PyObject *__pyx_pw_5drone_9Missile2d_9from_dict(PyObject *__pyx_v_self, PyObject *__pyx_v_state_dict) {
+  PyObject *__pyx_r = 0;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("from_dict (wrapper)", 0);
+  if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_state_dict), (&amp;PyDict_Type), 1, "state_dict", 1))) <span class='error_goto'>__PYX_ERR(0, 387, __pyx_L1_error)</span>
+  __pyx_r = __pyx_pf_5drone_9Missile2d_8from_dict(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self), ((PyObject*)__pyx_v_state_dict));
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = NULL;
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5drone_9Missile2d_8from_dict(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v_state_dict) {
+  PyObject *__pyx_r = NULL;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("from_dict", 0);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
+  __pyx_t_1 = __Pyx_void_to_None(__pyx_f_5drone_9Missile2d_from_dict(__pyx_v_self, __pyx_v_state_dict, 1));<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 387, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_1);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.from_dict", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_XGIVEREF</span>(__pyx_r);
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+</pre><pre class="cython line score-10" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">388</span>:         <span class="bp">self</span><span class="o">.</span><span class="n">t</span> <span class="o">=</span> <span class="n">state_dict</span><span class="p">[</span><span class="s">&#39;t&#39;</span><span class="p">]</span></pre>
+<pre class='cython code score-10 '>  if (unlikely(__pyx_v_state_dict == Py_None)) {
+    <span class='py_c_api'>PyErr_SetString</span>(PyExc_TypeError, "'NoneType' object is not subscriptable");
+    <span class='error_goto'>__PYX_ERR(0, 388, __pyx_L1_error)</span>
+  }
+  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyDict_GetItem</span>(__pyx_v_state_dict, __pyx_n_u_t);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 388, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  if (<span class='pyx_c_api'>__Pyx_PyObject_SetAttrStr</span>(((PyObject *)__pyx_v_self), __pyx_n_s_t, __pyx_t_1) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 388, __pyx_L1_error)</span>
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
+</pre><pre class="cython line score-21" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">389</span>:         <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">state_dict</span><span class="p">[</span><span class="s">&#39;pos&#39;</span><span class="p">][</span><span class="mf">0</span><span class="p">]</span></pre>
+<pre class='cython code score-21 '>  if (unlikely(__pyx_v_state_dict == Py_None)) {
+    <span class='py_c_api'>PyErr_SetString</span>(PyExc_TypeError, "'NoneType' object is not subscriptable");
+    <span class='error_goto'>__PYX_ERR(0, 389, __pyx_L1_error)</span>
+  }
+  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyDict_GetItem</span>(__pyx_v_state_dict, __pyx_n_u_pos);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 389, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_GetItemInt</span>(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 389, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_5 = __pyx_<span class='py_c_api'>PyFloat_AsDouble</span>(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 389, __pyx_L1_error)</span>
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_6 = 0;
+  *((double *) ( /* dim=0 */ (__pyx_v_self-&gt;state.data + __pyx_t_6 * __pyx_v_self-&gt;state.strides[0]) )) = __pyx_t_5;
+</pre><pre class="cython line score-21" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">390</span>:         <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">state_dict</span><span class="p">[</span><span class="s">&#39;pos&#39;</span><span class="p">][</span><span class="mf">1</span><span class="p">]</span></pre>
+<pre class='cython code score-21 '>  if (unlikely(__pyx_v_state_dict == Py_None)) {
+    <span class='py_c_api'>PyErr_SetString</span>(PyExc_TypeError, "'NoneType' object is not subscriptable");
+    <span class='error_goto'>__PYX_ERR(0, 390, __pyx_L1_error)</span>
+  }
+  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyDict_GetItem</span>(__pyx_v_state_dict, __pyx_n_u_pos);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 390, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_GetItemInt</span>(__pyx_t_2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 0);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 390, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_5 = __pyx_<span class='py_c_api'>PyFloat_AsDouble</span>(__pyx_t_1); if (unlikely((__pyx_t_5 == (double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 390, __pyx_L1_error)</span>
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_6 = 1;
+  *((double *) ( /* dim=0 */ (__pyx_v_self-&gt;state.data + __pyx_t_6 * __pyx_v_self-&gt;state.strides[0]) )) = __pyx_t_5;
+</pre><pre class="cython line score-18" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">391</span>:         <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="mf">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">state_dict</span><span class="p">[</span><span class="s">&#39;theta&#39;</span><span class="p">]</span></pre>
+<pre class='cython code score-18 '>  if (unlikely(__pyx_v_state_dict == Py_None)) {
+    <span class='py_c_api'>PyErr_SetString</span>(PyExc_TypeError, "'NoneType' object is not subscriptable");
+    <span class='error_goto'>__PYX_ERR(0, 391, __pyx_L1_error)</span>
+  }
+  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyDict_GetItem</span>(__pyx_v_state_dict, __pyx_n_u_theta);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 391, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  __pyx_t_5 = __pyx_<span class='py_c_api'>PyFloat_AsDouble</span>(__pyx_t_1); if (unlikely((__pyx_t_5 == (double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 391, __pyx_L1_error)</span>
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_6 = 2;
+  *((double *) ( /* dim=0 */ (__pyx_v_self-&gt;state.data + __pyx_t_6 * __pyx_v_self-&gt;state.strides[0]) )) = __pyx_t_5;
+</pre><pre class="cython line score-13" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">392</span>:         <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="mf">3</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">t</span></pre>
+<pre class='cython code score-13 '>  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(((PyObject *)__pyx_v_self), __pyx_n_s_t);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 392, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  __pyx_t_5 = __pyx_<span class='py_c_api'>PyFloat_AsDouble</span>(__pyx_t_1); if (unlikely((__pyx_t_5 == (double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 392, __pyx_L1_error)</span>
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_6 = 3;
+  *((double *) ( /* dim=0 */ (__pyx_v_self-&gt;state.data + __pyx_t_6 * __pyx_v_self-&gt;state.strides[0]) )) = __pyx_t_5;
+</pre><pre class="cython line score-0">&#xA0;<span class="">393</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">394</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">395</span>: </pre>
+<pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">396</span>:     <span class="k">def</span> <span class="nf">to_numpy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre>
+<pre class='cython code score-6 '>/* Python wrapper */
+static PyObject *__pyx_pw_5drone_9Missile2d_11to_numpy(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_5drone_9Missile2d_10to_numpy[] = "Missile2d.to_numpy(self)";
+static PyObject *__pyx_pw_5drone_9Missile2d_11to_numpy(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("to_numpy (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_9Missile2d_10to_numpy(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self));
+
+  /* function exit code */
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5drone_9Missile2d_10to_numpy(struct __pyx_obj_5drone_Missile2d *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("to_numpy", 0);
+/* … */
+  /* function exit code */
+  __pyx_L1_error:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_1);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_2);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_3);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_4);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.to_numpy", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_XGIVEREF</span>(__pyx_r);
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+</pre><pre class="cython line score-21" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">397</span>:         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">)</span></pre>
+<pre class='cython code score-21 '>  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
+  <span class='pyx_c_api'>__Pyx_GetModuleGlobalName</span>(__pyx_t_2, __pyx_n_s_np);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 397, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+  __pyx_t_3 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(__pyx_t_2, __pyx_n_s_array);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 397, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_v_self-&gt;state, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);;<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 397, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+  __pyx_t_4 = NULL;
+  if (CYTHON_UNPACK_METHODS &amp;&amp; unlikely(<span class='py_c_api'>PyMethod_Check</span>(__pyx_t_3))) {
+    __pyx_t_4 = <span class='py_macro_api'>PyMethod_GET_SELF</span>(__pyx_t_3);
+    if (likely(__pyx_t_4)) {
+      PyObject* function = <span class='py_macro_api'>PyMethod_GET_FUNCTION</span>(__pyx_t_3);
+      <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_4);
+      <span class='pyx_macro_api'>__Pyx_INCREF</span>(function);
+      <span class='pyx_macro_api'>__Pyx_DECREF_SET</span>(__pyx_t_3, function);
+    }
+  }
+  __pyx_t_1 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, __pyx_t_2) : <span class='pyx_c_api'>__Pyx_PyObject_CallOneArg</span>(__pyx_t_3, __pyx_t_2);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_4); __pyx_t_4 = 0;
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+  if (unlikely(!__pyx_t_1)) <span class='error_goto'>__PYX_ERR(0, 397, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+</pre><pre class="cython line score-0">&#xA0;<span class="">398</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">399</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">400</span>:     <span class="nd">@property</span></pre>
+<pre class="cython line score-4" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">401</span>:     <span class="k">def</span> <span class="nf">vel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre>
+<pre class='cython code score-4 '>/* Python wrapper */
+static PyObject *__pyx_pw_5drone_9Missile2d_3vel_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_5drone_9Missile2d_3vel_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_9Missile2d_3vel___get__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self));
+
+  /* function exit code */
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5drone_9Missile2d_3vel___get__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__get__", 0);
+/* … */
+  /* function exit code */
+  __pyx_L1_error:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_1);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_2);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.vel.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_XGIVEREF</span>(__pyx_r);
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+</pre><pre class="cython line score-18" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">402</span>:         <span class="k">return</span> <span class="n">Vec2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vel_len</span><span class="p">,</span> <span class="mf">0</span><span class="p">)</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="mf">2</span><span class="p">])</span></pre>
+<pre class='cython code score-18 '>  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
+  __pyx_t_1 = <span class='py_c_api'>PyFloat_FromDouble</span>(__pyx_v_self-&gt;vel_len);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 402, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  __pyx_t_2 = <span class='py_c_api'>PyTuple_New</span>(2);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 402, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+  <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_1);
+  <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_2, 0, __pyx_t_1);
+  <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_int_0);
+  <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_int_0);
+  <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_2, 1, __pyx_int_0);
+  __pyx_t_1 = 0;
+  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyObject_Call</span>(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_2, NULL);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 402, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_3 = 2;
+  __pyx_t_2 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1)-&gt;__pyx_vtab)-&gt;rotate(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1), (*((double *) ( /* dim=0 */ (__pyx_v_self-&gt;state.data + __pyx_t_3 * __pyx_v_self-&gt;state.strides[0]) ))), 0, NULL));<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 402, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_r = __pyx_t_2;
+  __pyx_t_2 = 0;
+  goto __pyx_L0;
+</pre><pre class="cython line score-0">&#xA0;<span class="">403</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">404</span>:     <span class="nd">@property</span></pre>
+<pre class="cython line score-8" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">405</span>:     <span class="k">def</span> <span class="nf">vel_np</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre>
+<pre class='cython code score-8 '>/* Python wrapper */
+static PyObject *__pyx_pw_5drone_9Missile2d_6vel_np_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_5drone_9Missile2d_6vel_np_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_9Missile2d_6vel_np___get__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self));
+
+  /* function exit code */
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5drone_9Missile2d_6vel_np___get__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self) {
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v = NULL;
+  PyObject *__pyx_r = NULL;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__get__", 0);
+/* … */
+  /* function exit code */
+  __pyx_L1_error:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_1);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_2);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_4);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_5);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_6);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.vel_np.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>((PyObject *)__pyx_v_v);
+  <span class='refnanny'>__Pyx_XGIVEREF</span>(__pyx_r);
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+</pre><pre class="cython line score-17" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">406</span>:         <span class="n">v</span> <span class="o">=</span> <span class="n">Vec2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vel_len</span><span class="p">,</span> <span class="mf">0</span><span class="p">)</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="mf">2</span><span class="p">])</span></pre>
+<pre class='cython code score-17 '>  __pyx_t_1 = <span class='py_c_api'>PyFloat_FromDouble</span>(__pyx_v_self-&gt;vel_len);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 406, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  __pyx_t_2 = <span class='py_c_api'>PyTuple_New</span>(2);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 406, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+  <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_1);
+  <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_2, 0, __pyx_t_1);
+  <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_int_0);
+  <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_int_0);
+  <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_2, 1, __pyx_int_0);
+  __pyx_t_1 = 0;
+  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyObject_Call</span>(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_2, NULL);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 406, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_3 = 2;
+  __pyx_t_2 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1)-&gt;__pyx_vtab)-&gt;rotate(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1), (*((double *) ( /* dim=0 */ (__pyx_v_self-&gt;state.data + __pyx_t_3 * __pyx_v_self-&gt;state.strides[0]) ))), 0, NULL));<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 406, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_v_v = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2);
+  __pyx_t_2 = 0;
+</pre><pre class="cython line score-39" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">407</span>:         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">as_np</span><span class="p">())</span></pre>
+<pre class='cython code score-39 '>  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
+  <span class='pyx_c_api'>__Pyx_GetModuleGlobalName</span>(__pyx_t_1, __pyx_n_s_np);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 407, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  __pyx_t_4 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(__pyx_t_1, __pyx_n_s_asarray);<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 407, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_4);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_5 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(((PyObject *)__pyx_v_v), __pyx_n_s_as_np);<span class='error_goto'> if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 407, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_5);
+  __pyx_t_6 = NULL;
+  if (CYTHON_UNPACK_METHODS &amp;&amp; likely(<span class='py_c_api'>PyMethod_Check</span>(__pyx_t_5))) {
+    __pyx_t_6 = <span class='py_macro_api'>PyMethod_GET_SELF</span>(__pyx_t_5);
+    if (likely(__pyx_t_6)) {
+      PyObject* function = <span class='py_macro_api'>PyMethod_GET_FUNCTION</span>(__pyx_t_5);
+      <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_6);
+      <span class='pyx_macro_api'>__Pyx_INCREF</span>(function);
+      <span class='pyx_macro_api'>__Pyx_DECREF_SET</span>(__pyx_t_5, function);
+    }
+  }
+  __pyx_t_1 = (__pyx_t_6) ? <span class='pyx_c_api'>__Pyx_PyObject_CallOneArg</span>(__pyx_t_5, __pyx_t_6) : <span class='pyx_c_api'>__Pyx_PyObject_CallNoArg</span>(__pyx_t_5);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_6); __pyx_t_6 = 0;
+  if (unlikely(!__pyx_t_1)) <span class='error_goto'>__PYX_ERR(0, 407, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_t_5 = NULL;
+  if (CYTHON_UNPACK_METHODS &amp;&amp; unlikely(<span class='py_c_api'>PyMethod_Check</span>(__pyx_t_4))) {
+    __pyx_t_5 = <span class='py_macro_api'>PyMethod_GET_SELF</span>(__pyx_t_4);
+    if (likely(__pyx_t_5)) {
+      PyObject* function = <span class='py_macro_api'>PyMethod_GET_FUNCTION</span>(__pyx_t_4);
+      <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_5);
+      <span class='pyx_macro_api'>__Pyx_INCREF</span>(function);
+      <span class='pyx_macro_api'>__Pyx_DECREF_SET</span>(__pyx_t_4, function);
+    }
+  }
+  __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_t_1) : <span class='pyx_c_api'>__Pyx_PyObject_CallOneArg</span>(__pyx_t_4, __pyx_t_1);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
+  if (unlikely(!__pyx_t_2)) <span class='error_goto'>__PYX_ERR(0, 407, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_r = __pyx_t_2;
+  __pyx_t_2 = 0;
+  goto __pyx_L0;
+</pre><pre class="cython line score-0">&#xA0;<span class="">408</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">409</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">410</span>:     <span class="nd">@property</span></pre>
+<pre class="cython line score-5" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">411</span>:     <span class="k">def</span> <span class="nf">pos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre>
+<pre class='cython code score-5 '>/* Python wrapper */
+static PyObject *__pyx_pw_5drone_9Missile2d_3pos_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_5drone_9Missile2d_3pos_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_9Missile2d_3pos___get__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self));
+
+  /* function exit code */
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5drone_9Missile2d_3pos___get__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__get__", 0);
+/* … */
+  /* function exit code */
+  __pyx_L1_error:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_2);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_3);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_4);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.pos.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_XGIVEREF</span>(__pyx_r);
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+</pre><pre class="cython line score-21" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">412</span>:         <span class="k">return</span> <span class="n">Vec2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="mf">1</span><span class="p">])</span></pre>
+<pre class='cython code score-21 '>  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
+  __pyx_t_1 = 0;
+  __pyx_t_2 = <span class='py_c_api'>PyFloat_FromDouble</span>((*((double *) ( /* dim=0 */ (__pyx_v_self-&gt;state.data + __pyx_t_1 * __pyx_v_self-&gt;state.strides[0]) ))));<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 412, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+  __pyx_t_1 = 1;
+  __pyx_t_3 = <span class='py_c_api'>PyFloat_FromDouble</span>((*((double *) ( /* dim=0 */ (__pyx_v_self-&gt;state.data + __pyx_t_1 * __pyx_v_self-&gt;state.strides[0]) ))));<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 412, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
+  __pyx_t_4 = <span class='py_c_api'>PyTuple_New</span>(2);<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 412, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_4);
+  <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_2);
+  <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_4, 0, __pyx_t_2);
+  <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_3);
+  <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_4, 1, __pyx_t_3);
+  __pyx_t_2 = 0;
+  __pyx_t_3 = 0;
+  __pyx_t_3 = <span class='pyx_c_api'>__Pyx_PyObject_Call</span>(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_4, NULL);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 412, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_r = __pyx_t_3;
+  __pyx_t_3 = 0;
+  goto __pyx_L0;
+</pre><pre class="cython line score-0">&#xA0;<span class="">413</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">414</span>:     <span class="nd">@property</span></pre>
+<pre class="cython line score-7" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">415</span>:     <span class="k">def</span> <span class="nf">pos_np</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre>
+<pre class='cython code score-7 '>/* Python wrapper */
+static PyObject *__pyx_pw_5drone_9Missile2d_6pos_np_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_5drone_9Missile2d_6pos_np_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_9Missile2d_6pos_np___get__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self));
+
+  /* function exit code */
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5drone_9Missile2d_6pos_np___get__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__get__", 0);
+/* … */
+  /* function exit code */
+  __pyx_L1_error:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_1);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_2);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_3);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_5);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_6);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.pos_np.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_XGIVEREF</span>(__pyx_r);
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+</pre><pre class="cython line score-38" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">416</span>:         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="mf">1</span><span class="p">]])</span></pre>
+<pre class='cython code score-38 '>  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
+  <span class='pyx_c_api'>__Pyx_GetModuleGlobalName</span>(__pyx_t_2, __pyx_n_s_np);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 416, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+  __pyx_t_3 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(__pyx_t_2, __pyx_n_s_array);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 416, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_4 = 0;
+  __pyx_t_2 = <span class='py_c_api'>PyFloat_FromDouble</span>((*((double *) ( /* dim=0 */ (__pyx_v_self-&gt;state.data + __pyx_t_4 * __pyx_v_self-&gt;state.strides[0]) ))));<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 416, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+  __pyx_t_4 = 1;
+  __pyx_t_5 = <span class='py_c_api'>PyFloat_FromDouble</span>((*((double *) ( /* dim=0 */ (__pyx_v_self-&gt;state.data + __pyx_t_4 * __pyx_v_self-&gt;state.strides[0]) ))));<span class='error_goto'> if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 416, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_5);
+  __pyx_t_6 = <span class='py_c_api'>PyList_New</span>(2);<span class='error_goto'> if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 416, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_6);
+  <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_2);
+  <span class='py_macro_api'>PyList_SET_ITEM</span>(__pyx_t_6, 0, __pyx_t_2);
+  <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_5);
+  <span class='py_macro_api'>PyList_SET_ITEM</span>(__pyx_t_6, 1, __pyx_t_5);
+  __pyx_t_2 = 0;
+  __pyx_t_5 = 0;
+  __pyx_t_5 = NULL;
+  if (CYTHON_UNPACK_METHODS &amp;&amp; unlikely(<span class='py_c_api'>PyMethod_Check</span>(__pyx_t_3))) {
+    __pyx_t_5 = <span class='py_macro_api'>PyMethod_GET_SELF</span>(__pyx_t_3);
+    if (likely(__pyx_t_5)) {
+      PyObject* function = <span class='py_macro_api'>PyMethod_GET_FUNCTION</span>(__pyx_t_3);
+      <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_5);
+      <span class='pyx_macro_api'>__Pyx_INCREF</span>(function);
+      <span class='pyx_macro_api'>__Pyx_DECREF_SET</span>(__pyx_t_3, function);
+    }
+  }
+  __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_5, __pyx_t_6) : <span class='pyx_c_api'>__Pyx_PyObject_CallOneArg</span>(__pyx_t_3, __pyx_t_6);
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_6); __pyx_t_6 = 0;
+  if (unlikely(!__pyx_t_1)) <span class='error_goto'>__PYX_ERR(0, 416, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+</pre><pre class="cython line score-0">&#xA0;<span class="">417</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">418</span>:     <span class="nd">@property</span></pre>
+<pre class="cython line score-3" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">419</span>:     <span class="k">def</span> <span class="nf">theta</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></pre>
+<pre class='cython code score-3 '>/* Python wrapper */
+static PyObject *__pyx_pw_5drone_9Missile2d_5theta_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_5drone_9Missile2d_5theta_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_9Missile2d_5theta___get__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self));
+
+  /* function exit code */
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5drone_9Missile2d_5theta___get__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__get__", 0);
+/* … */
+  /* function exit code */
+  __pyx_L1_error:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_2);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("drone.Missile2d.theta.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_XGIVEREF</span>(__pyx_r);
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+</pre><pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">420</span>:         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="mf">2</span><span class="p">]</span></pre>
+<pre class='cython code score-6 '>  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
+  __pyx_t_1 = 2;
+  __pyx_t_2 = <span class='py_c_api'>PyFloat_FromDouble</span>((*((double *) ( /* dim=0 */ (__pyx_v_self-&gt;state.data + __pyx_t_1 * __pyx_v_self-&gt;state.strides[0]) ))));<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 420, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
+  __pyx_r = __pyx_t_2;
+  __pyx_t_2 = 0;
+  goto __pyx_L0;
+</pre><pre class="cython line score-0">&#xA0;<span class="">421</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">422</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">423</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">424</span>: </pre>
+<pre class="cython line score-22" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">425</span>: <span class="k">cpdef</span> <span class="kt">real</span> <span class="nf">test</span><span class="p">(</span><span class="nb">int</span> <span class="n">a</span><span class="p">):</span></pre>
 <pre class='cython code score-22 '>static PyObject *__pyx_pw_5drone_15test(PyObject *__pyx_self, PyObject *__pyx_arg_a); /*proto*/
 static __pyx_t_7easyvec_7vectors_real __pyx_f_5drone_test(int __pyx_v_a, CYTHON_UNUSED int __pyx_skip_dispatch) {
   struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_v = 0;
@@ -6323,7 +8587,7 @@ static PyObject *__pyx_pw_5drone_15test(PyObject *__pyx_self, PyObject *__pyx_ar
   <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
   <span class='refnanny'>__Pyx_RefNannySetupContext</span>("test (wrapper)", 0);
   assert(__pyx_arg_a); {
-    __pyx_v_a = <span class='pyx_c_api'>__Pyx_PyInt_As_int</span>(__pyx_arg_a); if (unlikely((__pyx_v_a == (int)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 316, __pyx_L3_error)</span>
+    __pyx_v_a = <span class='pyx_c_api'>__Pyx_PyInt_As_int</span>(__pyx_arg_a); if (unlikely((__pyx_v_a == (int)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 425, __pyx_L3_error)</span>
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -6346,7 +8610,7 @@ static PyObject *__pyx_pf_5drone_14test(CYTHON_UNUSED PyObject *__pyx_self, int 
   <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
   <span class='refnanny'>__Pyx_RefNannySetupContext</span>("test", 0);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
-  __pyx_t_1 = <span class='py_c_api'>PyFloat_FromDouble</span>(__pyx_f_5drone_test(__pyx_v_a, 0));<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 316, __pyx_L1_error)</span>
+  __pyx_t_1 = <span class='py_c_api'>PyFloat_FromDouble</span>(__pyx_f_5drone_test(__pyx_v_a, 0));<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 425, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6362,18 +8626,18 @@ static PyObject *__pyx_pf_5drone_14test(CYTHON_UNUSED PyObject *__pyx_self, int 
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return __pyx_r;
 }
-</pre><pre class="cython line score-7" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">317</span>:     <span class="k">cdef</span> <span class="kt">Vec2</span> <span class="nf">v</span> <span class="o">=</span> <span class="n">Vec2</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">)</span></pre>
-<pre class='cython code score-7 '>  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyObject_Call</span>(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_tuple_, NULL);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 317, __pyx_L1_error)</span>
+</pre><pre class="cython line score-7" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">426</span>:     <span class="k">cdef</span> <span class="kt">Vec2</span> <span class="nf">v</span> <span class="o">=</span> <span class="n">Vec2</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">)</span></pre>
+<pre class='cython code score-7 '>  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyObject_Call</span>(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_tuple_, NULL);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 426, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   __pyx_v_v = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1);
   __pyx_t_1 = 0;
 /* … */
-  __pyx_tuple_ = <span class='py_c_api'>PyTuple_Pack</span>(2, __pyx_int_1, __pyx_int_2);<span class='error_goto'> if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 317, __pyx_L1_error)</span>
+  __pyx_tuple_ = <span class='py_c_api'>PyTuple_Pack</span>(2, __pyx_int_1, __pyx_int_2);<span class='error_goto'> if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 426, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_tuple_);
   <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_tuple_);
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">318</span>:     <span class="k">cdef</span> <span class="kt">real</span> <span class="nf">b</span> <span class="o">=</span> <span class="n">a</span></pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">427</span>:     <span class="k">cdef</span> <span class="kt">real</span> <span class="nf">b</span> <span class="o">=</span> <span class="n">a</span></pre>
 <pre class='cython code score-0 '>  __pyx_v_b = __pyx_v_a;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">319</span>:     <span class="k">return</span> <span class="n">v</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span></pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">428</span>:     <span class="k">return</span> <span class="n">v</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span></pre>
 <pre class='cython code score-0 '>  __pyx_r = (__pyx_v_v-&gt;x + __pyx_v_b);
   goto __pyx_L0;
 </pre></div></body></html>

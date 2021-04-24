@@ -313,6 +313,115 @@ cdef class Drone2d:
         return self.state[5]
 
 
+
+cdef class Missile2d:
+    cdef public double vel_len, ay, alpha
+    cdef public double[:] state, tmp1, tmp2, tmp3, tmp4
+    # [0, 1, 2,     3]
+    # [x, y, theta, t]
+    
+    def __init__(self, vel_len, ay, alpha):
+        self.vel_len = vel_len
+        self.ay = ay
+        self.alpha = alpha
+        n = 4
+        self.state = np.zeros(n)
+        self.tmp1 = np.zeros(n)
+        self.tmp2 = np.zeros(n)
+        self.tmp3 = np.zeros(n)
+        self.tmp4 = np.zeros(n)
+        self.t = 0
+
+    cpdef void fill_dy(self, Vec2 aim, double[:] dy):
+        cdef Vec2 pos = Vec2(self.state[0], self.state[1])
+        cdef Vec2 vel = Vec2(self.vel_len, 0).rotate(self.state[2])
+
+        cdef Vec2 r_vis = aim.sub_vec(pos).norm()
+        cdef double angle = vel.angle_to(r_vis)
+        if abs(angle) < 3 * 3.14/ 180:
+            dy[2] = 0
+        elif angle > 0:
+            dy[2] = self.ay/self.vel_len
+
+        dy[0] = vel.x                    # dx = vx
+        dy[1] = vel.y                    # dy = vy
+
+        dy[3] = 1   # dt
+        # print(f'rho={rho} F_coeff={F_coeff} F1={F1} F2={F2} V={V} F_Cx={F_Cx} F_Cx_x={F_Cx_x} F_Cx_y={F_Cx_y} F_x={F_x} F_y={F_y}')
+
+    cpdef void step(self, Vec2 drone_pos, Vec2 drone_vel, double tau=0.1, int n=10):
+        cdef double dt = tau / n
+        cdef size_t i, j
+        cdef double t = 0
+        cdef Vec2 aim, drone_pos_t
+        cdef double fly_time
+        for i in range(n):
+            t = dt * i
+            drone_pos_t = drone_pos + t * drone_vel
+            fly_time = (drone_pos_t - self.pos).vel() / self.vel_len
+            aim = drone_pos_t + fly_time * self.alpha * drone_vel 
+            self.fill_dy(aim, self.tmp1) # k1
+            for j in range(self.tmp1.shape[0]):
+                self.tmp1[j] = self.state[j] + 0.5 * dt * self.tmp1[j]
+
+            t = dt * i + 0.5*dt
+            drone_pos_t = drone_pos + t * drone_vel
+            fly_time = (drone_pos_t - self.pos).vel() / self.vel_len
+            aim = drone_pos_t + fly_time * self.alpha * drone_vel 
+            self.fill_dy(aim, self.tmp2) # k2
+            for j in range(self.state.shape[0]):
+                self.state[j] = self.state[j] + dt * self.tmp2[j]
+            self.t += dt
+            self.state[3] = self.t
+
+
+    cpdef dict to_dict(self):
+        cdef dict res = {
+            't': self.t,
+            'pos': Vec2(self.state[0], self.state[1]),
+            'vel': self.vel,
+            'theta': self.state[2]
+        }
+        return res
+
+    cpdef void from_dict(self, dict state_dict):
+        self.t = state_dict['t']
+        self.state[0] = state_dict['pos'][0]
+        self.state[1] = state_dict['pos'][1]
+        self.state[2] = state_dict['theta']
+        self.state[3] = self.t
+
+
+
+    def to_numpy(self):
+        return np.array(self.state)
+
+
+    @property
+    def vel(self):
+        return Vec2(self.vel_len, 0).rotate(self.state[2])
+    
+    @property
+    def vel_np(self):
+        v = Vec2(self.vel_len, 0).rotate(self.state[2])
+        return np.asarray(v.as_np())
+
+
+    @property
+    def pos(self):
+        return Vec2(self.state[0], self.state[1])
+
+    @property
+    def pos_np(self):
+        return np.array([self.state[0], self.state[1]])
+
+    @property
+    def theta(self):
+        return self.state[2]
+
+
+
+
 cpdef real test(int a):
     cdef Vec2 v = Vec2(1,2) 
     cdef real b = a

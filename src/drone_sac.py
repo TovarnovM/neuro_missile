@@ -267,19 +267,26 @@ class AgentParallel:
         self.critic_2.optimizer.step()
 
         self.update_network_parameters()
+        return np.array([
+            value_loss.cpu().detach().numpy(), 
+            actor_loss.cpu().detach().numpy(), 
+            critic_loss.cpu().detach().numpy() ])
 
 
     def to_dict(self):
-        return {
+        res = {
             'actor': self.actor.state_dict(),
             'value': self.value.state_dict(),
             'target_value': self.target_value.state_dict(),
             'critic_1': self.critic_1.state_dict(),
             'critic_2': self.critic_2.state_dict()
         }
+        for ss in res:
+            res[ss] = {k: v.cpu() for k, v in res[ss].items()}
+        return res
 
     def from_dict(self, d):
-        self.actor.load_state_dict(d['actor'])
+        self.actor.load_state_dict(d['actor'],)
         self.value.load_state_dict(d['value'])
         self.target_value.load_state_dict(d['target_value'])
         self.critic_1.load_state_dict(d['critic_1'])
@@ -316,6 +323,15 @@ class BufferParallel:
     def get_list_len(self):
         return len(self.state_memory_list)
 
+    def trim_oldest(self, n_remain, refresh=True):
+        if self.get_list_len() > n_remain:
+            self.state_memory_list = list(self.state_memory_list[-n_remain:])
+            self.new_state_memory_list = list(self.new_state_memory_list[-n_remain:])
+            self.action_memory_list = list(self.action_memory_list[-n_remain:])
+            self.reward_memory_list = list(self.reward_memory_list[-n_remain:])
+            self.terminal_memory_list = list(self.terminal_memory_list[-n_remain:])
+        if refresh:
+            self.refresh()
 
     def refresh(self, permut=True):
         self.n = len(self.state_memory_list)
