@@ -1232,6 +1232,8 @@ struct __pyx_array_obj;
 struct __pyx_MemviewEnum_obj;
 struct __pyx_memoryview_obj;
 struct __pyx_memoryviewslice_obj;
+struct __pyx_opt_args_7easyvec_7vectors_4Vec2_norm_;
+struct __pyx_opt_args_7easyvec_7vectors_4Vec2_norm;
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_round_;
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_round;
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_ceil_;
@@ -1244,10 +1246,47 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_angle_to_xy;
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_angle_to;
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_rotate_;
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_rotate;
+struct __pyx_opt_args_7easyvec_7vectors_4Vec3_norm_;
+struct __pyx_opt_args_7easyvec_7vectors_4Vec3_norm;
+struct __pyx_opt_args_7easyvec_7vectors_4Vec3_round_;
+struct __pyx_opt_args_7easyvec_7vectors_4Vec3_round;
+struct __pyx_opt_args_7easyvec_7vectors_4Vec3_ceil_;
+struct __pyx_opt_args_7easyvec_7vectors_4Vec3_ceil;
+struct __pyx_opt_args_7easyvec_7vectors_4Vec3_floor_;
+struct __pyx_opt_args_7easyvec_7vectors_4Vec3_floor;
+struct __pyx_opt_args_7easyvec_7vectors_4Vec3_trunc_;
+struct __pyx_opt_args_7easyvec_7vectors_4Vec3_trunc;
+struct __pyx_opt_args_7easyvec_7vectors_4Vec3_angle_to;
+struct __pyx_opt_args_7easyvec_7vectors_4Vec3_rotate_;
+struct __pyx_opt_args_7easyvec_7vectors_4Vec3_rotate;
+
+/* "easyvec/vectors.pxd":128
+ *     cpdef Vec2 abs_(self)
+ *     cpdef Vec2 abs(self)
+ *     cpdef Vec2 norm_(self, bint raise_zero_len_error=*)             # <<<<<<<<<<<<<<
+ *     cpdef Vec2 norm(self, bint raise_zero_len_error=*)
+ *     cpdef Vec2 round_(self, int ndigits=*)
+ */
+struct __pyx_opt_args_7easyvec_7vectors_4Vec2_norm_ {
+  int __pyx_n;
+  int raise_zero_len_error;
+};
+
+/* "easyvec/vectors.pxd":129
+ *     cpdef Vec2 abs(self)
+ *     cpdef Vec2 norm_(self, bint raise_zero_len_error=*)
+ *     cpdef Vec2 norm(self, bint raise_zero_len_error=*)             # <<<<<<<<<<<<<<
+ *     cpdef Vec2 round_(self, int ndigits=*)
+ *     cpdef Vec2 round(self, int ndigits=*)
+ */
+struct __pyx_opt_args_7easyvec_7vectors_4Vec2_norm {
+  int __pyx_n;
+  int raise_zero_len_error;
+};
 
 /* "easyvec/vectors.pxd":130
- *     cpdef Vec2 norm_(self)
- *     cpdef Vec2 norm(self)
+ *     cpdef Vec2 norm_(self, bint raise_zero_len_error=*)
+ *     cpdef Vec2 norm(self, bint raise_zero_len_error=*)
  *     cpdef Vec2 round_(self, int ndigits=*)             # <<<<<<<<<<<<<<
  *     cpdef Vec2 round(self, int ndigits=*)
  *     cpdef Vec2 ceil_(self, int ndigits=*)
@@ -1258,7 +1297,7 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_round_ {
 };
 
 /* "easyvec/vectors.pxd":131
- *     cpdef Vec2 norm(self)
+ *     cpdef Vec2 norm(self, bint raise_zero_len_error=*)
  *     cpdef Vec2 round_(self, int ndigits=*)
  *     cpdef Vec2 round(self, int ndigits=*)             # <<<<<<<<<<<<<<
  *     cpdef Vec2 ceil_(self, int ndigits=*)
@@ -1344,25 +1383,25 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_trunc {
 /* "easyvec/vectors.pxd":142
  *     cpdef real cross_xy(self, real x, real y)
  * 
- *     cpdef real angle_to_xy(self, real x, real y, int degree=*)             # <<<<<<<<<<<<<<
- *     cpdef real angle_to(self, Vec2 vec, int degree=*)
+ *     cpdef real angle_to_xy(self, real x, real y, int degrees=*)             # <<<<<<<<<<<<<<
+ *     cpdef real angle_to(self, Vec2 vec, int degrees=*)
  * 
  */
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_angle_to_xy {
   int __pyx_n;
-  int degree;
+  int degrees;
 };
 
 /* "easyvec/vectors.pxd":143
  * 
- *     cpdef real angle_to_xy(self, real x, real y, int degree=*)
- *     cpdef real angle_to(self, Vec2 vec, int degree=*)             # <<<<<<<<<<<<<<
+ *     cpdef real angle_to_xy(self, real x, real y, int degrees=*)
+ *     cpdef real angle_to(self, Vec2 vec, int degrees=*)             # <<<<<<<<<<<<<<
  * 
  *     cpdef Vec2 rotate90_(self)
  */
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_angle_to {
   int __pyx_n;
-  int degree;
+  int degrees;
 };
 
 /* "easyvec/vectors.pxd":150
@@ -1385,6 +1424,161 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_rotate_ {
  * 
  */
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_rotate {
+  int __pyx_n;
+  int degrees;
+};
+
+/* "easyvec/vectors.pxd":256
+ *     cpdef Vec3 abs_(self)
+ *     cpdef Vec3 abs(self)
+ *     cpdef Vec3 norm_(self, bint raise_zero_len_error=*)             # <<<<<<<<<<<<<<
+ *     cpdef Vec3 norm(self, bint raise_zero_len_error=*)
+ *     cpdef Vec3 round_(self, int ndigits=*)
+ */
+struct __pyx_opt_args_7easyvec_7vectors_4Vec3_norm_ {
+  int __pyx_n;
+  int raise_zero_len_error;
+};
+
+/* "easyvec/vectors.pxd":257
+ *     cpdef Vec3 abs(self)
+ *     cpdef Vec3 norm_(self, bint raise_zero_len_error=*)
+ *     cpdef Vec3 norm(self, bint raise_zero_len_error=*)             # <<<<<<<<<<<<<<
+ *     cpdef Vec3 round_(self, int ndigits=*)
+ *     cpdef Vec3 round(self, int ndigits=*)
+ */
+struct __pyx_opt_args_7easyvec_7vectors_4Vec3_norm {
+  int __pyx_n;
+  int raise_zero_len_error;
+};
+
+/* "easyvec/vectors.pxd":258
+ *     cpdef Vec3 norm_(self, bint raise_zero_len_error=*)
+ *     cpdef Vec3 norm(self, bint raise_zero_len_error=*)
+ *     cpdef Vec3 round_(self, int ndigits=*)             # <<<<<<<<<<<<<<
+ *     cpdef Vec3 round(self, int ndigits=*)
+ *     cpdef Vec3 ceil_(self, int ndigits=*)
+ */
+struct __pyx_opt_args_7easyvec_7vectors_4Vec3_round_ {
+  int __pyx_n;
+  int ndigits;
+};
+
+/* "easyvec/vectors.pxd":259
+ *     cpdef Vec3 norm(self, bint raise_zero_len_error=*)
+ *     cpdef Vec3 round_(self, int ndigits=*)
+ *     cpdef Vec3 round(self, int ndigits=*)             # <<<<<<<<<<<<<<
+ *     cpdef Vec3 ceil_(self, int ndigits=*)
+ *     cpdef Vec3 ceil(self, int ndigits=*)
+ */
+struct __pyx_opt_args_7easyvec_7vectors_4Vec3_round {
+  int __pyx_n;
+  int ndigits;
+};
+
+/* "easyvec/vectors.pxd":260
+ *     cpdef Vec3 round_(self, int ndigits=*)
+ *     cpdef Vec3 round(self, int ndigits=*)
+ *     cpdef Vec3 ceil_(self, int ndigits=*)             # <<<<<<<<<<<<<<
+ *     cpdef Vec3 ceil(self, int ndigits=*)
+ *     cpdef Vec3 floor_(self, int ndigits=*)
+ */
+struct __pyx_opt_args_7easyvec_7vectors_4Vec3_ceil_ {
+  int __pyx_n;
+  int ndigits;
+};
+
+/* "easyvec/vectors.pxd":261
+ *     cpdef Vec3 round(self, int ndigits=*)
+ *     cpdef Vec3 ceil_(self, int ndigits=*)
+ *     cpdef Vec3 ceil(self, int ndigits=*)             # <<<<<<<<<<<<<<
+ *     cpdef Vec3 floor_(self, int ndigits=*)
+ *     cpdef Vec3 floor(self, int ndigits=*)
+ */
+struct __pyx_opt_args_7easyvec_7vectors_4Vec3_ceil {
+  int __pyx_n;
+  int ndigits;
+};
+
+/* "easyvec/vectors.pxd":262
+ *     cpdef Vec3 ceil_(self, int ndigits=*)
+ *     cpdef Vec3 ceil(self, int ndigits=*)
+ *     cpdef Vec3 floor_(self, int ndigits=*)             # <<<<<<<<<<<<<<
+ *     cpdef Vec3 floor(self, int ndigits=*)
+ *     cpdef Vec3 trunc_(self, int ndigits=*)
+ */
+struct __pyx_opt_args_7easyvec_7vectors_4Vec3_floor_ {
+  int __pyx_n;
+  int ndigits;
+};
+
+/* "easyvec/vectors.pxd":263
+ *     cpdef Vec3 ceil(self, int ndigits=*)
+ *     cpdef Vec3 floor_(self, int ndigits=*)
+ *     cpdef Vec3 floor(self, int ndigits=*)             # <<<<<<<<<<<<<<
+ *     cpdef Vec3 trunc_(self, int ndigits=*)
+ *     cpdef Vec3 trunc(self, int ndigits=*)
+ */
+struct __pyx_opt_args_7easyvec_7vectors_4Vec3_floor {
+  int __pyx_n;
+  int ndigits;
+};
+
+/* "easyvec/vectors.pxd":264
+ *     cpdef Vec3 floor_(self, int ndigits=*)
+ *     cpdef Vec3 floor(self, int ndigits=*)
+ *     cpdef Vec3 trunc_(self, int ndigits=*)             # <<<<<<<<<<<<<<
+ *     cpdef Vec3 trunc(self, int ndigits=*)
+ *     cpdef Vec3 cross(self, Vec3 right)
+ */
+struct __pyx_opt_args_7easyvec_7vectors_4Vec3_trunc_ {
+  int __pyx_n;
+  int ndigits;
+};
+
+/* "easyvec/vectors.pxd":265
+ *     cpdef Vec3 floor(self, int ndigits=*)
+ *     cpdef Vec3 trunc_(self, int ndigits=*)
+ *     cpdef Vec3 trunc(self, int ndigits=*)             # <<<<<<<<<<<<<<
+ *     cpdef Vec3 cross(self, Vec3 right)
+ *     cpdef Vec3 cross_xy(self, real x, real y, real z)
+ */
+struct __pyx_opt_args_7easyvec_7vectors_4Vec3_trunc {
+  int __pyx_n;
+  int ndigits;
+};
+
+/* "easyvec/vectors.pxd":268
+ *     cpdef Vec3 cross(self, Vec3 right)
+ *     cpdef Vec3 cross_xy(self, real x, real y, real z)
+ *     cpdef real angle_to(self, Vec3 vec, bint degrees=*)             # <<<<<<<<<<<<<<
+ *     cpdef Vec3 rotate_(self, Vec3 axis, real angle, int degrees=*)
+ *     cpdef Vec3 rotate(self, real angle, int degrees=*)
+ */
+struct __pyx_opt_args_7easyvec_7vectors_4Vec3_angle_to {
+  int __pyx_n;
+  int degrees;
+};
+
+/* "easyvec/vectors.pxd":269
+ *     cpdef Vec3 cross_xy(self, real x, real y, real z)
+ *     cpdef real angle_to(self, Vec3 vec, bint degrees=*)
+ *     cpdef Vec3 rotate_(self, Vec3 axis, real angle, int degrees=*)             # <<<<<<<<<<<<<<
+ *     cpdef Vec3 rotate(self, real angle, int degrees=*)
+ * 
+ */
+struct __pyx_opt_args_7easyvec_7vectors_4Vec3_rotate_ {
+  int __pyx_n;
+  int degrees;
+};
+
+/* "easyvec/vectors.pxd":270
+ *     cpdef real angle_to(self, Vec3 vec, bint degrees=*)
+ *     cpdef Vec3 rotate_(self, Vec3 axis, real angle, int degrees=*)
+ *     cpdef Vec3 rotate(self, real angle, int degrees=*)             # <<<<<<<<<<<<<<
+ * 
+ */
+struct __pyx_opt_args_7easyvec_7vectors_4Vec3_rotate {
   int __pyx_n;
   int degrees;
 };
@@ -1463,7 +1657,7 @@ struct __pyx_opt_args_5drone_get_max_v_a {
   int rounds;
 };
 
-/* "drone.pyx":134
+/* "drone.pyx":135
  *         # print(f'rho={rho} F_coeff={F_coeff} F1={F1} F2={F2} V={V} F_Cx={F_Cx} F_Cx_x={F_Cx_x} F_Cx_y={F_Cx_y} F_x={F_x} F_y={F_y}')
  * 
  *     cpdef void step(self, double F1, double F2, double tau=0.1, int n=10):             # <<<<<<<<<<<<<<
@@ -1476,7 +1670,7 @@ struct __pyx_opt_args_5drone_7Drone2d_step {
   int n;
 };
 
-/* "drone.pyx":193
+/* "drone.pyx":194
  *         self.t = self.state[6]
  * 
  *     cpdef (double, double, double) get_vmin_vmax_amax(self, double delta_t, Vec2 pos_trg, Vec2 vel_trg, int n_vel_search=25):             # <<<<<<<<<<<<<<
@@ -1493,7 +1687,7 @@ struct __pyx_opt_args_5drone_7Drone2d_get_vmin_vmax_amax {
   int n_vel_search;
 };
 
-/* "drone.pyx":352
+/* "drone.pyx":355
  *         # print(f'rho={rho} F_coeff={F_coeff} F1={F1} F2={F2} V={V} F_Cx={F_Cx} F_Cx_x={F_Cx_x} F_Cx_y={F_Cx_y} F_x={F_x} F_y={F_y}')
  * 
  *     cpdef void step(self, Vec2 drone_pos, Vec2 drone_vel, double tau=0.1, int n=10):             # <<<<<<<<<<<<<<
@@ -1525,10 +1719,12 @@ struct __pyx_obj_7easyvec_7vectors_Vec2 {
  * 
  * 
  * cdef class Vec3:             # <<<<<<<<<<<<<<
- *     cdef real x, y, z
+ *     cdef public real x, y, z
+ *     cpdef Vec3 clone(self)
  */
 struct __pyx_obj_7easyvec_7vectors_Vec3 {
   PyObject_HEAD
+  struct __pyx_vtabstruct_7easyvec_7vectors_Vec3 *__pyx_vtab;
   __pyx_t_7easyvec_7vectors_real x;
   __pyx_t_7easyvec_7vectors_real y;
   __pyx_t_7easyvec_7vectors_real z;
@@ -1553,6 +1749,7 @@ struct __pyx_obj_5drone_Drone2d {
   double t;
   double g;
   double mu_omega;
+  int n;
   __Pyx_memviewslice state;
   __Pyx_memviewslice tmp1;
   __Pyx_memviewslice tmp2;
@@ -1561,12 +1758,12 @@ struct __pyx_obj_5drone_Drone2d {
 };
 
 
-/* "drone.pyx":317
+/* "drone.pyx":310
  * 
  * 
  * cdef class Missile2d:             # <<<<<<<<<<<<<<
- *     cdef public double vel_len, ay, alpha
- *     cdef public double[:] state, tmp1, tmp2, tmp3, tmp4
+ *     cdef public double vel_len, ay, alpha, t
+ *     cdef public int n
  */
 struct __pyx_obj_5drone_Missile2d {
   PyObject_HEAD
@@ -1574,6 +1771,8 @@ struct __pyx_obj_5drone_Missile2d {
   double vel_len;
   double ay;
   double alpha;
+  double t;
+  int n;
   __Pyx_memviewslice state;
   __Pyx_memviewslice tmp1;
   __Pyx_memviewslice tmp2;
@@ -1756,8 +1955,8 @@ struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 {
   __pyx_t_7easyvec_7vectors_real (*len_sqared)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*abs_)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*abs)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec2 *(*norm_)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec2 *(*norm)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *(*norm_)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec2_norm_ *__pyx_optional_args);
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *(*norm)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec2_norm *__pyx_optional_args);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*round_)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec2_round_ *__pyx_optional_args);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*round)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec2_round *__pyx_optional_args);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*ceil_)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec2_ceil_ *__pyx_optional_args);
@@ -1845,6 +2044,186 @@ struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 {
 static struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *__pyx_vtabptr_7easyvec_7vectors_Vec2;
 
 
+/* "easyvec/vectors.pxd":154
+ * 
+ * 
+ * cdef class Vec3:             # <<<<<<<<<<<<<<
+ *     cdef public real x, y, z
+ *     cpdef Vec3 clone(self)
+ */
+
+struct __pyx_vtabstruct_7easyvec_7vectors_Vec3 {
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*clone)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*copy)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  int (*is_eq)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*add_num_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*add_num)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*add_vec_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*add)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*add_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*add_vec)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*add_xy_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*add_xy)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*add_tup_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*add_tup)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*add_list_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*add_list)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*neg_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*neg)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  PyObject *(*keys)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  PyObject *(*as_tuple)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*sub_num_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*sub_num)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*sub_vec_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*sub_vec)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*sub_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*sub)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*sub_xy_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*sub_xy)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*sub_tup_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*sub_tup)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*sub_list_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*sub_list)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mul_num_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mul_num)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mul_vec_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mul_vec)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mul_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mul)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mul_xy_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mul_xy)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mul_tup_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mul_tup)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mul_list_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mul_list)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
+  __pyx_t_7easyvec_7vectors_real (*dot)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  __pyx_t_7easyvec_7vectors_real (*dot_xy)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
+  __pyx_t_7easyvec_7vectors_real (*dot_tup)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
+  __pyx_t_7easyvec_7vectors_real (*dot_list)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*div_num_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*div_num)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*div_vec_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*div_vec)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*div_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*div)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*div_xy_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*div_xy)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*div_tup_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*div_tup)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*div_list_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*div_list)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*floordiv_num_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*floordiv_num)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*floordiv_vec_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*floordiv_vec)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*floordiv_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*floordiv)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*floordiv_xy_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*floordiv_xy)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*floordiv_tup_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*floordiv_tup)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*floordiv_list_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*floordiv_list)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mod_num_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mod_num)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mod_vec_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mod_vec)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mod_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mod)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mod_xy_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mod_xy)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mod_tup_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mod_tup)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mod_list_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mod_list)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
+  __pyx_t_7easyvec_7vectors_real (*len)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  __pyx_t_7easyvec_7vectors_real (*len_sqared)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*abs_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*abs)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*norm_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec3_norm_ *__pyx_optional_args);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*norm)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec3_norm *__pyx_optional_args);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*round_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec3_round_ *__pyx_optional_args);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*round)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec3_round *__pyx_optional_args);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*ceil_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec3_ceil_ *__pyx_optional_args);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*ceil)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec3_ceil *__pyx_optional_args);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*floor_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec3_floor_ *__pyx_optional_args);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*floor)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec3_floor *__pyx_optional_args);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*trunc_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec3_trunc_ *__pyx_optional_args);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*trunc)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec3_trunc *__pyx_optional_args);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*cross)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*cross_xy)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
+  __pyx_t_7easyvec_7vectors_real (*angle_to)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec3_angle_to *__pyx_optional_args);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*rotate_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec3_rotate_ *__pyx_optional_args);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*rotate)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec3_rotate *__pyx_optional_args);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_0add_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_1add_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_2add_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_3add_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_4add_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_0add_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_1add_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_2add_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_3add_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_4add_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_0sub_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_1sub_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_2sub_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_3sub_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_4sub_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_0sub_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_1sub_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_2sub_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_3sub_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_4sub_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_0mul_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_1mul_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_2mul_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_3mul_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_4mul_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_0mul_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_1mul_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_2mul_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_3mul_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_4mul_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  __pyx_t_7easyvec_7vectors_real (*__pyx_fuse_0dot_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  __pyx_t_7easyvec_7vectors_real (*__pyx_fuse_1dot_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  __pyx_t_7easyvec_7vectors_real (*__pyx_fuse_2dot_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  __pyx_t_7easyvec_7vectors_real (*__pyx_fuse_3dot_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  __pyx_t_7easyvec_7vectors_real (*__pyx_fuse_4dot_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_0div_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_1div_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_2div_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_3div_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_4div_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_0div_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_1div_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_2div_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_3div_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_4div_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_0floordiv_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_1floordiv_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_2floordiv_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_3floordiv_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_4floordiv_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_0floordiv_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_1floordiv_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_2floordiv_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_3floordiv_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_4floordiv_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_0mod_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_1mod_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_2mod_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_3mod_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_4mod_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_0mod_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_1mod_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_2mod_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_3mod_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_4mod_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
+};
+static struct __pyx_vtabstruct_7easyvec_7vectors_Vec3 *__pyx_vtabptr_7easyvec_7vectors_Vec3;
+
+
 /* "drone.pyx":77
  * 
  * 
@@ -1865,12 +2244,12 @@ struct __pyx_vtabstruct_5drone_Drone2d {
 static struct __pyx_vtabstruct_5drone_Drone2d *__pyx_vtabptr_5drone_Drone2d;
 
 
-/* "drone.pyx":317
+/* "drone.pyx":310
  * 
  * 
  * cdef class Missile2d:             # <<<<<<<<<<<<<<
- *     cdef public double vel_len, ay, alpha
- *     cdef public double[:] state, tmp1, tmp2, tmp3, tmp4
+ *     cdef public double vel_len, ay, alpha, t
+ *     cdef public int n
  */
 
 struct __pyx_vtabstruct_5drone_Missile2d {
@@ -2262,15 +2641,6 @@ static CYTHON_INLINE PyObject *__Pyx_GetAttr(PyObject *, PyObject *);
 /* GetAttr3.proto */
 static CYTHON_INLINE PyObject *__Pyx_GetAttr3(PyObject *, PyObject *, PyObject *);
 
-/* PyObjectSetAttrStr.proto */
-#if CYTHON_USE_TYPE_SLOTS
-#define __Pyx_PyObject_DelAttrStr(o,n) __Pyx_PyObject_SetAttrStr(o, n, NULL)
-static CYTHON_INLINE int __Pyx_PyObject_SetAttrStr(PyObject* obj, PyObject* attr_name, PyObject* value);
-#else
-#define __Pyx_PyObject_DelAttrStr(o,n)   PyObject_DelAttr(o,n)
-#define __Pyx_PyObject_SetAttrStr(o,n,v) PyObject_SetAttr(o,n,v)
-#endif
-
 /* ExtTypeTest.proto */
 static CYTHON_INLINE int __Pyx_TypeTest(PyObject *obj, PyTypeObject *type);
 
@@ -2536,6 +2906,11 @@ static int __pyx_slices_overlap(__Pyx_memviewslice *slice1,
 /* Capsule.proto */
 static CYTHON_INLINE PyObject *__pyx_capsule_create(void *p, const char *sig);
 
+/* GCCDiagnostics.proto */
+#if defined(__GNUC__) && (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 6))
+#define __Pyx_HAS_GCC_DIAGNOSTIC
+#endif
+
 /* MemviewDtypeToObject.proto */
 static CYTHON_INLINE PyObject *__pyx_memview_get_double(const char *itemp);
 static CYTHON_INLINE int __pyx_memview_set_double(const char *itemp, PyObject *obj);
@@ -2565,11 +2940,6 @@ static int __Pyx_ValidateAndInit_memviewslice(
 
 /* ObjectToMemviewSlice.proto */
 static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_ds_double(PyObject *, int writable_flag);
-
-/* GCCDiagnostics.proto */
-#if defined(__GNUC__) && (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 6))
-#define __Pyx_HAS_GCC_DIAGNOSTIC
-#endif
 
 /* ToPyCTupleUtility.proto */
 static PyObject* __pyx_convert__to_py___pyx_ctuple_double__and_double(__pyx_ctuple_double__and_double);
@@ -2685,20 +3055,20 @@ __pyx_memoryview_copy_new_contig(const __Pyx_memviewslice *from_mvs,
                                  size_t sizeof_dtype, int contig_flag,
                                  int dtype_is_object);
 
+/* CIntToPy.proto */
+static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value);
+
 /* CIntFromPy.proto */
 static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *);
 
 /* CIntFromPy.proto */
 static CYTHON_INLINE long __Pyx_PyInt_As_long(PyObject *);
 
-/* CIntToPy.proto */
-static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value);
+/* CIntFromPy.proto */
+static CYTHON_INLINE size_t __Pyx_PyInt_As_size_t(PyObject *);
 
 /* CIntToPy.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value);
-
-/* CIntFromPy.proto */
-static CYTHON_INLINE size_t __Pyx_PyInt_As_size_t(PyObject *);
 
 /* CIntFromPy.proto */
 static CYTHON_INLINE char __Pyx_PyInt_As_char(PyObject *);
@@ -2883,6 +3253,7 @@ static const char __pyx_k_np[] = "np";
 static const char __pyx_k_vA[] = "vA";
 static const char __pyx_k_vD[] = "vD";
 static const char __pyx_k_aim[] = "aim";
+static const char __pyx_k_len[] = "len";
 static const char __pyx_k_new[] = "__new__";
 static const char __pyx_k_obj[] = "obj";
 static const char __pyx_k_pos[] = "pos";
@@ -2895,7 +3266,9 @@ static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_mode[] = "mode";
 static const char __pyx_k_name[] = "name";
 static const char __pyx_k_ndim[] = "ndim";
+static const char __pyx_k_norm[] = "norm";
 static const char __pyx_k_pack[] = "pack";
+static const char __pyx_k_pos0[] = "pos0";
 static const char __pyx_k_size[] = "size";
 static const char __pyx_k_step[] = "step";
 static const char __pyx_k_stop[] = "stop";
@@ -2996,9 +3369,9 @@ static const char __pyx_k_Can_only_create_a_buffer_that_is[] = "Can only create 
 static const char __pyx_k_Cannot_assign_to_read_only_memor[] = "Cannot assign to read-only memoryview";
 static const char __pyx_k_Cannot_create_writable_memory_vi[] = "Cannot create writable memory view from read-only memoryview";
 static const char __pyx_k_Empty_shape_tuple_for_cython_arr[] = "Empty shape tuple for cython.array";
-static const char __pyx_k_Incompatible_checksums_s_vs_0x37[] = "Incompatible checksums (%s vs 0x37d0dfb = (alpha, ay, state, tmp1, tmp2, tmp3, tmp4, vel_len))";
+static const char __pyx_k_Incompatible_checksums_s_vs_0x96[] = "Incompatible checksums (%s vs 0x96d6a70 = (alpha, ay, n, state, t, tmp1, tmp2, tmp3, tmp4, vel_len))";
 static const char __pyx_k_Incompatible_checksums_s_vs_0xb0[] = "Incompatible checksums (%s vs 0xb068931 = (name))";
-static const char __pyx_k_Incompatible_checksums_s_vs_0xbe[] = "Incompatible checksums (%s vs 0xbe344c3 = (Cx, F_max, J, L, g, m, mu_omega, state, t, tmp1, tmp2, tmp3, tmp4))";
+static const char __pyx_k_Incompatible_checksums_s_vs_0xbd[] = "Incompatible checksums (%s vs 0xbdc517b = (Cx, F_max, J, L, g, m, mu_omega, n, state, t, tmp1, tmp2, tmp3, tmp4))";
 static const char __pyx_k_Indirect_dimensions_not_supporte[] = "Indirect dimensions not supported";
 static const char __pyx_k_Invalid_mode_expected_c_or_fortr[] = "Invalid mode, expected 'c' or 'fortran', got %s";
 static const char __pyx_k_Out_of_bounds_on_buffer_access_a[] = "Out of bounds on buffer access (axis %d)";
@@ -3025,9 +3398,9 @@ static PyObject *__pyx_n_s_F1;
 static PyObject *__pyx_n_s_F2;
 static PyObject *__pyx_n_s_F_max;
 static PyObject *__pyx_n_s_ImportError;
-static PyObject *__pyx_kp_s_Incompatible_checksums_s_vs_0x37;
+static PyObject *__pyx_kp_s_Incompatible_checksums_s_vs_0x96;
 static PyObject *__pyx_kp_s_Incompatible_checksums_s_vs_0xb0;
-static PyObject *__pyx_kp_s_Incompatible_checksums_s_vs_0xbe;
+static PyObject *__pyx_kp_s_Incompatible_checksums_s_vs_0xbd;
 static PyObject *__pyx_n_s_IndexError;
 static PyObject *__pyx_kp_s_Indirect_dimensions_not_supporte;
 static PyObject *__pyx_kp_s_Invalid_mode_expected_c_or_fortr;
@@ -3088,6 +3461,7 @@ static PyObject *__pyx_n_s_id;
 static PyObject *__pyx_n_s_import;
 static PyObject *__pyx_n_s_itemsize;
 static PyObject *__pyx_kp_s_itemsize_0_for_cython_array;
+static PyObject *__pyx_n_s_len;
 static PyObject *__pyx_n_s_linspace;
 static PyObject *__pyx_n_s_m;
 static PyObject *__pyx_n_s_main;
@@ -3102,6 +3476,7 @@ static PyObject *__pyx_n_s_name_2;
 static PyObject *__pyx_n_s_ndim;
 static PyObject *__pyx_n_s_new;
 static PyObject *__pyx_kp_s_no_default___reduce___due_to_non;
+static PyObject *__pyx_n_s_norm;
 static PyObject *__pyx_n_s_np;
 static PyObject *__pyx_n_s_numpy;
 static PyObject *__pyx_kp_u_numpy_core_multiarray_failed_to;
@@ -3112,6 +3487,7 @@ static PyObject *__pyx_n_s_pack;
 static PyObject *__pyx_n_s_pickle;
 static PyObject *__pyx_n_s_pos;
 static PyObject *__pyx_n_u_pos;
+static PyObject *__pyx_n_s_pos0;
 static PyObject *__pyx_n_s_pos_trg;
 static PyObject *__pyx_n_s_pyx_PickleError;
 static PyObject *__pyx_n_s_pyx_checksum;
@@ -3203,6 +3579,8 @@ static PyObject *__pyx_pf_5drone_7Drone2d_1g___get__(struct __pyx_obj_5drone_Dro
 static int __pyx_pf_5drone_7Drone2d_1g_2__set__(struct __pyx_obj_5drone_Drone2d *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
 static PyObject *__pyx_pf_5drone_7Drone2d_8mu_omega___get__(struct __pyx_obj_5drone_Drone2d *__pyx_v_self); /* proto */
 static int __pyx_pf_5drone_7Drone2d_8mu_omega_2__set__(struct __pyx_obj_5drone_Drone2d *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
+static PyObject *__pyx_pf_5drone_7Drone2d_1n___get__(struct __pyx_obj_5drone_Drone2d *__pyx_v_self); /* proto */
+static int __pyx_pf_5drone_7Drone2d_1n_2__set__(struct __pyx_obj_5drone_Drone2d *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
 static PyObject *__pyx_pf_5drone_7Drone2d_5state___get__(struct __pyx_obj_5drone_Drone2d *__pyx_v_self); /* proto */
 static int __pyx_pf_5drone_7Drone2d_5state_2__set__(struct __pyx_obj_5drone_Drone2d *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
 static PyObject *__pyx_pf_5drone_7Drone2d_4tmp1___get__(struct __pyx_obj_5drone_Drone2d *__pyx_v_self); /* proto */
@@ -3215,12 +3593,13 @@ static PyObject *__pyx_pf_5drone_7Drone2d_4tmp4___get__(struct __pyx_obj_5drone_
 static int __pyx_pf_5drone_7Drone2d_4tmp4_2__set__(struct __pyx_obj_5drone_Drone2d *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
 static PyObject *__pyx_pf_5drone_7Drone2d_28__reduce_cython__(struct __pyx_obj_5drone_Drone2d *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5drone_7Drone2d_30__setstate_cython__(struct __pyx_obj_5drone_Drone2d *__pyx_v_self, PyObject *__pyx_v___pyx_state); /* proto */
-static int __pyx_pf_5drone_9Missile2d___init__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v_vel_len, PyObject *__pyx_v_ay, PyObject *__pyx_v_alpha); /* proto */
+static int __pyx_pf_5drone_9Missile2d___init__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v_pos0, PyObject *__pyx_v_pos_trg, PyObject *__pyx_v_vel_len, PyObject *__pyx_v_ay, PyObject *__pyx_v_alpha); /* proto */
 static PyObject *__pyx_pf_5drone_9Missile2d_2fill_dy(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_aim, __Pyx_memviewslice __pyx_v_dy); /* proto */
 static PyObject *__pyx_pf_5drone_9Missile2d_4step(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_drone_pos, struct __pyx_obj_7easyvec_7vectors_Vec2 *__pyx_v_drone_vel, double __pyx_v_tau, int __pyx_v_n); /* proto */
 static PyObject *__pyx_pf_5drone_9Missile2d_6to_dict(struct __pyx_obj_5drone_Missile2d *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5drone_9Missile2d_8from_dict(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v_state_dict); /* proto */
 static PyObject *__pyx_pf_5drone_9Missile2d_10to_numpy(struct __pyx_obj_5drone_Missile2d *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_5drone_9Missile2d_12from_numpy(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v_state); /* proto */
 static PyObject *__pyx_pf_5drone_9Missile2d_3vel___get__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5drone_9Missile2d_6vel_np___get__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_5drone_9Missile2d_3pos___get__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self); /* proto */
@@ -3232,6 +3611,10 @@ static PyObject *__pyx_pf_5drone_9Missile2d_2ay___get__(struct __pyx_obj_5drone_
 static int __pyx_pf_5drone_9Missile2d_2ay_2__set__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
 static PyObject *__pyx_pf_5drone_9Missile2d_5alpha___get__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self); /* proto */
 static int __pyx_pf_5drone_9Missile2d_5alpha_2__set__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
+static PyObject *__pyx_pf_5drone_9Missile2d_1t___get__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self); /* proto */
+static int __pyx_pf_5drone_9Missile2d_1t_2__set__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
+static PyObject *__pyx_pf_5drone_9Missile2d_1n___get__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self); /* proto */
+static int __pyx_pf_5drone_9Missile2d_1n_2__set__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
 static PyObject *__pyx_pf_5drone_9Missile2d_5state___get__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self); /* proto */
 static int __pyx_pf_5drone_9Missile2d_5state_2__set__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
 static PyObject *__pyx_pf_5drone_9Missile2d_4tmp1___get__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self); /* proto */
@@ -3242,8 +3625,8 @@ static PyObject *__pyx_pf_5drone_9Missile2d_4tmp3___get__(struct __pyx_obj_5dron
 static int __pyx_pf_5drone_9Missile2d_4tmp3_2__set__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
 static PyObject *__pyx_pf_5drone_9Missile2d_4tmp4___get__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self); /* proto */
 static int __pyx_pf_5drone_9Missile2d_4tmp4_2__set__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
-static PyObject *__pyx_pf_5drone_9Missile2d_12__reduce_cython__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_5drone_9Missile2d_14__setstate_cython__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_5drone_9Missile2d_14__reduce_cython__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_5drone_9Missile2d_16__setstate_cython__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v___pyx_state); /* proto */
 static PyObject *__pyx_pf_5drone_14test(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_a); /* proto */
 static PyObject *__pyx_pf_5drone_16__pyx_unpickle_Drone2d(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
 static PyObject *__pyx_pf_5drone_18__pyx_unpickle_Missile2d(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
@@ -3306,9 +3689,9 @@ static PyObject *__pyx_int_6;
 static PyObject *__pyx_int_33;
 static PyObject *__pyx_int_42;
 static PyObject *__pyx_int_100;
-static PyObject *__pyx_int_58527227;
+static PyObject *__pyx_int_158165616;
 static PyObject *__pyx_int_184977713;
-static PyObject *__pyx_int_199443651;
+static PyObject *__pyx_int_198988155;
 static PyObject *__pyx_int_neg_1;
 static PyObject *__pyx_tuple_;
 static PyObject *__pyx_tuple__2;
@@ -3319,7 +3702,7 @@ static PyObject *__pyx_tuple__6;
 static PyObject *__pyx_tuple__7;
 static PyObject *__pyx_tuple__8;
 static PyObject *__pyx_tuple__9;
-static PyObject *__pyx_slice__18;
+static PyObject *__pyx_slice__19;
 static PyObject *__pyx_tuple__10;
 static PyObject *__pyx_tuple__11;
 static PyObject *__pyx_tuple__12;
@@ -3328,20 +3711,21 @@ static PyObject *__pyx_tuple__14;
 static PyObject *__pyx_tuple__15;
 static PyObject *__pyx_tuple__16;
 static PyObject *__pyx_tuple__17;
-static PyObject *__pyx_tuple__19;
+static PyObject *__pyx_tuple__18;
 static PyObject *__pyx_tuple__20;
 static PyObject *__pyx_tuple__21;
 static PyObject *__pyx_tuple__22;
-static PyObject *__pyx_tuple__24;
-static PyObject *__pyx_tuple__26;
+static PyObject *__pyx_tuple__23;
+static PyObject *__pyx_tuple__25;
 static PyObject *__pyx_tuple__27;
 static PyObject *__pyx_tuple__28;
 static PyObject *__pyx_tuple__29;
 static PyObject *__pyx_tuple__30;
 static PyObject *__pyx_tuple__31;
-static PyObject *__pyx_codeobj__23;
-static PyObject *__pyx_codeobj__25;
-static PyObject *__pyx_codeobj__32;
+static PyObject *__pyx_tuple__32;
+static PyObject *__pyx_codeobj__24;
+static PyObject *__pyx_codeobj__26;
+static PyObject *__pyx_codeobj__33;
 /* Late includes */
 
 /* "drone.pyx":8
@@ -5165,7 +5549,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_get_DJI(PyTypeObject *__pyx_v_cls) {
   return __pyx_r;
 }
 
-/* "drone.pyx":90
+/* "drone.pyx":91
  *     # [x, y, Vx, Vy, alpha, omega, t]
  * 
  *     def __init__(self, m, J, F_max, L, Cx, g, mu_omega):             # <<<<<<<<<<<<<<
@@ -5222,41 +5606,41 @@ static int __pyx_pw_5drone_7Drone2d_3__init__(PyObject *__pyx_v_self, PyObject *
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_J)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 7, 7, 1); __PYX_ERR(0, 90, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 7, 7, 1); __PYX_ERR(0, 91, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_F_max)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 7, 7, 2); __PYX_ERR(0, 90, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 7, 7, 2); __PYX_ERR(0, 91, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_L)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 7, 7, 3); __PYX_ERR(0, 90, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 7, 7, 3); __PYX_ERR(0, 91, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_Cx)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 7, 7, 4); __PYX_ERR(0, 90, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 7, 7, 4); __PYX_ERR(0, 91, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
         if (likely((values[5] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_g)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 7, 7, 5); __PYX_ERR(0, 90, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 7, 7, 5); __PYX_ERR(0, 91, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  6:
         if (likely((values[6] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_mu_omega)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 7, 7, 6); __PYX_ERR(0, 90, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 7, 7, 6); __PYX_ERR(0, 91, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(0, 90, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(0, 91, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 7) {
       goto __pyx_L5_argtuple_error;
@@ -5279,7 +5663,7 @@ static int __pyx_pw_5drone_7Drone2d_3__init__(PyObject *__pyx_v_self, PyObject *
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 1, 7, 7, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 90, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 1, 7, 7, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 91, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("drone.Drone2d.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -5293,7 +5677,6 @@ static int __pyx_pw_5drone_7Drone2d_3__init__(PyObject *__pyx_v_self, PyObject *
 }
 
 static int __pyx_pf_5drone_7Drone2d_2__init__(struct __pyx_obj_5drone_Drone2d *__pyx_v_self, PyObject *__pyx_v_m, PyObject *__pyx_v_J, PyObject *__pyx_v_F_max, PyObject *__pyx_v_L, PyObject *__pyx_v_Cx, PyObject *__pyx_v_g, PyObject *__pyx_v_mu_omega) {
-  long __pyx_v_n;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   double __pyx_t_1;
@@ -5307,88 +5690,88 @@ static int __pyx_pf_5drone_7Drone2d_2__init__(struct __pyx_obj_5drone_Drone2d *_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "drone.pyx":91
+  /* "drone.pyx":92
  * 
  *     def __init__(self, m, J, F_max, L, Cx, g, mu_omega):
  *         self.m = m             # <<<<<<<<<<<<<<
  *         self.J = J
  *         self.F_max = F_max
  */
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_m); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 91, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_m); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 92, __pyx_L1_error)
   __pyx_v_self->m = __pyx_t_1;
 
-  /* "drone.pyx":92
+  /* "drone.pyx":93
  *     def __init__(self, m, J, F_max, L, Cx, g, mu_omega):
  *         self.m = m
  *         self.J = J             # <<<<<<<<<<<<<<
  *         self.F_max = F_max
  *         self.L = L
  */
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_J); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 92, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_J); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 93, __pyx_L1_error)
   __pyx_v_self->J = __pyx_t_1;
 
-  /* "drone.pyx":93
+  /* "drone.pyx":94
  *         self.m = m
  *         self.J = J
  *         self.F_max = F_max             # <<<<<<<<<<<<<<
  *         self.L = L
  *         self.Cx = Cx
  */
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_F_max); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 93, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_F_max); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 94, __pyx_L1_error)
   __pyx_v_self->F_max = __pyx_t_1;
 
-  /* "drone.pyx":94
+  /* "drone.pyx":95
  *         self.J = J
  *         self.F_max = F_max
  *         self.L = L             # <<<<<<<<<<<<<<
  *         self.Cx = Cx
  *         self.g = g
  */
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_L); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 94, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_L); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 95, __pyx_L1_error)
   __pyx_v_self->L = __pyx_t_1;
 
-  /* "drone.pyx":95
+  /* "drone.pyx":96
  *         self.F_max = F_max
  *         self.L = L
  *         self.Cx = Cx             # <<<<<<<<<<<<<<
  *         self.g = g
- *         n = 7
+ *         self.n = 7
  */
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_Cx); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 95, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_Cx); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 96, __pyx_L1_error)
   __pyx_v_self->Cx = __pyx_t_1;
 
-  /* "drone.pyx":96
+  /* "drone.pyx":97
  *         self.L = L
  *         self.Cx = Cx
  *         self.g = g             # <<<<<<<<<<<<<<
- *         n = 7
- *         self.state = np.zeros(n)
+ *         self.n = 7
+ *         self.state = np.zeros(self.n)
  */
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_g); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 96, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_g); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 97, __pyx_L1_error)
   __pyx_v_self->g = __pyx_t_1;
 
-  /* "drone.pyx":97
+  /* "drone.pyx":98
  *         self.Cx = Cx
  *         self.g = g
- *         n = 7             # <<<<<<<<<<<<<<
- *         self.state = np.zeros(n)
- *         self.tmp1 = np.zeros(n)
+ *         self.n = 7             # <<<<<<<<<<<<<<
+ *         self.state = np.zeros(self.n)
+ *         self.tmp1 = np.zeros(self.n)
  */
-  __pyx_v_n = 7;
+  __pyx_v_self->n = 7;
 
-  /* "drone.pyx":98
+  /* "drone.pyx":99
  *         self.g = g
- *         n = 7
- *         self.state = np.zeros(n)             # <<<<<<<<<<<<<<
- *         self.tmp1 = np.zeros(n)
- *         self.tmp2 = np.zeros(n)
+ *         self.n = 7
+ *         self.state = np.zeros(self.n)             # <<<<<<<<<<<<<<
+ *         self.tmp1 = np.zeros(self.n)
+ *         self.tmp2 = np.zeros(self.n)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 98, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 99, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_zeros); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 98, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_zeros); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 99, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyInt_From_long(__pyx_v_n); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 98, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_self->n); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 99, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_4))) {
@@ -5403,29 +5786,29 @@ static int __pyx_pf_5drone_7Drone2d_2__init__(struct __pyx_obj_5drone_Drone2d *_
   __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 98, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 99, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 98, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 99, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->state, 0);
   __pyx_v_self->state = __pyx_t_6;
   __pyx_t_6.memview = NULL;
   __pyx_t_6.data = NULL;
 
-  /* "drone.pyx":99
- *         n = 7
- *         self.state = np.zeros(n)
- *         self.tmp1 = np.zeros(n)             # <<<<<<<<<<<<<<
- *         self.tmp2 = np.zeros(n)
- *         self.tmp3 = np.zeros(n)
+  /* "drone.pyx":100
+ *         self.n = 7
+ *         self.state = np.zeros(self.n)
+ *         self.tmp1 = np.zeros(self.n)             # <<<<<<<<<<<<<<
+ *         self.tmp2 = np.zeros(self.n)
+ *         self.tmp3 = np.zeros(self.n)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 99, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 100, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_zeros); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 99, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_zeros); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 100, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyInt_From_long(__pyx_v_n); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 99, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_self->n); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 100, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
@@ -5440,29 +5823,29 @@ static int __pyx_pf_5drone_7Drone2d_2__init__(struct __pyx_obj_5drone_Drone2d *_
   __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_5, __pyx_t_4) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 99, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 100, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 99, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 100, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->tmp1, 0);
   __pyx_v_self->tmp1 = __pyx_t_6;
   __pyx_t_6.memview = NULL;
   __pyx_t_6.data = NULL;
 
-  /* "drone.pyx":100
- *         self.state = np.zeros(n)
- *         self.tmp1 = np.zeros(n)
- *         self.tmp2 = np.zeros(n)             # <<<<<<<<<<<<<<
- *         self.tmp3 = np.zeros(n)
- *         self.tmp4 = np.zeros(n)
+  /* "drone.pyx":101
+ *         self.state = np.zeros(self.n)
+ *         self.tmp1 = np.zeros(self.n)
+ *         self.tmp2 = np.zeros(self.n)             # <<<<<<<<<<<<<<
+ *         self.tmp3 = np.zeros(self.n)
+ *         self.tmp4 = np.zeros(self.n)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 101, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_zeros); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_zeros); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 101, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyInt_From_long(__pyx_v_n); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_self->n); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 101, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_4))) {
@@ -5477,29 +5860,29 @@ static int __pyx_pf_5drone_7Drone2d_2__init__(struct __pyx_obj_5drone_Drone2d *_
   __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 100, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 101, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 101, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->tmp2, 0);
   __pyx_v_self->tmp2 = __pyx_t_6;
   __pyx_t_6.memview = NULL;
   __pyx_t_6.data = NULL;
 
-  /* "drone.pyx":101
- *         self.tmp1 = np.zeros(n)
- *         self.tmp2 = np.zeros(n)
- *         self.tmp3 = np.zeros(n)             # <<<<<<<<<<<<<<
- *         self.tmp4 = np.zeros(n)
+  /* "drone.pyx":102
+ *         self.tmp1 = np.zeros(self.n)
+ *         self.tmp2 = np.zeros(self.n)
+ *         self.tmp3 = np.zeros(self.n)             # <<<<<<<<<<<<<<
+ *         self.tmp4 = np.zeros(self.n)
  *         self.t = 0
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 101, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 102, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_zeros); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 101, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_zeros); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 102, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyInt_From_long(__pyx_v_n); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 101, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_self->n); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 102, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
@@ -5514,29 +5897,29 @@ static int __pyx_pf_5drone_7Drone2d_2__init__(struct __pyx_obj_5drone_Drone2d *_
   __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_5, __pyx_t_4) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 101, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 102, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 101, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 102, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->tmp3, 0);
   __pyx_v_self->tmp3 = __pyx_t_6;
   __pyx_t_6.memview = NULL;
   __pyx_t_6.data = NULL;
 
-  /* "drone.pyx":102
- *         self.tmp2 = np.zeros(n)
- *         self.tmp3 = np.zeros(n)
- *         self.tmp4 = np.zeros(n)             # <<<<<<<<<<<<<<
+  /* "drone.pyx":103
+ *         self.tmp2 = np.zeros(self.n)
+ *         self.tmp3 = np.zeros(self.n)
+ *         self.tmp4 = np.zeros(self.n)             # <<<<<<<<<<<<<<
  *         self.t = 0
  *         self.mu_omega = mu_omega
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 102, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 103, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_zeros); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 102, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_zeros); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 103, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyInt_From_long(__pyx_v_n); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 102, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_self->n); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 103, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_4))) {
@@ -5551,36 +5934,36 @@ static int __pyx_pf_5drone_7Drone2d_2__init__(struct __pyx_obj_5drone_Drone2d *_
   __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 102, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 103, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 102, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 103, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->tmp4, 0);
   __pyx_v_self->tmp4 = __pyx_t_6;
   __pyx_t_6.memview = NULL;
   __pyx_t_6.data = NULL;
 
-  /* "drone.pyx":103
- *         self.tmp3 = np.zeros(n)
- *         self.tmp4 = np.zeros(n)
+  /* "drone.pyx":104
+ *         self.tmp3 = np.zeros(self.n)
+ *         self.tmp4 = np.zeros(self.n)
  *         self.t = 0             # <<<<<<<<<<<<<<
  *         self.mu_omega = mu_omega
  * 
  */
   __pyx_v_self->t = 0.0;
 
-  /* "drone.pyx":104
- *         self.tmp4 = np.zeros(n)
+  /* "drone.pyx":105
+ *         self.tmp4 = np.zeros(self.n)
  *         self.t = 0
  *         self.mu_omega = mu_omega             # <<<<<<<<<<<<<<
  * 
  *     cpdef void fill_dy(self, double t, double[:] y, double F1, double F2, double[:] dy):
  */
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_mu_omega); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 104, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_mu_omega); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 105, __pyx_L1_error)
   __pyx_v_self->mu_omega = __pyx_t_1;
 
-  /* "drone.pyx":90
+  /* "drone.pyx":91
  *     # [x, y, Vx, Vy, alpha, omega, t]
  * 
  *     def __init__(self, m, J, F_max, L, Cx, g, mu_omega):             # <<<<<<<<<<<<<<
@@ -5604,7 +5987,7 @@ static int __pyx_pf_5drone_7Drone2d_2__init__(struct __pyx_obj_5drone_Drone2d *_
   return __pyx_r;
 }
 
-/* "drone.pyx":106
+/* "drone.pyx":107
  *         self.mu_omega = mu_omega
  * 
  *     cpdef void fill_dy(self, double t, double[:] y, double F1, double F2, double[:] dy):             # <<<<<<<<<<<<<<
@@ -5650,18 +6033,18 @@ static void __pyx_f_5drone_7Drone2d_fill_dy(struct __pyx_obj_5drone_Drone2d *__p
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_fill_dy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 106, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_fill_dy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 107, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_5drone_7Drone2d_5fill_dy)) {
-        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_t); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 106, __pyx_L1_error)
+        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_t); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 107, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_4 = __pyx_memoryview_fromslice(__pyx_v_y, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 106, __pyx_L1_error)
+        __pyx_t_4 = __pyx_memoryview_fromslice(__pyx_v_y, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 107, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
-        __pyx_t_5 = PyFloat_FromDouble(__pyx_v_F1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 106, __pyx_L1_error)
+        __pyx_t_5 = PyFloat_FromDouble(__pyx_v_F1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 107, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_6 = PyFloat_FromDouble(__pyx_v_F2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 106, __pyx_L1_error)
+        __pyx_t_6 = PyFloat_FromDouble(__pyx_v_F2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 107, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_7 = __pyx_memoryview_fromslice(__pyx_v_dy, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 106, __pyx_L1_error)
+        __pyx_t_7 = __pyx_memoryview_fromslice(__pyx_v_dy, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 107, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_8 = __pyx_t_1; __pyx_t_9 = NULL;
@@ -5679,7 +6062,7 @@ static void __pyx_f_5drone_7Drone2d_fill_dy(struct __pyx_obj_5drone_Drone2d *__p
         #if CYTHON_FAST_PYCALL
         if (PyFunction_Check(__pyx_t_8)) {
           PyObject *__pyx_temp[6] = {__pyx_t_9, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6, __pyx_t_7};
-          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_10, 5+__pyx_t_10); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 106, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_10, 5+__pyx_t_10); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 107, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -5692,7 +6075,7 @@ static void __pyx_f_5drone_7Drone2d_fill_dy(struct __pyx_obj_5drone_Drone2d *__p
         #if CYTHON_FAST_PYCCALL
         if (__Pyx_PyFastCFunction_Check(__pyx_t_8)) {
           PyObject *__pyx_temp[6] = {__pyx_t_9, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6, __pyx_t_7};
-          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_10, 5+__pyx_t_10); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 106, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_10, 5+__pyx_t_10); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 107, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -5703,7 +6086,7 @@ static void __pyx_f_5drone_7Drone2d_fill_dy(struct __pyx_obj_5drone_Drone2d *__p
         } else
         #endif
         {
-          __pyx_t_11 = PyTuple_New(5+__pyx_t_10); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 106, __pyx_L1_error)
+          __pyx_t_11 = PyTuple_New(5+__pyx_t_10); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 107, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_11);
           if (__pyx_t_9) {
             __Pyx_GIVEREF(__pyx_t_9); PyTuple_SET_ITEM(__pyx_t_11, 0, __pyx_t_9); __pyx_t_9 = NULL;
@@ -5723,7 +6106,7 @@ static void __pyx_f_5drone_7Drone2d_fill_dy(struct __pyx_obj_5drone_Drone2d *__p
           __pyx_t_5 = 0;
           __pyx_t_6 = 0;
           __pyx_t_7 = 0;
-          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_11, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 106, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_11, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 107, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
         }
@@ -5745,7 +6128,7 @@ static void __pyx_f_5drone_7Drone2d_fill_dy(struct __pyx_obj_5drone_Drone2d *__p
     #endif
   }
 
-  /* "drone.pyx":107
+  /* "drone.pyx":108
  * 
  *     cpdef void fill_dy(self, double t, double[:] y, double F1, double F2, double[:] dy):
  *         cdef double rho = get_rho(y[1]/1000)             # <<<<<<<<<<<<<<
@@ -5755,7 +6138,7 @@ static void __pyx_f_5drone_7Drone2d_fill_dy(struct __pyx_obj_5drone_Drone2d *__p
   __pyx_t_12 = 1;
   __pyx_v_rho = __pyx_f_5drone_get_rho(((*((double *) ( /* dim=0 */ (__pyx_v_y.data + __pyx_t_12 * __pyx_v_y.strides[0]) ))) / 1000.0), 0);
 
-  /* "drone.pyx":108
+  /* "drone.pyx":109
  *     cpdef void fill_dy(self, double t, double[:] y, double F1, double F2, double[:] dy):
  *         cdef double rho = get_rho(y[1]/1000)
  *         cdef double F_coeff = get_T_T0(y[1]/1000)             # <<<<<<<<<<<<<<
@@ -5765,7 +6148,7 @@ static void __pyx_f_5drone_7Drone2d_fill_dy(struct __pyx_obj_5drone_Drone2d *__p
   __pyx_t_12 = 1;
   __pyx_v_F_coeff = __pyx_f_5drone_get_T_T0(((*((double *) ( /* dim=0 */ (__pyx_v_y.data + __pyx_t_12 * __pyx_v_y.strides[0]) ))) / 1000.0), 0);
 
-  /* "drone.pyx":109
+  /* "drone.pyx":110
  *         cdef double rho = get_rho(y[1]/1000)
  *         cdef double F_coeff = get_T_T0(y[1]/1000)
  *         F1 *= F_coeff * self.F_max             # <<<<<<<<<<<<<<
@@ -5774,7 +6157,7 @@ static void __pyx_f_5drone_7Drone2d_fill_dy(struct __pyx_obj_5drone_Drone2d *__p
  */
   __pyx_v_F1 = (__pyx_v_F1 * (__pyx_v_F_coeff * __pyx_v_self->F_max));
 
-  /* "drone.pyx":110
+  /* "drone.pyx":111
  *         cdef double F_coeff = get_T_T0(y[1]/1000)
  *         F1 *= F_coeff * self.F_max
  *         F2 *= F_coeff * self.F_max             # <<<<<<<<<<<<<<
@@ -5783,7 +6166,7 @@ static void __pyx_f_5drone_7Drone2d_fill_dy(struct __pyx_obj_5drone_Drone2d *__p
  */
   __pyx_v_F2 = (__pyx_v_F2 * (__pyx_v_F_coeff * __pyx_v_self->F_max));
 
-  /* "drone.pyx":112
+  /* "drone.pyx":113
  *         F2 *= F_coeff * self.F_max
  * 
  *         cdef double V = (y[2]**2 + y[3]**2)**0.5             # <<<<<<<<<<<<<<
@@ -5794,7 +6177,7 @@ static void __pyx_f_5drone_7Drone2d_fill_dy(struct __pyx_obj_5drone_Drone2d *__p
   __pyx_t_13 = 3;
   __pyx_v_V = pow((pow((*((double *) ( /* dim=0 */ (__pyx_v_y.data + __pyx_t_12 * __pyx_v_y.strides[0]) ))), 2.0) + pow((*((double *) ( /* dim=0 */ (__pyx_v_y.data + __pyx_t_13 * __pyx_v_y.strides[0]) ))), 2.0)), 0.5);
 
-  /* "drone.pyx":114
+  /* "drone.pyx":115
  *         cdef double V = (y[2]**2 + y[3]**2)**0.5
  *         cdef double F_Cx, F_Cx_x, F_Cx_y
  *         if V < 1e-8:             # <<<<<<<<<<<<<<
@@ -5804,7 +6187,7 @@ static void __pyx_f_5drone_7Drone2d_fill_dy(struct __pyx_obj_5drone_Drone2d *__p
   __pyx_t_14 = ((__pyx_v_V < 1e-8) != 0);
   if (__pyx_t_14) {
 
-    /* "drone.pyx":115
+    /* "drone.pyx":116
  *         cdef double F_Cx, F_Cx_x, F_Cx_y
  *         if V < 1e-8:
  *             F_Cx = 0             # <<<<<<<<<<<<<<
@@ -5813,7 +6196,7 @@ static void __pyx_f_5drone_7Drone2d_fill_dy(struct __pyx_obj_5drone_Drone2d *__p
  */
     __pyx_v_F_Cx = 0.0;
 
-    /* "drone.pyx":116
+    /* "drone.pyx":117
  *         if V < 1e-8:
  *             F_Cx = 0
  *             F_Cx_x = 0             # <<<<<<<<<<<<<<
@@ -5822,7 +6205,7 @@ static void __pyx_f_5drone_7Drone2d_fill_dy(struct __pyx_obj_5drone_Drone2d *__p
  */
     __pyx_v_F_Cx_x = 0.0;
 
-    /* "drone.pyx":117
+    /* "drone.pyx":118
  *             F_Cx = 0
  *             F_Cx_x = 0
  *             F_Cx_y = 0             # <<<<<<<<<<<<<<
@@ -5831,7 +6214,7 @@ static void __pyx_f_5drone_7Drone2d_fill_dy(struct __pyx_obj_5drone_Drone2d *__p
  */
     __pyx_v_F_Cx_y = 0.0;
 
-    /* "drone.pyx":114
+    /* "drone.pyx":115
  *         cdef double V = (y[2]**2 + y[3]**2)**0.5
  *         cdef double F_Cx, F_Cx_x, F_Cx_y
  *         if V < 1e-8:             # <<<<<<<<<<<<<<
@@ -5841,7 +6224,7 @@ static void __pyx_f_5drone_7Drone2d_fill_dy(struct __pyx_obj_5drone_Drone2d *__p
     goto __pyx_L3;
   }
 
-  /* "drone.pyx":119
+  /* "drone.pyx":120
  *             F_Cx_y = 0
  *         else:
  *             F_Cx = self.Cx * rho * V**2 / 2             # <<<<<<<<<<<<<<
@@ -5851,7 +6234,7 @@ static void __pyx_f_5drone_7Drone2d_fill_dy(struct __pyx_obj_5drone_Drone2d *__p
   /*else*/ {
     __pyx_v_F_Cx = (((__pyx_v_self->Cx * __pyx_v_rho) * pow(__pyx_v_V, 2.0)) / 2.0);
 
-    /* "drone.pyx":120
+    /* "drone.pyx":121
  *         else:
  *             F_Cx = self.Cx * rho * V**2 / 2
  *             F_Cx_x = -F_Cx*y[2]/V             # <<<<<<<<<<<<<<
@@ -5861,7 +6244,7 @@ static void __pyx_f_5drone_7Drone2d_fill_dy(struct __pyx_obj_5drone_Drone2d *__p
     __pyx_t_13 = 2;
     __pyx_v_F_Cx_x = (((-__pyx_v_F_Cx) * (*((double *) ( /* dim=0 */ (__pyx_v_y.data + __pyx_t_13 * __pyx_v_y.strides[0]) )))) / __pyx_v_V);
 
-    /* "drone.pyx":121
+    /* "drone.pyx":122
  *             F_Cx = self.Cx * rho * V**2 / 2
  *             F_Cx_x = -F_Cx*y[2]/V
  *             F_Cx_y = -F_Cx*y[3]/V             # <<<<<<<<<<<<<<
@@ -5873,7 +6256,7 @@ static void __pyx_f_5drone_7Drone2d_fill_dy(struct __pyx_obj_5drone_Drone2d *__p
   }
   __pyx_L3:;
 
-  /* "drone.pyx":122
+  /* "drone.pyx":123
  *             F_Cx_x = -F_Cx*y[2]/V
  *             F_Cx_y = -F_Cx*y[3]/V
  *         cdef double F_x = -(F1 + F2) * sin(y[4])             # <<<<<<<<<<<<<<
@@ -5883,7 +6266,7 @@ static void __pyx_f_5drone_7Drone2d_fill_dy(struct __pyx_obj_5drone_Drone2d *__p
   __pyx_t_13 = 4;
   __pyx_v_F_x = ((-(__pyx_v_F1 + __pyx_v_F2)) * sin((*((double *) ( /* dim=0 */ (__pyx_v_y.data + __pyx_t_13 * __pyx_v_y.strides[0]) )))));
 
-  /* "drone.pyx":123
+  /* "drone.pyx":124
  *             F_Cx_y = -F_Cx*y[3]/V
  *         cdef double F_x = -(F1 + F2) * sin(y[4])
  *         cdef double F_y =  (F1 + F2) * cos(y[4])             # <<<<<<<<<<<<<<
@@ -5893,7 +6276,7 @@ static void __pyx_f_5drone_7Drone2d_fill_dy(struct __pyx_obj_5drone_Drone2d *__p
   __pyx_t_13 = 4;
   __pyx_v_F_y = ((__pyx_v_F1 + __pyx_v_F2) * cos((*((double *) ( /* dim=0 */ (__pyx_v_y.data + __pyx_t_13 * __pyx_v_y.strides[0]) )))));
 
-  /* "drone.pyx":125
+  /* "drone.pyx":126
  *         cdef double F_y =  (F1 + F2) * cos(y[4])
  * 
  *         dy[0] = y[2]                    # dx = vx             # <<<<<<<<<<<<<<
@@ -5904,7 +6287,7 @@ static void __pyx_f_5drone_7Drone2d_fill_dy(struct __pyx_obj_5drone_Drone2d *__p
   __pyx_t_12 = 0;
   *((double *) ( /* dim=0 */ (__pyx_v_dy.data + __pyx_t_12 * __pyx_v_dy.strides[0]) )) = (*((double *) ( /* dim=0 */ (__pyx_v_y.data + __pyx_t_13 * __pyx_v_y.strides[0]) )));
 
-  /* "drone.pyx":126
+  /* "drone.pyx":127
  * 
  *         dy[0] = y[2]                    # dx = vx
  *         dy[1] = y[3]                    # dy = vy             # <<<<<<<<<<<<<<
@@ -5915,7 +6298,7 @@ static void __pyx_f_5drone_7Drone2d_fill_dy(struct __pyx_obj_5drone_Drone2d *__p
   __pyx_t_12 = 1;
   *((double *) ( /* dim=0 */ (__pyx_v_dy.data + __pyx_t_12 * __pyx_v_dy.strides[0]) )) = (*((double *) ( /* dim=0 */ (__pyx_v_y.data + __pyx_t_13 * __pyx_v_y.strides[0]) )));
 
-  /* "drone.pyx":127
+  /* "drone.pyx":128
  *         dy[0] = y[2]                    # dx = vx
  *         dy[1] = y[3]                    # dy = vy
  *         dy[2] = (F_Cx_x + F_x)/self.m        # dvx = ax             # <<<<<<<<<<<<<<
@@ -5925,7 +6308,7 @@ static void __pyx_f_5drone_7Drone2d_fill_dy(struct __pyx_obj_5drone_Drone2d *__p
   __pyx_t_13 = 2;
   *((double *) ( /* dim=0 */ (__pyx_v_dy.data + __pyx_t_13 * __pyx_v_dy.strides[0]) )) = ((__pyx_v_F_Cx_x + __pyx_v_F_x) / __pyx_v_self->m);
 
-  /* "drone.pyx":128
+  /* "drone.pyx":129
  *         dy[1] = y[3]                    # dy = vy
  *         dy[2] = (F_Cx_x + F_x)/self.m        # dvx = ax
  *         dy[3] = (F_Cx_y + F_y)/self.m - self.g # dvy = ay             # <<<<<<<<<<<<<<
@@ -5935,7 +6318,7 @@ static void __pyx_f_5drone_7Drone2d_fill_dy(struct __pyx_obj_5drone_Drone2d *__p
   __pyx_t_13 = 3;
   *((double *) ( /* dim=0 */ (__pyx_v_dy.data + __pyx_t_13 * __pyx_v_dy.strides[0]) )) = (((__pyx_v_F_Cx_y + __pyx_v_F_y) / __pyx_v_self->m) - __pyx_v_self->g);
 
-  /* "drone.pyx":129
+  /* "drone.pyx":130
  *         dy[2] = (F_Cx_x + F_x)/self.m        # dvx = ax
  *         dy[3] = (F_Cx_y + F_y)/self.m - self.g # dvy = ay
  *         dy[4] = y[5]                    # dalpha = omega             # <<<<<<<<<<<<<<
@@ -5946,7 +6329,7 @@ static void __pyx_f_5drone_7Drone2d_fill_dy(struct __pyx_obj_5drone_Drone2d *__p
   __pyx_t_12 = 4;
   *((double *) ( /* dim=0 */ (__pyx_v_dy.data + __pyx_t_12 * __pyx_v_dy.strides[0]) )) = (*((double *) ( /* dim=0 */ (__pyx_v_y.data + __pyx_t_13 * __pyx_v_y.strides[0]) )));
 
-  /* "drone.pyx":130
+  /* "drone.pyx":131
  *         dy[3] = (F_Cx_y + F_y)/self.m - self.g # dvy = ay
  *         dy[4] = y[5]                    # dalpha = omega
  *         dy[5] = (F2 - F1)*self.L/self.J - dy[5] * self.mu_omega     # domega             # <<<<<<<<<<<<<<
@@ -5957,7 +6340,7 @@ static void __pyx_f_5drone_7Drone2d_fill_dy(struct __pyx_obj_5drone_Drone2d *__p
   __pyx_t_12 = 5;
   *((double *) ( /* dim=0 */ (__pyx_v_dy.data + __pyx_t_12 * __pyx_v_dy.strides[0]) )) = ((((__pyx_v_F2 - __pyx_v_F1) * __pyx_v_self->L) / __pyx_v_self->J) - ((*((double *) ( /* dim=0 */ (__pyx_v_dy.data + __pyx_t_13 * __pyx_v_dy.strides[0]) ))) * __pyx_v_self->mu_omega));
 
-  /* "drone.pyx":131
+  /* "drone.pyx":132
  *         dy[4] = y[5]                    # dalpha = omega
  *         dy[5] = (F2 - F1)*self.L/self.J - dy[5] * self.mu_omega     # domega
  *         dy[6] = 1   # dt             # <<<<<<<<<<<<<<
@@ -5967,7 +6350,7 @@ static void __pyx_f_5drone_7Drone2d_fill_dy(struct __pyx_obj_5drone_Drone2d *__p
   __pyx_t_13 = 6;
   *((double *) ( /* dim=0 */ (__pyx_v_dy.data + __pyx_t_13 * __pyx_v_dy.strides[0]) )) = 1.0;
 
-  /* "drone.pyx":106
+  /* "drone.pyx":107
  *         self.mu_omega = mu_omega
  * 
  *     cpdef void fill_dy(self, double t, double[:] y, double F1, double F2, double[:] dy):             # <<<<<<<<<<<<<<
@@ -6037,29 +6420,29 @@ static PyObject *__pyx_pw_5drone_7Drone2d_5fill_dy(PyObject *__pyx_v_self, PyObj
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_y)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("fill_dy", 1, 5, 5, 1); __PYX_ERR(0, 106, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("fill_dy", 1, 5, 5, 1); __PYX_ERR(0, 107, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_F1)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("fill_dy", 1, 5, 5, 2); __PYX_ERR(0, 106, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("fill_dy", 1, 5, 5, 2); __PYX_ERR(0, 107, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_F2)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("fill_dy", 1, 5, 5, 3); __PYX_ERR(0, 106, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("fill_dy", 1, 5, 5, 3); __PYX_ERR(0, 107, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_dy)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("fill_dy", 1, 5, 5, 4); __PYX_ERR(0, 106, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("fill_dy", 1, 5, 5, 4); __PYX_ERR(0, 107, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "fill_dy") < 0)) __PYX_ERR(0, 106, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "fill_dy") < 0)) __PYX_ERR(0, 107, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 5) {
       goto __pyx_L5_argtuple_error;
@@ -6070,15 +6453,15 @@ static PyObject *__pyx_pw_5drone_7Drone2d_5fill_dy(PyObject *__pyx_v_self, PyObj
       values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
       values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
     }
-    __pyx_v_t = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_t == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 106, __pyx_L3_error)
-    __pyx_v_y = __Pyx_PyObject_to_MemoryviewSlice_ds_double(values[1], PyBUF_WRITABLE); if (unlikely(!__pyx_v_y.memview)) __PYX_ERR(0, 106, __pyx_L3_error)
-    __pyx_v_F1 = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_F1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 106, __pyx_L3_error)
-    __pyx_v_F2 = __pyx_PyFloat_AsDouble(values[3]); if (unlikely((__pyx_v_F2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 106, __pyx_L3_error)
-    __pyx_v_dy = __Pyx_PyObject_to_MemoryviewSlice_ds_double(values[4], PyBUF_WRITABLE); if (unlikely(!__pyx_v_dy.memview)) __PYX_ERR(0, 106, __pyx_L3_error)
+    __pyx_v_t = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_t == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 107, __pyx_L3_error)
+    __pyx_v_y = __Pyx_PyObject_to_MemoryviewSlice_ds_double(values[1], PyBUF_WRITABLE); if (unlikely(!__pyx_v_y.memview)) __PYX_ERR(0, 107, __pyx_L3_error)
+    __pyx_v_F1 = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_F1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 107, __pyx_L3_error)
+    __pyx_v_F2 = __pyx_PyFloat_AsDouble(values[3]); if (unlikely((__pyx_v_F2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 107, __pyx_L3_error)
+    __pyx_v_dy = __Pyx_PyObject_to_MemoryviewSlice_ds_double(values[4], PyBUF_WRITABLE); if (unlikely(!__pyx_v_dy.memview)) __PYX_ERR(0, 107, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("fill_dy", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 106, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("fill_dy", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 107, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("drone.Drone2d.fill_dy", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -6100,7 +6483,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_4fill_dy(struct __pyx_obj_5drone_Drone
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("fill_dy", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_void_to_None(__pyx_f_5drone_7Drone2d_fill_dy(__pyx_v_self, __pyx_v_t, __pyx_v_y, __pyx_v_F1, __pyx_v_F2, __pyx_v_dy, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 106, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_void_to_None(__pyx_f_5drone_7Drone2d_fill_dy(__pyx_v_self, __pyx_v_t, __pyx_v_y, __pyx_v_F1, __pyx_v_F2, __pyx_v_dy, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 107, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6119,7 +6502,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_4fill_dy(struct __pyx_obj_5drone_Drone
   return __pyx_r;
 }
 
-/* "drone.pyx":134
+/* "drone.pyx":135
  *         # print(f'rho={rho} F_coeff={F_coeff} F1={F1} F2={F2} V={V} F_Cx={F_Cx} F_Cx_x={F_Cx_x} F_Cx_y={F_Cx_y} F_x={F_x} F_y={F_y}')
  * 
  *     cpdef void step(self, double F1, double F2, double tau=0.1, int n=10):             # <<<<<<<<<<<<<<
@@ -6176,16 +6559,16 @@ static void __pyx_f_5drone_7Drone2d_step(struct __pyx_obj_5drone_Drone2d *__pyx_
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_step); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 134, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_step); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 135, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_5drone_7Drone2d_7step)) {
-        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_F1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 134, __pyx_L1_error)
+        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_F1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 135, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_4 = PyFloat_FromDouble(__pyx_v_F2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 134, __pyx_L1_error)
+        __pyx_t_4 = PyFloat_FromDouble(__pyx_v_F2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 135, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
-        __pyx_t_5 = PyFloat_FromDouble(__pyx_v_tau); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 134, __pyx_L1_error)
+        __pyx_t_5 = PyFloat_FromDouble(__pyx_v_tau); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 135, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_6 = __Pyx_PyInt_From_int(__pyx_v_n); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 134, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyInt_From_int(__pyx_v_n); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 135, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_7 = __pyx_t_1; __pyx_t_8 = NULL;
@@ -6203,7 +6586,7 @@ static void __pyx_f_5drone_7Drone2d_step(struct __pyx_obj_5drone_Drone2d *__pyx_
         #if CYTHON_FAST_PYCALL
         if (PyFunction_Check(__pyx_t_7)) {
           PyObject *__pyx_temp[5] = {__pyx_t_8, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6};
-          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_9, 4+__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 134, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_9, 4+__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 135, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -6215,7 +6598,7 @@ static void __pyx_f_5drone_7Drone2d_step(struct __pyx_obj_5drone_Drone2d *__pyx_
         #if CYTHON_FAST_PYCCALL
         if (__Pyx_PyFastCFunction_Check(__pyx_t_7)) {
           PyObject *__pyx_temp[5] = {__pyx_t_8, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6};
-          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_9, 4+__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 134, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_9, 4+__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 135, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -6225,7 +6608,7 @@ static void __pyx_f_5drone_7Drone2d_step(struct __pyx_obj_5drone_Drone2d *__pyx_
         } else
         #endif
         {
-          __pyx_t_10 = PyTuple_New(4+__pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 134, __pyx_L1_error)
+          __pyx_t_10 = PyTuple_New(4+__pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 135, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_10);
           if (__pyx_t_8) {
             __Pyx_GIVEREF(__pyx_t_8); PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_8); __pyx_t_8 = NULL;
@@ -6242,7 +6625,7 @@ static void __pyx_f_5drone_7Drone2d_step(struct __pyx_obj_5drone_Drone2d *__pyx_
           __pyx_t_4 = 0;
           __pyx_t_5 = 0;
           __pyx_t_6 = 0;
-          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_10, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 134, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_10, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 135, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
         }
@@ -6264,7 +6647,7 @@ static void __pyx_f_5drone_7Drone2d_step(struct __pyx_obj_5drone_Drone2d *__pyx_
     #endif
   }
 
-  /* "drone.pyx":139
+  /* "drone.pyx":140
  *         F2 [-1, 1]
  *         """
  *         cdef double dt = tau / n             # <<<<<<<<<<<<<<
@@ -6273,7 +6656,7 @@ static void __pyx_f_5drone_7Drone2d_step(struct __pyx_obj_5drone_Drone2d *__pyx_
  */
   __pyx_v_dt = (__pyx_v_tau / ((double)__pyx_v_n));
 
-  /* "drone.pyx":141
+  /* "drone.pyx":142
  *         cdef double dt = tau / n
  *         cdef size_t i, j
  *         F1 = 0.5*F1 + 0.5             # <<<<<<<<<<<<<<
@@ -6282,7 +6665,7 @@ static void __pyx_f_5drone_7Drone2d_step(struct __pyx_obj_5drone_Drone2d *__pyx_
  */
   __pyx_v_F1 = ((0.5 * __pyx_v_F1) + 0.5);
 
-  /* "drone.pyx":142
+  /* "drone.pyx":143
  *         cdef size_t i, j
  *         F1 = 0.5*F1 + 0.5
  *         F2 = 0.5*F2 + 0.5             # <<<<<<<<<<<<<<
@@ -6291,7 +6674,7 @@ static void __pyx_f_5drone_7Drone2d_step(struct __pyx_obj_5drone_Drone2d *__pyx_
  */
   __pyx_v_F2 = ((0.5 * __pyx_v_F2) + 0.5);
 
-  /* "drone.pyx":144
+  /* "drone.pyx":145
  *         F2 = 0.5*F2 + 0.5
  *         # print(f'before {np.array(self.state)}')
  *         for i in range(n):             # <<<<<<<<<<<<<<
@@ -6303,7 +6686,7 @@ static void __pyx_f_5drone_7Drone2d_step(struct __pyx_obj_5drone_Drone2d *__pyx_
   for (__pyx_t_12 = 0; __pyx_t_12 < __pyx_t_11; __pyx_t_12+=1) {
     __pyx_v_i = __pyx_t_12;
 
-    /* "drone.pyx":145
+    /* "drone.pyx":146
  *         # print(f'before {np.array(self.state)}')
  *         for i in range(n):
  *             self.fill_dy(self.t, self.state, F1, F2, self.tmp1) # k1             # <<<<<<<<<<<<<<
@@ -6312,7 +6695,7 @@ static void __pyx_f_5drone_7Drone2d_step(struct __pyx_obj_5drone_Drone2d *__pyx_
  */
     ((struct __pyx_vtabstruct_5drone_Drone2d *)__pyx_v_self->__pyx_vtab)->fill_dy(__pyx_v_self, __pyx_v_self->t, __pyx_v_self->state, __pyx_v_F1, __pyx_v_F2, __pyx_v_self->tmp1, 0);
 
-    /* "drone.pyx":146
+    /* "drone.pyx":147
  *         for i in range(n):
  *             self.fill_dy(self.t, self.state, F1, F2, self.tmp1) # k1
  *             for j in range(self.tmp1.shape[0]):             # <<<<<<<<<<<<<<
@@ -6324,7 +6707,7 @@ static void __pyx_f_5drone_7Drone2d_step(struct __pyx_obj_5drone_Drone2d *__pyx_
     for (__pyx_t_15 = 0; __pyx_t_15 < __pyx_t_14; __pyx_t_15+=1) {
       __pyx_v_j = __pyx_t_15;
 
-      /* "drone.pyx":147
+      /* "drone.pyx":148
  *             self.fill_dy(self.t, self.state, F1, F2, self.tmp1) # k1
  *             for j in range(self.tmp1.shape[0]):
  *                 self.tmp1[j] = self.state[j] + 0.5 * dt * self.tmp1[j]             # <<<<<<<<<<<<<<
@@ -6337,7 +6720,7 @@ static void __pyx_f_5drone_7Drone2d_step(struct __pyx_obj_5drone_Drone2d *__pyx_
       *((double *) ( /* dim=0 */ (__pyx_v_self->tmp1.data + __pyx_t_18 * __pyx_v_self->tmp1.strides[0]) )) = ((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_16 * __pyx_v_self->state.strides[0]) ))) + ((0.5 * __pyx_v_dt) * (*((double *) ( /* dim=0 */ (__pyx_v_self->tmp1.data + __pyx_t_17 * __pyx_v_self->tmp1.strides[0]) )))));
     }
 
-    /* "drone.pyx":148
+    /* "drone.pyx":149
  *             for j in range(self.tmp1.shape[0]):
  *                 self.tmp1[j] = self.state[j] + 0.5 * dt * self.tmp1[j]
  *             self.fill_dy(self.t + 0.5*dt, self.tmp1, F1, F2, self.tmp2) # k2             # <<<<<<<<<<<<<<
@@ -6346,7 +6729,7 @@ static void __pyx_f_5drone_7Drone2d_step(struct __pyx_obj_5drone_Drone2d *__pyx_
  */
     ((struct __pyx_vtabstruct_5drone_Drone2d *)__pyx_v_self->__pyx_vtab)->fill_dy(__pyx_v_self, (__pyx_v_self->t + (0.5 * __pyx_v_dt)), __pyx_v_self->tmp1, __pyx_v_F1, __pyx_v_F2, __pyx_v_self->tmp2, 0);
 
-    /* "drone.pyx":149
+    /* "drone.pyx":150
  *                 self.tmp1[j] = self.state[j] + 0.5 * dt * self.tmp1[j]
  *             self.fill_dy(self.t + 0.5*dt, self.tmp1, F1, F2, self.tmp2) # k2
  *             for j in range(self.state.shape[0]):             # <<<<<<<<<<<<<<
@@ -6358,7 +6741,7 @@ static void __pyx_f_5drone_7Drone2d_step(struct __pyx_obj_5drone_Drone2d *__pyx_
     for (__pyx_t_15 = 0; __pyx_t_15 < __pyx_t_14; __pyx_t_15+=1) {
       __pyx_v_j = __pyx_t_15;
 
-      /* "drone.pyx":150
+      /* "drone.pyx":151
  *             self.fill_dy(self.t + 0.5*dt, self.tmp1, F1, F2, self.tmp2) # k2
  *             for j in range(self.state.shape[0]):
  *                 self.state[j] = self.state[j] + dt * self.tmp2[j]             # <<<<<<<<<<<<<<
@@ -6371,7 +6754,7 @@ static void __pyx_f_5drone_7Drone2d_step(struct __pyx_obj_5drone_Drone2d *__pyx_
       *((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_18 * __pyx_v_self->state.strides[0]) )) = ((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_17 * __pyx_v_self->state.strides[0]) ))) + (__pyx_v_dt * (*((double *) ( /* dim=0 */ (__pyx_v_self->tmp2.data + __pyx_t_16 * __pyx_v_self->tmp2.strides[0]) )))));
     }
 
-    /* "drone.pyx":151
+    /* "drone.pyx":152
  *             for j in range(self.state.shape[0]):
  *                 self.state[j] = self.state[j] + dt * self.tmp2[j]
  *             self.t += dt             # <<<<<<<<<<<<<<
@@ -6380,7 +6763,7 @@ static void __pyx_f_5drone_7Drone2d_step(struct __pyx_obj_5drone_Drone2d *__pyx_
  */
     __pyx_v_self->t = (__pyx_v_self->t + __pyx_v_dt);
 
-    /* "drone.pyx":152
+    /* "drone.pyx":153
  *                 self.state[j] = self.state[j] + dt * self.tmp2[j]
  *             self.t += dt
  *             self.state[6] = self.t             # <<<<<<<<<<<<<<
@@ -6391,7 +6774,7 @@ static void __pyx_f_5drone_7Drone2d_step(struct __pyx_obj_5drone_Drone2d *__pyx_
     __pyx_t_20 = 6;
     *((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_20 * __pyx_v_self->state.strides[0]) )) = __pyx_t_19;
 
-    /* "drone.pyx":153
+    /* "drone.pyx":154
  *             self.t += dt
  *             self.state[6] = self.t
  *             self.flip_alpha()             # <<<<<<<<<<<<<<
@@ -6401,7 +6784,7 @@ static void __pyx_f_5drone_7Drone2d_step(struct __pyx_obj_5drone_Drone2d *__pyx_
     ((struct __pyx_vtabstruct_5drone_Drone2d *)__pyx_v_self->__pyx_vtab)->flip_alpha(__pyx_v_self, 0);
   }
 
-  /* "drone.pyx":134
+  /* "drone.pyx":135
  *         # print(f'rho={rho} F_coeff={F_coeff} F1={F1} F2={F2} V={V} F_Cx={F_Cx} F_Cx_x={F_Cx_x} F_Cx_y={F_Cx_y} F_x={F_x} F_y={F_y}')
  * 
  *     cpdef void step(self, double F1, double F2, double tau=0.1, int n=10):             # <<<<<<<<<<<<<<
@@ -6467,7 +6850,7 @@ static PyObject *__pyx_pw_5drone_7Drone2d_7step(PyObject *__pyx_v_self, PyObject
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_F2)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("step", 0, 2, 4, 1); __PYX_ERR(0, 134, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("step", 0, 2, 4, 1); __PYX_ERR(0, 135, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -6483,7 +6866,7 @@ static PyObject *__pyx_pw_5drone_7Drone2d_7step(PyObject *__pyx_v_self, PyObject
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "step") < 0)) __PYX_ERR(0, 134, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "step") < 0)) __PYX_ERR(0, 135, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -6497,22 +6880,22 @@ static PyObject *__pyx_pw_5drone_7Drone2d_7step(PyObject *__pyx_v_self, PyObject
         default: goto __pyx_L5_argtuple_error;
       }
     }
-    __pyx_v_F1 = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_F1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 134, __pyx_L3_error)
-    __pyx_v_F2 = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_F2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 134, __pyx_L3_error)
+    __pyx_v_F1 = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_F1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 135, __pyx_L3_error)
+    __pyx_v_F2 = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_F2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 135, __pyx_L3_error)
     if (values[2]) {
-      __pyx_v_tau = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_tau == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 134, __pyx_L3_error)
+      __pyx_v_tau = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_tau == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 135, __pyx_L3_error)
     } else {
       __pyx_v_tau = ((double)0.1);
     }
     if (values[3]) {
-      __pyx_v_n = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_n == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 134, __pyx_L3_error)
+      __pyx_v_n = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_n == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 135, __pyx_L3_error)
     } else {
       __pyx_v_n = ((int)10);
     }
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("step", 0, 2, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 134, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("step", 0, 2, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 135, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("drone.Drone2d.step", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -6539,7 +6922,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_6step(struct __pyx_obj_5drone_Drone2d 
   __pyx_t_1.tau = __pyx_v_tau;
   __pyx_t_1.n = __pyx_v_n;
   __pyx_vtabptr_5drone_Drone2d->step(__pyx_v_self, __pyx_v_F1, __pyx_v_F2, 1, &__pyx_t_1); 
-  __pyx_t_2 = __Pyx_void_to_None(NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 134, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_void_to_None(NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 135, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
@@ -6556,7 +6939,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_6step(struct __pyx_obj_5drone_Drone2d 
   return __pyx_r;
 }
 
-/* "drone.pyx":157
+/* "drone.pyx":158
  * 
  * 
  *     cpdef dict to_dict(self):             # <<<<<<<<<<<<<<
@@ -6587,7 +6970,7 @@ static PyObject *__pyx_f_5drone_7Drone2d_to_dict(struct __pyx_obj_5drone_Drone2d
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_to_dict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 157, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_to_dict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 158, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_5drone_7Drone2d_9to_dict)) {
         __Pyx_XDECREF(__pyx_r);
@@ -6604,10 +6987,10 @@ static PyObject *__pyx_f_5drone_7Drone2d_to_dict(struct __pyx_obj_5drone_Drone2d
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 157, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 158, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (!(likely(PyDict_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "dict", Py_TYPE(__pyx_t_2)->tp_name), 0))) __PYX_ERR(0, 157, __pyx_L1_error)
+        if (!(likely(PyDict_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "dict", Py_TYPE(__pyx_t_2)->tp_name), 0))) __PYX_ERR(0, 158, __pyx_L1_error)
         __pyx_r = ((PyObject*)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6626,21 +7009,21 @@ static PyObject *__pyx_f_5drone_7Drone2d_to_dict(struct __pyx_obj_5drone_Drone2d
     #endif
   }
 
-  /* "drone.pyx":159
+  /* "drone.pyx":160
  *     cpdef dict to_dict(self):
  *         cdef dict res = {
  *             't': self.t,             # <<<<<<<<<<<<<<
  *             'pos': Vec2(self.state[0], self.state[1]),
  *             'vel': Vec2(self.state[2], self.state[3]),
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 159, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 160, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->t); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 159, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->t); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 160, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_t, __pyx_t_2) < 0) __PYX_ERR(0, 159, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_t, __pyx_t_2) < 0) __PYX_ERR(0, 160, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "drone.pyx":160
+  /* "drone.pyx":161
  *         cdef dict res = {
  *             't': self.t,
  *             'pos': Vec2(self.state[0], self.state[1]),             # <<<<<<<<<<<<<<
@@ -6648,12 +7031,12 @@ static PyObject *__pyx_f_5drone_7Drone2d_to_dict(struct __pyx_obj_5drone_Drone2d
  *             'alpha': self.state[4],
  */
   __pyx_t_5 = 0;
-  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_5 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 160, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_5 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 161, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_5 = 1;
-  __pyx_t_3 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_5 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 160, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_5 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 161, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 160, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 161, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_2);
@@ -6661,13 +7044,13 @@ static PyObject *__pyx_f_5drone_7Drone2d_to_dict(struct __pyx_obj_5drone_Drone2d
   PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_3);
   __pyx_t_2 = 0;
   __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_4, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 160, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_4, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 161, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_pos, __pyx_t_3) < 0) __PYX_ERR(0, 159, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_pos, __pyx_t_3) < 0) __PYX_ERR(0, 160, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "drone.pyx":161
+  /* "drone.pyx":162
  *             't': self.t,
  *             'pos': Vec2(self.state[0], self.state[1]),
  *             'vel': Vec2(self.state[2], self.state[3]),             # <<<<<<<<<<<<<<
@@ -6675,12 +7058,12 @@ static PyObject *__pyx_f_5drone_7Drone2d_to_dict(struct __pyx_obj_5drone_Drone2d
  *             'omega': self.state[5]
  */
   __pyx_t_5 = 2;
-  __pyx_t_3 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_5 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 161, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_5 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_5 = 3;
-  __pyx_t_4 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_5 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 161, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_5 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 161, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_3);
   PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_3);
@@ -6688,13 +7071,13 @@ static PyObject *__pyx_f_5drone_7Drone2d_to_dict(struct __pyx_obj_5drone_Drone2d
   PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_4);
   __pyx_t_3 = 0;
   __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_2, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 161, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_2, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_vel, __pyx_t_4) < 0) __PYX_ERR(0, 159, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_vel, __pyx_t_4) < 0) __PYX_ERR(0, 160, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "drone.pyx":162
+  /* "drone.pyx":163
  *             'pos': Vec2(self.state[0], self.state[1]),
  *             'vel': Vec2(self.state[2], self.state[3]),
  *             'alpha': self.state[4],             # <<<<<<<<<<<<<<
@@ -6702,12 +7085,12 @@ static PyObject *__pyx_f_5drone_7Drone2d_to_dict(struct __pyx_obj_5drone_Drone2d
  *         }
  */
   __pyx_t_5 = 4;
-  __pyx_t_4 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_5 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 162, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_5 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 163, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_alpha, __pyx_t_4) < 0) __PYX_ERR(0, 159, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_alpha, __pyx_t_4) < 0) __PYX_ERR(0, 160, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "drone.pyx":163
+  /* "drone.pyx":164
  *             'vel': Vec2(self.state[2], self.state[3]),
  *             'alpha': self.state[4],
  *             'omega': self.state[5]             # <<<<<<<<<<<<<<
@@ -6715,14 +7098,14 @@ static PyObject *__pyx_f_5drone_7Drone2d_to_dict(struct __pyx_obj_5drone_Drone2d
  *         return res
  */
   __pyx_t_5 = 5;
-  __pyx_t_4 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_5 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 163, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_5 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 164, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_omega, __pyx_t_4) < 0) __PYX_ERR(0, 159, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_omega, __pyx_t_4) < 0) __PYX_ERR(0, 160, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_res = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "drone.pyx":165
+  /* "drone.pyx":166
  *             'omega': self.state[5]
  *         }
  *         return res             # <<<<<<<<<<<<<<
@@ -6734,7 +7117,7 @@ static PyObject *__pyx_f_5drone_7Drone2d_to_dict(struct __pyx_obj_5drone_Drone2d
   __pyx_r = __pyx_v_res;
   goto __pyx_L0;
 
-  /* "drone.pyx":157
+  /* "drone.pyx":158
  * 
  * 
  *     cpdef dict to_dict(self):             # <<<<<<<<<<<<<<
@@ -6780,7 +7163,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_8to_dict(struct __pyx_obj_5drone_Drone
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("to_dict", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_5drone_7Drone2d_to_dict(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 157, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_5drone_7Drone2d_to_dict(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6797,7 +7180,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_8to_dict(struct __pyx_obj_5drone_Drone
   return __pyx_r;
 }
 
-/* "drone.pyx":167
+/* "drone.pyx":168
  *         return res
  * 
  *     cpdef void from_dict(self, dict state_dict):             # <<<<<<<<<<<<<<
@@ -6827,7 +7210,7 @@ static void __pyx_f_5drone_7Drone2d_from_dict(struct __pyx_obj_5drone_Drone2d *_
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_from_dict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 167, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_from_dict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 168, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_5drone_7Drone2d_11from_dict)) {
         __Pyx_INCREF(__pyx_t_1);
@@ -6843,7 +7226,7 @@ static void __pyx_f_5drone_7Drone2d_from_dict(struct __pyx_obj_5drone_Drone2d *_
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, __pyx_v_state_dict) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_state_dict);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 167, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 168, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -6863,7 +7246,7 @@ static void __pyx_f_5drone_7Drone2d_from_dict(struct __pyx_obj_5drone_Drone2d *_
     #endif
   }
 
-  /* "drone.pyx":168
+  /* "drone.pyx":169
  * 
  *     cpdef void from_dict(self, dict state_dict):
  *         self.t = state_dict['t']             # <<<<<<<<<<<<<<
@@ -6872,15 +7255,15 @@ static void __pyx_f_5drone_7Drone2d_from_dict(struct __pyx_obj_5drone_Drone2d *_
  */
   if (unlikely(__pyx_v_state_dict == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 168, __pyx_L1_error)
+    __PYX_ERR(0, 169, __pyx_L1_error)
   }
-  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_state_dict, __pyx_n_u_t); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 168, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_state_dict, __pyx_n_u_t); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 169, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 168, __pyx_L1_error)
+  __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 169, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_self->t = __pyx_t_5;
 
-  /* "drone.pyx":169
+  /* "drone.pyx":170
  *     cpdef void from_dict(self, dict state_dict):
  *         self.t = state_dict['t']
  *         self.state[0] = state_dict['pos'][0]             # <<<<<<<<<<<<<<
@@ -6889,19 +7272,19 @@ static void __pyx_f_5drone_7Drone2d_from_dict(struct __pyx_obj_5drone_Drone2d *_
  */
   if (unlikely(__pyx_v_state_dict == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 169, __pyx_L1_error)
+    __PYX_ERR(0, 170, __pyx_L1_error)
   }
-  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_state_dict, __pyx_n_u_pos); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 169, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_state_dict, __pyx_n_u_pos); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 170, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 169, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 170, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 169, __pyx_L1_error)
+  __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 170, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_6 = 0;
   *((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_6 * __pyx_v_self->state.strides[0]) )) = __pyx_t_5;
 
-  /* "drone.pyx":170
+  /* "drone.pyx":171
  *         self.t = state_dict['t']
  *         self.state[0] = state_dict['pos'][0]
  *         self.state[1] = state_dict['pos'][1]             # <<<<<<<<<<<<<<
@@ -6910,19 +7293,19 @@ static void __pyx_f_5drone_7Drone2d_from_dict(struct __pyx_obj_5drone_Drone2d *_
  */
   if (unlikely(__pyx_v_state_dict == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 170, __pyx_L1_error)
+    __PYX_ERR(0, 171, __pyx_L1_error)
   }
-  __pyx_t_2 = __Pyx_PyDict_GetItem(__pyx_v_state_dict, __pyx_n_u_pos); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 170, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_GetItem(__pyx_v_state_dict, __pyx_n_u_pos); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 171, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 170, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 171, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 170, __pyx_L1_error)
+  __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 171, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_6 = 1;
   *((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_6 * __pyx_v_self->state.strides[0]) )) = __pyx_t_5;
 
-  /* "drone.pyx":171
+  /* "drone.pyx":172
  *         self.state[0] = state_dict['pos'][0]
  *         self.state[1] = state_dict['pos'][1]
  *         self.state[2] = state_dict['vel'][0]             # <<<<<<<<<<<<<<
@@ -6931,19 +7314,19 @@ static void __pyx_f_5drone_7Drone2d_from_dict(struct __pyx_obj_5drone_Drone2d *_
  */
   if (unlikely(__pyx_v_state_dict == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 171, __pyx_L1_error)
+    __PYX_ERR(0, 172, __pyx_L1_error)
   }
-  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_state_dict, __pyx_n_u_vel); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 171, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_state_dict, __pyx_n_u_vel); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 172, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 171, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 172, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 171, __pyx_L1_error)
+  __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 172, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_6 = 2;
   *((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_6 * __pyx_v_self->state.strides[0]) )) = __pyx_t_5;
 
-  /* "drone.pyx":172
+  /* "drone.pyx":173
  *         self.state[1] = state_dict['pos'][1]
  *         self.state[2] = state_dict['vel'][0]
  *         self.state[3] = state_dict['vel'][1]             # <<<<<<<<<<<<<<
@@ -6952,19 +7335,19 @@ static void __pyx_f_5drone_7Drone2d_from_dict(struct __pyx_obj_5drone_Drone2d *_
  */
   if (unlikely(__pyx_v_state_dict == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 172, __pyx_L1_error)
+    __PYX_ERR(0, 173, __pyx_L1_error)
   }
-  __pyx_t_2 = __Pyx_PyDict_GetItem(__pyx_v_state_dict, __pyx_n_u_vel); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 172, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_GetItem(__pyx_v_state_dict, __pyx_n_u_vel); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 173, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 172, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 173, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 172, __pyx_L1_error)
+  __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 173, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_6 = 3;
   *((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_6 * __pyx_v_self->state.strides[0]) )) = __pyx_t_5;
 
-  /* "drone.pyx":173
+  /* "drone.pyx":174
  *         self.state[2] = state_dict['vel'][0]
  *         self.state[3] = state_dict['vel'][1]
  *         self.state[4] = state_dict['alpha']             # <<<<<<<<<<<<<<
@@ -6973,16 +7356,16 @@ static void __pyx_f_5drone_7Drone2d_from_dict(struct __pyx_obj_5drone_Drone2d *_
  */
   if (unlikely(__pyx_v_state_dict == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 173, __pyx_L1_error)
+    __PYX_ERR(0, 174, __pyx_L1_error)
   }
-  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_state_dict, __pyx_n_u_alpha); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 173, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_state_dict, __pyx_n_u_alpha); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 174, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 173, __pyx_L1_error)
+  __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 174, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_6 = 4;
   *((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_6 * __pyx_v_self->state.strides[0]) )) = __pyx_t_5;
 
-  /* "drone.pyx":174
+  /* "drone.pyx":175
  *         self.state[3] = state_dict['vel'][1]
  *         self.state[4] = state_dict['alpha']
  *         self.state[5] = state_dict['omega']             # <<<<<<<<<<<<<<
@@ -6991,16 +7374,16 @@ static void __pyx_f_5drone_7Drone2d_from_dict(struct __pyx_obj_5drone_Drone2d *_
  */
   if (unlikely(__pyx_v_state_dict == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 174, __pyx_L1_error)
+    __PYX_ERR(0, 175, __pyx_L1_error)
   }
-  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_state_dict, __pyx_n_u_omega); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 174, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_state_dict, __pyx_n_u_omega); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 175, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 174, __pyx_L1_error)
+  __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 175, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_6 = 5;
   *((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_6 * __pyx_v_self->state.strides[0]) )) = __pyx_t_5;
 
-  /* "drone.pyx":175
+  /* "drone.pyx":176
  *         self.state[4] = state_dict['alpha']
  *         self.state[5] = state_dict['omega']
  *         self.state[6] = self.t             # <<<<<<<<<<<<<<
@@ -7011,7 +7394,7 @@ static void __pyx_f_5drone_7Drone2d_from_dict(struct __pyx_obj_5drone_Drone2d *_
   __pyx_t_6 = 6;
   *((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_6 * __pyx_v_self->state.strides[0]) )) = __pyx_t_5;
 
-  /* "drone.pyx":167
+  /* "drone.pyx":168
  *         return res
  * 
  *     cpdef void from_dict(self, dict state_dict):             # <<<<<<<<<<<<<<
@@ -7041,7 +7424,7 @@ static PyObject *__pyx_pw_5drone_7Drone2d_11from_dict(PyObject *__pyx_v_self, Py
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("from_dict (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_state_dict), (&PyDict_Type), 1, "state_dict", 1))) __PYX_ERR(0, 167, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_state_dict), (&PyDict_Type), 1, "state_dict", 1))) __PYX_ERR(0, 168, __pyx_L1_error)
   __pyx_r = __pyx_pf_5drone_7Drone2d_10from_dict(((struct __pyx_obj_5drone_Drone2d *)__pyx_v_self), ((PyObject*)__pyx_v_state_dict));
 
   /* function exit code */
@@ -7062,7 +7445,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_10from_dict(struct __pyx_obj_5drone_Dr
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("from_dict", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_void_to_None(__pyx_f_5drone_7Drone2d_from_dict(__pyx_v_self, __pyx_v_state_dict, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 167, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_void_to_None(__pyx_f_5drone_7Drone2d_from_dict(__pyx_v_self, __pyx_v_state_dict, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 168, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -7079,7 +7462,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_10from_dict(struct __pyx_obj_5drone_Dr
   return __pyx_r;
 }
 
-/* "drone.pyx":177
+/* "drone.pyx":178
  *         self.state[6] = self.t
  * 
  *     cpdef void flip_alpha(self):             # <<<<<<<<<<<<<<
@@ -7109,7 +7492,7 @@ static void __pyx_f_5drone_7Drone2d_flip_alpha(struct __pyx_obj_5drone_Drone2d *
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_flip_alpha); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 177, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_flip_alpha); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 178, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_5drone_7Drone2d_13flip_alpha)) {
         __Pyx_INCREF(__pyx_t_1);
@@ -7125,7 +7508,7 @@ static void __pyx_f_5drone_7Drone2d_flip_alpha(struct __pyx_obj_5drone_Drone2d *
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 177, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 178, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -7145,7 +7528,7 @@ static void __pyx_f_5drone_7Drone2d_flip_alpha(struct __pyx_obj_5drone_Drone2d *
     #endif
   }
 
-  /* "drone.pyx":178
+  /* "drone.pyx":179
  * 
  *     cpdef void flip_alpha(self):
  *         if self.state[4] > pi:             # <<<<<<<<<<<<<<
@@ -7156,7 +7539,7 @@ static void __pyx_f_5drone_7Drone2d_flip_alpha(struct __pyx_obj_5drone_Drone2d *
   __pyx_t_6 = (((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_5 * __pyx_v_self->state.strides[0]) ))) > M_PI) != 0);
   if (__pyx_t_6) {
 
-    /* "drone.pyx":179
+    /* "drone.pyx":180
  *     cpdef void flip_alpha(self):
  *         if self.state[4] > pi:
  *             self.state[4] -= 2*pi             # <<<<<<<<<<<<<<
@@ -7166,7 +7549,7 @@ static void __pyx_f_5drone_7Drone2d_flip_alpha(struct __pyx_obj_5drone_Drone2d *
     __pyx_t_5 = 4;
     *((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_5 * __pyx_v_self->state.strides[0]) )) -= (2.0 * M_PI);
 
-    /* "drone.pyx":178
+    /* "drone.pyx":179
  * 
  *     cpdef void flip_alpha(self):
  *         if self.state[4] > pi:             # <<<<<<<<<<<<<<
@@ -7176,7 +7559,7 @@ static void __pyx_f_5drone_7Drone2d_flip_alpha(struct __pyx_obj_5drone_Drone2d *
     goto __pyx_L3;
   }
 
-  /* "drone.pyx":180
+  /* "drone.pyx":181
  *         if self.state[4] > pi:
  *             self.state[4] -= 2*pi
  *         elif self.state[4] <= -pi:             # <<<<<<<<<<<<<<
@@ -7187,7 +7570,7 @@ static void __pyx_f_5drone_7Drone2d_flip_alpha(struct __pyx_obj_5drone_Drone2d *
   __pyx_t_6 = (((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_5 * __pyx_v_self->state.strides[0]) ))) <= (-M_PI)) != 0);
   if (__pyx_t_6) {
 
-    /* "drone.pyx":181
+    /* "drone.pyx":182
  *             self.state[4] -= 2*pi
  *         elif self.state[4] <= -pi:
  *             self.state[4] += 2*pi             # <<<<<<<<<<<<<<
@@ -7197,7 +7580,7 @@ static void __pyx_f_5drone_7Drone2d_flip_alpha(struct __pyx_obj_5drone_Drone2d *
     __pyx_t_5 = 4;
     *((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_5 * __pyx_v_self->state.strides[0]) )) += (2.0 * M_PI);
 
-    /* "drone.pyx":180
+    /* "drone.pyx":181
  *         if self.state[4] > pi:
  *             self.state[4] -= 2*pi
  *         elif self.state[4] <= -pi:             # <<<<<<<<<<<<<<
@@ -7207,7 +7590,7 @@ static void __pyx_f_5drone_7Drone2d_flip_alpha(struct __pyx_obj_5drone_Drone2d *
   }
   __pyx_L3:;
 
-  /* "drone.pyx":177
+  /* "drone.pyx":178
  *         self.state[6] = self.t
  * 
  *     cpdef void flip_alpha(self):             # <<<<<<<<<<<<<<
@@ -7250,7 +7633,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_12flip_alpha(struct __pyx_obj_5drone_D
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("flip_alpha", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_void_to_None(__pyx_f_5drone_7Drone2d_flip_alpha(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 177, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_void_to_None(__pyx_f_5drone_7Drone2d_flip_alpha(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 178, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -7267,7 +7650,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_12flip_alpha(struct __pyx_obj_5drone_D
   return __pyx_r;
 }
 
-/* "drone.pyx":184
+/* "drone.pyx":185
  * 
  * 
  *     def to_numpy(self):             # <<<<<<<<<<<<<<
@@ -7301,7 +7684,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_14to_numpy(struct __pyx_obj_5drone_Dro
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("to_numpy", 0);
 
-  /* "drone.pyx":185
+  /* "drone.pyx":186
  * 
  *     def to_numpy(self):
  *         return np.array(self.state)             # <<<<<<<<<<<<<<
@@ -7309,12 +7692,12 @@ static PyObject *__pyx_pf_5drone_7Drone2d_14to_numpy(struct __pyx_obj_5drone_Dro
  *     def from_numpy(self, state):
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 185, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 186, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_array); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 185, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_array); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 186, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_v_self->state, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 185, __pyx_L1_error)
+  __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_v_self->state, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 186, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
@@ -7329,14 +7712,14 @@ static PyObject *__pyx_pf_5drone_7Drone2d_14to_numpy(struct __pyx_obj_5drone_Dro
   __pyx_t_1 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, __pyx_t_2) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 185, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 186, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "drone.pyx":184
+  /* "drone.pyx":185
  * 
  * 
  *     def to_numpy(self):             # <<<<<<<<<<<<<<
@@ -7358,7 +7741,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_14to_numpy(struct __pyx_obj_5drone_Dro
   return __pyx_r;
 }
 
-/* "drone.pyx":187
+/* "drone.pyx":188
  *         return np.array(self.state)
  * 
  *     def from_numpy(self, state):             # <<<<<<<<<<<<<<
@@ -7396,7 +7779,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_16from_numpy(struct __pyx_obj_5drone_D
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("from_numpy", 0);
 
-  /* "drone.pyx":189
+  /* "drone.pyx":190
  *     def from_numpy(self, state):
  *         cdef size_t i
  *         for i in range(self.state.shape[0]):             # <<<<<<<<<<<<<<
@@ -7408,22 +7791,22 @@ static PyObject *__pyx_pf_5drone_7Drone2d_16from_numpy(struct __pyx_obj_5drone_D
   for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
     __pyx_v_i = __pyx_t_3;
 
-    /* "drone.pyx":190
+    /* "drone.pyx":191
  *         cdef size_t i
  *         for i in range(self.state.shape[0]):
  *             self.state[i] = state[i]             # <<<<<<<<<<<<<<
  *         self.t = self.state[6]
  * 
  */
-    __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_state, __pyx_v_i, size_t, 0, __Pyx_PyInt_FromSize_t, 0, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 190, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_state, __pyx_v_i, size_t, 0, __Pyx_PyInt_FromSize_t, 0, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 191, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_4); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 190, __pyx_L1_error)
+    __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_4); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 191, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_t_6 = __pyx_v_i;
     *((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_6 * __pyx_v_self->state.strides[0]) )) = __pyx_t_5;
   }
 
-  /* "drone.pyx":191
+  /* "drone.pyx":192
  *         for i in range(self.state.shape[0]):
  *             self.state[i] = state[i]
  *         self.t = self.state[6]             # <<<<<<<<<<<<<<
@@ -7433,7 +7816,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_16from_numpy(struct __pyx_obj_5drone_D
   __pyx_t_7 = 6;
   __pyx_v_self->t = (*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_7 * __pyx_v_self->state.strides[0]) )));
 
-  /* "drone.pyx":187
+  /* "drone.pyx":188
  *         return np.array(self.state)
  * 
  *     def from_numpy(self, state):             # <<<<<<<<<<<<<<
@@ -7454,7 +7837,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_16from_numpy(struct __pyx_obj_5drone_D
   return __pyx_r;
 }
 
-/* "drone.pyx":193
+/* "drone.pyx":194
  *         self.t = self.state[6]
  * 
  *     cpdef (double, double, double) get_vmin_vmax_amax(self, double delta_t, Vec2 pos_trg, Vec2 vel_trg, int n_vel_search=25):             # <<<<<<<<<<<<<<
@@ -7507,12 +7890,12 @@ static __pyx_ctuple_double__and_double__and_double __pyx_f_5drone_7Drone2d_get_v
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_get_vmin_vmax_amax); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 193, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_get_vmin_vmax_amax); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 194, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_5drone_7Drone2d_19get_vmin_vmax_amax)) {
-        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_delta_t); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 193, __pyx_L1_error)
+        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_delta_t); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 194, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_n_vel_search); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 193, __pyx_L1_error)
+        __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_n_vel_search); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 194, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_5 = __pyx_t_1; __pyx_t_6 = NULL;
@@ -7530,7 +7913,7 @@ static __pyx_ctuple_double__and_double__and_double __pyx_f_5drone_7Drone2d_get_v
         #if CYTHON_FAST_PYCALL
         if (PyFunction_Check(__pyx_t_5)) {
           PyObject *__pyx_temp[5] = {__pyx_t_6, __pyx_t_3, ((PyObject *)__pyx_v_pos_trg), ((PyObject *)__pyx_v_vel_trg), __pyx_t_4};
-          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 4+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 193, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 4+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 194, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -7540,7 +7923,7 @@ static __pyx_ctuple_double__and_double__and_double __pyx_f_5drone_7Drone2d_get_v
         #if CYTHON_FAST_PYCCALL
         if (__Pyx_PyFastCFunction_Check(__pyx_t_5)) {
           PyObject *__pyx_temp[5] = {__pyx_t_6, __pyx_t_3, ((PyObject *)__pyx_v_pos_trg), ((PyObject *)__pyx_v_vel_trg), __pyx_t_4};
-          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 4+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 193, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 4+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 194, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -7548,7 +7931,7 @@ static __pyx_ctuple_double__and_double__and_double __pyx_f_5drone_7Drone2d_get_v
         } else
         #endif
         {
-          __pyx_t_8 = PyTuple_New(4+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 193, __pyx_L1_error)
+          __pyx_t_8 = PyTuple_New(4+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 194, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_8);
           if (__pyx_t_6) {
             __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -7565,12 +7948,12 @@ static __pyx_ctuple_double__and_double__and_double __pyx_f_5drone_7Drone2d_get_v
           PyTuple_SET_ITEM(__pyx_t_8, 3+__pyx_t_7, __pyx_t_4);
           __pyx_t_3 = 0;
           __pyx_t_4 = 0;
-          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 193, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 194, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         }
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __pyx_t_9 = __pyx_convert__from_py___pyx_ctuple_double__and_double__and_double(__pyx_t_2); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 193, __pyx_L1_error)
+        __pyx_t_9 = __pyx_convert__from_py___pyx_ctuple_double__and_double__and_double(__pyx_t_2); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 194, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __pyx_r = __pyx_t_9;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -7589,7 +7972,7 @@ static __pyx_ctuple_double__and_double__and_double __pyx_f_5drone_7Drone2d_get_v
     #endif
   }
 
-  /* "drone.pyx":194
+  /* "drone.pyx":195
  * 
  *     cpdef (double, double, double) get_vmin_vmax_amax(self, double delta_t, Vec2 pos_trg, Vec2 vel_trg, int n_vel_search=25):
  *         cdef Vec2 D = pos_trg             # <<<<<<<<<<<<<<
@@ -7599,7 +7982,7 @@ static __pyx_ctuple_double__and_double__and_double __pyx_f_5drone_7Drone2d_get_v
   __Pyx_INCREF(((PyObject *)__pyx_v_pos_trg));
   __pyx_v_D = __pyx_v_pos_trg;
 
-  /* "drone.pyx":195
+  /* "drone.pyx":196
  *     cpdef (double, double, double) get_vmin_vmax_amax(self, double delta_t, Vec2 pos_trg, Vec2 vel_trg, int n_vel_search=25):
  *         cdef Vec2 D = pos_trg
  *         cdef Vec2 A = Vec2(self.state[0], self.state[1])             # <<<<<<<<<<<<<<
@@ -7607,12 +7990,12 @@ static __pyx_ctuple_double__and_double__and_double __pyx_f_5drone_7Drone2d_get_v
  *         cdef Vec2 B = get_B(delta_t, A, velA)
  */
   __pyx_t_10 = 0;
-  __pyx_t_1 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_10 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 195, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_10 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 196, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_10 = 1;
-  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_10 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 195, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_10 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 196, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 195, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 196, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1);
@@ -7620,13 +8003,13 @@ static __pyx_ctuple_double__and_double__and_double __pyx_f_5drone_7Drone2d_get_v
   PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_t_2);
   __pyx_t_1 = 0;
   __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 195, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 196, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_A = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "drone.pyx":196
+  /* "drone.pyx":197
  *         cdef Vec2 D = pos_trg
  *         cdef Vec2 A = Vec2(self.state[0], self.state[1])
  *         cdef Vec2 velA = Vec2(self.state[2], self.state[3])             # <<<<<<<<<<<<<<
@@ -7634,12 +8017,12 @@ static __pyx_ctuple_double__and_double__and_double __pyx_f_5drone_7Drone2d_get_v
  *         cdef Vec2 C = get_C(delta_t, D, vel_trg)
  */
   __pyx_t_10 = 2;
-  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_10 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 196, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_10 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 197, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_10 = 3;
-  __pyx_t_5 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_10 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 196, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_10 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 197, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 196, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 197, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_2);
@@ -7647,37 +8030,37 @@ static __pyx_ctuple_double__and_double__and_double __pyx_f_5drone_7Drone2d_get_v
   PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_5);
   __pyx_t_2 = 0;
   __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_1, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 196, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_1, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 197, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_velA = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "drone.pyx":197
+  /* "drone.pyx":198
  *         cdef Vec2 A = Vec2(self.state[0], self.state[1])
  *         cdef Vec2 velA = Vec2(self.state[2], self.state[3])
  *         cdef Vec2 B = get_B(delta_t, A, velA)             # <<<<<<<<<<<<<<
  *         cdef Vec2 C = get_C(delta_t, D, vel_trg)
  *         cdef double amax = get_max_a(delta_t, A, B, C, D)
  */
-  __pyx_t_5 = ((PyObject *)__pyx_f_5drone_get_B(__pyx_v_delta_t, __pyx_v_A, __pyx_v_velA, 0)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 197, __pyx_L1_error)
+  __pyx_t_5 = ((PyObject *)__pyx_f_5drone_get_B(__pyx_v_delta_t, __pyx_v_A, __pyx_v_velA, 0)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 198, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_v_B = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "drone.pyx":198
+  /* "drone.pyx":199
  *         cdef Vec2 velA = Vec2(self.state[2], self.state[3])
  *         cdef Vec2 B = get_B(delta_t, A, velA)
  *         cdef Vec2 C = get_C(delta_t, D, vel_trg)             # <<<<<<<<<<<<<<
  *         cdef double amax = get_max_a(delta_t, A, B, C, D)
  *         cdef double vmin, vmax
  */
-  __pyx_t_5 = ((PyObject *)__pyx_f_5drone_get_C(__pyx_v_delta_t, __pyx_v_D, __pyx_v_vel_trg, 0)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 198, __pyx_L1_error)
+  __pyx_t_5 = ((PyObject *)__pyx_f_5drone_get_C(__pyx_v_delta_t, __pyx_v_D, __pyx_v_vel_trg, 0)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 199, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_v_C = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "drone.pyx":199
+  /* "drone.pyx":200
  *         cdef Vec2 B = get_B(delta_t, A, velA)
  *         cdef Vec2 C = get_C(delta_t, D, vel_trg)
  *         cdef double amax = get_max_a(delta_t, A, B, C, D)             # <<<<<<<<<<<<<<
@@ -7686,7 +8069,7 @@ static __pyx_ctuple_double__and_double__and_double __pyx_f_5drone_7Drone2d_get_v
  */
   __pyx_v_amax = __pyx_f_5drone_get_max_a(__pyx_v_delta_t, __pyx_v_A, __pyx_v_B, __pyx_v_C, __pyx_v_D, 0);
 
-  /* "drone.pyx":201
+  /* "drone.pyx":202
  *         cdef double amax = get_max_a(delta_t, A, B, C, D)
  *         cdef double vmin, vmax
  *         vmin, vmax = get_min_max_v(delta_t, A, B, C, D, n_vel_search)             # <<<<<<<<<<<<<<
@@ -7701,7 +8084,7 @@ static __pyx_ctuple_double__and_double__and_double __pyx_f_5drone_7Drone2d_get_v
   __pyx_v_vmin = __pyx_t_13;
   __pyx_v_vmax = __pyx_t_14;
 
-  /* "drone.pyx":202
+  /* "drone.pyx":203
  *         cdef double vmin, vmax
  *         vmin, vmax = get_min_max_v(delta_t, A, B, C, D, n_vel_search)
  *         return vmin, vmax, amax             # <<<<<<<<<<<<<<
@@ -7714,7 +8097,7 @@ static __pyx_ctuple_double__and_double__and_double __pyx_f_5drone_7Drone2d_get_v
   __pyx_r = __pyx_t_9;
   goto __pyx_L0;
 
-  /* "drone.pyx":193
+  /* "drone.pyx":194
  *         self.t = self.state[6]
  * 
  *     cpdef (double, double, double) get_vmin_vmax_amax(self, double delta_t, Vec2 pos_trg, Vec2 vel_trg, int n_vel_search=25):             # <<<<<<<<<<<<<<
@@ -7784,13 +8167,13 @@ static PyObject *__pyx_pw_5drone_7Drone2d_19get_vmin_vmax_amax(PyObject *__pyx_v
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_pos_trg)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("get_vmin_vmax_amax", 0, 3, 4, 1); __PYX_ERR(0, 193, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("get_vmin_vmax_amax", 0, 3, 4, 1); __PYX_ERR(0, 194, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_vel_trg)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("get_vmin_vmax_amax", 0, 3, 4, 2); __PYX_ERR(0, 193, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("get_vmin_vmax_amax", 0, 3, 4, 2); __PYX_ERR(0, 194, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
@@ -7800,7 +8183,7 @@ static PyObject *__pyx_pw_5drone_7Drone2d_19get_vmin_vmax_amax(PyObject *__pyx_v
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_vmin_vmax_amax") < 0)) __PYX_ERR(0, 193, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_vmin_vmax_amax") < 0)) __PYX_ERR(0, 194, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -7813,25 +8196,25 @@ static PyObject *__pyx_pw_5drone_7Drone2d_19get_vmin_vmax_amax(PyObject *__pyx_v
         default: goto __pyx_L5_argtuple_error;
       }
     }
-    __pyx_v_delta_t = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_delta_t == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 193, __pyx_L3_error)
+    __pyx_v_delta_t = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_delta_t == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 194, __pyx_L3_error)
     __pyx_v_pos_trg = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[1]);
     __pyx_v_vel_trg = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[2]);
     if (values[3]) {
-      __pyx_v_n_vel_search = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_n_vel_search == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 193, __pyx_L3_error)
+      __pyx_v_n_vel_search = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_n_vel_search == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 194, __pyx_L3_error)
     } else {
       __pyx_v_n_vel_search = ((int)25);
     }
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_vmin_vmax_amax", 0, 3, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 193, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_vmin_vmax_amax", 0, 3, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 194, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("drone.Drone2d.get_vmin_vmax_amax", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_pos_trg), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "pos_trg", 0))) __PYX_ERR(0, 193, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_vel_trg), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "vel_trg", 0))) __PYX_ERR(0, 193, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_pos_trg), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "pos_trg", 0))) __PYX_ERR(0, 194, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_vel_trg), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "vel_trg", 0))) __PYX_ERR(0, 194, __pyx_L1_error)
   __pyx_r = __pyx_pf_5drone_7Drone2d_18get_vmin_vmax_amax(((struct __pyx_obj_5drone_Drone2d *)__pyx_v_self), __pyx_v_delta_t, __pyx_v_pos_trg, __pyx_v_vel_trg, __pyx_v_n_vel_search);
 
   /* function exit code */
@@ -7857,7 +8240,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_18get_vmin_vmax_amax(struct __pyx_obj_
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.n_vel_search = __pyx_v_n_vel_search;
   __pyx_t_1 = __pyx_vtabptr_5drone_Drone2d->get_vmin_vmax_amax(__pyx_v_self, __pyx_v_delta_t, __pyx_v_pos_trg, __pyx_v_vel_trg, 1, &__pyx_t_2); 
-  __pyx_t_3 = __pyx_convert__to_py___pyx_ctuple_double__and_double__and_double(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 193, __pyx_L1_error)
+  __pyx_t_3 = __pyx_convert__to_py___pyx_ctuple_double__and_double__and_double(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 194, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_r = __pyx_t_3;
   __pyx_t_3 = 0;
@@ -7874,7 +8257,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_18get_vmin_vmax_amax(struct __pyx_obj_
   return __pyx_r;
 }
 
-/* "drone.pyx":204
+/* "drone.pyx":205
  *         return vmin, vmax, amax
  * 
  *     cpdef double get_amax(self, double delta_t, Vec2 pos_trg, Vec2 vel_trg):             # <<<<<<<<<<<<<<
@@ -7914,10 +8297,10 @@ static double __pyx_f_5drone_7Drone2d_get_amax(struct __pyx_obj_5drone_Drone2d *
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_get_amax); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 204, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_get_amax); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 205, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_5drone_7Drone2d_21get_amax)) {
-        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_delta_t); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 204, __pyx_L1_error)
+        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_delta_t); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 205, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -7935,7 +8318,7 @@ static double __pyx_f_5drone_7Drone2d_get_amax(struct __pyx_obj_5drone_Drone2d *
         #if CYTHON_FAST_PYCALL
         if (PyFunction_Check(__pyx_t_4)) {
           PyObject *__pyx_temp[4] = {__pyx_t_5, __pyx_t_3, ((PyObject *)__pyx_v_pos_trg), ((PyObject *)__pyx_v_vel_trg)};
-          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 204, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 205, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -7944,14 +8327,14 @@ static double __pyx_f_5drone_7Drone2d_get_amax(struct __pyx_obj_5drone_Drone2d *
         #if CYTHON_FAST_PYCCALL
         if (__Pyx_PyFastCFunction_Check(__pyx_t_4)) {
           PyObject *__pyx_temp[4] = {__pyx_t_5, __pyx_t_3, ((PyObject *)__pyx_v_pos_trg), ((PyObject *)__pyx_v_vel_trg)};
-          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 204, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_6, 3+__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 205, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         } else
         #endif
         {
-          __pyx_t_7 = PyTuple_New(3+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 204, __pyx_L1_error)
+          __pyx_t_7 = PyTuple_New(3+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 205, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_7);
           if (__pyx_t_5) {
             __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_5); __pyx_t_5 = NULL;
@@ -7965,12 +8348,12 @@ static double __pyx_f_5drone_7Drone2d_get_amax(struct __pyx_obj_5drone_Drone2d *
           __Pyx_GIVEREF(((PyObject *)__pyx_v_vel_trg));
           PyTuple_SET_ITEM(__pyx_t_7, 2+__pyx_t_6, ((PyObject *)__pyx_v_vel_trg));
           __pyx_t_3 = 0;
-          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_7, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 204, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_7, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 205, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         }
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        __pyx_t_8 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_8 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 204, __pyx_L1_error)
+        __pyx_t_8 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_8 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 205, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __pyx_r = __pyx_t_8;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -7989,7 +8372,7 @@ static double __pyx_f_5drone_7Drone2d_get_amax(struct __pyx_obj_5drone_Drone2d *
     #endif
   }
 
-  /* "drone.pyx":205
+  /* "drone.pyx":206
  * 
  *     cpdef double get_amax(self, double delta_t, Vec2 pos_trg, Vec2 vel_trg):
  *         cdef Vec2 D = pos_trg             # <<<<<<<<<<<<<<
@@ -7999,7 +8382,7 @@ static double __pyx_f_5drone_7Drone2d_get_amax(struct __pyx_obj_5drone_Drone2d *
   __Pyx_INCREF(((PyObject *)__pyx_v_pos_trg));
   __pyx_v_D = __pyx_v_pos_trg;
 
-  /* "drone.pyx":206
+  /* "drone.pyx":207
  *     cpdef double get_amax(self, double delta_t, Vec2 pos_trg, Vec2 vel_trg):
  *         cdef Vec2 D = pos_trg
  *         cdef Vec2 A = Vec2(self.state[0], self.state[1])             # <<<<<<<<<<<<<<
@@ -8007,12 +8390,12 @@ static double __pyx_f_5drone_7Drone2d_get_amax(struct __pyx_obj_5drone_Drone2d *
  *         cdef Vec2 B = get_B(delta_t, A, velA)
  */
   __pyx_t_9 = 0;
-  __pyx_t_1 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_9 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 206, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_9 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 207, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_9 = 1;
-  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_9 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 206, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_9 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 207, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 206, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 207, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_1);
@@ -8020,13 +8403,13 @@ static double __pyx_f_5drone_7Drone2d_get_amax(struct __pyx_obj_5drone_Drone2d *
   PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_2);
   __pyx_t_1 = 0;
   __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_4, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 206, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_4, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 207, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_A = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "drone.pyx":207
+  /* "drone.pyx":208
  *         cdef Vec2 D = pos_trg
  *         cdef Vec2 A = Vec2(self.state[0], self.state[1])
  *         cdef Vec2 velA = Vec2(self.state[2], self.state[3])             # <<<<<<<<<<<<<<
@@ -8034,12 +8417,12 @@ static double __pyx_f_5drone_7Drone2d_get_amax(struct __pyx_obj_5drone_Drone2d *
  *         cdef Vec2 C = get_C(delta_t, D, vel_trg)
  */
   __pyx_t_9 = 2;
-  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_9 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 207, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_9 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 208, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_9 = 3;
-  __pyx_t_4 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_9 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 207, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_9 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 208, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 207, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 208, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_2);
@@ -8047,37 +8430,37 @@ static double __pyx_f_5drone_7Drone2d_get_amax(struct __pyx_obj_5drone_Drone2d *
   PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_4);
   __pyx_t_2 = 0;
   __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_1, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 207, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_1, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 208, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_velA = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_4);
   __pyx_t_4 = 0;
 
-  /* "drone.pyx":208
+  /* "drone.pyx":209
  *         cdef Vec2 A = Vec2(self.state[0], self.state[1])
  *         cdef Vec2 velA = Vec2(self.state[2], self.state[3])
  *         cdef Vec2 B = get_B(delta_t, A, velA)             # <<<<<<<<<<<<<<
  *         cdef Vec2 C = get_C(delta_t, D, vel_trg)
  *         cdef double amax = get_max_a(delta_t, A, B, C, D)
  */
-  __pyx_t_4 = ((PyObject *)__pyx_f_5drone_get_B(__pyx_v_delta_t, __pyx_v_A, __pyx_v_velA, 0)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 208, __pyx_L1_error)
+  __pyx_t_4 = ((PyObject *)__pyx_f_5drone_get_B(__pyx_v_delta_t, __pyx_v_A, __pyx_v_velA, 0)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 209, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_v_B = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_4);
   __pyx_t_4 = 0;
 
-  /* "drone.pyx":209
+  /* "drone.pyx":210
  *         cdef Vec2 velA = Vec2(self.state[2], self.state[3])
  *         cdef Vec2 B = get_B(delta_t, A, velA)
  *         cdef Vec2 C = get_C(delta_t, D, vel_trg)             # <<<<<<<<<<<<<<
  *         cdef double amax = get_max_a(delta_t, A, B, C, D)
  *         return amax
  */
-  __pyx_t_4 = ((PyObject *)__pyx_f_5drone_get_C(__pyx_v_delta_t, __pyx_v_D, __pyx_v_vel_trg, 0)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 209, __pyx_L1_error)
+  __pyx_t_4 = ((PyObject *)__pyx_f_5drone_get_C(__pyx_v_delta_t, __pyx_v_D, __pyx_v_vel_trg, 0)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 210, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_v_C = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_4);
   __pyx_t_4 = 0;
 
-  /* "drone.pyx":210
+  /* "drone.pyx":211
  *         cdef Vec2 B = get_B(delta_t, A, velA)
  *         cdef Vec2 C = get_C(delta_t, D, vel_trg)
  *         cdef double amax = get_max_a(delta_t, A, B, C, D)             # <<<<<<<<<<<<<<
@@ -8086,7 +8469,7 @@ static double __pyx_f_5drone_7Drone2d_get_amax(struct __pyx_obj_5drone_Drone2d *
  */
   __pyx_v_amax = __pyx_f_5drone_get_max_a(__pyx_v_delta_t, __pyx_v_A, __pyx_v_B, __pyx_v_C, __pyx_v_D, 0);
 
-  /* "drone.pyx":211
+  /* "drone.pyx":212
  *         cdef Vec2 C = get_C(delta_t, D, vel_trg)
  *         cdef double amax = get_max_a(delta_t, A, B, C, D)
  *         return amax             # <<<<<<<<<<<<<<
@@ -8096,7 +8479,7 @@ static double __pyx_f_5drone_7Drone2d_get_amax(struct __pyx_obj_5drone_Drone2d *
   __pyx_r = __pyx_v_amax;
   goto __pyx_L0;
 
-  /* "drone.pyx":204
+  /* "drone.pyx":205
  *         return vmin, vmax, amax
  * 
  *     cpdef double get_amax(self, double delta_t, Vec2 pos_trg, Vec2 vel_trg):             # <<<<<<<<<<<<<<
@@ -8162,17 +8545,17 @@ static PyObject *__pyx_pw_5drone_7Drone2d_21get_amax(PyObject *__pyx_v_self, PyO
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_pos_trg)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("get_amax", 1, 3, 3, 1); __PYX_ERR(0, 204, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("get_amax", 1, 3, 3, 1); __PYX_ERR(0, 205, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_vel_trg)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("get_amax", 1, 3, 3, 2); __PYX_ERR(0, 204, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("get_amax", 1, 3, 3, 2); __PYX_ERR(0, 205, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_amax") < 0)) __PYX_ERR(0, 204, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_amax") < 0)) __PYX_ERR(0, 205, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -8181,20 +8564,20 @@ static PyObject *__pyx_pw_5drone_7Drone2d_21get_amax(PyObject *__pyx_v_self, PyO
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
-    __pyx_v_delta_t = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_delta_t == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 204, __pyx_L3_error)
+    __pyx_v_delta_t = __pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_delta_t == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 205, __pyx_L3_error)
     __pyx_v_pos_trg = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[1]);
     __pyx_v_vel_trg = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[2]);
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_amax", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 204, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_amax", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 205, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("drone.Drone2d.get_amax", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_pos_trg), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "pos_trg", 0))) __PYX_ERR(0, 204, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_vel_trg), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "vel_trg", 0))) __PYX_ERR(0, 204, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_pos_trg), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "pos_trg", 0))) __PYX_ERR(0, 205, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_vel_trg), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "vel_trg", 0))) __PYX_ERR(0, 205, __pyx_L1_error)
   __pyx_r = __pyx_pf_5drone_7Drone2d_20get_amax(((struct __pyx_obj_5drone_Drone2d *)__pyx_v_self), __pyx_v_delta_t, __pyx_v_pos_trg, __pyx_v_vel_trg);
 
   /* function exit code */
@@ -8215,7 +8598,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_20get_amax(struct __pyx_obj_5drone_Dro
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_amax", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5drone_7Drone2d_get_amax(__pyx_v_self, __pyx_v_delta_t, __pyx_v_pos_trg, __pyx_v_vel_trg, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 204, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5drone_7Drone2d_get_amax(__pyx_v_self, __pyx_v_delta_t, __pyx_v_pos_trg, __pyx_v_vel_trg, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 205, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -8232,7 +8615,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_20get_amax(struct __pyx_obj_5drone_Dro
   return __pyx_r;
 }
 
-/* "drone.pyx":213
+/* "drone.pyx":214
  *         return amax
  * 
  *     def get_traject(self, delta_t, pos_trg, vel_trg, n_points=100):             # <<<<<<<<<<<<<<
@@ -8282,13 +8665,13 @@ static PyObject *__pyx_pw_5drone_7Drone2d_23get_traject(PyObject *__pyx_v_self, 
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_pos_trg)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("get_traject", 0, 3, 4, 1); __PYX_ERR(0, 213, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("get_traject", 0, 3, 4, 1); __PYX_ERR(0, 214, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_vel_trg)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("get_traject", 0, 3, 4, 2); __PYX_ERR(0, 213, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("get_traject", 0, 3, 4, 2); __PYX_ERR(0, 214, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
@@ -8298,7 +8681,7 @@ static PyObject *__pyx_pw_5drone_7Drone2d_23get_traject(PyObject *__pyx_v_self, 
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_traject") < 0)) __PYX_ERR(0, 213, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_traject") < 0)) __PYX_ERR(0, 214, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -8318,7 +8701,7 @@ static PyObject *__pyx_pw_5drone_7Drone2d_23get_traject(PyObject *__pyx_v_self, 
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_traject", 0, 3, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 213, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_traject", 0, 3, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 214, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("drone.Drone2d.get_traject", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -8359,16 +8742,16 @@ static PyObject *__pyx_pf_5drone_7Drone2d_22get_traject(struct __pyx_obj_5drone_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_traject", 0);
 
-  /* "drone.pyx":214
+  /* "drone.pyx":215
  * 
  *     def get_traject(self, delta_t, pos_trg, vel_trg, n_points=100):
  *         ts = np.linspace(0,1, n_points)             # <<<<<<<<<<<<<<
  *         cdef Vec2 A = Vec2(self.state[0], self.state[1])
  *         cdef Vec2 velA = Vec2(self.state[2], self.state[3])
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 214, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 215, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_linspace); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 214, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_linspace); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 215, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -8386,7 +8769,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_22get_traject(struct __pyx_obj_5drone_
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[4] = {__pyx_t_2, __pyx_int_0, __pyx_int_1, __pyx_v_n_points};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 3+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 214, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 3+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 215, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
@@ -8394,13 +8777,13 @@ static PyObject *__pyx_pf_5drone_7Drone2d_22get_traject(struct __pyx_obj_5drone_
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[4] = {__pyx_t_2, __pyx_int_0, __pyx_int_1, __pyx_v_n_points};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 3+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 214, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 3+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 215, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
   #endif
   {
-    __pyx_t_5 = PyTuple_New(3+__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 214, __pyx_L1_error)
+    __pyx_t_5 = PyTuple_New(3+__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 215, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     if (__pyx_t_2) {
       __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_2); __pyx_t_2 = NULL;
@@ -8414,7 +8797,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_22get_traject(struct __pyx_obj_5drone_
     __Pyx_INCREF(__pyx_v_n_points);
     __Pyx_GIVEREF(__pyx_v_n_points);
     PyTuple_SET_ITEM(__pyx_t_5, 2+__pyx_t_4, __pyx_v_n_points);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 214, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 215, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
@@ -8422,7 +8805,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_22get_traject(struct __pyx_obj_5drone_
   __pyx_v_ts = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "drone.pyx":215
+  /* "drone.pyx":216
  *     def get_traject(self, delta_t, pos_trg, vel_trg, n_points=100):
  *         ts = np.linspace(0,1, n_points)
  *         cdef Vec2 A = Vec2(self.state[0], self.state[1])             # <<<<<<<<<<<<<<
@@ -8430,12 +8813,12 @@ static PyObject *__pyx_pf_5drone_7Drone2d_22get_traject(struct __pyx_obj_5drone_
  *         cdef Vec2 D = Vec2(pos_trg[0], pos_trg[1])
  */
   __pyx_t_6 = 0;
-  __pyx_t_1 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_6 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 215, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_6 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 216, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_6 = 1;
-  __pyx_t_3 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_6 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 215, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_6 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 216, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 215, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 216, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1);
@@ -8443,13 +8826,13 @@ static PyObject *__pyx_pf_5drone_7Drone2d_22get_traject(struct __pyx_obj_5drone_
   PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_t_3);
   __pyx_t_1 = 0;
   __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 215, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 216, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_A = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "drone.pyx":216
+  /* "drone.pyx":217
  *         ts = np.linspace(0,1, n_points)
  *         cdef Vec2 A = Vec2(self.state[0], self.state[1])
  *         cdef Vec2 velA = Vec2(self.state[2], self.state[3])             # <<<<<<<<<<<<<<
@@ -8457,12 +8840,12 @@ static PyObject *__pyx_pf_5drone_7Drone2d_22get_traject(struct __pyx_obj_5drone_
  *         cdef Vec2 B = get_B(delta_t, A, velA)
  */
   __pyx_t_6 = 2;
-  __pyx_t_3 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_6 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 216, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_6 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 217, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_6 = 3;
-  __pyx_t_5 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_6 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 216, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_6 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 217, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 216, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 217, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_3);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_3);
@@ -8470,24 +8853,24 @@ static PyObject *__pyx_pf_5drone_7Drone2d_22get_traject(struct __pyx_obj_5drone_
   PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_5);
   __pyx_t_3 = 0;
   __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_1, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 216, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_1, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 217, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_velA = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "drone.pyx":217
+  /* "drone.pyx":218
  *         cdef Vec2 A = Vec2(self.state[0], self.state[1])
  *         cdef Vec2 velA = Vec2(self.state[2], self.state[3])
  *         cdef Vec2 D = Vec2(pos_trg[0], pos_trg[1])             # <<<<<<<<<<<<<<
  *         cdef Vec2 B = get_B(delta_t, A, velA)
  *         cdef Vec2 C = get_C(delta_t, D, Vec2(vel_trg[0], vel_trg[1]))
  */
-  __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_pos_trg, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 217, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_pos_trg, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 218, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_pos_trg, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 217, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_pos_trg, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 218, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 217, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 218, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_5);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_5);
@@ -8495,38 +8878,38 @@ static PyObject *__pyx_pf_5drone_7Drone2d_22get_traject(struct __pyx_obj_5drone_
   PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_1);
   __pyx_t_5 = 0;
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 217, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 218, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_D = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "drone.pyx":218
+  /* "drone.pyx":219
  *         cdef Vec2 velA = Vec2(self.state[2], self.state[3])
  *         cdef Vec2 D = Vec2(pos_trg[0], pos_trg[1])
  *         cdef Vec2 B = get_B(delta_t, A, velA)             # <<<<<<<<<<<<<<
  *         cdef Vec2 C = get_C(delta_t, D, Vec2(vel_trg[0], vel_trg[1]))
  * 
  */
-  __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_v_delta_t); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 218, __pyx_L1_error)
-  __pyx_t_1 = ((PyObject *)__pyx_f_5drone_get_B(__pyx_t_7, __pyx_v_A, __pyx_v_velA, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 218, __pyx_L1_error)
+  __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_v_delta_t); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 219, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_f_5drone_get_B(__pyx_t_7, __pyx_v_A, __pyx_v_velA, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 219, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_B = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "drone.pyx":219
+  /* "drone.pyx":220
  *         cdef Vec2 D = Vec2(pos_trg[0], pos_trg[1])
  *         cdef Vec2 B = get_B(delta_t, A, velA)
  *         cdef Vec2 C = get_C(delta_t, D, Vec2(vel_trg[0], vel_trg[1]))             # <<<<<<<<<<<<<<
  * 
  *         return np.array([
  */
-  __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_v_delta_t); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 219, __pyx_L1_error)
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_vel_trg, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 219, __pyx_L1_error)
+  __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_v_delta_t); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 220, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_vel_trg, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 220, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_vel_trg, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 219, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_vel_trg, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 220, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 219, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 220, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1);
@@ -8534,16 +8917,16 @@ static PyObject *__pyx_pf_5drone_7Drone2d_22get_traject(struct __pyx_obj_5drone_
   PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_t_3);
   __pyx_t_1 = 0;
   __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 219, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 220, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = ((PyObject *)__pyx_f_5drone_get_C(__pyx_t_7, __pyx_v_D, ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_3), 0)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 219, __pyx_L1_error)
+  __pyx_t_5 = ((PyObject *)__pyx_f_5drone_get_C(__pyx_t_7, __pyx_v_D, ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_3), 0)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 220, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_C = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "drone.pyx":221
+  /* "drone.pyx":222
  *         cdef Vec2 C = get_C(delta_t, D, Vec2(vel_trg[0], vel_trg[1]))
  * 
  *         return np.array([             # <<<<<<<<<<<<<<
@@ -8551,16 +8934,16 @@ static PyObject *__pyx_pf_5drone_7Drone2d_22get_traject(struct __pyx_obj_5drone_
  *             for t in ts
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 221, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 222, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_array); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 221, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_array); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 222, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   { /* enter inner scope */
-    __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 221, __pyx_L5_error)
+    __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 222, __pyx_L5_error)
     __Pyx_GOTREF(__pyx_t_3);
 
-    /* "drone.pyx":223
+    /* "drone.pyx":224
  *         return np.array([
  *             (1-t)**3 * A + 3*t*(1-t)**2 * B + 3*t*t*(1-t)*C + t**3 * D
  *             for t in ts             # <<<<<<<<<<<<<<
@@ -8571,26 +8954,26 @@ static PyObject *__pyx_pf_5drone_7Drone2d_22get_traject(struct __pyx_obj_5drone_
       __pyx_t_2 = __pyx_v_ts; __Pyx_INCREF(__pyx_t_2); __pyx_t_8 = 0;
       __pyx_t_9 = NULL;
     } else {
-      __pyx_t_8 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_v_ts); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 223, __pyx_L5_error)
+      __pyx_t_8 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_v_ts); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 224, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_9 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 223, __pyx_L5_error)
+      __pyx_t_9 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 224, __pyx_L5_error)
     }
     for (;;) {
       if (likely(!__pyx_t_9)) {
         if (likely(PyList_CheckExact(__pyx_t_2))) {
           if (__pyx_t_8 >= PyList_GET_SIZE(__pyx_t_2)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_10 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_8); __Pyx_INCREF(__pyx_t_10); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 223, __pyx_L5_error)
+          __pyx_t_10 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_8); __Pyx_INCREF(__pyx_t_10); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 224, __pyx_L5_error)
           #else
-          __pyx_t_10 = PySequence_ITEM(__pyx_t_2, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 223, __pyx_L5_error)
+          __pyx_t_10 = PySequence_ITEM(__pyx_t_2, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 224, __pyx_L5_error)
           __Pyx_GOTREF(__pyx_t_10);
           #endif
         } else {
           if (__pyx_t_8 >= PyTuple_GET_SIZE(__pyx_t_2)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_10 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_8); __Pyx_INCREF(__pyx_t_10); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 223, __pyx_L5_error)
+          __pyx_t_10 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_8); __Pyx_INCREF(__pyx_t_10); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 224, __pyx_L5_error)
           #else
-          __pyx_t_10 = PySequence_ITEM(__pyx_t_2, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 223, __pyx_L5_error)
+          __pyx_t_10 = PySequence_ITEM(__pyx_t_2, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 224, __pyx_L5_error)
           __Pyx_GOTREF(__pyx_t_10);
           #endif
         }
@@ -8600,7 +8983,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_22get_traject(struct __pyx_obj_5drone_
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(0, 223, __pyx_L5_error)
+            else __PYX_ERR(0, 224, __pyx_L5_error)
           }
           break;
         }
@@ -8609,70 +8992,70 @@ static PyObject *__pyx_pf_5drone_7Drone2d_22get_traject(struct __pyx_obj_5drone_
       __Pyx_XDECREF_SET(__pyx_7genexpr__pyx_v_t, __pyx_t_10);
       __pyx_t_10 = 0;
 
-      /* "drone.pyx":222
+      /* "drone.pyx":223
  * 
  *         return np.array([
  *             (1-t)**3 * A + 3*t*(1-t)**2 * B + 3*t*t*(1-t)*C + t**3 * D             # <<<<<<<<<<<<<<
  *             for t in ts
  *         ])
  */
-      __pyx_t_10 = __Pyx_PyInt_SubtractCObj(__pyx_int_1, __pyx_7genexpr__pyx_v_t, 1, 0, 0); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 222, __pyx_L5_error)
+      __pyx_t_10 = __Pyx_PyInt_SubtractCObj(__pyx_int_1, __pyx_7genexpr__pyx_v_t, 1, 0, 0); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 223, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_11 = PyNumber_Power(__pyx_t_10, __pyx_int_3, Py_None); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 222, __pyx_L5_error)
+      __pyx_t_11 = PyNumber_Power(__pyx_t_10, __pyx_int_3, Py_None); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 223, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_11);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __pyx_t_10 = PyNumber_Multiply(__pyx_t_11, ((PyObject *)__pyx_v_A)); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 222, __pyx_L5_error)
+      __pyx_t_10 = PyNumber_Multiply(__pyx_t_11, ((PyObject *)__pyx_v_A)); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 223, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-      __pyx_t_11 = PyNumber_Multiply(__pyx_int_3, __pyx_7genexpr__pyx_v_t); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 222, __pyx_L5_error)
+      __pyx_t_11 = PyNumber_Multiply(__pyx_int_3, __pyx_7genexpr__pyx_v_t); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 223, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_11);
-      __pyx_t_12 = __Pyx_PyInt_SubtractCObj(__pyx_int_1, __pyx_7genexpr__pyx_v_t, 1, 0, 0); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 222, __pyx_L5_error)
+      __pyx_t_12 = __Pyx_PyInt_SubtractCObj(__pyx_int_1, __pyx_7genexpr__pyx_v_t, 1, 0, 0); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 223, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_12);
-      __pyx_t_13 = PyNumber_Power(__pyx_t_12, __pyx_int_2, Py_None); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 222, __pyx_L5_error)
+      __pyx_t_13 = PyNumber_Power(__pyx_t_12, __pyx_int_2, Py_None); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 223, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_13);
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      __pyx_t_12 = PyNumber_Multiply(__pyx_t_11, __pyx_t_13); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 222, __pyx_L5_error)
+      __pyx_t_12 = PyNumber_Multiply(__pyx_t_11, __pyx_t_13); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 223, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_12);
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-      __pyx_t_13 = PyNumber_Multiply(__pyx_t_12, ((PyObject *)__pyx_v_B)); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 222, __pyx_L5_error)
+      __pyx_t_13 = PyNumber_Multiply(__pyx_t_12, ((PyObject *)__pyx_v_B)); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 223, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_13);
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      __pyx_t_12 = PyNumber_Add(__pyx_t_10, __pyx_t_13); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 222, __pyx_L5_error)
+      __pyx_t_12 = PyNumber_Add(__pyx_t_10, __pyx_t_13); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 223, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_12);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-      __pyx_t_13 = PyNumber_Multiply(__pyx_int_3, __pyx_7genexpr__pyx_v_t); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 222, __pyx_L5_error)
+      __pyx_t_13 = PyNumber_Multiply(__pyx_int_3, __pyx_7genexpr__pyx_v_t); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 223, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_13);
-      __pyx_t_10 = PyNumber_Multiply(__pyx_t_13, __pyx_7genexpr__pyx_v_t); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 222, __pyx_L5_error)
+      __pyx_t_10 = PyNumber_Multiply(__pyx_t_13, __pyx_7genexpr__pyx_v_t); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 223, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-      __pyx_t_13 = __Pyx_PyInt_SubtractCObj(__pyx_int_1, __pyx_7genexpr__pyx_v_t, 1, 0, 0); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 222, __pyx_L5_error)
+      __pyx_t_13 = __Pyx_PyInt_SubtractCObj(__pyx_int_1, __pyx_7genexpr__pyx_v_t, 1, 0, 0); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 223, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_13);
-      __pyx_t_11 = PyNumber_Multiply(__pyx_t_10, __pyx_t_13); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 222, __pyx_L5_error)
+      __pyx_t_11 = PyNumber_Multiply(__pyx_t_10, __pyx_t_13); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 223, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_11);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-      __pyx_t_13 = PyNumber_Multiply(__pyx_t_11, ((PyObject *)__pyx_v_C)); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 222, __pyx_L5_error)
+      __pyx_t_13 = PyNumber_Multiply(__pyx_t_11, ((PyObject *)__pyx_v_C)); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 223, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_13);
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-      __pyx_t_11 = PyNumber_Add(__pyx_t_12, __pyx_t_13); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 222, __pyx_L5_error)
+      __pyx_t_11 = PyNumber_Add(__pyx_t_12, __pyx_t_13); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 223, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_11);
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-      __pyx_t_13 = PyNumber_Power(__pyx_7genexpr__pyx_v_t, __pyx_int_3, Py_None); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 222, __pyx_L5_error)
+      __pyx_t_13 = PyNumber_Power(__pyx_7genexpr__pyx_v_t, __pyx_int_3, Py_None); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 223, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_13);
-      __pyx_t_12 = PyNumber_Multiply(__pyx_t_13, ((PyObject *)__pyx_v_D)); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 222, __pyx_L5_error)
+      __pyx_t_12 = PyNumber_Multiply(__pyx_t_13, ((PyObject *)__pyx_v_D)); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 223, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_12);
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-      __pyx_t_13 = PyNumber_Add(__pyx_t_11, __pyx_t_12); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 222, __pyx_L5_error)
+      __pyx_t_13 = PyNumber_Add(__pyx_t_11, __pyx_t_12); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 223, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_13);
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_t_13))) __PYX_ERR(0, 221, __pyx_L5_error)
+      if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_t_13))) __PYX_ERR(0, 222, __pyx_L5_error)
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
 
-      /* "drone.pyx":223
+      /* "drone.pyx":224
  *         return np.array([
  *             (1-t)**3 * A + 3*t*(1-t)**2 * B + 3*t*t*(1-t)*C + t**3 * D
  *             for t in ts             # <<<<<<<<<<<<<<
@@ -8701,14 +9084,14 @@ static PyObject *__pyx_pf_5drone_7Drone2d_22get_traject(struct __pyx_obj_5drone_
   __pyx_t_5 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_2, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 221, __pyx_L1_error)
+  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 222, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_5;
   __pyx_t_5 = 0;
   goto __pyx_L0;
 
-  /* "drone.pyx":213
+  /* "drone.pyx":214
  *         return amax
  * 
  *     def get_traject(self, delta_t, pos_trg, vel_trg, n_points=100):             # <<<<<<<<<<<<<<
@@ -8741,7 +9124,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_22get_traject(struct __pyx_obj_5drone_
   return __pyx_r;
 }
 
-/* "drone.pyx":226
+/* "drone.pyx":227
  *         ])
  * 
  *     def get_traject_vels(self, delta_t, pos_trg, vel_trg, n_points=100):             # <<<<<<<<<<<<<<
@@ -8791,13 +9174,13 @@ static PyObject *__pyx_pw_5drone_7Drone2d_25get_traject_vels(PyObject *__pyx_v_s
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_pos_trg)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("get_traject_vels", 0, 3, 4, 1); __PYX_ERR(0, 226, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("get_traject_vels", 0, 3, 4, 1); __PYX_ERR(0, 227, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_vel_trg)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("get_traject_vels", 0, 3, 4, 2); __PYX_ERR(0, 226, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("get_traject_vels", 0, 3, 4, 2); __PYX_ERR(0, 227, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
@@ -8807,7 +9190,7 @@ static PyObject *__pyx_pw_5drone_7Drone2d_25get_traject_vels(PyObject *__pyx_v_s
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_traject_vels") < 0)) __PYX_ERR(0, 226, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_traject_vels") < 0)) __PYX_ERR(0, 227, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -8827,7 +9210,7 @@ static PyObject *__pyx_pw_5drone_7Drone2d_25get_traject_vels(PyObject *__pyx_v_s
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_traject_vels", 0, 3, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 226, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_traject_vels", 0, 3, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 227, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("drone.Drone2d.get_traject_vels", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -8868,16 +9251,16 @@ static PyObject *__pyx_pf_5drone_7Drone2d_24get_traject_vels(struct __pyx_obj_5d
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_traject_vels", 0);
 
-  /* "drone.pyx":227
+  /* "drone.pyx":228
  * 
  *     def get_traject_vels(self, delta_t, pos_trg, vel_trg, n_points=100):
  *         ts = np.linspace(0,1, n_points)             # <<<<<<<<<<<<<<
  *         cdef Vec2 A = Vec2(self.state[0], self.state[1])
  *         cdef Vec2 velA = Vec2(self.state[2], self.state[3])
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 227, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 228, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_linspace); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 227, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_linspace); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 228, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -8895,7 +9278,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_24get_traject_vels(struct __pyx_obj_5d
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[4] = {__pyx_t_2, __pyx_int_0, __pyx_int_1, __pyx_v_n_points};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 3+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 227, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 3+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 228, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
@@ -8903,13 +9286,13 @@ static PyObject *__pyx_pf_5drone_7Drone2d_24get_traject_vels(struct __pyx_obj_5d
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[4] = {__pyx_t_2, __pyx_int_0, __pyx_int_1, __pyx_v_n_points};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 3+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 227, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 3+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 228, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
   #endif
   {
-    __pyx_t_5 = PyTuple_New(3+__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 227, __pyx_L1_error)
+    __pyx_t_5 = PyTuple_New(3+__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 228, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     if (__pyx_t_2) {
       __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_2); __pyx_t_2 = NULL;
@@ -8923,7 +9306,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_24get_traject_vels(struct __pyx_obj_5d
     __Pyx_INCREF(__pyx_v_n_points);
     __Pyx_GIVEREF(__pyx_v_n_points);
     PyTuple_SET_ITEM(__pyx_t_5, 2+__pyx_t_4, __pyx_v_n_points);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 227, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 228, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
@@ -8931,7 +9314,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_24get_traject_vels(struct __pyx_obj_5d
   __pyx_v_ts = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "drone.pyx":228
+  /* "drone.pyx":229
  *     def get_traject_vels(self, delta_t, pos_trg, vel_trg, n_points=100):
  *         ts = np.linspace(0,1, n_points)
  *         cdef Vec2 A = Vec2(self.state[0], self.state[1])             # <<<<<<<<<<<<<<
@@ -8939,12 +9322,12 @@ static PyObject *__pyx_pf_5drone_7Drone2d_24get_traject_vels(struct __pyx_obj_5d
  *         cdef Vec2 D = Vec2(pos_trg[0], pos_trg[1])
  */
   __pyx_t_6 = 0;
-  __pyx_t_1 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_6 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 228, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_6 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 229, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_6 = 1;
-  __pyx_t_3 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_6 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 228, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_6 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 229, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 228, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 229, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1);
@@ -8952,13 +9335,13 @@ static PyObject *__pyx_pf_5drone_7Drone2d_24get_traject_vels(struct __pyx_obj_5d
   PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_t_3);
   __pyx_t_1 = 0;
   __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 228, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 229, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_A = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "drone.pyx":229
+  /* "drone.pyx":230
  *         ts = np.linspace(0,1, n_points)
  *         cdef Vec2 A = Vec2(self.state[0], self.state[1])
  *         cdef Vec2 velA = Vec2(self.state[2], self.state[3])             # <<<<<<<<<<<<<<
@@ -8966,12 +9349,12 @@ static PyObject *__pyx_pf_5drone_7Drone2d_24get_traject_vels(struct __pyx_obj_5d
  *         cdef Vec2 B = get_B(delta_t, A, velA)
  */
   __pyx_t_6 = 2;
-  __pyx_t_3 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_6 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 229, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_6 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 230, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_6 = 3;
-  __pyx_t_5 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_6 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 229, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_6 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 230, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 229, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 230, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_3);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_3);
@@ -8979,24 +9362,24 @@ static PyObject *__pyx_pf_5drone_7Drone2d_24get_traject_vels(struct __pyx_obj_5d
   PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_5);
   __pyx_t_3 = 0;
   __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_1, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 229, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_1, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 230, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_velA = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "drone.pyx":230
+  /* "drone.pyx":231
  *         cdef Vec2 A = Vec2(self.state[0], self.state[1])
  *         cdef Vec2 velA = Vec2(self.state[2], self.state[3])
  *         cdef Vec2 D = Vec2(pos_trg[0], pos_trg[1])             # <<<<<<<<<<<<<<
  *         cdef Vec2 B = get_B(delta_t, A, velA)
  *         cdef Vec2 C = get_C(delta_t, D, Vec2(vel_trg[0], vel_trg[1]))
  */
-  __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_pos_trg, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 230, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_pos_trg, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 231, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_pos_trg, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 230, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_pos_trg, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 231, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 230, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 231, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_5);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_5);
@@ -9004,38 +9387,38 @@ static PyObject *__pyx_pf_5drone_7Drone2d_24get_traject_vels(struct __pyx_obj_5d
   PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_1);
   __pyx_t_5 = 0;
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 230, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 231, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_D = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "drone.pyx":231
+  /* "drone.pyx":232
  *         cdef Vec2 velA = Vec2(self.state[2], self.state[3])
  *         cdef Vec2 D = Vec2(pos_trg[0], pos_trg[1])
  *         cdef Vec2 B = get_B(delta_t, A, velA)             # <<<<<<<<<<<<<<
  *         cdef Vec2 C = get_C(delta_t, D, Vec2(vel_trg[0], vel_trg[1]))
  * 
  */
-  __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_v_delta_t); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 231, __pyx_L1_error)
-  __pyx_t_1 = ((PyObject *)__pyx_f_5drone_get_B(__pyx_t_7, __pyx_v_A, __pyx_v_velA, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 231, __pyx_L1_error)
+  __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_v_delta_t); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 232, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_f_5drone_get_B(__pyx_t_7, __pyx_v_A, __pyx_v_velA, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 232, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_B = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "drone.pyx":232
+  /* "drone.pyx":233
  *         cdef Vec2 D = Vec2(pos_trg[0], pos_trg[1])
  *         cdef Vec2 B = get_B(delta_t, A, velA)
  *         cdef Vec2 C = get_C(delta_t, D, Vec2(vel_trg[0], vel_trg[1]))             # <<<<<<<<<<<<<<
  * 
  *         return np.array([
  */
-  __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_v_delta_t); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 232, __pyx_L1_error)
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_vel_trg, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 232, __pyx_L1_error)
+  __pyx_t_7 = __pyx_PyFloat_AsDouble(__pyx_v_delta_t); if (unlikely((__pyx_t_7 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 233, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_vel_trg, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 233, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_vel_trg, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 232, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_vel_trg, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 233, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 232, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 233, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1);
@@ -9043,16 +9426,16 @@ static PyObject *__pyx_pf_5drone_7Drone2d_24get_traject_vels(struct __pyx_obj_5d
   PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_t_3);
   __pyx_t_1 = 0;
   __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 232, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 233, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = ((PyObject *)__pyx_f_5drone_get_C(__pyx_t_7, __pyx_v_D, ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_3), 0)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 232, __pyx_L1_error)
+  __pyx_t_5 = ((PyObject *)__pyx_f_5drone_get_C(__pyx_t_7, __pyx_v_D, ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_3), 0)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 233, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_C = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "drone.pyx":234
+  /* "drone.pyx":235
  *         cdef Vec2 C = get_C(delta_t, D, Vec2(vel_trg[0], vel_trg[1]))
  * 
  *         return np.array([             # <<<<<<<<<<<<<<
@@ -9060,16 +9443,16 @@ static PyObject *__pyx_pf_5drone_7Drone2d_24get_traject_vels(struct __pyx_obj_5d
  *             for t in ts
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 234, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 235, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_array); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 234, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_array); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 235, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   { /* enter inner scope */
-    __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 234, __pyx_L5_error)
+    __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 235, __pyx_L5_error)
     __Pyx_GOTREF(__pyx_t_3);
 
-    /* "drone.pyx":236
+    /* "drone.pyx":237
  *         return np.array([
  *             (3*(1-t)**2*(B-A) + 6*t*(1-t)*(C-B) + 3*t**2*(D-C))/delta_t
  *             for t in ts             # <<<<<<<<<<<<<<
@@ -9080,26 +9463,26 @@ static PyObject *__pyx_pf_5drone_7Drone2d_24get_traject_vels(struct __pyx_obj_5d
       __pyx_t_2 = __pyx_v_ts; __Pyx_INCREF(__pyx_t_2); __pyx_t_8 = 0;
       __pyx_t_9 = NULL;
     } else {
-      __pyx_t_8 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_v_ts); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 236, __pyx_L5_error)
+      __pyx_t_8 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_v_ts); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 237, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_9 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 236, __pyx_L5_error)
+      __pyx_t_9 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 237, __pyx_L5_error)
     }
     for (;;) {
       if (likely(!__pyx_t_9)) {
         if (likely(PyList_CheckExact(__pyx_t_2))) {
           if (__pyx_t_8 >= PyList_GET_SIZE(__pyx_t_2)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_10 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_8); __Pyx_INCREF(__pyx_t_10); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 236, __pyx_L5_error)
+          __pyx_t_10 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_8); __Pyx_INCREF(__pyx_t_10); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 237, __pyx_L5_error)
           #else
-          __pyx_t_10 = PySequence_ITEM(__pyx_t_2, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 236, __pyx_L5_error)
+          __pyx_t_10 = PySequence_ITEM(__pyx_t_2, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 237, __pyx_L5_error)
           __Pyx_GOTREF(__pyx_t_10);
           #endif
         } else {
           if (__pyx_t_8 >= PyTuple_GET_SIZE(__pyx_t_2)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_10 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_8); __Pyx_INCREF(__pyx_t_10); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 236, __pyx_L5_error)
+          __pyx_t_10 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_8); __Pyx_INCREF(__pyx_t_10); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(0, 237, __pyx_L5_error)
           #else
-          __pyx_t_10 = PySequence_ITEM(__pyx_t_2, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 236, __pyx_L5_error)
+          __pyx_t_10 = PySequence_ITEM(__pyx_t_2, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 237, __pyx_L5_error)
           __Pyx_GOTREF(__pyx_t_10);
           #endif
         }
@@ -9109,7 +9492,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_24get_traject_vels(struct __pyx_obj_5d
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(0, 236, __pyx_L5_error)
+            else __PYX_ERR(0, 237, __pyx_L5_error)
           }
           break;
         }
@@ -9118,67 +9501,67 @@ static PyObject *__pyx_pf_5drone_7Drone2d_24get_traject_vels(struct __pyx_obj_5d
       __Pyx_XDECREF_SET(__pyx_8genexpr1__pyx_v_t, __pyx_t_10);
       __pyx_t_10 = 0;
 
-      /* "drone.pyx":235
+      /* "drone.pyx":236
  * 
  *         return np.array([
  *             (3*(1-t)**2*(B-A) + 6*t*(1-t)*(C-B) + 3*t**2*(D-C))/delta_t             # <<<<<<<<<<<<<<
  *             for t in ts
  *         ])
  */
-      __pyx_t_10 = __Pyx_PyInt_SubtractCObj(__pyx_int_1, __pyx_8genexpr1__pyx_v_t, 1, 0, 0); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 235, __pyx_L5_error)
+      __pyx_t_10 = __Pyx_PyInt_SubtractCObj(__pyx_int_1, __pyx_8genexpr1__pyx_v_t, 1, 0, 0); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 236, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_11 = PyNumber_Power(__pyx_t_10, __pyx_int_2, Py_None); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 235, __pyx_L5_error)
+      __pyx_t_11 = PyNumber_Power(__pyx_t_10, __pyx_int_2, Py_None); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 236, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_11);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __pyx_t_10 = PyNumber_Multiply(__pyx_int_3, __pyx_t_11); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 235, __pyx_L5_error)
+      __pyx_t_10 = PyNumber_Multiply(__pyx_int_3, __pyx_t_11); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 236, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-      __pyx_t_11 = PyNumber_Subtract(((PyObject *)__pyx_v_B), ((PyObject *)__pyx_v_A)); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 235, __pyx_L5_error)
+      __pyx_t_11 = PyNumber_Subtract(((PyObject *)__pyx_v_B), ((PyObject *)__pyx_v_A)); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 236, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_11);
-      __pyx_t_12 = PyNumber_Multiply(__pyx_t_10, __pyx_t_11); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 235, __pyx_L5_error)
+      __pyx_t_12 = PyNumber_Multiply(__pyx_t_10, __pyx_t_11); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 236, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_12);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-      __pyx_t_11 = PyNumber_Multiply(__pyx_int_6, __pyx_8genexpr1__pyx_v_t); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 235, __pyx_L5_error)
+      __pyx_t_11 = PyNumber_Multiply(__pyx_int_6, __pyx_8genexpr1__pyx_v_t); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 236, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_11);
-      __pyx_t_10 = __Pyx_PyInt_SubtractCObj(__pyx_int_1, __pyx_8genexpr1__pyx_v_t, 1, 0, 0); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 235, __pyx_L5_error)
+      __pyx_t_10 = __Pyx_PyInt_SubtractCObj(__pyx_int_1, __pyx_8genexpr1__pyx_v_t, 1, 0, 0); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 236, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_13 = PyNumber_Multiply(__pyx_t_11, __pyx_t_10); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 235, __pyx_L5_error)
+      __pyx_t_13 = PyNumber_Multiply(__pyx_t_11, __pyx_t_10); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 236, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_13);
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __pyx_t_10 = PyNumber_Subtract(((PyObject *)__pyx_v_C), ((PyObject *)__pyx_v_B)); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 235, __pyx_L5_error)
+      __pyx_t_10 = PyNumber_Subtract(((PyObject *)__pyx_v_C), ((PyObject *)__pyx_v_B)); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 236, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_11 = PyNumber_Multiply(__pyx_t_13, __pyx_t_10); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 235, __pyx_L5_error)
+      __pyx_t_11 = PyNumber_Multiply(__pyx_t_13, __pyx_t_10); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 236, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_11);
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __pyx_t_10 = PyNumber_Add(__pyx_t_12, __pyx_t_11); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 235, __pyx_L5_error)
+      __pyx_t_10 = PyNumber_Add(__pyx_t_12, __pyx_t_11); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 236, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-      __pyx_t_11 = PyNumber_Power(__pyx_8genexpr1__pyx_v_t, __pyx_int_2, Py_None); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 235, __pyx_L5_error)
+      __pyx_t_11 = PyNumber_Power(__pyx_8genexpr1__pyx_v_t, __pyx_int_2, Py_None); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 236, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_11);
-      __pyx_t_12 = PyNumber_Multiply(__pyx_int_3, __pyx_t_11); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 235, __pyx_L5_error)
+      __pyx_t_12 = PyNumber_Multiply(__pyx_int_3, __pyx_t_11); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 236, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_12);
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-      __pyx_t_11 = PyNumber_Subtract(((PyObject *)__pyx_v_D), ((PyObject *)__pyx_v_C)); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 235, __pyx_L5_error)
+      __pyx_t_11 = PyNumber_Subtract(((PyObject *)__pyx_v_D), ((PyObject *)__pyx_v_C)); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 236, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_11);
-      __pyx_t_13 = PyNumber_Multiply(__pyx_t_12, __pyx_t_11); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 235, __pyx_L5_error)
+      __pyx_t_13 = PyNumber_Multiply(__pyx_t_12, __pyx_t_11); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 236, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_13);
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-      __pyx_t_11 = PyNumber_Add(__pyx_t_10, __pyx_t_13); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 235, __pyx_L5_error)
+      __pyx_t_11 = PyNumber_Add(__pyx_t_10, __pyx_t_13); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 236, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_11);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-      __pyx_t_13 = __Pyx_PyNumber_Divide(__pyx_t_11, __pyx_v_delta_t); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 235, __pyx_L5_error)
+      __pyx_t_13 = __Pyx_PyNumber_Divide(__pyx_t_11, __pyx_v_delta_t); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 236, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_13);
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-      if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_t_13))) __PYX_ERR(0, 234, __pyx_L5_error)
+      if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_t_13))) __PYX_ERR(0, 235, __pyx_L5_error)
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
 
-      /* "drone.pyx":236
+      /* "drone.pyx":237
  *         return np.array([
  *             (3*(1-t)**2*(B-A) + 6*t*(1-t)*(C-B) + 3*t**2*(D-C))/delta_t
  *             for t in ts             # <<<<<<<<<<<<<<
@@ -9207,14 +9590,14 @@ static PyObject *__pyx_pf_5drone_7Drone2d_24get_traject_vels(struct __pyx_obj_5d
   __pyx_t_5 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_2, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 234, __pyx_L1_error)
+  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 235, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_5;
   __pyx_t_5 = 0;
   goto __pyx_L0;
 
-  /* "drone.pyx":226
+  /* "drone.pyx":227
  *         ])
  * 
  *     def get_traject_vels(self, delta_t, pos_trg, vel_trg, n_points=100):             # <<<<<<<<<<<<<<
@@ -9247,7 +9630,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_24get_traject_vels(struct __pyx_obj_5d
   return __pyx_r;
 }
 
-/* "drone.pyx":239
+/* "drone.pyx":240
  *         ])
  * 
  *     def get_delta_t_minimum(self, pos_trg, vel_trg, vmax, amax, t_tol, n=33, rounds=3):             # <<<<<<<<<<<<<<
@@ -9307,25 +9690,25 @@ static PyObject *__pyx_pw_5drone_7Drone2d_27get_delta_t_minimum(PyObject *__pyx_
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_vel_trg)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("get_delta_t_minimum", 0, 5, 7, 1); __PYX_ERR(0, 239, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("get_delta_t_minimum", 0, 5, 7, 1); __PYX_ERR(0, 240, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_vmax)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("get_delta_t_minimum", 0, 5, 7, 2); __PYX_ERR(0, 239, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("get_delta_t_minimum", 0, 5, 7, 2); __PYX_ERR(0, 240, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_amax)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("get_delta_t_minimum", 0, 5, 7, 3); __PYX_ERR(0, 239, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("get_delta_t_minimum", 0, 5, 7, 3); __PYX_ERR(0, 240, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_t_tol)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("get_delta_t_minimum", 0, 5, 7, 4); __PYX_ERR(0, 239, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("get_delta_t_minimum", 0, 5, 7, 4); __PYX_ERR(0, 240, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
@@ -9341,7 +9724,7 @@ static PyObject *__pyx_pw_5drone_7Drone2d_27get_delta_t_minimum(PyObject *__pyx_
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_delta_t_minimum") < 0)) __PYX_ERR(0, 239, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_delta_t_minimum") < 0)) __PYX_ERR(0, 240, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -9368,7 +9751,7 @@ static PyObject *__pyx_pw_5drone_7Drone2d_27get_delta_t_minimum(PyObject *__pyx_
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_delta_t_minimum", 0, 5, 7, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 239, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_delta_t_minimum", 0, 5, 7, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 240, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("drone.Drone2d.get_delta_t_minimum", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -9416,57 +9799,57 @@ static PyObject *__pyx_pf_5drone_7Drone2d_26get_delta_t_minimum(struct __pyx_obj
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_delta_t_minimum", 0);
 
-  /* "drone.pyx":243
+  /* "drone.pyx":244
  *         cdef Vec2 A, VelA, B, C, D, velD
  *         cdef int t1_flag, t2_flag, t3_flag
  *         cdef int n_ = n             # <<<<<<<<<<<<<<
  *         cdef int rounds_ = rounds
  *         vmax_ = vmax
  */
-  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_n); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 243, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_n); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 244, __pyx_L1_error)
   __pyx_v_n_ = __pyx_t_1;
 
-  /* "drone.pyx":244
+  /* "drone.pyx":245
  *         cdef int t1_flag, t2_flag, t3_flag
  *         cdef int n_ = n
  *         cdef int rounds_ = rounds             # <<<<<<<<<<<<<<
  *         vmax_ = vmax
  *         amax_ = amax
  */
-  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_rounds); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 244, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_rounds); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 245, __pyx_L1_error)
   __pyx_v_rounds_ = __pyx_t_1;
 
-  /* "drone.pyx":245
+  /* "drone.pyx":246
  *         cdef int n_ = n
  *         cdef int rounds_ = rounds
  *         vmax_ = vmax             # <<<<<<<<<<<<<<
  *         amax_ = amax
  *         t_tol_ = t_tol
  */
-  __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_v_vmax); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 245, __pyx_L1_error)
+  __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_v_vmax); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 246, __pyx_L1_error)
   __pyx_v_vmax_ = __pyx_t_2;
 
-  /* "drone.pyx":246
+  /* "drone.pyx":247
  *         cdef int rounds_ = rounds
  *         vmax_ = vmax
  *         amax_ = amax             # <<<<<<<<<<<<<<
  *         t_tol_ = t_tol
  * 
  */
-  __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_v_amax); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 246, __pyx_L1_error)
+  __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_v_amax); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 247, __pyx_L1_error)
   __pyx_v_amax_ = __pyx_t_2;
 
-  /* "drone.pyx":247
+  /* "drone.pyx":248
  *         vmax_ = vmax
  *         amax_ = amax
  *         t_tol_ = t_tol             # <<<<<<<<<<<<<<
  * 
  *         A = Vec2(self.state[0], self.state[1])
  */
-  __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_v_t_tol); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 247, __pyx_L1_error)
+  __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_v_t_tol); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 248, __pyx_L1_error)
   __pyx_v_t_tol_ = __pyx_t_2;
 
-  /* "drone.pyx":249
+  /* "drone.pyx":250
  *         t_tol_ = t_tol
  * 
  *         A = Vec2(self.state[0], self.state[1])             # <<<<<<<<<<<<<<
@@ -9474,12 +9857,12 @@ static PyObject *__pyx_pf_5drone_7Drone2d_26get_delta_t_minimum(struct __pyx_obj
  *         D = Vec2(pos_trg[0], pos_trg[1])
  */
   __pyx_t_3 = 0;
-  __pyx_t_4 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_3 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 249, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_3 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 250, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_3 = 1;
-  __pyx_t_5 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_3 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 249, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_3 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 250, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 249, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 250, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_4);
@@ -9487,13 +9870,13 @@ static PyObject *__pyx_pf_5drone_7Drone2d_26get_delta_t_minimum(struct __pyx_obj
   PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_t_5);
   __pyx_t_4 = 0;
   __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_6, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 249, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_6, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 250, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __pyx_v_A = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "drone.pyx":250
+  /* "drone.pyx":251
  * 
  *         A = Vec2(self.state[0], self.state[1])
  *         velA = Vec2(self.state[2], self.state[3])             # <<<<<<<<<<<<<<
@@ -9501,12 +9884,12 @@ static PyObject *__pyx_pf_5drone_7Drone2d_26get_delta_t_minimum(struct __pyx_obj
  *         velD = Vec2(vel_trg[0], vel_trg[1])
  */
   __pyx_t_3 = 2;
-  __pyx_t_5 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_3 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 250, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_3 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 251, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_3 = 3;
-  __pyx_t_6 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_3 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 250, __pyx_L1_error)
+  __pyx_t_6 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_3 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 251, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 250, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 251, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_5);
   PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_5);
@@ -9514,24 +9897,24 @@ static PyObject *__pyx_pf_5drone_7Drone2d_26get_delta_t_minimum(struct __pyx_obj
   PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_6);
   __pyx_t_5 = 0;
   __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_4, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 250, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_4, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 251, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_velA = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_6);
   __pyx_t_6 = 0;
 
-  /* "drone.pyx":251
+  /* "drone.pyx":252
  *         A = Vec2(self.state[0], self.state[1])
  *         velA = Vec2(self.state[2], self.state[3])
  *         D = Vec2(pos_trg[0], pos_trg[1])             # <<<<<<<<<<<<<<
  *         velD = Vec2(vel_trg[0], vel_trg[1])
  * 
  */
-  __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_pos_trg, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 251, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_pos_trg, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 252, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_pos_trg, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 251, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_pos_trg, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 252, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 251, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 252, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_6);
   PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_6);
@@ -9539,24 +9922,24 @@ static PyObject *__pyx_pf_5drone_7Drone2d_26get_delta_t_minimum(struct __pyx_obj
   PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_t_4);
   __pyx_t_6 = 0;
   __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 251, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_5, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 252, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_D = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_4);
   __pyx_t_4 = 0;
 
-  /* "drone.pyx":252
+  /* "drone.pyx":253
  *         velA = Vec2(self.state[2], self.state[3])
  *         D = Vec2(pos_trg[0], pos_trg[1])
  *         velD = Vec2(vel_trg[0], vel_trg[1])             # <<<<<<<<<<<<<<
  * 
  *         t1 = 0
  */
-  __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_vel_trg, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 252, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_vel_trg, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 253, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_vel_trg, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 252, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_vel_trg, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 253, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 252, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 253, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_4);
@@ -9564,13 +9947,13 @@ static PyObject *__pyx_pf_5drone_7Drone2d_26get_delta_t_minimum(struct __pyx_obj
   PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_t_5);
   __pyx_t_4 = 0;
   __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_6, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 252, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_6, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 253, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __pyx_v_velD = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "drone.pyx":254
+  /* "drone.pyx":255
  *         velD = Vec2(vel_trg[0], vel_trg[1])
  * 
  *         t1 = 0             # <<<<<<<<<<<<<<
@@ -9579,19 +9962,19 @@ static PyObject *__pyx_pf_5drone_7Drone2d_26get_delta_t_minimum(struct __pyx_obj
  */
   __pyx_v_t1 = 0.0;
 
-  /* "drone.pyx":255
+  /* "drone.pyx":256
  * 
  *         t1 = 0
  *         t3 = A.sub_vec(velD).len() / vmax_             # <<<<<<<<<<<<<<
  *         if velD.len() > vmax_:
  *             vmax_ = velD.len()*1.01
  */
-  __pyx_t_5 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)__pyx_v_A->__pyx_vtab)->sub_vec(__pyx_v_A, __pyx_v_velD, 0)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 255, __pyx_L1_error)
+  __pyx_t_5 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)__pyx_v_A->__pyx_vtab)->sub_vec(__pyx_v_A, __pyx_v_velD, 0)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 256, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_v_t3 = (((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_5)->__pyx_vtab)->len(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_5), 0) / ((__pyx_t_7easyvec_7vectors_real)__pyx_v_vmax_));
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "drone.pyx":256
+  /* "drone.pyx":257
  *         t1 = 0
  *         t3 = A.sub_vec(velD).len() / vmax_
  *         if velD.len() > vmax_:             # <<<<<<<<<<<<<<
@@ -9601,7 +9984,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_26get_delta_t_minimum(struct __pyx_obj
   __pyx_t_7 = ((((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)__pyx_v_velD->__pyx_vtab)->len(__pyx_v_velD, 0) > __pyx_v_vmax_) != 0);
   if (__pyx_t_7) {
 
-    /* "drone.pyx":257
+    /* "drone.pyx":258
  *         t3 = A.sub_vec(velD).len() / vmax_
  *         if velD.len() > vmax_:
  *             vmax_ = velD.len()*1.01             # <<<<<<<<<<<<<<
@@ -9610,7 +9993,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_26get_delta_t_minimum(struct __pyx_obj
  */
     __pyx_v_vmax_ = (((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)__pyx_v_velD->__pyx_vtab)->len(__pyx_v_velD, 0) * 1.01);
 
-    /* "drone.pyx":256
+    /* "drone.pyx":257
  *         t1 = 0
  *         t3 = A.sub_vec(velD).len() / vmax_
  *         if velD.len() > vmax_:             # <<<<<<<<<<<<<<
@@ -9619,7 +10002,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_26get_delta_t_minimum(struct __pyx_obj
  */
   }
 
-  /* "drone.pyx":258
+  /* "drone.pyx":259
  *         if velD.len() > vmax_:
  *             vmax_ = velD.len()*1.01
  *         if velA.len() > vmax_:             # <<<<<<<<<<<<<<
@@ -9629,7 +10012,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_26get_delta_t_minimum(struct __pyx_obj
   __pyx_t_7 = ((((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)__pyx_v_velA->__pyx_vtab)->len(__pyx_v_velA, 0) > __pyx_v_vmax_) != 0);
   if (__pyx_t_7) {
 
-    /* "drone.pyx":259
+    /* "drone.pyx":260
  *             vmax_ = velD.len()*1.01
  *         if velA.len() > vmax_:
  *             vmax_ = velA.len()*1.01             # <<<<<<<<<<<<<<
@@ -9638,7 +10021,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_26get_delta_t_minimum(struct __pyx_obj
  */
     __pyx_v_vmax_ = (((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)__pyx_v_velA->__pyx_vtab)->len(__pyx_v_velA, 0) * 1.01);
 
-    /* "drone.pyx":258
+    /* "drone.pyx":259
  *         if velD.len() > vmax_:
  *             vmax_ = velD.len()*1.01
  *         if velA.len() > vmax_:             # <<<<<<<<<<<<<<
@@ -9647,7 +10030,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_26get_delta_t_minimum(struct __pyx_obj
  */
   }
 
-  /* "drone.pyx":261
+  /* "drone.pyx":262
  *             vmax_ = velA.len()*1.01
  * 
  *         while True:             # <<<<<<<<<<<<<<
@@ -9656,31 +10039,31 @@ static PyObject *__pyx_pf_5drone_7Drone2d_26get_delta_t_minimum(struct __pyx_obj
  */
   while (1) {
 
-    /* "drone.pyx":262
+    /* "drone.pyx":263
  * 
  *         while True:
  *             B = get_B(t3, A, velA)             # <<<<<<<<<<<<<<
  *             C = get_C(t3, D, velD)
  *             vmax_fact, amax_fact = get_max_v_a(t3, A, B, C, D, n_, rounds_)
  */
-    __pyx_t_5 = ((PyObject *)__pyx_f_5drone_get_B(__pyx_v_t3, __pyx_v_A, __pyx_v_velA, 0)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 262, __pyx_L1_error)
+    __pyx_t_5 = ((PyObject *)__pyx_f_5drone_get_B(__pyx_v_t3, __pyx_v_A, __pyx_v_velA, 0)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 263, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_XDECREF_SET(__pyx_v_B, ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_5));
     __pyx_t_5 = 0;
 
-    /* "drone.pyx":263
+    /* "drone.pyx":264
  *         while True:
  *             B = get_B(t3, A, velA)
  *             C = get_C(t3, D, velD)             # <<<<<<<<<<<<<<
  *             vmax_fact, amax_fact = get_max_v_a(t3, A, B, C, D, n_, rounds_)
  *             if vmax_fact > vmax_ or amax_fact > amax_:
  */
-    __pyx_t_5 = ((PyObject *)__pyx_f_5drone_get_C(__pyx_v_t3, __pyx_v_D, __pyx_v_velD, 0)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 263, __pyx_L1_error)
+    __pyx_t_5 = ((PyObject *)__pyx_f_5drone_get_C(__pyx_v_t3, __pyx_v_D, __pyx_v_velD, 0)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 264, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_XDECREF_SET(__pyx_v_C, ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_5));
     __pyx_t_5 = 0;
 
-    /* "drone.pyx":264
+    /* "drone.pyx":265
  *             B = get_B(t3, A, velA)
  *             C = get_C(t3, D, velD)
  *             vmax_fact, amax_fact = get_max_v_a(t3, A, B, C, D, n_, rounds_)             # <<<<<<<<<<<<<<
@@ -9696,7 +10079,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_26get_delta_t_minimum(struct __pyx_obj
     __pyx_v_vmax_fact = __pyx_t_2;
     __pyx_v_amax_fact = __pyx_t_10;
 
-    /* "drone.pyx":265
+    /* "drone.pyx":266
  *             C = get_C(t3, D, velD)
  *             vmax_fact, amax_fact = get_max_v_a(t3, A, B, C, D, n_, rounds_)
  *             if vmax_fact > vmax_ or amax_fact > amax_:             # <<<<<<<<<<<<<<
@@ -9714,7 +10097,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_26get_delta_t_minimum(struct __pyx_obj
     __pyx_L8_bool_binop_done:;
     if (__pyx_t_7) {
 
-      /* "drone.pyx":266
+      /* "drone.pyx":267
  *             vmax_fact, amax_fact = get_max_v_a(t3, A, B, C, D, n_, rounds_)
  *             if vmax_fact > vmax_ or amax_fact > amax_:
  *                 t3 *= 1.618             # <<<<<<<<<<<<<<
@@ -9723,7 +10106,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_26get_delta_t_minimum(struct __pyx_obj
  */
       __pyx_v_t3 = (__pyx_v_t3 * 1.618);
 
-      /* "drone.pyx":265
+      /* "drone.pyx":266
  *             C = get_C(t3, D, velD)
  *             vmax_fact, amax_fact = get_max_v_a(t3, A, B, C, D, n_, rounds_)
  *             if vmax_fact > vmax_ or amax_fact > amax_:             # <<<<<<<<<<<<<<
@@ -9733,7 +10116,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_26get_delta_t_minimum(struct __pyx_obj
       goto __pyx_L7;
     }
 
-    /* "drone.pyx":268
+    /* "drone.pyx":269
  *                 t3 *= 1.618
  *             else:
  *                 break             # <<<<<<<<<<<<<<
@@ -9747,7 +10130,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_26get_delta_t_minimum(struct __pyx_obj
   }
   __pyx_L6_break:;
 
-  /* "drone.pyx":270
+  /* "drone.pyx":271
  *                 break
  * 
  *         while t3 - t1 > t_tol_:             # <<<<<<<<<<<<<<
@@ -9758,7 +10141,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_26get_delta_t_minimum(struct __pyx_obj
     __pyx_t_7 = (((__pyx_v_t3 - __pyx_v_t1) > __pyx_v_t_tol_) != 0);
     if (!__pyx_t_7) break;
 
-    /* "drone.pyx":271
+    /* "drone.pyx":272
  * 
  *         while t3 - t1 > t_tol_:
  *             t2 = (t1 + t3)/2             # <<<<<<<<<<<<<<
@@ -9767,31 +10150,31 @@ static PyObject *__pyx_pf_5drone_7Drone2d_26get_delta_t_minimum(struct __pyx_obj
  */
     __pyx_v_t2 = ((__pyx_v_t1 + __pyx_v_t3) / 2.0);
 
-    /* "drone.pyx":272
+    /* "drone.pyx":273
  *         while t3 - t1 > t_tol_:
  *             t2 = (t1 + t3)/2
  *             B = get_B(t2, A, velA)             # <<<<<<<<<<<<<<
  *             C = get_C(t2, D, velD)
  *             vmax_fact, amax_fact = get_max_v_a(t2, A, B, C, D, n_, rounds_)
  */
-    __pyx_t_5 = ((PyObject *)__pyx_f_5drone_get_B(__pyx_v_t2, __pyx_v_A, __pyx_v_velA, 0)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 272, __pyx_L1_error)
+    __pyx_t_5 = ((PyObject *)__pyx_f_5drone_get_B(__pyx_v_t2, __pyx_v_A, __pyx_v_velA, 0)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 273, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_XDECREF_SET(__pyx_v_B, ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_5));
     __pyx_t_5 = 0;
 
-    /* "drone.pyx":273
+    /* "drone.pyx":274
  *             t2 = (t1 + t3)/2
  *             B = get_B(t2, A, velA)
  *             C = get_C(t2, D, velD)             # <<<<<<<<<<<<<<
  *             vmax_fact, amax_fact = get_max_v_a(t2, A, B, C, D, n_, rounds_)
  *             if vmax_fact > vmax_ or amax_fact > amax_:
  */
-    __pyx_t_5 = ((PyObject *)__pyx_f_5drone_get_C(__pyx_v_t2, __pyx_v_D, __pyx_v_velD, 0)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 273, __pyx_L1_error)
+    __pyx_t_5 = ((PyObject *)__pyx_f_5drone_get_C(__pyx_v_t2, __pyx_v_D, __pyx_v_velD, 0)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 274, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_XDECREF_SET(__pyx_v_C, ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_5));
     __pyx_t_5 = 0;
 
-    /* "drone.pyx":274
+    /* "drone.pyx":275
  *             B = get_B(t2, A, velA)
  *             C = get_C(t2, D, velD)
  *             vmax_fact, amax_fact = get_max_v_a(t2, A, B, C, D, n_, rounds_)             # <<<<<<<<<<<<<<
@@ -9807,7 +10190,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_26get_delta_t_minimum(struct __pyx_obj
     __pyx_v_vmax_fact = __pyx_t_10;
     __pyx_v_amax_fact = __pyx_t_2;
 
-    /* "drone.pyx":275
+    /* "drone.pyx":276
  *             C = get_C(t2, D, velD)
  *             vmax_fact, amax_fact = get_max_v_a(t2, A, B, C, D, n_, rounds_)
  *             if vmax_fact > vmax_ or amax_fact > amax_:             # <<<<<<<<<<<<<<
@@ -9825,7 +10208,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_26get_delta_t_minimum(struct __pyx_obj
     __pyx_L13_bool_binop_done:;
     if (__pyx_t_7) {
 
-      /* "drone.pyx":276
+      /* "drone.pyx":277
  *             vmax_fact, amax_fact = get_max_v_a(t2, A, B, C, D, n_, rounds_)
  *             if vmax_fact > vmax_ or amax_fact > amax_:
  *                 t1 = t2             # <<<<<<<<<<<<<<
@@ -9834,7 +10217,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_26get_delta_t_minimum(struct __pyx_obj
  */
       __pyx_v_t1 = __pyx_v_t2;
 
-      /* "drone.pyx":275
+      /* "drone.pyx":276
  *             C = get_C(t2, D, velD)
  *             vmax_fact, amax_fact = get_max_v_a(t2, A, B, C, D, n_, rounds_)
  *             if vmax_fact > vmax_ or amax_fact > amax_:             # <<<<<<<<<<<<<<
@@ -9844,7 +10227,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_26get_delta_t_minimum(struct __pyx_obj
       goto __pyx_L12;
     }
 
-    /* "drone.pyx":278
+    /* "drone.pyx":279
  *                 t1 = t2
  *             else:
  *                 t3 = t2             # <<<<<<<<<<<<<<
@@ -9857,21 +10240,21 @@ static PyObject *__pyx_pf_5drone_7Drone2d_26get_delta_t_minimum(struct __pyx_obj
     __pyx_L12:;
   }
 
-  /* "drone.pyx":280
+  /* "drone.pyx":281
  *                 t3 = t2
  * 
  *         return t2             # <<<<<<<<<<<<<<
  * 
- * 
+ *     @property
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_t2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 280, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_t2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 281, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_r = __pyx_t_5;
   __pyx_t_5 = 0;
   goto __pyx_L0;
 
-  /* "drone.pyx":239
+  /* "drone.pyx":240
  *         ])
  * 
  *     def get_delta_t_minimum(self, pos_trg, vel_trg, vmax, amax, t_tol, n=33, rounds=3):             # <<<<<<<<<<<<<<
@@ -9898,7 +10281,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_26get_delta_t_minimum(struct __pyx_obj
   return __pyx_r;
 }
 
-/* "drone.pyx":291
+/* "drone.pyx":284
  * 
  *     @property
  *     def vel(self):             # <<<<<<<<<<<<<<
@@ -9931,7 +10314,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_3vel___get__(struct __pyx_obj_5drone_D
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "drone.pyx":292
+  /* "drone.pyx":285
  *     @property
  *     def vel(self):
  *         return Vec2(self.state[2], self.state[3])             # <<<<<<<<<<<<<<
@@ -9940,12 +10323,12 @@ static PyObject *__pyx_pf_5drone_7Drone2d_3vel___get__(struct __pyx_obj_5drone_D
  */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = 2;
-  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_1 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 292, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_1 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 285, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_1 = 3;
-  __pyx_t_3 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_1 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 292, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_1 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 285, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 292, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 285, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_2);
@@ -9953,14 +10336,14 @@ static PyObject *__pyx_pf_5drone_7Drone2d_3vel___get__(struct __pyx_obj_5drone_D
   PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_3);
   __pyx_t_2 = 0;
   __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_4, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 292, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_4, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 285, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_r = __pyx_t_3;
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "drone.pyx":291
+  /* "drone.pyx":284
  * 
  *     @property
  *     def vel(self):             # <<<<<<<<<<<<<<
@@ -9981,7 +10364,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_3vel___get__(struct __pyx_obj_5drone_D
   return __pyx_r;
 }
 
-/* "drone.pyx":295
+/* "drone.pyx":288
  * 
  *     @property
  *     def vel_np(self):             # <<<<<<<<<<<<<<
@@ -10016,7 +10399,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_6vel_np___get__(struct __pyx_obj_5dron
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "drone.pyx":296
+  /* "drone.pyx":289
  *     @property
  *     def vel_np(self):
  *         return np.array([self.state[2], self.state[3]])             # <<<<<<<<<<<<<<
@@ -10024,18 +10407,18 @@ static PyObject *__pyx_pf_5drone_7Drone2d_6vel_np___get__(struct __pyx_obj_5dron
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 296, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 289, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_array); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 296, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_array); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 289, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_4 = 2;
-  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_4 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 296, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_4 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 289, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_4 = 3;
-  __pyx_t_5 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_4 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 296, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_4 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 289, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = PyList_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 296, __pyx_L1_error)
+  __pyx_t_6 = PyList_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 289, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_GIVEREF(__pyx_t_2);
   PyList_SET_ITEM(__pyx_t_6, 0, __pyx_t_2);
@@ -10056,14 +10439,14 @@ static PyObject *__pyx_pf_5drone_7Drone2d_6vel_np___get__(struct __pyx_obj_5dron
   __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_5, __pyx_t_6) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_6);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 296, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 289, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "drone.pyx":295
+  /* "drone.pyx":288
  * 
  *     @property
  *     def vel_np(self):             # <<<<<<<<<<<<<<
@@ -10086,7 +10469,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_6vel_np___get__(struct __pyx_obj_5dron
   return __pyx_r;
 }
 
-/* "drone.pyx":300
+/* "drone.pyx":293
  * 
  *     @property
  *     def pos(self):             # <<<<<<<<<<<<<<
@@ -10119,7 +10502,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_3pos___get__(struct __pyx_obj_5drone_D
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "drone.pyx":301
+  /* "drone.pyx":294
  *     @property
  *     def pos(self):
  *         return Vec2(self.state[0], self.state[1])             # <<<<<<<<<<<<<<
@@ -10128,12 +10511,12 @@ static PyObject *__pyx_pf_5drone_7Drone2d_3pos___get__(struct __pyx_obj_5drone_D
  */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = 0;
-  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_1 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 301, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_1 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 294, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_1 = 1;
-  __pyx_t_3 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_1 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 301, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_1 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 294, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 301, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 294, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_2);
@@ -10141,14 +10524,14 @@ static PyObject *__pyx_pf_5drone_7Drone2d_3pos___get__(struct __pyx_obj_5drone_D
   PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_3);
   __pyx_t_2 = 0;
   __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_4, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 301, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_4, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 294, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_r = __pyx_t_3;
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "drone.pyx":300
+  /* "drone.pyx":293
  * 
  *     @property
  *     def pos(self):             # <<<<<<<<<<<<<<
@@ -10169,7 +10552,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_3pos___get__(struct __pyx_obj_5drone_D
   return __pyx_r;
 }
 
-/* "drone.pyx":304
+/* "drone.pyx":297
  * 
  *     @property
  *     def pos_np(self):             # <<<<<<<<<<<<<<
@@ -10204,7 +10587,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_6pos_np___get__(struct __pyx_obj_5dron
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "drone.pyx":305
+  /* "drone.pyx":298
  *     @property
  *     def pos_np(self):
  *         return np.array([self.state[0], self.state[1]])             # <<<<<<<<<<<<<<
@@ -10212,18 +10595,18 @@ static PyObject *__pyx_pf_5drone_7Drone2d_6pos_np___get__(struct __pyx_obj_5dron
  *     @property
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 305, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 298, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_array); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 305, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_array); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 298, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_4 = 0;
-  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_4 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 305, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_4 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 298, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_4 = 1;
-  __pyx_t_5 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_4 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 305, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_4 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 298, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = PyList_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 305, __pyx_L1_error)
+  __pyx_t_6 = PyList_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 298, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_GIVEREF(__pyx_t_2);
   PyList_SET_ITEM(__pyx_t_6, 0, __pyx_t_2);
@@ -10244,14 +10627,14 @@ static PyObject *__pyx_pf_5drone_7Drone2d_6pos_np___get__(struct __pyx_obj_5dron
   __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_5, __pyx_t_6) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_6);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 305, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 298, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "drone.pyx":304
+  /* "drone.pyx":297
  * 
  *     @property
  *     def pos_np(self):             # <<<<<<<<<<<<<<
@@ -10274,7 +10657,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_6pos_np___get__(struct __pyx_obj_5dron
   return __pyx_r;
 }
 
-/* "drone.pyx":308
+/* "drone.pyx":301
  * 
  *     @property
  *     def alpha(self):             # <<<<<<<<<<<<<<
@@ -10305,7 +10688,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_5alpha___get__(struct __pyx_obj_5drone
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "drone.pyx":309
+  /* "drone.pyx":302
  *     @property
  *     def alpha(self):
  *         return self.state[4]             # <<<<<<<<<<<<<<
@@ -10314,13 +10697,13 @@ static PyObject *__pyx_pf_5drone_7Drone2d_5alpha___get__(struct __pyx_obj_5drone
  */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = 4;
-  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_1 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 309, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_1 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 302, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "drone.pyx":308
+  /* "drone.pyx":301
  * 
  *     @property
  *     def alpha(self):             # <<<<<<<<<<<<<<
@@ -10339,7 +10722,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_5alpha___get__(struct __pyx_obj_5drone
   return __pyx_r;
 }
 
-/* "drone.pyx":312
+/* "drone.pyx":305
  * 
  *     @property
  *     def omega(self):             # <<<<<<<<<<<<<<
@@ -10370,7 +10753,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_5omega___get__(struct __pyx_obj_5drone
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "drone.pyx":313
+  /* "drone.pyx":306
  *     @property
  *     def omega(self):
  *         return self.state[5]             # <<<<<<<<<<<<<<
@@ -10379,13 +10762,13 @@ static PyObject *__pyx_pf_5drone_7Drone2d_5omega___get__(struct __pyx_obj_5drone
  */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = 5;
-  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_1 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 313, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_1 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 306, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "drone.pyx":312
+  /* "drone.pyx":305
  * 
  *     @property
  *     def omega(self):             # <<<<<<<<<<<<<<
@@ -10408,8 +10791,8 @@ static PyObject *__pyx_pf_5drone_7Drone2d_5omega___get__(struct __pyx_obj_5drone
  *         return cls(m=m, J=J, F_max=42, L=L, Cx=0.2, g=9.81, mu_omega=1.0)
  * 
  *     cdef public double m, J, F_max, L, Cx, t, g, mu_omega             # <<<<<<<<<<<<<<
+ *     cdef public int n
  *     cdef public double[:] state, tmp1, tmp2, tmp3, tmp4
- *     # [0, 1, 2,  3,  4,     5,     6]
  */
 
 /* Python wrapper */
@@ -11007,6 +11390,88 @@ static int __pyx_pf_5drone_7Drone2d_8mu_omega_2__set__(struct __pyx_obj_5drone_D
 /* "drone.pyx":86
  * 
  *     cdef public double m, J, F_max, L, Cx, t, g, mu_omega
+ *     cdef public int n             # <<<<<<<<<<<<<<
+ *     cdef public double[:] state, tmp1, tmp2, tmp3, tmp4
+ *     # [0, 1, 2,  3,  4,     5,     6]
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5drone_7Drone2d_1n_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_5drone_7Drone2d_1n_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_7Drone2d_1n___get__(((struct __pyx_obj_5drone_Drone2d *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5drone_7Drone2d_1n___get__(struct __pyx_obj_5drone_Drone2d *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__get__", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->n); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("drone.Drone2d.n.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static int __pyx_pw_5drone_7Drone2d_1n_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_5drone_7Drone2d_1n_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_7Drone2d_1n_2__set__(((struct __pyx_obj_5drone_Drone2d *)__pyx_v_self), ((PyObject *)__pyx_v_value));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_5drone_7Drone2d_1n_2__set__(struct __pyx_obj_5drone_Drone2d *__pyx_v_self, PyObject *__pyx_v_value) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__set__", 0);
+  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_value); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 86, __pyx_L1_error)
+  __pyx_v_self->n = __pyx_t_1;
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("drone.Drone2d.n.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "drone.pyx":87
+ *     cdef public double m, J, F_max, L, Cx, t, g, mu_omega
+ *     cdef public int n
  *     cdef public double[:] state, tmp1, tmp2, tmp3, tmp4             # <<<<<<<<<<<<<<
  *     # [0, 1, 2,  3,  4,     5,     6]
  *     # [x, y, Vx, Vy, alpha, omega, t]
@@ -11034,7 +11499,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_5state___get__(struct __pyx_obj_5drone
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_self->state, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_self->state, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 87, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -11072,7 +11537,7 @@ static int __pyx_pf_5drone_7Drone2d_5state_2__set__(struct __pyx_obj_5drone_Dron
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
-  __pyx_t_1 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_v_value, PyBUF_WRITABLE); if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_v_value, PyBUF_WRITABLE); if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 87, __pyx_L1_error)
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->state, 0);
   __pyx_v_self->state = __pyx_t_1;
   __pyx_t_1.memview = NULL;
@@ -11112,7 +11577,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_4tmp1___get__(struct __pyx_obj_5drone_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_self->tmp1, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_self->tmp1, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 87, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -11150,7 +11615,7 @@ static int __pyx_pf_5drone_7Drone2d_4tmp1_2__set__(struct __pyx_obj_5drone_Drone
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
-  __pyx_t_1 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_v_value, PyBUF_WRITABLE); if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_v_value, PyBUF_WRITABLE); if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 87, __pyx_L1_error)
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->tmp1, 0);
   __pyx_v_self->tmp1 = __pyx_t_1;
   __pyx_t_1.memview = NULL;
@@ -11190,7 +11655,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_4tmp2___get__(struct __pyx_obj_5drone_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_self->tmp2, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_self->tmp2, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 87, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -11228,7 +11693,7 @@ static int __pyx_pf_5drone_7Drone2d_4tmp2_2__set__(struct __pyx_obj_5drone_Drone
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
-  __pyx_t_1 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_v_value, PyBUF_WRITABLE); if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_v_value, PyBUF_WRITABLE); if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 87, __pyx_L1_error)
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->tmp2, 0);
   __pyx_v_self->tmp2 = __pyx_t_1;
   __pyx_t_1.memview = NULL;
@@ -11268,7 +11733,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_4tmp3___get__(struct __pyx_obj_5drone_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_self->tmp3, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_self->tmp3, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 87, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -11306,7 +11771,7 @@ static int __pyx_pf_5drone_7Drone2d_4tmp3_2__set__(struct __pyx_obj_5drone_Drone
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
-  __pyx_t_1 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_v_value, PyBUF_WRITABLE); if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_v_value, PyBUF_WRITABLE); if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 87, __pyx_L1_error)
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->tmp3, 0);
   __pyx_v_self->tmp3 = __pyx_t_1;
   __pyx_t_1.memview = NULL;
@@ -11346,7 +11811,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_4tmp4___get__(struct __pyx_obj_5drone_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_self->tmp4, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_self->tmp4, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 87, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -11384,7 +11849,7 @@ static int __pyx_pf_5drone_7Drone2d_4tmp4_2__set__(struct __pyx_obj_5drone_Drone
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
-  __pyx_t_1 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_v_value, PyBUF_WRITABLE); if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_v_value, PyBUF_WRITABLE); if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 87, __pyx_L1_error)
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->tmp4, 0);
   __pyx_v_self->tmp4 = __pyx_t_1;
   __pyx_t_1.memview = NULL;
@@ -11442,8 +11907,9 @@ static PyObject *__pyx_pf_5drone_7Drone2d_28__reduce_cython__(struct __pyx_obj_5
   PyObject *__pyx_t_12 = NULL;
   PyObject *__pyx_t_13 = NULL;
   PyObject *__pyx_t_14 = NULL;
-  int __pyx_t_15;
+  PyObject *__pyx_t_15 = NULL;
   int __pyx_t_16;
+  int __pyx_t_17;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -11452,7 +11918,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_28__reduce_cython__(struct __pyx_obj_5
   /* "(tree fragment)":5
  *     cdef object _dict
  *     cdef bint use_setstate
- *     state = (self.Cx, self.F_max, self.J, self.L, self.g, self.m, self.mu_omega, self.state, self.t, self.tmp1, self.tmp2, self.tmp3, self.tmp4)             # <<<<<<<<<<<<<<
+ *     state = (self.Cx, self.F_max, self.J, self.L, self.g, self.m, self.mu_omega, self.n, self.state, self.t, self.tmp1, self.tmp2, self.tmp3, self.tmp4)             # <<<<<<<<<<<<<<
  *     _dict = getattr(self, '__dict__', None)
  *     if _dict is not None:
  */
@@ -11470,46 +11936,50 @@ static PyObject *__pyx_pf_5drone_7Drone2d_28__reduce_cython__(struct __pyx_obj_5
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_t_7 = PyFloat_FromDouble(__pyx_v_self->mu_omega); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_8 = __pyx_memoryview_fromslice(__pyx_v_self->state, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 5, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyInt_From_int(__pyx_v_self->n); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  __pyx_t_9 = PyFloat_FromDouble(__pyx_v_self->t); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 5, __pyx_L1_error)
+  __pyx_t_9 = __pyx_memoryview_fromslice(__pyx_v_self->state, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
-  __pyx_t_10 = __pyx_memoryview_fromslice(__pyx_v_self->tmp1, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 5, __pyx_L1_error)
+  __pyx_t_10 = PyFloat_FromDouble(__pyx_v_self->t); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_10);
-  __pyx_t_11 = __pyx_memoryview_fromslice(__pyx_v_self->tmp2, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 5, __pyx_L1_error)
+  __pyx_t_11 = __pyx_memoryview_fromslice(__pyx_v_self->tmp1, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
-  __pyx_t_12 = __pyx_memoryview_fromslice(__pyx_v_self->tmp3, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 5, __pyx_L1_error)
+  __pyx_t_12 = __pyx_memoryview_fromslice(__pyx_v_self->tmp2, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
-  __pyx_t_13 = __pyx_memoryview_fromslice(__pyx_v_self->tmp4, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 5, __pyx_L1_error)
+  __pyx_t_13 = __pyx_memoryview_fromslice(__pyx_v_self->tmp3, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_13);
-  __pyx_t_14 = PyTuple_New(13); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 5, __pyx_L1_error)
+  __pyx_t_14 = __pyx_memoryview_fromslice(__pyx_v_self->tmp4, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_14);
+  __pyx_t_15 = PyTuple_New(14); if (unlikely(!__pyx_t_15)) __PYX_ERR(1, 5, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_15);
   __Pyx_GIVEREF(__pyx_t_1);
-  PyTuple_SET_ITEM(__pyx_t_14, 0, __pyx_t_1);
+  PyTuple_SET_ITEM(__pyx_t_15, 0, __pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_2);
-  PyTuple_SET_ITEM(__pyx_t_14, 1, __pyx_t_2);
+  PyTuple_SET_ITEM(__pyx_t_15, 1, __pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_3);
-  PyTuple_SET_ITEM(__pyx_t_14, 2, __pyx_t_3);
+  PyTuple_SET_ITEM(__pyx_t_15, 2, __pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_4);
-  PyTuple_SET_ITEM(__pyx_t_14, 3, __pyx_t_4);
+  PyTuple_SET_ITEM(__pyx_t_15, 3, __pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_5);
-  PyTuple_SET_ITEM(__pyx_t_14, 4, __pyx_t_5);
+  PyTuple_SET_ITEM(__pyx_t_15, 4, __pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_6);
-  PyTuple_SET_ITEM(__pyx_t_14, 5, __pyx_t_6);
+  PyTuple_SET_ITEM(__pyx_t_15, 5, __pyx_t_6);
   __Pyx_GIVEREF(__pyx_t_7);
-  PyTuple_SET_ITEM(__pyx_t_14, 6, __pyx_t_7);
+  PyTuple_SET_ITEM(__pyx_t_15, 6, __pyx_t_7);
   __Pyx_GIVEREF(__pyx_t_8);
-  PyTuple_SET_ITEM(__pyx_t_14, 7, __pyx_t_8);
+  PyTuple_SET_ITEM(__pyx_t_15, 7, __pyx_t_8);
   __Pyx_GIVEREF(__pyx_t_9);
-  PyTuple_SET_ITEM(__pyx_t_14, 8, __pyx_t_9);
+  PyTuple_SET_ITEM(__pyx_t_15, 8, __pyx_t_9);
   __Pyx_GIVEREF(__pyx_t_10);
-  PyTuple_SET_ITEM(__pyx_t_14, 9, __pyx_t_10);
+  PyTuple_SET_ITEM(__pyx_t_15, 9, __pyx_t_10);
   __Pyx_GIVEREF(__pyx_t_11);
-  PyTuple_SET_ITEM(__pyx_t_14, 10, __pyx_t_11);
+  PyTuple_SET_ITEM(__pyx_t_15, 10, __pyx_t_11);
   __Pyx_GIVEREF(__pyx_t_12);
-  PyTuple_SET_ITEM(__pyx_t_14, 11, __pyx_t_12);
+  PyTuple_SET_ITEM(__pyx_t_15, 11, __pyx_t_12);
   __Pyx_GIVEREF(__pyx_t_13);
-  PyTuple_SET_ITEM(__pyx_t_14, 12, __pyx_t_13);
+  PyTuple_SET_ITEM(__pyx_t_15, 12, __pyx_t_13);
+  __Pyx_GIVEREF(__pyx_t_14);
+  PyTuple_SET_ITEM(__pyx_t_15, 13, __pyx_t_14);
   __pyx_t_1 = 0;
   __pyx_t_2 = 0;
   __pyx_t_3 = 0;
@@ -11523,31 +11993,32 @@ static PyObject *__pyx_pf_5drone_7Drone2d_28__reduce_cython__(struct __pyx_obj_5
   __pyx_t_11 = 0;
   __pyx_t_12 = 0;
   __pyx_t_13 = 0;
-  __pyx_v_state = ((PyObject*)__pyx_t_14);
   __pyx_t_14 = 0;
+  __pyx_v_state = ((PyObject*)__pyx_t_15);
+  __pyx_t_15 = 0;
 
   /* "(tree fragment)":6
  *     cdef bint use_setstate
- *     state = (self.Cx, self.F_max, self.J, self.L, self.g, self.m, self.mu_omega, self.state, self.t, self.tmp1, self.tmp2, self.tmp3, self.tmp4)
+ *     state = (self.Cx, self.F_max, self.J, self.L, self.g, self.m, self.mu_omega, self.n, self.state, self.t, self.tmp1, self.tmp2, self.tmp3, self.tmp4)
  *     _dict = getattr(self, '__dict__', None)             # <<<<<<<<<<<<<<
  *     if _dict is not None:
  *         state += (_dict,)
  */
-  __pyx_t_14 = __Pyx_GetAttr3(((PyObject *)__pyx_v_self), __pyx_n_s_dict, Py_None); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 6, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_14);
-  __pyx_v__dict = __pyx_t_14;
-  __pyx_t_14 = 0;
+  __pyx_t_15 = __Pyx_GetAttr3(((PyObject *)__pyx_v_self), __pyx_n_s_dict, Py_None); if (unlikely(!__pyx_t_15)) __PYX_ERR(1, 6, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_15);
+  __pyx_v__dict = __pyx_t_15;
+  __pyx_t_15 = 0;
 
   /* "(tree fragment)":7
- *     state = (self.Cx, self.F_max, self.J, self.L, self.g, self.m, self.mu_omega, self.state, self.t, self.tmp1, self.tmp2, self.tmp3, self.tmp4)
+ *     state = (self.Cx, self.F_max, self.J, self.L, self.g, self.m, self.mu_omega, self.n, self.state, self.t, self.tmp1, self.tmp2, self.tmp3, self.tmp4)
  *     _dict = getattr(self, '__dict__', None)
  *     if _dict is not None:             # <<<<<<<<<<<<<<
  *         state += (_dict,)
  *         use_setstate = True
  */
-  __pyx_t_15 = (__pyx_v__dict != Py_None);
-  __pyx_t_16 = (__pyx_t_15 != 0);
-  if (__pyx_t_16) {
+  __pyx_t_16 = (__pyx_v__dict != Py_None);
+  __pyx_t_17 = (__pyx_t_16 != 0);
+  if (__pyx_t_17) {
 
     /* "(tree fragment)":8
  *     _dict = getattr(self, '__dict__', None)
@@ -11556,16 +12027,16 @@ static PyObject *__pyx_pf_5drone_7Drone2d_28__reduce_cython__(struct __pyx_obj_5
  *         use_setstate = True
  *     else:
  */
-    __pyx_t_14 = PyTuple_New(1); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 8, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_14);
+    __pyx_t_15 = PyTuple_New(1); if (unlikely(!__pyx_t_15)) __PYX_ERR(1, 8, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_15);
     __Pyx_INCREF(__pyx_v__dict);
     __Pyx_GIVEREF(__pyx_v__dict);
-    PyTuple_SET_ITEM(__pyx_t_14, 0, __pyx_v__dict);
-    __pyx_t_13 = PyNumber_InPlaceAdd(__pyx_v_state, __pyx_t_14); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 8, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_13);
-    __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-    __Pyx_DECREF_SET(__pyx_v_state, ((PyObject*)__pyx_t_13));
-    __pyx_t_13 = 0;
+    PyTuple_SET_ITEM(__pyx_t_15, 0, __pyx_v__dict);
+    __pyx_t_14 = PyNumber_InPlaceAdd(__pyx_v_state, __pyx_t_15); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 8, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_14);
+    __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
+    __Pyx_DECREF_SET(__pyx_v_state, ((PyObject*)__pyx_t_14));
+    __pyx_t_14 = 0;
 
     /* "(tree fragment)":9
  *     if _dict is not None:
@@ -11577,7 +12048,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_28__reduce_cython__(struct __pyx_obj_5
     __pyx_v_use_setstate = 1;
 
     /* "(tree fragment)":7
- *     state = (self.Cx, self.F_max, self.J, self.L, self.g, self.m, self.mu_omega, self.state, self.t, self.tmp1, self.tmp2, self.tmp3, self.tmp4)
+ *     state = (self.Cx, self.F_max, self.J, self.L, self.g, self.m, self.mu_omega, self.n, self.state, self.t, self.tmp1, self.tmp2, self.tmp3, self.tmp4)
  *     _dict = getattr(self, '__dict__', None)
  *     if _dict is not None:             # <<<<<<<<<<<<<<
  *         state += (_dict,)
@@ -11591,7 +12062,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_28__reduce_cython__(struct __pyx_obj_5
  *     else:
  *         use_setstate = False             # <<<<<<<<<<<<<<
  *     if use_setstate:
- *         return __pyx_unpickle_Drone2d, (type(self), 0xbe344c3, None), state
+ *         return __pyx_unpickle_Drone2d, (type(self), 0xbdc517b, None), state
  */
   /*else*/ {
     __pyx_v_use_setstate = 0;
@@ -11602,89 +12073,89 @@ static PyObject *__pyx_pf_5drone_7Drone2d_28__reduce_cython__(struct __pyx_obj_5
  *     else:
  *         use_setstate = False
  *     if use_setstate:             # <<<<<<<<<<<<<<
- *         return __pyx_unpickle_Drone2d, (type(self), 0xbe344c3, None), state
+ *         return __pyx_unpickle_Drone2d, (type(self), 0xbdc517b, None), state
  *     else:
  */
-  __pyx_t_16 = (__pyx_v_use_setstate != 0);
-  if (__pyx_t_16) {
+  __pyx_t_17 = (__pyx_v_use_setstate != 0);
+  if (__pyx_t_17) {
 
     /* "(tree fragment)":13
  *         use_setstate = False
  *     if use_setstate:
- *         return __pyx_unpickle_Drone2d, (type(self), 0xbe344c3, None), state             # <<<<<<<<<<<<<<
+ *         return __pyx_unpickle_Drone2d, (type(self), 0xbdc517b, None), state             # <<<<<<<<<<<<<<
  *     else:
- *         return __pyx_unpickle_Drone2d, (type(self), 0xbe344c3, state)
+ *         return __pyx_unpickle_Drone2d, (type(self), 0xbdc517b, state)
  */
     __Pyx_XDECREF(__pyx_r);
-    __Pyx_GetModuleGlobalName(__pyx_t_13, __pyx_n_s_pyx_unpickle_Drone2d); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 13, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_13);
-    __pyx_t_14 = PyTuple_New(3); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 13, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_14, __pyx_n_s_pyx_unpickle_Drone2d); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 13, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_14);
+    __pyx_t_15 = PyTuple_New(3); if (unlikely(!__pyx_t_15)) __PYX_ERR(1, 13, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_15);
     __Pyx_INCREF(((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
     __Pyx_GIVEREF(((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
-    PyTuple_SET_ITEM(__pyx_t_14, 0, ((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
-    __Pyx_INCREF(__pyx_int_199443651);
-    __Pyx_GIVEREF(__pyx_int_199443651);
-    PyTuple_SET_ITEM(__pyx_t_14, 1, __pyx_int_199443651);
+    PyTuple_SET_ITEM(__pyx_t_15, 0, ((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
+    __Pyx_INCREF(__pyx_int_198988155);
+    __Pyx_GIVEREF(__pyx_int_198988155);
+    PyTuple_SET_ITEM(__pyx_t_15, 1, __pyx_int_198988155);
     __Pyx_INCREF(Py_None);
     __Pyx_GIVEREF(Py_None);
-    PyTuple_SET_ITEM(__pyx_t_14, 2, Py_None);
-    __pyx_t_12 = PyTuple_New(3); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 13, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_12);
-    __Pyx_GIVEREF(__pyx_t_13);
-    PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_13);
+    PyTuple_SET_ITEM(__pyx_t_15, 2, Py_None);
+    __pyx_t_13 = PyTuple_New(3); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 13, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_13);
     __Pyx_GIVEREF(__pyx_t_14);
-    PyTuple_SET_ITEM(__pyx_t_12, 1, __pyx_t_14);
+    PyTuple_SET_ITEM(__pyx_t_13, 0, __pyx_t_14);
+    __Pyx_GIVEREF(__pyx_t_15);
+    PyTuple_SET_ITEM(__pyx_t_13, 1, __pyx_t_15);
     __Pyx_INCREF(__pyx_v_state);
     __Pyx_GIVEREF(__pyx_v_state);
-    PyTuple_SET_ITEM(__pyx_t_12, 2, __pyx_v_state);
-    __pyx_t_13 = 0;
+    PyTuple_SET_ITEM(__pyx_t_13, 2, __pyx_v_state);
     __pyx_t_14 = 0;
-    __pyx_r = __pyx_t_12;
-    __pyx_t_12 = 0;
+    __pyx_t_15 = 0;
+    __pyx_r = __pyx_t_13;
+    __pyx_t_13 = 0;
     goto __pyx_L0;
 
     /* "(tree fragment)":12
  *     else:
  *         use_setstate = False
  *     if use_setstate:             # <<<<<<<<<<<<<<
- *         return __pyx_unpickle_Drone2d, (type(self), 0xbe344c3, None), state
+ *         return __pyx_unpickle_Drone2d, (type(self), 0xbdc517b, None), state
  *     else:
  */
   }
 
   /* "(tree fragment)":15
- *         return __pyx_unpickle_Drone2d, (type(self), 0xbe344c3, None), state
+ *         return __pyx_unpickle_Drone2d, (type(self), 0xbdc517b, None), state
  *     else:
- *         return __pyx_unpickle_Drone2d, (type(self), 0xbe344c3, state)             # <<<<<<<<<<<<<<
+ *         return __pyx_unpickle_Drone2d, (type(self), 0xbdc517b, state)             # <<<<<<<<<<<<<<
  * def __setstate_cython__(self, __pyx_state):
  *     __pyx_unpickle_Drone2d__set_state(self, __pyx_state)
  */
   /*else*/ {
     __Pyx_XDECREF(__pyx_r);
-    __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_n_s_pyx_unpickle_Drone2d); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 15, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_12);
-    __pyx_t_14 = PyTuple_New(3); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 15, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_14);
+    __Pyx_GetModuleGlobalName(__pyx_t_13, __pyx_n_s_pyx_unpickle_Drone2d); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 15, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_13);
+    __pyx_t_15 = PyTuple_New(3); if (unlikely(!__pyx_t_15)) __PYX_ERR(1, 15, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_15);
     __Pyx_INCREF(((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
     __Pyx_GIVEREF(((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
-    PyTuple_SET_ITEM(__pyx_t_14, 0, ((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
-    __Pyx_INCREF(__pyx_int_199443651);
-    __Pyx_GIVEREF(__pyx_int_199443651);
-    PyTuple_SET_ITEM(__pyx_t_14, 1, __pyx_int_199443651);
+    PyTuple_SET_ITEM(__pyx_t_15, 0, ((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
+    __Pyx_INCREF(__pyx_int_198988155);
+    __Pyx_GIVEREF(__pyx_int_198988155);
+    PyTuple_SET_ITEM(__pyx_t_15, 1, __pyx_int_198988155);
     __Pyx_INCREF(__pyx_v_state);
     __Pyx_GIVEREF(__pyx_v_state);
-    PyTuple_SET_ITEM(__pyx_t_14, 2, __pyx_v_state);
-    __pyx_t_13 = PyTuple_New(2); if (unlikely(!__pyx_t_13)) __PYX_ERR(1, 15, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_13);
-    __Pyx_GIVEREF(__pyx_t_12);
-    PyTuple_SET_ITEM(__pyx_t_13, 0, __pyx_t_12);
-    __Pyx_GIVEREF(__pyx_t_14);
-    PyTuple_SET_ITEM(__pyx_t_13, 1, __pyx_t_14);
-    __pyx_t_12 = 0;
-    __pyx_t_14 = 0;
-    __pyx_r = __pyx_t_13;
+    PyTuple_SET_ITEM(__pyx_t_15, 2, __pyx_v_state);
+    __pyx_t_14 = PyTuple_New(2); if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 15, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_14);
+    __Pyx_GIVEREF(__pyx_t_13);
+    PyTuple_SET_ITEM(__pyx_t_14, 0, __pyx_t_13);
+    __Pyx_GIVEREF(__pyx_t_15);
+    PyTuple_SET_ITEM(__pyx_t_14, 1, __pyx_t_15);
     __pyx_t_13 = 0;
+    __pyx_t_15 = 0;
+    __pyx_r = __pyx_t_14;
+    __pyx_t_14 = 0;
     goto __pyx_L0;
   }
 
@@ -11710,6 +12181,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_28__reduce_cython__(struct __pyx_obj_5
   __Pyx_XDECREF(__pyx_t_12);
   __Pyx_XDECREF(__pyx_t_13);
   __Pyx_XDECREF(__pyx_t_14);
+  __Pyx_XDECREF(__pyx_t_15);
   __Pyx_AddTraceback("drone.Drone2d.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -11722,7 +12194,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_28__reduce_cython__(struct __pyx_obj_5
 
 /* "(tree fragment)":16
  *     else:
- *         return __pyx_unpickle_Drone2d, (type(self), 0xbe344c3, state)
+ *         return __pyx_unpickle_Drone2d, (type(self), 0xbdc517b, state)
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_Drone2d__set_state(self, __pyx_state)
  */
@@ -11751,7 +12223,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_30__setstate_cython__(struct __pyx_obj
   __Pyx_RefNannySetupContext("__setstate_cython__", 0);
 
   /* "(tree fragment)":17
- *         return __pyx_unpickle_Drone2d, (type(self), 0xbe344c3, state)
+ *         return __pyx_unpickle_Drone2d, (type(self), 0xbdc517b, state)
  * def __setstate_cython__(self, __pyx_state):
  *     __pyx_unpickle_Drone2d__set_state(self, __pyx_state)             # <<<<<<<<<<<<<<
  */
@@ -11762,7 +12234,7 @@ static PyObject *__pyx_pf_5drone_7Drone2d_30__setstate_cython__(struct __pyx_obj
 
   /* "(tree fragment)":16
  *     else:
- *         return __pyx_unpickle_Drone2d, (type(self), 0xbe344c3, state)
+ *         return __pyx_unpickle_Drone2d, (type(self), 0xbdc517b, state)
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_Drone2d__set_state(self, __pyx_state)
  */
@@ -11780,10 +12252,10 @@ static PyObject *__pyx_pf_5drone_7Drone2d_30__setstate_cython__(struct __pyx_obj
   return __pyx_r;
 }
 
-/* "drone.pyx":323
+/* "drone.pyx":317
  *     # [x, y, theta, t]
  * 
- *     def __init__(self, vel_len, ay, alpha):             # <<<<<<<<<<<<<<
+ *     def __init__(self, pos0, pos_trg, vel_len, ay, alpha):             # <<<<<<<<<<<<<<
  *         self.vel_len = vel_len
  *         self.ay = ay
  */
@@ -11791,6 +12263,8 @@ static PyObject *__pyx_pf_5drone_7Drone2d_30__setstate_cython__(struct __pyx_obj
 /* Python wrapper */
 static int __pyx_pw_5drone_9Missile2d_1__init__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static int __pyx_pw_5drone_9Missile2d_1__init__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_pos0 = 0;
+  PyObject *__pyx_v_pos_trg = 0;
   PyObject *__pyx_v_vel_len = 0;
   PyObject *__pyx_v_ay = 0;
   PyObject *__pyx_v_alpha = 0;
@@ -11801,12 +12275,16 @@ static int __pyx_pw_5drone_9Missile2d_1__init__(PyObject *__pyx_v_self, PyObject
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__init__ (wrapper)", 0);
   {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_vel_len,&__pyx_n_s_ay,&__pyx_n_s_alpha,0};
-    PyObject* values[3] = {0,0,0};
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_pos0,&__pyx_n_s_pos_trg,&__pyx_n_s_vel_len,&__pyx_n_s_ay,&__pyx_n_s_alpha,0};
+    PyObject* values[5] = {0,0,0,0,0};
     if (unlikely(__pyx_kwds)) {
       Py_ssize_t kw_args;
       const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
       switch (pos_args) {
+        case  5: values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
+        CYTHON_FALLTHROUGH;
+        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+        CYTHON_FALLTHROUGH;
         case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
         CYTHON_FALLTHROUGH;
         case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
@@ -11819,52 +12297,69 @@ static int __pyx_pw_5drone_9Missile2d_1__init__(PyObject *__pyx_v_self, PyObject
       kw_args = PyDict_Size(__pyx_kwds);
       switch (pos_args) {
         case  0:
-        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_vel_len)) != 0)) kw_args--;
+        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_pos0)) != 0)) kw_args--;
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
-        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_ay)) != 0)) kw_args--;
+        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_pos_trg)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, 1); __PYX_ERR(0, 323, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 1); __PYX_ERR(0, 317, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
-        if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_alpha)) != 0)) kw_args--;
+        if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_vel_len)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, 2); __PYX_ERR(0, 323, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 2); __PYX_ERR(0, 317, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  3:
+        if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_ay)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 3); __PYX_ERR(0, 317, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  4:
+        if (likely((values[4] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_alpha)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, 4); __PYX_ERR(0, 317, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(0, 323, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(0, 317, __pyx_L3_error)
       }
-    } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 5) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+      values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+      values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
     }
-    __pyx_v_vel_len = values[0];
-    __pyx_v_ay = values[1];
-    __pyx_v_alpha = values[2];
+    __pyx_v_pos0 = values[0];
+    __pyx_v_pos_trg = values[1];
+    __pyx_v_vel_len = values[2];
+    __pyx_v_ay = values[3];
+    __pyx_v_alpha = values[4];
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 323, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 317, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("drone.Missile2d.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5drone_9Missile2d___init__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self), __pyx_v_vel_len, __pyx_v_ay, __pyx_v_alpha);
+  __pyx_r = __pyx_pf_5drone_9Missile2d___init__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self), __pyx_v_pos0, __pyx_v_pos_trg, __pyx_v_vel_len, __pyx_v_ay, __pyx_v_alpha);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_5drone_9Missile2d___init__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v_vel_len, PyObject *__pyx_v_ay, PyObject *__pyx_v_alpha) {
-  long __pyx_v_n;
+static int __pyx_pf_5drone_9Missile2d___init__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v_pos0, PyObject *__pyx_v_pos_trg, PyObject *__pyx_v_vel_len, PyObject *__pyx_v_ay, PyObject *__pyx_v_alpha) {
+  PyObject *__pyx_v_D = NULL;
+  PyObject *__pyx_v_vel = NULL;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   double __pyx_t_1;
@@ -11873,63 +12368,64 @@ static int __pyx_pf_5drone_9Missile2d___init__(struct __pyx_obj_5drone_Missile2d
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   __Pyx_memviewslice __pyx_t_6 = { 0, 0, { 0 }, { 0 }, { 0 } };
+  Py_ssize_t __pyx_t_7;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "drone.pyx":324
+  /* "drone.pyx":318
  * 
- *     def __init__(self, vel_len, ay, alpha):
+ *     def __init__(self, pos0, pos_trg, vel_len, ay, alpha):
  *         self.vel_len = vel_len             # <<<<<<<<<<<<<<
  *         self.ay = ay
  *         self.alpha = alpha
  */
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_vel_len); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 324, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_vel_len); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 318, __pyx_L1_error)
   __pyx_v_self->vel_len = __pyx_t_1;
 
-  /* "drone.pyx":325
- *     def __init__(self, vel_len, ay, alpha):
+  /* "drone.pyx":319
+ *     def __init__(self, pos0, pos_trg, vel_len, ay, alpha):
  *         self.vel_len = vel_len
  *         self.ay = ay             # <<<<<<<<<<<<<<
  *         self.alpha = alpha
- *         n = 4
+ *         self.n = 4
  */
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_ay); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 325, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_ay); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 319, __pyx_L1_error)
   __pyx_v_self->ay = __pyx_t_1;
 
-  /* "drone.pyx":326
+  /* "drone.pyx":320
  *         self.vel_len = vel_len
  *         self.ay = ay
  *         self.alpha = alpha             # <<<<<<<<<<<<<<
- *         n = 4
- *         self.state = np.zeros(n)
+ *         self.n = 4
+ *         self.state = np.zeros(self.n)
  */
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_alpha); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 326, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_alpha); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 320, __pyx_L1_error)
   __pyx_v_self->alpha = __pyx_t_1;
 
-  /* "drone.pyx":327
+  /* "drone.pyx":321
  *         self.ay = ay
  *         self.alpha = alpha
- *         n = 4             # <<<<<<<<<<<<<<
- *         self.state = np.zeros(n)
- *         self.tmp1 = np.zeros(n)
+ *         self.n = 4             # <<<<<<<<<<<<<<
+ *         self.state = np.zeros(self.n)
+ *         self.tmp1 = np.zeros(self.n)
  */
-  __pyx_v_n = 4;
+  __pyx_v_self->n = 4;
 
-  /* "drone.pyx":328
+  /* "drone.pyx":322
  *         self.alpha = alpha
- *         n = 4
- *         self.state = np.zeros(n)             # <<<<<<<<<<<<<<
- *         self.tmp1 = np.zeros(n)
- *         self.tmp2 = np.zeros(n)
+ *         self.n = 4
+ *         self.state = np.zeros(self.n)             # <<<<<<<<<<<<<<
+ *         self.tmp1 = np.zeros(self.n)
+ *         self.tmp2 = np.zeros(self.n)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 328, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 322, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_zeros); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 328, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_zeros); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 322, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyInt_From_long(__pyx_v_n); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 328, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_self->n); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 322, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_4))) {
@@ -11944,29 +12440,29 @@ static int __pyx_pf_5drone_9Missile2d___init__(struct __pyx_obj_5drone_Missile2d
   __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 328, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 322, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 328, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 322, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->state, 0);
   __pyx_v_self->state = __pyx_t_6;
   __pyx_t_6.memview = NULL;
   __pyx_t_6.data = NULL;
 
-  /* "drone.pyx":329
- *         n = 4
- *         self.state = np.zeros(n)
- *         self.tmp1 = np.zeros(n)             # <<<<<<<<<<<<<<
- *         self.tmp2 = np.zeros(n)
- *         self.tmp3 = np.zeros(n)
+  /* "drone.pyx":323
+ *         self.n = 4
+ *         self.state = np.zeros(self.n)
+ *         self.tmp1 = np.zeros(self.n)             # <<<<<<<<<<<<<<
+ *         self.tmp2 = np.zeros(self.n)
+ *         self.tmp3 = np.zeros(self.n)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 329, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 323, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_zeros); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 329, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_zeros); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 323, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyInt_From_long(__pyx_v_n); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 329, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_self->n); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 323, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
@@ -11981,29 +12477,29 @@ static int __pyx_pf_5drone_9Missile2d___init__(struct __pyx_obj_5drone_Missile2d
   __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_5, __pyx_t_4) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 329, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 323, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 329, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 323, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->tmp1, 0);
   __pyx_v_self->tmp1 = __pyx_t_6;
   __pyx_t_6.memview = NULL;
   __pyx_t_6.data = NULL;
 
-  /* "drone.pyx":330
- *         self.state = np.zeros(n)
- *         self.tmp1 = np.zeros(n)
- *         self.tmp2 = np.zeros(n)             # <<<<<<<<<<<<<<
- *         self.tmp3 = np.zeros(n)
- *         self.tmp4 = np.zeros(n)
+  /* "drone.pyx":324
+ *         self.state = np.zeros(self.n)
+ *         self.tmp1 = np.zeros(self.n)
+ *         self.tmp2 = np.zeros(self.n)             # <<<<<<<<<<<<<<
+ *         self.tmp3 = np.zeros(self.n)
+ *         self.tmp4 = np.zeros(self.n)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 330, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 324, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_zeros); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 330, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_zeros); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 324, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyInt_From_long(__pyx_v_n); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 330, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_self->n); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 324, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_4))) {
@@ -12018,29 +12514,29 @@ static int __pyx_pf_5drone_9Missile2d___init__(struct __pyx_obj_5drone_Missile2d
   __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 330, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 324, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 330, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 324, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->tmp2, 0);
   __pyx_v_self->tmp2 = __pyx_t_6;
   __pyx_t_6.memview = NULL;
   __pyx_t_6.data = NULL;
 
-  /* "drone.pyx":331
- *         self.tmp1 = np.zeros(n)
- *         self.tmp2 = np.zeros(n)
- *         self.tmp3 = np.zeros(n)             # <<<<<<<<<<<<<<
- *         self.tmp4 = np.zeros(n)
- *         self.t = 0
+  /* "drone.pyx":325
+ *         self.tmp1 = np.zeros(self.n)
+ *         self.tmp2 = np.zeros(self.n)
+ *         self.tmp3 = np.zeros(self.n)             # <<<<<<<<<<<<<<
+ *         self.tmp4 = np.zeros(self.n)
+ * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 331, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 325, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_zeros); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 331, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_zeros); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 325, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyInt_From_long(__pyx_v_n); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 331, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_self->n); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 325, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
@@ -12055,29 +12551,29 @@ static int __pyx_pf_5drone_9Missile2d___init__(struct __pyx_obj_5drone_Missile2d
   __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_5, __pyx_t_4) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 331, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 325, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 331, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 325, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->tmp3, 0);
   __pyx_v_self->tmp3 = __pyx_t_6;
   __pyx_t_6.memview = NULL;
   __pyx_t_6.data = NULL;
 
-  /* "drone.pyx":332
- *         self.tmp2 = np.zeros(n)
- *         self.tmp3 = np.zeros(n)
- *         self.tmp4 = np.zeros(n)             # <<<<<<<<<<<<<<
- *         self.t = 0
+  /* "drone.pyx":326
+ *         self.tmp2 = np.zeros(self.n)
+ *         self.tmp3 = np.zeros(self.n)
+ *         self.tmp4 = np.zeros(self.n)             # <<<<<<<<<<<<<<
  * 
+ *         self.state[0] = pos0[0]
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 332, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 326, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_zeros); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 332, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_zeros); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 326, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyInt_From_long(__pyx_v_n); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 332, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_self->n); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 326, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_4))) {
@@ -12092,29 +12588,123 @@ static int __pyx_pf_5drone_9Missile2d___init__(struct __pyx_obj_5drone_Missile2d
   __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 332, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 326, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 332, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_t_2, PyBUF_WRITABLE); if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 326, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->tmp4, 0);
   __pyx_v_self->tmp4 = __pyx_t_6;
   __pyx_t_6.memview = NULL;
   __pyx_t_6.data = NULL;
 
+  /* "drone.pyx":328
+ *         self.tmp4 = np.zeros(self.n)
+ * 
+ *         self.state[0] = pos0[0]             # <<<<<<<<<<<<<<
+ *         self.state[1] = pos0[1]
+ * 
+ */
+  __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_pos0, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 328, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 328, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_7 = 0;
+  *((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_7 * __pyx_v_self->state.strides[0]) )) = __pyx_t_1;
+
+  /* "drone.pyx":329
+ * 
+ *         self.state[0] = pos0[0]
+ *         self.state[1] = pos0[1]             # <<<<<<<<<<<<<<
+ * 
+ *         D = pos_trg - pos0
+ */
+  __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_pos0, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 329, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 329, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_7 = 1;
+  *((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_7 * __pyx_v_self->state.strides[0]) )) = __pyx_t_1;
+
+  /* "drone.pyx":331
+ *         self.state[1] = pos0[1]
+ * 
+ *         D = pos_trg - pos0             # <<<<<<<<<<<<<<
+ *         vel = D.norm() * vel_len
+ *         self.state[2] = Vec2(1,0).angle_to(vel)
+ */
+  __pyx_t_2 = PyNumber_Subtract(__pyx_v_pos_trg, __pyx_v_pos0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 331, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_v_D = __pyx_t_2;
+  __pyx_t_2 = 0;
+
+  /* "drone.pyx":332
+ * 
+ *         D = pos_trg - pos0
+ *         vel = D.norm() * vel_len             # <<<<<<<<<<<<<<
+ *         self.state[2] = Vec2(1,0).angle_to(vel)
+ *         self.state[3] = 0
+ */
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_D, __pyx_n_s_norm); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 332, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_3 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_4))) {
+    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_4);
+    if (likely(__pyx_t_3)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+      __Pyx_INCREF(__pyx_t_3);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_4, function);
+    }
+  }
+  __pyx_t_2 = (__pyx_t_3) ? __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallNoArg(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 332, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_4 = PyNumber_Multiply(__pyx_t_2, __pyx_v_vel_len); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 332, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_v_vel = __pyx_t_4;
+  __pyx_t_4 = 0;
+
   /* "drone.pyx":333
- *         self.tmp3 = np.zeros(n)
- *         self.tmp4 = np.zeros(n)
+ *         D = pos_trg - pos0
+ *         vel = D.norm() * vel_len
+ *         self.state[2] = Vec2(1,0).angle_to(vel)             # <<<<<<<<<<<<<<
+ *         self.state[3] = 0
+ *         self.t = 0
+ */
+  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_tuple_, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 333, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  if (!(likely(((__pyx_v_vel) == Py_None) || likely(__Pyx_TypeTest(__pyx_v_vel, __pyx_ptype_7easyvec_7vectors_Vec2))))) __PYX_ERR(0, 333, __pyx_L1_error)
+  __pyx_t_7 = 2;
+  *((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_7 * __pyx_v_self->state.strides[0]) )) = ((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_4)->__pyx_vtab)->angle_to(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_4), ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_v_vel), 0, NULL);
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+
+  /* "drone.pyx":334
+ *         vel = D.norm() * vel_len
+ *         self.state[2] = Vec2(1,0).angle_to(vel)
+ *         self.state[3] = 0             # <<<<<<<<<<<<<<
+ *         self.t = 0
+ * 
+ */
+  __pyx_t_7 = 3;
+  *((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_7 * __pyx_v_self->state.strides[0]) )) = 0.0;
+
+  /* "drone.pyx":335
+ *         self.state[2] = Vec2(1,0).angle_to(vel)
+ *         self.state[3] = 0
  *         self.t = 0             # <<<<<<<<<<<<<<
  * 
  *     cpdef void fill_dy(self, Vec2 aim, double[:] dy):
  */
-  if (__Pyx_PyObject_SetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_t, __pyx_int_0) < 0) __PYX_ERR(0, 333, __pyx_L1_error)
+  __pyx_v_self->t = 0.0;
 
-  /* "drone.pyx":323
+  /* "drone.pyx":317
  *     # [x, y, theta, t]
  * 
- *     def __init__(self, vel_len, ay, alpha):             # <<<<<<<<<<<<<<
+ *     def __init__(self, pos0, pos_trg, vel_len, ay, alpha):             # <<<<<<<<<<<<<<
  *         self.vel_len = vel_len
  *         self.ay = ay
  */
@@ -12131,11 +12721,13 @@ static int __pyx_pf_5drone_9Missile2d___init__(struct __pyx_obj_5drone_Missile2d
   __Pyx_AddTraceback("drone.Missile2d.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
+  __Pyx_XDECREF(__pyx_v_D);
+  __Pyx_XDECREF(__pyx_v_vel);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "drone.pyx":335
+/* "drone.pyx":337
  *         self.t = 0
  * 
  *     cpdef void fill_dy(self, Vec2 aim, double[:] dy):             # <<<<<<<<<<<<<<
@@ -12173,10 +12765,10 @@ static void __pyx_f_5drone_9Missile2d_fill_dy(struct __pyx_obj_5drone_Missile2d 
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_fill_dy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 335, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_fill_dy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 337, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_5drone_9Missile2d_3fill_dy)) {
-        __pyx_t_3 = __pyx_memoryview_fromslice(__pyx_v_dy, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 335, __pyx_L1_error)
+        __pyx_t_3 = __pyx_memoryview_fromslice(__pyx_v_dy, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 337, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_4 = __pyx_t_1; __pyx_t_5 = NULL;
@@ -12194,7 +12786,7 @@ static void __pyx_f_5drone_9Missile2d_fill_dy(struct __pyx_obj_5drone_Missile2d 
         #if CYTHON_FAST_PYCALL
         if (PyFunction_Check(__pyx_t_4)) {
           PyObject *__pyx_temp[3] = {__pyx_t_5, ((PyObject *)__pyx_v_aim), __pyx_t_3};
-          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 335, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 337, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -12203,14 +12795,14 @@ static void __pyx_f_5drone_9Missile2d_fill_dy(struct __pyx_obj_5drone_Missile2d 
         #if CYTHON_FAST_PYCCALL
         if (__Pyx_PyFastCFunction_Check(__pyx_t_4)) {
           PyObject *__pyx_temp[3] = {__pyx_t_5, ((PyObject *)__pyx_v_aim), __pyx_t_3};
-          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 335, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 337, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         } else
         #endif
         {
-          __pyx_t_7 = PyTuple_New(2+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 335, __pyx_L1_error)
+          __pyx_t_7 = PyTuple_New(2+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 337, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_7);
           if (__pyx_t_5) {
             __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_5); __pyx_t_5 = NULL;
@@ -12221,7 +12813,7 @@ static void __pyx_f_5drone_9Missile2d_fill_dy(struct __pyx_obj_5drone_Missile2d 
           __Pyx_GIVEREF(__pyx_t_3);
           PyTuple_SET_ITEM(__pyx_t_7, 1+__pyx_t_6, __pyx_t_3);
           __pyx_t_3 = 0;
-          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_7, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 335, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_7, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 337, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         }
@@ -12243,7 +12835,7 @@ static void __pyx_f_5drone_9Missile2d_fill_dy(struct __pyx_obj_5drone_Missile2d 
     #endif
   }
 
-  /* "drone.pyx":336
+  /* "drone.pyx":338
  * 
  *     cpdef void fill_dy(self, Vec2 aim, double[:] dy):
  *         cdef Vec2 pos = Vec2(self.state[0], self.state[1])             # <<<<<<<<<<<<<<
@@ -12251,12 +12843,12 @@ static void __pyx_f_5drone_9Missile2d_fill_dy(struct __pyx_obj_5drone_Missile2d 
  * 
  */
   __pyx_t_8 = 0;
-  __pyx_t_1 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_8 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 336, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_8 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 338, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_8 = 1;
-  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_8 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 336, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_8 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 338, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 336, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 338, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_1);
@@ -12264,22 +12856,22 @@ static void __pyx_f_5drone_9Missile2d_fill_dy(struct __pyx_obj_5drone_Missile2d 
   PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_2);
   __pyx_t_1 = 0;
   __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_4, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 336, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_4, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 338, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_pos = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "drone.pyx":337
+  /* "drone.pyx":339
  *     cpdef void fill_dy(self, Vec2 aim, double[:] dy):
  *         cdef Vec2 pos = Vec2(self.state[0], self.state[1])
  *         cdef Vec2 vel = Vec2(self.vel_len, 0).rotate(self.state[2])             # <<<<<<<<<<<<<<
  * 
  *         cdef Vec2 r_vis = aim.sub_vec(pos).norm()
  */
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->vel_len); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 337, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->vel_len); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 339, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 337, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 339, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_2);
@@ -12287,53 +12879,53 @@ static void __pyx_f_5drone_9Missile2d_fill_dy(struct __pyx_obj_5drone_Missile2d 
   __Pyx_GIVEREF(__pyx_int_0);
   PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_int_0);
   __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_4, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 337, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_4, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 339, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_8 = 2;
-  __pyx_t_4 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2)->__pyx_vtab)->rotate(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2), (*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_8 * __pyx_v_self->state.strides[0]) ))), 0, NULL)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 337, __pyx_L1_error)
+  __pyx_t_4 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2)->__pyx_vtab)->rotate(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2), (*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_8 * __pyx_v_self->state.strides[0]) ))), 0, NULL)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 339, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_vel = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_4);
   __pyx_t_4 = 0;
 
-  /* "drone.pyx":339
+  /* "drone.pyx":341
  *         cdef Vec2 vel = Vec2(self.vel_len, 0).rotate(self.state[2])
  * 
  *         cdef Vec2 r_vis = aim.sub_vec(pos).norm()             # <<<<<<<<<<<<<<
  *         cdef double angle = vel.angle_to(r_vis)
- *         if abs(angle) < 3 * 3.14/ 180:
+ *         if abs(angle) < 2 * 3.14/ 180:
  */
-  __pyx_t_4 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)__pyx_v_aim->__pyx_vtab)->sub_vec(__pyx_v_aim, __pyx_v_pos, 0)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 339, __pyx_L1_error)
+  __pyx_t_4 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)__pyx_v_aim->__pyx_vtab)->sub_vec(__pyx_v_aim, __pyx_v_pos, 0)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 341, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_2 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_4)->__pyx_vtab)->norm(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_4), 0)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 339, __pyx_L1_error)
+  __pyx_t_2 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_4)->__pyx_vtab)->norm(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_4), 0, NULL)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 341, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_r_vis = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "drone.pyx":340
+  /* "drone.pyx":342
  * 
  *         cdef Vec2 r_vis = aim.sub_vec(pos).norm()
  *         cdef double angle = vel.angle_to(r_vis)             # <<<<<<<<<<<<<<
- *         if abs(angle) < 3 * 3.14/ 180:
+ *         if abs(angle) < 2 * 3.14/ 180:
  *             dy[2] = 0
  */
   __pyx_v_angle = ((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)__pyx_v_vel->__pyx_vtab)->angle_to(__pyx_v_vel, __pyx_v_r_vis, 0, NULL);
 
-  /* "drone.pyx":341
+  /* "drone.pyx":343
  *         cdef Vec2 r_vis = aim.sub_vec(pos).norm()
  *         cdef double angle = vel.angle_to(r_vis)
- *         if abs(angle) < 3 * 3.14/ 180:             # <<<<<<<<<<<<<<
+ *         if abs(angle) < 2 * 3.14/ 180:             # <<<<<<<<<<<<<<
  *             dy[2] = 0
  *         elif angle > 0:
  */
-  __pyx_t_9 = ((fabs(__pyx_v_angle) < ((3.0 * 3.14) / 180.0)) != 0);
+  __pyx_t_9 = ((fabs(__pyx_v_angle) < ((2.0 * 3.14) / 180.0)) != 0);
   if (__pyx_t_9) {
 
-    /* "drone.pyx":342
+    /* "drone.pyx":344
  *         cdef double angle = vel.angle_to(r_vis)
- *         if abs(angle) < 3 * 3.14/ 180:
+ *         if abs(angle) < 2 * 3.14/ 180:
  *             dy[2] = 0             # <<<<<<<<<<<<<<
  *         elif angle > 0:
  *             dy[2] = self.ay/self.vel_len
@@ -12341,49 +12933,62 @@ static void __pyx_f_5drone_9Missile2d_fill_dy(struct __pyx_obj_5drone_Missile2d 
     __pyx_t_8 = 2;
     *((double *) ( /* dim=0 */ (__pyx_v_dy.data + __pyx_t_8 * __pyx_v_dy.strides[0]) )) = 0.0;
 
-    /* "drone.pyx":341
+    /* "drone.pyx":343
  *         cdef Vec2 r_vis = aim.sub_vec(pos).norm()
  *         cdef double angle = vel.angle_to(r_vis)
- *         if abs(angle) < 3 * 3.14/ 180:             # <<<<<<<<<<<<<<
+ *         if abs(angle) < 2 * 3.14/ 180:             # <<<<<<<<<<<<<<
  *             dy[2] = 0
  *         elif angle > 0:
  */
     goto __pyx_L3;
   }
 
-  /* "drone.pyx":343
- *         if abs(angle) < 3 * 3.14/ 180:
+  /* "drone.pyx":345
+ *         if abs(angle) < 2 * 3.14/ 180:
  *             dy[2] = 0
  *         elif angle > 0:             # <<<<<<<<<<<<<<
  *             dy[2] = self.ay/self.vel_len
- * 
+ *         else:
  */
   __pyx_t_9 = ((__pyx_v_angle > 0.0) != 0);
   if (__pyx_t_9) {
 
-    /* "drone.pyx":344
+    /* "drone.pyx":346
  *             dy[2] = 0
  *         elif angle > 0:
  *             dy[2] = self.ay/self.vel_len             # <<<<<<<<<<<<<<
- * 
- *         dy[0] = vel.x                    # dx = vx
+ *         else:
+ *             dy[2] = -self.ay/self.vel_len
  */
     __pyx_t_8 = 2;
     *((double *) ( /* dim=0 */ (__pyx_v_dy.data + __pyx_t_8 * __pyx_v_dy.strides[0]) )) = (__pyx_v_self->ay / __pyx_v_self->vel_len);
 
-    /* "drone.pyx":343
- *         if abs(angle) < 3 * 3.14/ 180:
+    /* "drone.pyx":345
+ *         if abs(angle) < 2 * 3.14/ 180:
  *             dy[2] = 0
  *         elif angle > 0:             # <<<<<<<<<<<<<<
  *             dy[2] = self.ay/self.vel_len
- * 
+ *         else:
  */
+    goto __pyx_L3;
+  }
+
+  /* "drone.pyx":348
+ *             dy[2] = self.ay/self.vel_len
+ *         else:
+ *             dy[2] = -self.ay/self.vel_len             # <<<<<<<<<<<<<<
+ *         dy[0] = vel.x                    # dx = vx
+ *         dy[1] = vel.y                    # dy = vy
+ */
+  /*else*/ {
+    __pyx_t_8 = 2;
+    *((double *) ( /* dim=0 */ (__pyx_v_dy.data + __pyx_t_8 * __pyx_v_dy.strides[0]) )) = ((-__pyx_v_self->ay) / __pyx_v_self->vel_len);
   }
   __pyx_L3:;
 
-  /* "drone.pyx":346
- *             dy[2] = self.ay/self.vel_len
- * 
+  /* "drone.pyx":349
+ *         else:
+ *             dy[2] = -self.ay/self.vel_len
  *         dy[0] = vel.x                    # dx = vx             # <<<<<<<<<<<<<<
  *         dy[1] = vel.y                    # dy = vy
  * 
@@ -12392,8 +12997,8 @@ static void __pyx_f_5drone_9Missile2d_fill_dy(struct __pyx_obj_5drone_Missile2d 
   __pyx_t_8 = 0;
   *((double *) ( /* dim=0 */ (__pyx_v_dy.data + __pyx_t_8 * __pyx_v_dy.strides[0]) )) = __pyx_t_10;
 
-  /* "drone.pyx":347
- * 
+  /* "drone.pyx":350
+ *             dy[2] = -self.ay/self.vel_len
  *         dy[0] = vel.x                    # dx = vx
  *         dy[1] = vel.y                    # dy = vy             # <<<<<<<<<<<<<<
  * 
@@ -12403,7 +13008,7 @@ static void __pyx_f_5drone_9Missile2d_fill_dy(struct __pyx_obj_5drone_Missile2d 
   __pyx_t_8 = 1;
   *((double *) ( /* dim=0 */ (__pyx_v_dy.data + __pyx_t_8 * __pyx_v_dy.strides[0]) )) = __pyx_t_10;
 
-  /* "drone.pyx":349
+  /* "drone.pyx":352
  *         dy[1] = vel.y                    # dy = vy
  * 
  *         dy[3] = 1   # dt             # <<<<<<<<<<<<<<
@@ -12413,7 +13018,7 @@ static void __pyx_f_5drone_9Missile2d_fill_dy(struct __pyx_obj_5drone_Missile2d 
   __pyx_t_8 = 3;
   *((double *) ( /* dim=0 */ (__pyx_v_dy.data + __pyx_t_8 * __pyx_v_dy.strides[0]) )) = 1.0;
 
-  /* "drone.pyx":335
+  /* "drone.pyx":337
  *         self.t = 0
  * 
  *     cpdef void fill_dy(self, Vec2 aim, double[:] dy):             # <<<<<<<<<<<<<<
@@ -12473,11 +13078,11 @@ static PyObject *__pyx_pw_5drone_9Missile2d_3fill_dy(PyObject *__pyx_v_self, PyO
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_dy)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("fill_dy", 1, 2, 2, 1); __PYX_ERR(0, 335, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("fill_dy", 1, 2, 2, 1); __PYX_ERR(0, 337, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "fill_dy") < 0)) __PYX_ERR(0, 335, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "fill_dy") < 0)) __PYX_ERR(0, 337, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -12486,17 +13091,17 @@ static PyObject *__pyx_pw_5drone_9Missile2d_3fill_dy(PyObject *__pyx_v_self, PyO
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
     __pyx_v_aim = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[0]);
-    __pyx_v_dy = __Pyx_PyObject_to_MemoryviewSlice_ds_double(values[1], PyBUF_WRITABLE); if (unlikely(!__pyx_v_dy.memview)) __PYX_ERR(0, 335, __pyx_L3_error)
+    __pyx_v_dy = __Pyx_PyObject_to_MemoryviewSlice_ds_double(values[1], PyBUF_WRITABLE); if (unlikely(!__pyx_v_dy.memview)) __PYX_ERR(0, 337, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("fill_dy", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 335, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("fill_dy", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 337, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("drone.Missile2d.fill_dy", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_aim), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "aim", 0))) __PYX_ERR(0, 335, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_aim), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "aim", 0))) __PYX_ERR(0, 337, __pyx_L1_error)
   __pyx_r = __pyx_pf_5drone_9Missile2d_2fill_dy(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self), __pyx_v_aim, __pyx_v_dy);
 
   /* function exit code */
@@ -12517,7 +13122,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_2fill_dy(struct __pyx_obj_5drone_Mis
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("fill_dy", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_void_to_None(__pyx_f_5drone_9Missile2d_fill_dy(__pyx_v_self, __pyx_v_aim, __pyx_v_dy, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 335, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_void_to_None(__pyx_f_5drone_9Missile2d_fill_dy(__pyx_v_self, __pyx_v_aim, __pyx_v_dy, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 337, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -12535,7 +13140,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_2fill_dy(struct __pyx_obj_5drone_Mis
   return __pyx_r;
 }
 
-/* "drone.pyx":352
+/* "drone.pyx":355
  *         # print(f'rho={rho} F_coeff={F_coeff} F1={F1} F2={F2} V={V} F_Cx={F_Cx} F_Cx_x={F_Cx_x} F_Cx_y={F_Cx_y} F_x={F_x} F_y={F_y}')
  * 
  *     cpdef void step(self, Vec2 drone_pos, Vec2 drone_vel, double tau=0.1, int n=10):             # <<<<<<<<<<<<<<
@@ -12594,12 +13199,12 @@ static void __pyx_f_5drone_9Missile2d_step(struct __pyx_obj_5drone_Missile2d *__
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_step); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 352, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_step); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 355, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_5drone_9Missile2d_5step)) {
-        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_tau); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 352, __pyx_L1_error)
+        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_tau); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 355, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_n); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 352, __pyx_L1_error)
+        __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_n); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 355, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_5 = __pyx_t_1; __pyx_t_6 = NULL;
@@ -12617,7 +13222,7 @@ static void __pyx_f_5drone_9Missile2d_step(struct __pyx_obj_5drone_Missile2d *__
         #if CYTHON_FAST_PYCALL
         if (PyFunction_Check(__pyx_t_5)) {
           PyObject *__pyx_temp[5] = {__pyx_t_6, ((PyObject *)__pyx_v_drone_pos), ((PyObject *)__pyx_v_drone_vel), __pyx_t_3, __pyx_t_4};
-          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 4+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 352, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 4+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 355, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -12627,7 +13232,7 @@ static void __pyx_f_5drone_9Missile2d_step(struct __pyx_obj_5drone_Missile2d *__
         #if CYTHON_FAST_PYCCALL
         if (__Pyx_PyFastCFunction_Check(__pyx_t_5)) {
           PyObject *__pyx_temp[5] = {__pyx_t_6, ((PyObject *)__pyx_v_drone_pos), ((PyObject *)__pyx_v_drone_vel), __pyx_t_3, __pyx_t_4};
-          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 4+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 352, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 4+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 355, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -12635,7 +13240,7 @@ static void __pyx_f_5drone_9Missile2d_step(struct __pyx_obj_5drone_Missile2d *__
         } else
         #endif
         {
-          __pyx_t_8 = PyTuple_New(4+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 352, __pyx_L1_error)
+          __pyx_t_8 = PyTuple_New(4+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 355, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_8);
           if (__pyx_t_6) {
             __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -12652,7 +13257,7 @@ static void __pyx_f_5drone_9Missile2d_step(struct __pyx_obj_5drone_Missile2d *__
           PyTuple_SET_ITEM(__pyx_t_8, 3+__pyx_t_7, __pyx_t_4);
           __pyx_t_3 = 0;
           __pyx_t_4 = 0;
-          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 352, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 355, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         }
@@ -12674,7 +13279,7 @@ static void __pyx_f_5drone_9Missile2d_step(struct __pyx_obj_5drone_Missile2d *__
     #endif
   }
 
-  /* "drone.pyx":353
+  /* "drone.pyx":356
  * 
  *     cpdef void step(self, Vec2 drone_pos, Vec2 drone_vel, double tau=0.1, int n=10):
  *         cdef double dt = tau / n             # <<<<<<<<<<<<<<
@@ -12683,7 +13288,7 @@ static void __pyx_f_5drone_9Missile2d_step(struct __pyx_obj_5drone_Missile2d *__
  */
   __pyx_v_dt = (__pyx_v_tau / ((double)__pyx_v_n));
 
-  /* "drone.pyx":355
+  /* "drone.pyx":358
  *         cdef double dt = tau / n
  *         cdef size_t i, j
  *         cdef double t = 0             # <<<<<<<<<<<<<<
@@ -12692,7 +13297,7 @@ static void __pyx_f_5drone_9Missile2d_step(struct __pyx_obj_5drone_Missile2d *__
  */
   __pyx_v_t = 0.0;
 
-  /* "drone.pyx":358
+  /* "drone.pyx":361
  *         cdef Vec2 aim, drone_pos_t
  *         cdef double fly_time
  *         for i in range(n):             # <<<<<<<<<<<<<<
@@ -12704,47 +13309,47 @@ static void __pyx_f_5drone_9Missile2d_step(struct __pyx_obj_5drone_Missile2d *__
   for (__pyx_t_10 = 0; __pyx_t_10 < __pyx_t_9; __pyx_t_10+=1) {
     __pyx_v_i = __pyx_t_10;
 
-    /* "drone.pyx":359
+    /* "drone.pyx":362
  *         cdef double fly_time
  *         for i in range(n):
  *             t = dt * i             # <<<<<<<<<<<<<<
  *             drone_pos_t = drone_pos + t * drone_vel
- *             fly_time = (drone_pos_t - self.pos).vel() / self.vel_len
+ *             fly_time = (drone_pos_t - self.pos).len() / self.vel_len
  */
     __pyx_v_t = (__pyx_v_dt * __pyx_v_i);
 
-    /* "drone.pyx":360
+    /* "drone.pyx":363
  *         for i in range(n):
  *             t = dt * i
  *             drone_pos_t = drone_pos + t * drone_vel             # <<<<<<<<<<<<<<
- *             fly_time = (drone_pos_t - self.pos).vel() / self.vel_len
+ *             fly_time = (drone_pos_t - self.pos).len() / self.vel_len
  *             aim = drone_pos_t + fly_time * self.alpha * drone_vel
  */
-    __pyx_t_1 = PyFloat_FromDouble(__pyx_v_t); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 360, __pyx_L1_error)
+    __pyx_t_1 = PyFloat_FromDouble(__pyx_v_t); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 363, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = PyNumber_Multiply(__pyx_t_1, ((PyObject *)__pyx_v_drone_vel)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 360, __pyx_L1_error)
+    __pyx_t_2 = PyNumber_Multiply(__pyx_t_1, ((PyObject *)__pyx_v_drone_vel)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 363, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = PyNumber_Add(((PyObject *)__pyx_v_drone_pos), __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 360, __pyx_L1_error)
+    __pyx_t_1 = PyNumber_Add(((PyObject *)__pyx_v_drone_pos), __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 363, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_7easyvec_7vectors_Vec2))))) __PYX_ERR(0, 360, __pyx_L1_error)
+    if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_7easyvec_7vectors_Vec2))))) __PYX_ERR(0, 363, __pyx_L1_error)
     __Pyx_XDECREF_SET(__pyx_v_drone_pos_t, ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1));
     __pyx_t_1 = 0;
 
-    /* "drone.pyx":361
+    /* "drone.pyx":364
  *             t = dt * i
  *             drone_pos_t = drone_pos + t * drone_vel
- *             fly_time = (drone_pos_t - self.pos).vel() / self.vel_len             # <<<<<<<<<<<<<<
+ *             fly_time = (drone_pos_t - self.pos).len() / self.vel_len             # <<<<<<<<<<<<<<
  *             aim = drone_pos_t + fly_time * self.alpha * drone_vel
  *             self.fill_dy(aim, self.tmp1) # k1
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_pos); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 361, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_pos); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 364, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_5 = PyNumber_Subtract(((PyObject *)__pyx_v_drone_pos_t), __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 361, __pyx_L1_error)
+    __pyx_t_5 = PyNumber_Subtract(((PyObject *)__pyx_v_drone_pos_t), __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 364, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_vel); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 361, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_len); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 364, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_5 = NULL;
@@ -12759,40 +13364,40 @@ static void __pyx_f_5drone_9Missile2d_step(struct __pyx_obj_5drone_Missile2d *__
     }
     __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_5) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 361, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 364, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->vel_len); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 361, __pyx_L1_error)
+    __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->vel_len); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 364, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_5 = __Pyx_PyNumber_Divide(__pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 361, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyNumber_Divide(__pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 364, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_11 = __pyx_PyFloat_AsDouble(__pyx_t_5); if (unlikely((__pyx_t_11 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 361, __pyx_L1_error)
+    __pyx_t_11 = __pyx_PyFloat_AsDouble(__pyx_t_5); if (unlikely((__pyx_t_11 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 364, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_v_fly_time = __pyx_t_11;
 
-    /* "drone.pyx":362
+    /* "drone.pyx":365
  *             drone_pos_t = drone_pos + t * drone_vel
- *             fly_time = (drone_pos_t - self.pos).vel() / self.vel_len
+ *             fly_time = (drone_pos_t - self.pos).len() / self.vel_len
  *             aim = drone_pos_t + fly_time * self.alpha * drone_vel             # <<<<<<<<<<<<<<
  *             self.fill_dy(aim, self.tmp1) # k1
  *             for j in range(self.tmp1.shape[0]):
  */
-    __pyx_t_5 = PyFloat_FromDouble((__pyx_v_fly_time * __pyx_v_self->alpha)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 362, __pyx_L1_error)
+    __pyx_t_5 = PyFloat_FromDouble((__pyx_v_fly_time * __pyx_v_self->alpha)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 365, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_2 = PyNumber_Multiply(__pyx_t_5, ((PyObject *)__pyx_v_drone_vel)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 362, __pyx_L1_error)
+    __pyx_t_2 = PyNumber_Multiply(__pyx_t_5, ((PyObject *)__pyx_v_drone_vel)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 365, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = PyNumber_Add(((PyObject *)__pyx_v_drone_pos_t), __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 362, __pyx_L1_error)
+    __pyx_t_5 = PyNumber_Add(((PyObject *)__pyx_v_drone_pos_t), __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 365, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_7easyvec_7vectors_Vec2))))) __PYX_ERR(0, 362, __pyx_L1_error)
+    if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_7easyvec_7vectors_Vec2))))) __PYX_ERR(0, 365, __pyx_L1_error)
     __Pyx_XDECREF_SET(__pyx_v_aim, ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_5));
     __pyx_t_5 = 0;
 
-    /* "drone.pyx":363
- *             fly_time = (drone_pos_t - self.pos).vel() / self.vel_len
+    /* "drone.pyx":366
+ *             fly_time = (drone_pos_t - self.pos).len() / self.vel_len
  *             aim = drone_pos_t + fly_time * self.alpha * drone_vel
  *             self.fill_dy(aim, self.tmp1) # k1             # <<<<<<<<<<<<<<
  *             for j in range(self.tmp1.shape[0]):
@@ -12800,7 +13405,7 @@ static void __pyx_f_5drone_9Missile2d_step(struct __pyx_obj_5drone_Missile2d *__
  */
     ((struct __pyx_vtabstruct_5drone_Missile2d *)__pyx_v_self->__pyx_vtab)->fill_dy(__pyx_v_self, __pyx_v_aim, __pyx_v_self->tmp1, 0);
 
-    /* "drone.pyx":364
+    /* "drone.pyx":367
  *             aim = drone_pos_t + fly_time * self.alpha * drone_vel
  *             self.fill_dy(aim, self.tmp1) # k1
  *             for j in range(self.tmp1.shape[0]):             # <<<<<<<<<<<<<<
@@ -12812,7 +13417,7 @@ static void __pyx_f_5drone_9Missile2d_step(struct __pyx_obj_5drone_Missile2d *__
     for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
       __pyx_v_j = __pyx_t_14;
 
-      /* "drone.pyx":365
+      /* "drone.pyx":368
  *             self.fill_dy(aim, self.tmp1) # k1
  *             for j in range(self.tmp1.shape[0]):
  *                 self.tmp1[j] = self.state[j] + 0.5 * dt * self.tmp1[j]             # <<<<<<<<<<<<<<
@@ -12825,47 +13430,47 @@ static void __pyx_f_5drone_9Missile2d_step(struct __pyx_obj_5drone_Missile2d *__
       *((double *) ( /* dim=0 */ (__pyx_v_self->tmp1.data + __pyx_t_17 * __pyx_v_self->tmp1.strides[0]) )) = ((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_15 * __pyx_v_self->state.strides[0]) ))) + ((0.5 * __pyx_v_dt) * (*((double *) ( /* dim=0 */ (__pyx_v_self->tmp1.data + __pyx_t_16 * __pyx_v_self->tmp1.strides[0]) )))));
     }
 
-    /* "drone.pyx":367
+    /* "drone.pyx":370
  *                 self.tmp1[j] = self.state[j] + 0.5 * dt * self.tmp1[j]
  * 
  *             t = dt * i + 0.5*dt             # <<<<<<<<<<<<<<
  *             drone_pos_t = drone_pos + t * drone_vel
- *             fly_time = (drone_pos_t - self.pos).vel() / self.vel_len
+ *             fly_time = (drone_pos_t - self.pos).len() / self.vel_len
  */
     __pyx_v_t = ((__pyx_v_dt * __pyx_v_i) + (0.5 * __pyx_v_dt));
 
-    /* "drone.pyx":368
+    /* "drone.pyx":371
  * 
  *             t = dt * i + 0.5*dt
  *             drone_pos_t = drone_pos + t * drone_vel             # <<<<<<<<<<<<<<
- *             fly_time = (drone_pos_t - self.pos).vel() / self.vel_len
+ *             fly_time = (drone_pos_t - self.pos).len() / self.vel_len
  *             aim = drone_pos_t + fly_time * self.alpha * drone_vel
  */
-    __pyx_t_5 = PyFloat_FromDouble(__pyx_v_t); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 368, __pyx_L1_error)
+    __pyx_t_5 = PyFloat_FromDouble(__pyx_v_t); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 371, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_2 = PyNumber_Multiply(__pyx_t_5, ((PyObject *)__pyx_v_drone_vel)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 368, __pyx_L1_error)
+    __pyx_t_2 = PyNumber_Multiply(__pyx_t_5, ((PyObject *)__pyx_v_drone_vel)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 371, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = PyNumber_Add(((PyObject *)__pyx_v_drone_pos), __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 368, __pyx_L1_error)
+    __pyx_t_5 = PyNumber_Add(((PyObject *)__pyx_v_drone_pos), __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 371, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_7easyvec_7vectors_Vec2))))) __PYX_ERR(0, 368, __pyx_L1_error)
+    if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_7easyvec_7vectors_Vec2))))) __PYX_ERR(0, 371, __pyx_L1_error)
     __Pyx_DECREF_SET(__pyx_v_drone_pos_t, ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_5));
     __pyx_t_5 = 0;
 
-    /* "drone.pyx":369
+    /* "drone.pyx":372
  *             t = dt * i + 0.5*dt
  *             drone_pos_t = drone_pos + t * drone_vel
- *             fly_time = (drone_pos_t - self.pos).vel() / self.vel_len             # <<<<<<<<<<<<<<
+ *             fly_time = (drone_pos_t - self.pos).len() / self.vel_len             # <<<<<<<<<<<<<<
  *             aim = drone_pos_t + fly_time * self.alpha * drone_vel
  *             self.fill_dy(aim, self.tmp2) # k2
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_pos); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 369, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_pos); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 372, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_1 = PyNumber_Subtract(((PyObject *)__pyx_v_drone_pos_t), __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 369, __pyx_L1_error)
+    __pyx_t_1 = PyNumber_Subtract(((PyObject *)__pyx_v_drone_pos_t), __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 372, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_vel); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 369, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_len); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 372, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_1 = NULL;
@@ -12880,40 +13485,40 @@ static void __pyx_f_5drone_9Missile2d_step(struct __pyx_obj_5drone_Missile2d *__
     }
     __pyx_t_5 = (__pyx_t_1) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_1) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 369, __pyx_L1_error)
+    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 372, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->vel_len); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 369, __pyx_L1_error)
+    __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->vel_len); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 372, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_1 = __Pyx_PyNumber_Divide(__pyx_t_5, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 369, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyNumber_Divide(__pyx_t_5, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 372, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_11 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_11 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 369, __pyx_L1_error)
+    __pyx_t_11 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_11 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 372, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_v_fly_time = __pyx_t_11;
 
-    /* "drone.pyx":370
+    /* "drone.pyx":373
  *             drone_pos_t = drone_pos + t * drone_vel
- *             fly_time = (drone_pos_t - self.pos).vel() / self.vel_len
+ *             fly_time = (drone_pos_t - self.pos).len() / self.vel_len
  *             aim = drone_pos_t + fly_time * self.alpha * drone_vel             # <<<<<<<<<<<<<<
  *             self.fill_dy(aim, self.tmp2) # k2
  *             for j in range(self.state.shape[0]):
  */
-    __pyx_t_1 = PyFloat_FromDouble((__pyx_v_fly_time * __pyx_v_self->alpha)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 370, __pyx_L1_error)
+    __pyx_t_1 = PyFloat_FromDouble((__pyx_v_fly_time * __pyx_v_self->alpha)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 373, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = PyNumber_Multiply(__pyx_t_1, ((PyObject *)__pyx_v_drone_vel)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 370, __pyx_L1_error)
+    __pyx_t_2 = PyNumber_Multiply(__pyx_t_1, ((PyObject *)__pyx_v_drone_vel)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 373, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = PyNumber_Add(((PyObject *)__pyx_v_drone_pos_t), __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 370, __pyx_L1_error)
+    __pyx_t_1 = PyNumber_Add(((PyObject *)__pyx_v_drone_pos_t), __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 373, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_7easyvec_7vectors_Vec2))))) __PYX_ERR(0, 370, __pyx_L1_error)
+    if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_7easyvec_7vectors_Vec2))))) __PYX_ERR(0, 373, __pyx_L1_error)
     __Pyx_DECREF_SET(__pyx_v_aim, ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1));
     __pyx_t_1 = 0;
 
-    /* "drone.pyx":371
- *             fly_time = (drone_pos_t - self.pos).vel() / self.vel_len
+    /* "drone.pyx":374
+ *             fly_time = (drone_pos_t - self.pos).len() / self.vel_len
  *             aim = drone_pos_t + fly_time * self.alpha * drone_vel
  *             self.fill_dy(aim, self.tmp2) # k2             # <<<<<<<<<<<<<<
  *             for j in range(self.state.shape[0]):
@@ -12921,7 +13526,7 @@ static void __pyx_f_5drone_9Missile2d_step(struct __pyx_obj_5drone_Missile2d *__
  */
     ((struct __pyx_vtabstruct_5drone_Missile2d *)__pyx_v_self->__pyx_vtab)->fill_dy(__pyx_v_self, __pyx_v_aim, __pyx_v_self->tmp2, 0);
 
-    /* "drone.pyx":372
+    /* "drone.pyx":375
  *             aim = drone_pos_t + fly_time * self.alpha * drone_vel
  *             self.fill_dy(aim, self.tmp2) # k2
  *             for j in range(self.state.shape[0]):             # <<<<<<<<<<<<<<
@@ -12933,7 +13538,7 @@ static void __pyx_f_5drone_9Missile2d_step(struct __pyx_obj_5drone_Missile2d *__
     for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
       __pyx_v_j = __pyx_t_14;
 
-      /* "drone.pyx":373
+      /* "drone.pyx":376
  *             self.fill_dy(aim, self.tmp2) # k2
  *             for j in range(self.state.shape[0]):
  *                 self.state[j] = self.state[j] + dt * self.tmp2[j]             # <<<<<<<<<<<<<<
@@ -12946,40 +13551,28 @@ static void __pyx_f_5drone_9Missile2d_step(struct __pyx_obj_5drone_Missile2d *__
       *((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_17 * __pyx_v_self->state.strides[0]) )) = ((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_16 * __pyx_v_self->state.strides[0]) ))) + (__pyx_v_dt * (*((double *) ( /* dim=0 */ (__pyx_v_self->tmp2.data + __pyx_t_15 * __pyx_v_self->tmp2.strides[0]) )))));
     }
 
-    /* "drone.pyx":374
+    /* "drone.pyx":377
  *             for j in range(self.state.shape[0]):
  *                 self.state[j] = self.state[j] + dt * self.tmp2[j]
  *             self.t += dt             # <<<<<<<<<<<<<<
  *             self.state[3] = self.t
  * 
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_t); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 374, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = PyFloat_FromDouble(__pyx_v_dt); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 374, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_5 = PyNumber_InPlaceAdd(__pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 374, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (__Pyx_PyObject_SetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_t, __pyx_t_5) < 0) __PYX_ERR(0, 374, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __pyx_v_self->t = (__pyx_v_self->t + __pyx_v_dt);
 
-    /* "drone.pyx":375
+    /* "drone.pyx":378
  *                 self.state[j] = self.state[j] + dt * self.tmp2[j]
  *             self.t += dt
  *             self.state[3] = self.t             # <<<<<<<<<<<<<<
  * 
  * 
  */
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_t); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 375, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_11 = __pyx_PyFloat_AsDouble(__pyx_t_5); if (unlikely((__pyx_t_11 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 375, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __pyx_t_11 = __pyx_v_self->t;
     __pyx_t_18 = 3;
     *((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_18 * __pyx_v_self->state.strides[0]) )) = __pyx_t_11;
   }
 
-  /* "drone.pyx":352
+  /* "drone.pyx":355
  *         # print(f'rho={rho} F_coeff={F_coeff} F1={F1} F2={F2} V={V} F_Cx={F_Cx} F_Cx_x={F_Cx_x} F_Cx_y={F_Cx_y} F_x={F_x} F_y={F_y}')
  * 
  *     cpdef void step(self, Vec2 drone_pos, Vec2 drone_vel, double tau=0.1, int n=10):             # <<<<<<<<<<<<<<
@@ -13045,7 +13638,7 @@ static PyObject *__pyx_pw_5drone_9Missile2d_5step(PyObject *__pyx_v_self, PyObje
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_drone_vel)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("step", 0, 2, 4, 1); __PYX_ERR(0, 352, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("step", 0, 2, 4, 1); __PYX_ERR(0, 355, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -13061,7 +13654,7 @@ static PyObject *__pyx_pw_5drone_9Missile2d_5step(PyObject *__pyx_v_self, PyObje
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "step") < 0)) __PYX_ERR(0, 352, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "step") < 0)) __PYX_ERR(0, 355, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -13078,26 +13671,26 @@ static PyObject *__pyx_pw_5drone_9Missile2d_5step(PyObject *__pyx_v_self, PyObje
     __pyx_v_drone_pos = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[0]);
     __pyx_v_drone_vel = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)values[1]);
     if (values[2]) {
-      __pyx_v_tau = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_tau == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 352, __pyx_L3_error)
+      __pyx_v_tau = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_tau == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 355, __pyx_L3_error)
     } else {
       __pyx_v_tau = ((double)0.1);
     }
     if (values[3]) {
-      __pyx_v_n = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_n == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 352, __pyx_L3_error)
+      __pyx_v_n = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_n == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 355, __pyx_L3_error)
     } else {
       __pyx_v_n = ((int)10);
     }
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("step", 0, 2, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 352, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("step", 0, 2, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 355, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("drone.Missile2d.step", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_drone_pos), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "drone_pos", 0))) __PYX_ERR(0, 352, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_drone_vel), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "drone_vel", 0))) __PYX_ERR(0, 352, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_drone_pos), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "drone_pos", 0))) __PYX_ERR(0, 355, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_drone_vel), __pyx_ptype_7easyvec_7vectors_Vec2, 1, "drone_vel", 0))) __PYX_ERR(0, 355, __pyx_L1_error)
   __pyx_r = __pyx_pf_5drone_9Missile2d_4step(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self), __pyx_v_drone_pos, __pyx_v_drone_vel, __pyx_v_tau, __pyx_v_n);
 
   /* function exit code */
@@ -13123,7 +13716,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_4step(struct __pyx_obj_5drone_Missil
   __pyx_t_1.tau = __pyx_v_tau;
   __pyx_t_1.n = __pyx_v_n;
   __pyx_vtabptr_5drone_Missile2d->step(__pyx_v_self, __pyx_v_drone_pos, __pyx_v_drone_vel, 1, &__pyx_t_1); 
-  __pyx_t_2 = __Pyx_void_to_None(NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 352, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_void_to_None(NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 355, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
@@ -13140,7 +13733,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_4step(struct __pyx_obj_5drone_Missil
   return __pyx_r;
 }
 
-/* "drone.pyx":378
+/* "drone.pyx":381
  * 
  * 
  *     cpdef dict to_dict(self):             # <<<<<<<<<<<<<<
@@ -13171,7 +13764,7 @@ static PyObject *__pyx_f_5drone_9Missile2d_to_dict(struct __pyx_obj_5drone_Missi
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_to_dict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 378, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_to_dict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 381, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_5drone_9Missile2d_7to_dict)) {
         __Pyx_XDECREF(__pyx_r);
@@ -13188,10 +13781,10 @@ static PyObject *__pyx_f_5drone_9Missile2d_to_dict(struct __pyx_obj_5drone_Missi
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 378, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 381, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (!(likely(PyDict_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "dict", Py_TYPE(__pyx_t_2)->tp_name), 0))) __PYX_ERR(0, 378, __pyx_L1_error)
+        if (!(likely(PyDict_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "dict", Py_TYPE(__pyx_t_2)->tp_name), 0))) __PYX_ERR(0, 381, __pyx_L1_error)
         __pyx_r = ((PyObject*)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -13210,21 +13803,21 @@ static PyObject *__pyx_f_5drone_9Missile2d_to_dict(struct __pyx_obj_5drone_Missi
     #endif
   }
 
-  /* "drone.pyx":380
+  /* "drone.pyx":383
  *     cpdef dict to_dict(self):
  *         cdef dict res = {
  *             't': self.t,             # <<<<<<<<<<<<<<
  *             'pos': Vec2(self.state[0], self.state[1]),
  *             'vel': self.vel,
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 380, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 383, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_t); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 380, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->t); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 383, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_t, __pyx_t_2) < 0) __PYX_ERR(0, 380, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_t, __pyx_t_2) < 0) __PYX_ERR(0, 383, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "drone.pyx":381
+  /* "drone.pyx":384
  *         cdef dict res = {
  *             't': self.t,
  *             'pos': Vec2(self.state[0], self.state[1]),             # <<<<<<<<<<<<<<
@@ -13232,12 +13825,12 @@ static PyObject *__pyx_f_5drone_9Missile2d_to_dict(struct __pyx_obj_5drone_Missi
  *             'theta': self.state[2]
  */
   __pyx_t_5 = 0;
-  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_5 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 381, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_5 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 384, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_5 = 1;
-  __pyx_t_3 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_5 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 381, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_5 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 384, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 381, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 384, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_2);
@@ -13245,25 +13838,25 @@ static PyObject *__pyx_f_5drone_9Missile2d_to_dict(struct __pyx_obj_5drone_Missi
   PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_3);
   __pyx_t_2 = 0;
   __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_4, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 381, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_4, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 384, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_pos, __pyx_t_3) < 0) __PYX_ERR(0, 380, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_pos, __pyx_t_3) < 0) __PYX_ERR(0, 383, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "drone.pyx":382
+  /* "drone.pyx":385
  *             't': self.t,
  *             'pos': Vec2(self.state[0], self.state[1]),
  *             'vel': self.vel,             # <<<<<<<<<<<<<<
  *             'theta': self.state[2]
  *         }
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_vel); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 382, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_vel); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 385, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_vel, __pyx_t_3) < 0) __PYX_ERR(0, 380, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_vel, __pyx_t_3) < 0) __PYX_ERR(0, 383, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "drone.pyx":383
+  /* "drone.pyx":386
  *             'pos': Vec2(self.state[0], self.state[1]),
  *             'vel': self.vel,
  *             'theta': self.state[2]             # <<<<<<<<<<<<<<
@@ -13271,14 +13864,14 @@ static PyObject *__pyx_f_5drone_9Missile2d_to_dict(struct __pyx_obj_5drone_Missi
  *         return res
  */
   __pyx_t_5 = 2;
-  __pyx_t_3 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_5 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 383, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_5 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 386, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_theta, __pyx_t_3) < 0) __PYX_ERR(0, 380, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_theta, __pyx_t_3) < 0) __PYX_ERR(0, 383, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_res = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "drone.pyx":385
+  /* "drone.pyx":388
  *             'theta': self.state[2]
  *         }
  *         return res             # <<<<<<<<<<<<<<
@@ -13290,7 +13883,7 @@ static PyObject *__pyx_f_5drone_9Missile2d_to_dict(struct __pyx_obj_5drone_Missi
   __pyx_r = __pyx_v_res;
   goto __pyx_L0;
 
-  /* "drone.pyx":378
+  /* "drone.pyx":381
  * 
  * 
  *     cpdef dict to_dict(self):             # <<<<<<<<<<<<<<
@@ -13336,7 +13929,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_6to_dict(struct __pyx_obj_5drone_Mis
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("to_dict", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_5drone_9Missile2d_to_dict(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 378, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_5drone_9Missile2d_to_dict(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 381, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -13353,7 +13946,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_6to_dict(struct __pyx_obj_5drone_Mis
   return __pyx_r;
 }
 
-/* "drone.pyx":387
+/* "drone.pyx":390
  *         return res
  * 
  *     cpdef void from_dict(self, dict state_dict):             # <<<<<<<<<<<<<<
@@ -13383,7 +13976,7 @@ static void __pyx_f_5drone_9Missile2d_from_dict(struct __pyx_obj_5drone_Missile2
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_from_dict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 387, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_from_dict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 390, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_5drone_9Missile2d_9from_dict)) {
         __Pyx_INCREF(__pyx_t_1);
@@ -13399,7 +13992,7 @@ static void __pyx_f_5drone_9Missile2d_from_dict(struct __pyx_obj_5drone_Missile2
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, __pyx_v_state_dict) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_state_dict);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 387, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 390, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -13419,7 +14012,7 @@ static void __pyx_f_5drone_9Missile2d_from_dict(struct __pyx_obj_5drone_Missile2
     #endif
   }
 
-  /* "drone.pyx":388
+  /* "drone.pyx":391
  * 
  *     cpdef void from_dict(self, dict state_dict):
  *         self.t = state_dict['t']             # <<<<<<<<<<<<<<
@@ -13428,14 +14021,15 @@ static void __pyx_f_5drone_9Missile2d_from_dict(struct __pyx_obj_5drone_Missile2
  */
   if (unlikely(__pyx_v_state_dict == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 388, __pyx_L1_error)
+    __PYX_ERR(0, 391, __pyx_L1_error)
   }
-  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_state_dict, __pyx_n_u_t); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 388, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_state_dict, __pyx_n_u_t); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 391, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (__Pyx_PyObject_SetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_t, __pyx_t_1) < 0) __PYX_ERR(0, 388, __pyx_L1_error)
+  __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 391, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_v_self->t = __pyx_t_5;
 
-  /* "drone.pyx":389
+  /* "drone.pyx":392
  *     cpdef void from_dict(self, dict state_dict):
  *         self.t = state_dict['t']
  *         self.state[0] = state_dict['pos'][0]             # <<<<<<<<<<<<<<
@@ -13444,19 +14038,19 @@ static void __pyx_f_5drone_9Missile2d_from_dict(struct __pyx_obj_5drone_Missile2
  */
   if (unlikely(__pyx_v_state_dict == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 389, __pyx_L1_error)
+    __PYX_ERR(0, 392, __pyx_L1_error)
   }
-  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_state_dict, __pyx_n_u_pos); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 389, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_state_dict, __pyx_n_u_pos); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 392, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 389, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 392, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 389, __pyx_L1_error)
+  __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 392, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_6 = 0;
   *((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_6 * __pyx_v_self->state.strides[0]) )) = __pyx_t_5;
 
-  /* "drone.pyx":390
+  /* "drone.pyx":393
  *         self.t = state_dict['t']
  *         self.state[0] = state_dict['pos'][0]
  *         self.state[1] = state_dict['pos'][1]             # <<<<<<<<<<<<<<
@@ -13465,19 +14059,19 @@ static void __pyx_f_5drone_9Missile2d_from_dict(struct __pyx_obj_5drone_Missile2
  */
   if (unlikely(__pyx_v_state_dict == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 390, __pyx_L1_error)
+    __PYX_ERR(0, 393, __pyx_L1_error)
   }
-  __pyx_t_2 = __Pyx_PyDict_GetItem(__pyx_v_state_dict, __pyx_n_u_pos); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 390, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_GetItem(__pyx_v_state_dict, __pyx_n_u_pos); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 393, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 390, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 393, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 390, __pyx_L1_error)
+  __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 393, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_6 = 1;
   *((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_6 * __pyx_v_self->state.strides[0]) )) = __pyx_t_5;
 
-  /* "drone.pyx":391
+  /* "drone.pyx":394
  *         self.state[0] = state_dict['pos'][0]
  *         self.state[1] = state_dict['pos'][1]
  *         self.state[2] = state_dict['theta']             # <<<<<<<<<<<<<<
@@ -13486,30 +14080,27 @@ static void __pyx_f_5drone_9Missile2d_from_dict(struct __pyx_obj_5drone_Missile2
  */
   if (unlikely(__pyx_v_state_dict == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 391, __pyx_L1_error)
+    __PYX_ERR(0, 394, __pyx_L1_error)
   }
-  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_state_dict, __pyx_n_u_theta); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 391, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_state_dict, __pyx_n_u_theta); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 394, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 391, __pyx_L1_error)
+  __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 394, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_6 = 2;
   *((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_6 * __pyx_v_self->state.strides[0]) )) = __pyx_t_5;
 
-  /* "drone.pyx":392
+  /* "drone.pyx":395
  *         self.state[1] = state_dict['pos'][1]
  *         self.state[2] = state_dict['theta']
  *         self.state[3] = self.t             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_t); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 392, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 392, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_5 = __pyx_v_self->t;
   __pyx_t_6 = 3;
   *((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_6 * __pyx_v_self->state.strides[0]) )) = __pyx_t_5;
 
-  /* "drone.pyx":387
+  /* "drone.pyx":390
  *         return res
  * 
  *     cpdef void from_dict(self, dict state_dict):             # <<<<<<<<<<<<<<
@@ -13539,7 +14130,7 @@ static PyObject *__pyx_pw_5drone_9Missile2d_9from_dict(PyObject *__pyx_v_self, P
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("from_dict (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_state_dict), (&PyDict_Type), 1, "state_dict", 1))) __PYX_ERR(0, 387, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_state_dict), (&PyDict_Type), 1, "state_dict", 1))) __PYX_ERR(0, 390, __pyx_L1_error)
   __pyx_r = __pyx_pf_5drone_9Missile2d_8from_dict(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self), ((PyObject*)__pyx_v_state_dict));
 
   /* function exit code */
@@ -13560,7 +14151,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_8from_dict(struct __pyx_obj_5drone_M
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("from_dict", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_void_to_None(__pyx_f_5drone_9Missile2d_from_dict(__pyx_v_self, __pyx_v_state_dict, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 387, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_void_to_None(__pyx_f_5drone_9Missile2d_from_dict(__pyx_v_self, __pyx_v_state_dict, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 390, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -13577,7 +14168,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_8from_dict(struct __pyx_obj_5drone_M
   return __pyx_r;
 }
 
-/* "drone.pyx":396
+/* "drone.pyx":399
  * 
  * 
  *     def to_numpy(self):             # <<<<<<<<<<<<<<
@@ -13611,20 +14202,20 @@ static PyObject *__pyx_pf_5drone_9Missile2d_10to_numpy(struct __pyx_obj_5drone_M
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("to_numpy", 0);
 
-  /* "drone.pyx":397
+  /* "drone.pyx":400
  * 
  *     def to_numpy(self):
  *         return np.array(self.state)             # <<<<<<<<<<<<<<
  * 
- * 
+ *     def from_numpy(self, state):
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 397, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 400, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_array); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 397, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_array); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 400, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_v_self->state, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 397, __pyx_L1_error)
+  __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_v_self->state, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 400, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
@@ -13639,14 +14230,14 @@ static PyObject *__pyx_pf_5drone_9Missile2d_10to_numpy(struct __pyx_obj_5drone_M
   __pyx_t_1 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, __pyx_t_2) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 397, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 400, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "drone.pyx":396
+  /* "drone.pyx":399
  * 
  * 
  *     def to_numpy(self):             # <<<<<<<<<<<<<<
@@ -13668,7 +14259,103 @@ static PyObject *__pyx_pf_5drone_9Missile2d_10to_numpy(struct __pyx_obj_5drone_M
   return __pyx_r;
 }
 
-/* "drone.pyx":401
+/* "drone.pyx":402
+ *         return np.array(self.state)
+ * 
+ *     def from_numpy(self, state):             # <<<<<<<<<<<<<<
+ *         cdef size_t i
+ *         for i in range(self.state.shape[0]):
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5drone_9Missile2d_13from_numpy(PyObject *__pyx_v_self, PyObject *__pyx_v_state); /*proto*/
+static char __pyx_doc_5drone_9Missile2d_12from_numpy[] = "Missile2d.from_numpy(self, state)";
+static PyObject *__pyx_pw_5drone_9Missile2d_13from_numpy(PyObject *__pyx_v_self, PyObject *__pyx_v_state) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("from_numpy (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_9Missile2d_12from_numpy(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self), ((PyObject *)__pyx_v_state));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5drone_9Missile2d_12from_numpy(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v_state) {
+  size_t __pyx_v_i;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  Py_ssize_t __pyx_t_1;
+  Py_ssize_t __pyx_t_2;
+  size_t __pyx_t_3;
+  PyObject *__pyx_t_4 = NULL;
+  double __pyx_t_5;
+  size_t __pyx_t_6;
+  Py_ssize_t __pyx_t_7;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("from_numpy", 0);
+
+  /* "drone.pyx":404
+ *     def from_numpy(self, state):
+ *         cdef size_t i
+ *         for i in range(self.state.shape[0]):             # <<<<<<<<<<<<<<
+ *             self.state[i] = state[i]
+ *         self.t = self.state[6]
+ */
+  __pyx_t_1 = (__pyx_v_self->state.shape[0]);
+  __pyx_t_2 = __pyx_t_1;
+  for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
+    __pyx_v_i = __pyx_t_3;
+
+    /* "drone.pyx":405
+ *         cdef size_t i
+ *         for i in range(self.state.shape[0]):
+ *             self.state[i] = state[i]             # <<<<<<<<<<<<<<
+ *         self.t = self.state[6]
+ * 
+ */
+    __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_state, __pyx_v_i, size_t, 0, __Pyx_PyInt_FromSize_t, 0, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 405, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_4); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 405, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_t_6 = __pyx_v_i;
+    *((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_6 * __pyx_v_self->state.strides[0]) )) = __pyx_t_5;
+  }
+
+  /* "drone.pyx":406
+ *         for i in range(self.state.shape[0]):
+ *             self.state[i] = state[i]
+ *         self.t = self.state[6]             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+  __pyx_t_7 = 6;
+  __pyx_v_self->t = (*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_7 * __pyx_v_self->state.strides[0]) )));
+
+  /* "drone.pyx":402
+ *         return np.array(self.state)
+ * 
+ *     def from_numpy(self, state):             # <<<<<<<<<<<<<<
+ *         cdef size_t i
+ *         for i in range(self.state.shape[0]):
+ */
+
+  /* function exit code */
+  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_AddTraceback("drone.Missile2d.from_numpy", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "drone.pyx":410
  * 
  *     @property
  *     def vel(self):             # <<<<<<<<<<<<<<
@@ -13700,7 +14387,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_3vel___get__(struct __pyx_obj_5drone
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "drone.pyx":402
+  /* "drone.pyx":411
  *     @property
  *     def vel(self):
  *         return Vec2(self.vel_len, 0).rotate(self.state[2])             # <<<<<<<<<<<<<<
@@ -13708,9 +14395,9 @@ static PyObject *__pyx_pf_5drone_9Missile2d_3vel___get__(struct __pyx_obj_5drone
  *     @property
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->vel_len); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 402, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->vel_len); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 411, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 402, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 411, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1);
@@ -13718,18 +14405,18 @@ static PyObject *__pyx_pf_5drone_9Missile2d_3vel___get__(struct __pyx_obj_5drone
   __Pyx_GIVEREF(__pyx_int_0);
   PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_int_0);
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 402, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 411, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_3 = 2;
-  __pyx_t_2 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1)->__pyx_vtab)->rotate(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1), (*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_3 * __pyx_v_self->state.strides[0]) ))), 0, NULL)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 402, __pyx_L1_error)
+  __pyx_t_2 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1)->__pyx_vtab)->rotate(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1), (*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_3 * __pyx_v_self->state.strides[0]) ))), 0, NULL)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 411, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "drone.pyx":401
+  /* "drone.pyx":410
  * 
  *     @property
  *     def vel(self):             # <<<<<<<<<<<<<<
@@ -13749,7 +14436,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_3vel___get__(struct __pyx_obj_5drone
   return __pyx_r;
 }
 
-/* "drone.pyx":405
+/* "drone.pyx":414
  * 
  *     @property
  *     def vel_np(self):             # <<<<<<<<<<<<<<
@@ -13785,16 +14472,16 @@ static PyObject *__pyx_pf_5drone_9Missile2d_6vel_np___get__(struct __pyx_obj_5dr
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "drone.pyx":406
+  /* "drone.pyx":415
  *     @property
  *     def vel_np(self):
  *         v = Vec2(self.vel_len, 0).rotate(self.state[2])             # <<<<<<<<<<<<<<
  *         return np.asarray(v.as_np())
  * 
  */
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->vel_len); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 406, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->vel_len); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 415, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 406, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 415, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1);
@@ -13802,17 +14489,17 @@ static PyObject *__pyx_pf_5drone_9Missile2d_6vel_np___get__(struct __pyx_obj_5dr
   __Pyx_GIVEREF(__pyx_int_0);
   PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_int_0);
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 406, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 415, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_3 = 2;
-  __pyx_t_2 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1)->__pyx_vtab)->rotate(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1), (*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_3 * __pyx_v_self->state.strides[0]) ))), 0, NULL)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 406, __pyx_L1_error)
+  __pyx_t_2 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1)->__pyx_vtab)->rotate(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1), (*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_3 * __pyx_v_self->state.strides[0]) ))), 0, NULL)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 415, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_v = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "drone.pyx":407
+  /* "drone.pyx":416
  *     def vel_np(self):
  *         v = Vec2(self.vel_len, 0).rotate(self.state[2])
  *         return np.asarray(v.as_np())             # <<<<<<<<<<<<<<
@@ -13820,12 +14507,12 @@ static PyObject *__pyx_pf_5drone_9Missile2d_6vel_np___get__(struct __pyx_obj_5dr
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 407, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 416, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_asarray); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 407, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_asarray); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 416, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_v), __pyx_n_s_as_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 407, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_v), __pyx_n_s_as_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 416, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_6 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
@@ -13839,7 +14526,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_6vel_np___get__(struct __pyx_obj_5dr
   }
   __pyx_t_1 = (__pyx_t_6) ? __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_6) : __Pyx_PyObject_CallNoArg(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 407, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 416, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -13855,14 +14542,14 @@ static PyObject *__pyx_pf_5drone_9Missile2d_6vel_np___get__(struct __pyx_obj_5dr
   __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_t_1) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_1);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 407, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 416, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "drone.pyx":405
+  /* "drone.pyx":414
  * 
  *     @property
  *     def vel_np(self):             # <<<<<<<<<<<<<<
@@ -13886,7 +14573,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_6vel_np___get__(struct __pyx_obj_5dr
   return __pyx_r;
 }
 
-/* "drone.pyx":411
+/* "drone.pyx":420
  * 
  *     @property
  *     def pos(self):             # <<<<<<<<<<<<<<
@@ -13919,7 +14606,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_3pos___get__(struct __pyx_obj_5drone
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "drone.pyx":412
+  /* "drone.pyx":421
  *     @property
  *     def pos(self):
  *         return Vec2(self.state[0], self.state[1])             # <<<<<<<<<<<<<<
@@ -13928,12 +14615,12 @@ static PyObject *__pyx_pf_5drone_9Missile2d_3pos___get__(struct __pyx_obj_5drone
  */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = 0;
-  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_1 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 412, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_1 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 421, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_1 = 1;
-  __pyx_t_3 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_1 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 412, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_1 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 421, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 412, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 421, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_2);
@@ -13941,14 +14628,14 @@ static PyObject *__pyx_pf_5drone_9Missile2d_3pos___get__(struct __pyx_obj_5drone
   PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_3);
   __pyx_t_2 = 0;
   __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_4, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 412, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_t_4, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 421, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_r = __pyx_t_3;
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "drone.pyx":411
+  /* "drone.pyx":420
  * 
  *     @property
  *     def pos(self):             # <<<<<<<<<<<<<<
@@ -13969,7 +14656,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_3pos___get__(struct __pyx_obj_5drone
   return __pyx_r;
 }
 
-/* "drone.pyx":415
+/* "drone.pyx":424
  * 
  *     @property
  *     def pos_np(self):             # <<<<<<<<<<<<<<
@@ -14004,7 +14691,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_6pos_np___get__(struct __pyx_obj_5dr
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "drone.pyx":416
+  /* "drone.pyx":425
  *     @property
  *     def pos_np(self):
  *         return np.array([self.state[0], self.state[1]])             # <<<<<<<<<<<<<<
@@ -14012,18 +14699,18 @@ static PyObject *__pyx_pf_5drone_9Missile2d_6pos_np___get__(struct __pyx_obj_5dr
  *     @property
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 416, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 425, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_array); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 416, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_array); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 425, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_4 = 0;
-  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_4 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 416, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_4 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 425, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_4 = 1;
-  __pyx_t_5 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_4 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 416, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_4 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 425, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = PyList_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 416, __pyx_L1_error)
+  __pyx_t_6 = PyList_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 425, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_GIVEREF(__pyx_t_2);
   PyList_SET_ITEM(__pyx_t_6, 0, __pyx_t_2);
@@ -14044,14 +14731,14 @@ static PyObject *__pyx_pf_5drone_9Missile2d_6pos_np___get__(struct __pyx_obj_5dr
   __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_5, __pyx_t_6) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_6);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 416, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 425, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "drone.pyx":415
+  /* "drone.pyx":424
  * 
  *     @property
  *     def pos_np(self):             # <<<<<<<<<<<<<<
@@ -14074,7 +14761,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_6pos_np___get__(struct __pyx_obj_5dr
   return __pyx_r;
 }
 
-/* "drone.pyx":419
+/* "drone.pyx":428
  * 
  *     @property
  *     def theta(self):             # <<<<<<<<<<<<<<
@@ -14105,7 +14792,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_5theta___get__(struct __pyx_obj_5dro
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "drone.pyx":420
+  /* "drone.pyx":429
  *     @property
  *     def theta(self):
  *         return self.state[2]             # <<<<<<<<<<<<<<
@@ -14114,13 +14801,13 @@ static PyObject *__pyx_pf_5drone_9Missile2d_5theta___get__(struct __pyx_obj_5dro
  */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = 2;
-  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_1 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 420, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble((*((double *) ( /* dim=0 */ (__pyx_v_self->state.data + __pyx_t_1 * __pyx_v_self->state.strides[0]) )))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 429, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "drone.pyx":419
+  /* "drone.pyx":428
  * 
  *     @property
  *     def theta(self):             # <<<<<<<<<<<<<<
@@ -14139,12 +14826,12 @@ static PyObject *__pyx_pf_5drone_9Missile2d_5theta___get__(struct __pyx_obj_5dro
   return __pyx_r;
 }
 
-/* "drone.pyx":318
+/* "drone.pyx":311
  * 
  * cdef class Missile2d:
- *     cdef public double vel_len, ay, alpha             # <<<<<<<<<<<<<<
+ *     cdef public double vel_len, ay, alpha, t             # <<<<<<<<<<<<<<
+ *     cdef public int n
  *     cdef public double[:] state, tmp1, tmp2, tmp3, tmp4
- *     # [0, 1, 2,     3]
  */
 
 /* Python wrapper */
@@ -14169,7 +14856,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_7vel_len___get__(struct __pyx_obj_5d
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->vel_len); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 318, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->vel_len); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 311, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -14207,7 +14894,7 @@ static int __pyx_pf_5drone_9Missile2d_7vel_len_2__set__(struct __pyx_obj_5drone_
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_value); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 318, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_value); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 311, __pyx_L1_error)
   __pyx_v_self->vel_len = __pyx_t_1;
 
   /* function exit code */
@@ -14243,7 +14930,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_2ay___get__(struct __pyx_obj_5drone_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->ay); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 318, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->ay); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 311, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -14281,7 +14968,7 @@ static int __pyx_pf_5drone_9Missile2d_2ay_2__set__(struct __pyx_obj_5drone_Missi
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_value); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 318, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_value); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 311, __pyx_L1_error)
   __pyx_v_self->ay = __pyx_t_1;
 
   /* function exit code */
@@ -14317,7 +15004,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_5alpha___get__(struct __pyx_obj_5dro
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->alpha); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 318, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->alpha); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 311, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -14355,7 +15042,7 @@ static int __pyx_pf_5drone_9Missile2d_5alpha_2__set__(struct __pyx_obj_5drone_Mi
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_value); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 318, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_value); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 311, __pyx_L1_error)
   __pyx_v_self->alpha = __pyx_t_1;
 
   /* function exit code */
@@ -14369,9 +15056,165 @@ static int __pyx_pf_5drone_9Missile2d_5alpha_2__set__(struct __pyx_obj_5drone_Mi
   return __pyx_r;
 }
 
-/* "drone.pyx":319
+/* Python wrapper */
+static PyObject *__pyx_pw_5drone_9Missile2d_1t_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_5drone_9Missile2d_1t_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_9Missile2d_1t___get__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5drone_9Missile2d_1t___get__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__get__", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->t); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 311, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("drone.Missile2d.t.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static int __pyx_pw_5drone_9Missile2d_1t_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_5drone_9Missile2d_1t_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_9Missile2d_1t_2__set__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self), ((PyObject *)__pyx_v_value));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_5drone_9Missile2d_1t_2__set__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v_value) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  double __pyx_t_1;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__set__", 0);
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_value); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 311, __pyx_L1_error)
+  __pyx_v_self->t = __pyx_t_1;
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("drone.Missile2d.t.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "drone.pyx":312
  * cdef class Missile2d:
- *     cdef public double vel_len, ay, alpha
+ *     cdef public double vel_len, ay, alpha, t
+ *     cdef public int n             # <<<<<<<<<<<<<<
+ *     cdef public double[:] state, tmp1, tmp2, tmp3, tmp4
+ *     # [0, 1, 2,     3]
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5drone_9Missile2d_1n_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_5drone_9Missile2d_1n_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_9Missile2d_1n___get__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5drone_9Missile2d_1n___get__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__get__", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->n); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 312, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("drone.Missile2d.n.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static int __pyx_pw_5drone_9Missile2d_1n_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_5drone_9Missile2d_1n_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_5drone_9Missile2d_1n_2__set__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self), ((PyObject *)__pyx_v_value));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_5drone_9Missile2d_1n_2__set__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v_value) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__set__", 0);
+  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_value); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 312, __pyx_L1_error)
+  __pyx_v_self->n = __pyx_t_1;
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("drone.Missile2d.n.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "drone.pyx":313
+ *     cdef public double vel_len, ay, alpha, t
+ *     cdef public int n
  *     cdef public double[:] state, tmp1, tmp2, tmp3, tmp4             # <<<<<<<<<<<<<<
  *     # [0, 1, 2,     3]
  *     # [x, y, theta, t]
@@ -14399,7 +15242,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_5state___get__(struct __pyx_obj_5dro
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_self->state, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 319, __pyx_L1_error)
+  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_self->state, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 313, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -14437,7 +15280,7 @@ static int __pyx_pf_5drone_9Missile2d_5state_2__set__(struct __pyx_obj_5drone_Mi
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
-  __pyx_t_1 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_v_value, PyBUF_WRITABLE); if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 319, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_v_value, PyBUF_WRITABLE); if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 313, __pyx_L1_error)
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->state, 0);
   __pyx_v_self->state = __pyx_t_1;
   __pyx_t_1.memview = NULL;
@@ -14477,7 +15320,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_4tmp1___get__(struct __pyx_obj_5dron
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_self->tmp1, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 319, __pyx_L1_error)
+  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_self->tmp1, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 313, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -14515,7 +15358,7 @@ static int __pyx_pf_5drone_9Missile2d_4tmp1_2__set__(struct __pyx_obj_5drone_Mis
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
-  __pyx_t_1 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_v_value, PyBUF_WRITABLE); if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 319, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_v_value, PyBUF_WRITABLE); if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 313, __pyx_L1_error)
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->tmp1, 0);
   __pyx_v_self->tmp1 = __pyx_t_1;
   __pyx_t_1.memview = NULL;
@@ -14555,7 +15398,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_4tmp2___get__(struct __pyx_obj_5dron
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_self->tmp2, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 319, __pyx_L1_error)
+  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_self->tmp2, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 313, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -14593,7 +15436,7 @@ static int __pyx_pf_5drone_9Missile2d_4tmp2_2__set__(struct __pyx_obj_5drone_Mis
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
-  __pyx_t_1 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_v_value, PyBUF_WRITABLE); if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 319, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_v_value, PyBUF_WRITABLE); if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 313, __pyx_L1_error)
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->tmp2, 0);
   __pyx_v_self->tmp2 = __pyx_t_1;
   __pyx_t_1.memview = NULL;
@@ -14633,7 +15476,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_4tmp3___get__(struct __pyx_obj_5dron
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_self->tmp3, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 319, __pyx_L1_error)
+  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_self->tmp3, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 313, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -14671,7 +15514,7 @@ static int __pyx_pf_5drone_9Missile2d_4tmp3_2__set__(struct __pyx_obj_5drone_Mis
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
-  __pyx_t_1 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_v_value, PyBUF_WRITABLE); if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 319, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_v_value, PyBUF_WRITABLE); if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 313, __pyx_L1_error)
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->tmp3, 0);
   __pyx_v_self->tmp3 = __pyx_t_1;
   __pyx_t_1.memview = NULL;
@@ -14711,7 +15554,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_4tmp4___get__(struct __pyx_obj_5dron
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_self->tmp4, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 319, __pyx_L1_error)
+  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_self->tmp4, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 313, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -14749,7 +15592,7 @@ static int __pyx_pf_5drone_9Missile2d_4tmp4_2__set__(struct __pyx_obj_5drone_Mis
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
-  __pyx_t_1 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_v_value, PyBUF_WRITABLE); if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 319, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(__pyx_v_value, PyBUF_WRITABLE); if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 313, __pyx_L1_error)
   __PYX_XDEC_MEMVIEW(&__pyx_v_self->tmp4, 0);
   __pyx_v_self->tmp4 = __pyx_t_1;
   __pyx_t_1.memview = NULL;
@@ -14774,20 +15617,20 @@ static int __pyx_pf_5drone_9Missile2d_4tmp4_2__set__(struct __pyx_obj_5drone_Mis
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5drone_9Missile2d_13__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static char __pyx_doc_5drone_9Missile2d_12__reduce_cython__[] = "Missile2d.__reduce_cython__(self)";
-static PyObject *__pyx_pw_5drone_9Missile2d_13__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_5drone_9Missile2d_15__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_5drone_9Missile2d_14__reduce_cython__[] = "Missile2d.__reduce_cython__(self)";
+static PyObject *__pyx_pw_5drone_9Missile2d_15__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__reduce_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_5drone_9Missile2d_12__reduce_cython__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self));
+  __pyx_r = __pyx_pf_5drone_9Missile2d_14__reduce_cython__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5drone_9Missile2d_12__reduce_cython__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self) {
+static PyObject *__pyx_pf_5drone_9Missile2d_14__reduce_cython__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self) {
   PyObject *__pyx_v_state = 0;
   PyObject *__pyx_v__dict = 0;
   int __pyx_v_use_setstate;
@@ -14802,8 +15645,10 @@ static PyObject *__pyx_pf_5drone_9Missile2d_12__reduce_cython__(struct __pyx_obj
   PyObject *__pyx_t_7 = NULL;
   PyObject *__pyx_t_8 = NULL;
   PyObject *__pyx_t_9 = NULL;
-  int __pyx_t_10;
-  int __pyx_t_11;
+  PyObject *__pyx_t_10 = NULL;
+  PyObject *__pyx_t_11 = NULL;
+  int __pyx_t_12;
+  int __pyx_t_13;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -14812,7 +15657,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_12__reduce_cython__(struct __pyx_obj
   /* "(tree fragment)":5
  *     cdef object _dict
  *     cdef bint use_setstate
- *     state = (self.alpha, self.ay, self.state, self.tmp1, self.tmp2, self.tmp3, self.tmp4, self.vel_len)             # <<<<<<<<<<<<<<
+ *     state = (self.alpha, self.ay, self.n, self.state, self.t, self.tmp1, self.tmp2, self.tmp3, self.tmp4, self.vel_len)             # <<<<<<<<<<<<<<
  *     _dict = getattr(self, '__dict__', None)
  *     if _dict is not None:
  */
@@ -14820,36 +15665,44 @@ static PyObject *__pyx_pf_5drone_9Missile2d_12__reduce_cython__(struct __pyx_obj
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->ay); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __pyx_memoryview_fromslice(__pyx_v_self->state, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 5, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_self->n); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __pyx_memoryview_fromslice(__pyx_v_self->tmp1, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 5, __pyx_L1_error)
+  __pyx_t_4 = __pyx_memoryview_fromslice(__pyx_v_self->state, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __pyx_memoryview_fromslice(__pyx_v_self->tmp2, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 5, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_self->t); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = __pyx_memoryview_fromslice(__pyx_v_self->tmp3, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 5, __pyx_L1_error)
+  __pyx_t_6 = __pyx_memoryview_fromslice(__pyx_v_self->tmp1, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_7 = __pyx_memoryview_fromslice(__pyx_v_self->tmp4, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 5, __pyx_L1_error)
+  __pyx_t_7 = __pyx_memoryview_fromslice(__pyx_v_self->tmp2, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_8 = PyFloat_FromDouble(__pyx_v_self->vel_len); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 5, __pyx_L1_error)
+  __pyx_t_8 = __pyx_memoryview_fromslice(__pyx_v_self->tmp3, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  __pyx_t_9 = PyTuple_New(8); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 5, __pyx_L1_error)
+  __pyx_t_9 = __pyx_memoryview_fromslice(__pyx_v_self->tmp4, 1, (PyObject *(*)(char *)) __pyx_memview_get_double, (int (*)(char *, PyObject *)) __pyx_memview_set_double, 0);; if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
+  __pyx_t_10 = PyFloat_FromDouble(__pyx_v_self->vel_len); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 5, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_10);
+  __pyx_t_11 = PyTuple_New(10); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 5, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_11);
   __Pyx_GIVEREF(__pyx_t_1);
-  PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_1);
+  PyTuple_SET_ITEM(__pyx_t_11, 0, __pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_2);
-  PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_2);
+  PyTuple_SET_ITEM(__pyx_t_11, 1, __pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_3);
-  PyTuple_SET_ITEM(__pyx_t_9, 2, __pyx_t_3);
+  PyTuple_SET_ITEM(__pyx_t_11, 2, __pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_4);
-  PyTuple_SET_ITEM(__pyx_t_9, 3, __pyx_t_4);
+  PyTuple_SET_ITEM(__pyx_t_11, 3, __pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_5);
-  PyTuple_SET_ITEM(__pyx_t_9, 4, __pyx_t_5);
+  PyTuple_SET_ITEM(__pyx_t_11, 4, __pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_6);
-  PyTuple_SET_ITEM(__pyx_t_9, 5, __pyx_t_6);
+  PyTuple_SET_ITEM(__pyx_t_11, 5, __pyx_t_6);
   __Pyx_GIVEREF(__pyx_t_7);
-  PyTuple_SET_ITEM(__pyx_t_9, 6, __pyx_t_7);
+  PyTuple_SET_ITEM(__pyx_t_11, 6, __pyx_t_7);
   __Pyx_GIVEREF(__pyx_t_8);
-  PyTuple_SET_ITEM(__pyx_t_9, 7, __pyx_t_8);
+  PyTuple_SET_ITEM(__pyx_t_11, 7, __pyx_t_8);
+  __Pyx_GIVEREF(__pyx_t_9);
+  PyTuple_SET_ITEM(__pyx_t_11, 8, __pyx_t_9);
+  __Pyx_GIVEREF(__pyx_t_10);
+  PyTuple_SET_ITEM(__pyx_t_11, 9, __pyx_t_10);
   __pyx_t_1 = 0;
   __pyx_t_2 = 0;
   __pyx_t_3 = 0;
@@ -14858,31 +15711,33 @@ static PyObject *__pyx_pf_5drone_9Missile2d_12__reduce_cython__(struct __pyx_obj
   __pyx_t_6 = 0;
   __pyx_t_7 = 0;
   __pyx_t_8 = 0;
-  __pyx_v_state = ((PyObject*)__pyx_t_9);
   __pyx_t_9 = 0;
+  __pyx_t_10 = 0;
+  __pyx_v_state = ((PyObject*)__pyx_t_11);
+  __pyx_t_11 = 0;
 
   /* "(tree fragment)":6
  *     cdef bint use_setstate
- *     state = (self.alpha, self.ay, self.state, self.tmp1, self.tmp2, self.tmp3, self.tmp4, self.vel_len)
+ *     state = (self.alpha, self.ay, self.n, self.state, self.t, self.tmp1, self.tmp2, self.tmp3, self.tmp4, self.vel_len)
  *     _dict = getattr(self, '__dict__', None)             # <<<<<<<<<<<<<<
  *     if _dict is not None:
  *         state += (_dict,)
  */
-  __pyx_t_9 = __Pyx_GetAttr3(((PyObject *)__pyx_v_self), __pyx_n_s_dict, Py_None); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 6, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_9);
-  __pyx_v__dict = __pyx_t_9;
-  __pyx_t_9 = 0;
+  __pyx_t_11 = __Pyx_GetAttr3(((PyObject *)__pyx_v_self), __pyx_n_s_dict, Py_None); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 6, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_11);
+  __pyx_v__dict = __pyx_t_11;
+  __pyx_t_11 = 0;
 
   /* "(tree fragment)":7
- *     state = (self.alpha, self.ay, self.state, self.tmp1, self.tmp2, self.tmp3, self.tmp4, self.vel_len)
+ *     state = (self.alpha, self.ay, self.n, self.state, self.t, self.tmp1, self.tmp2, self.tmp3, self.tmp4, self.vel_len)
  *     _dict = getattr(self, '__dict__', None)
  *     if _dict is not None:             # <<<<<<<<<<<<<<
  *         state += (_dict,)
  *         use_setstate = True
  */
-  __pyx_t_10 = (__pyx_v__dict != Py_None);
-  __pyx_t_11 = (__pyx_t_10 != 0);
-  if (__pyx_t_11) {
+  __pyx_t_12 = (__pyx_v__dict != Py_None);
+  __pyx_t_13 = (__pyx_t_12 != 0);
+  if (__pyx_t_13) {
 
     /* "(tree fragment)":8
  *     _dict = getattr(self, '__dict__', None)
@@ -14891,16 +15746,16 @@ static PyObject *__pyx_pf_5drone_9Missile2d_12__reduce_cython__(struct __pyx_obj
  *         use_setstate = True
  *     else:
  */
-    __pyx_t_9 = PyTuple_New(1); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 8, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
+    __pyx_t_11 = PyTuple_New(1); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 8, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_11);
     __Pyx_INCREF(__pyx_v__dict);
     __Pyx_GIVEREF(__pyx_v__dict);
-    PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_v__dict);
-    __pyx_t_8 = PyNumber_InPlaceAdd(__pyx_v_state, __pyx_t_9); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 8, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __Pyx_DECREF_SET(__pyx_v_state, ((PyObject*)__pyx_t_8));
-    __pyx_t_8 = 0;
+    PyTuple_SET_ITEM(__pyx_t_11, 0, __pyx_v__dict);
+    __pyx_t_10 = PyNumber_InPlaceAdd(__pyx_v_state, __pyx_t_11); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 8, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_10);
+    __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
+    __Pyx_DECREF_SET(__pyx_v_state, ((PyObject*)__pyx_t_10));
+    __pyx_t_10 = 0;
 
     /* "(tree fragment)":9
  *     if _dict is not None:
@@ -14912,7 +15767,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_12__reduce_cython__(struct __pyx_obj
     __pyx_v_use_setstate = 1;
 
     /* "(tree fragment)":7
- *     state = (self.alpha, self.ay, self.state, self.tmp1, self.tmp2, self.tmp3, self.tmp4, self.vel_len)
+ *     state = (self.alpha, self.ay, self.n, self.state, self.t, self.tmp1, self.tmp2, self.tmp3, self.tmp4, self.vel_len)
  *     _dict = getattr(self, '__dict__', None)
  *     if _dict is not None:             # <<<<<<<<<<<<<<
  *         state += (_dict,)
@@ -14926,7 +15781,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_12__reduce_cython__(struct __pyx_obj
  *     else:
  *         use_setstate = False             # <<<<<<<<<<<<<<
  *     if use_setstate:
- *         return __pyx_unpickle_Missile2d, (type(self), 0x37d0dfb, None), state
+ *         return __pyx_unpickle_Missile2d, (type(self), 0x96d6a70, None), state
  */
   /*else*/ {
     __pyx_v_use_setstate = 0;
@@ -14937,89 +15792,89 @@ static PyObject *__pyx_pf_5drone_9Missile2d_12__reduce_cython__(struct __pyx_obj
  *     else:
  *         use_setstate = False
  *     if use_setstate:             # <<<<<<<<<<<<<<
- *         return __pyx_unpickle_Missile2d, (type(self), 0x37d0dfb, None), state
+ *         return __pyx_unpickle_Missile2d, (type(self), 0x96d6a70, None), state
  *     else:
  */
-  __pyx_t_11 = (__pyx_v_use_setstate != 0);
-  if (__pyx_t_11) {
+  __pyx_t_13 = (__pyx_v_use_setstate != 0);
+  if (__pyx_t_13) {
 
     /* "(tree fragment)":13
  *         use_setstate = False
  *     if use_setstate:
- *         return __pyx_unpickle_Missile2d, (type(self), 0x37d0dfb, None), state             # <<<<<<<<<<<<<<
+ *         return __pyx_unpickle_Missile2d, (type(self), 0x96d6a70, None), state             # <<<<<<<<<<<<<<
  *     else:
- *         return __pyx_unpickle_Missile2d, (type(self), 0x37d0dfb, state)
+ *         return __pyx_unpickle_Missile2d, (type(self), 0x96d6a70, state)
  */
     __Pyx_XDECREF(__pyx_r);
-    __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_pyx_unpickle_Missile2d); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 13, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_9 = PyTuple_New(3); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 13, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
+    __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_n_s_pyx_unpickle_Missile2d); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 13, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_10);
+    __pyx_t_11 = PyTuple_New(3); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 13, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_11);
     __Pyx_INCREF(((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
     __Pyx_GIVEREF(((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
-    PyTuple_SET_ITEM(__pyx_t_9, 0, ((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
-    __Pyx_INCREF(__pyx_int_58527227);
-    __Pyx_GIVEREF(__pyx_int_58527227);
-    PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_int_58527227);
+    PyTuple_SET_ITEM(__pyx_t_11, 0, ((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
+    __Pyx_INCREF(__pyx_int_158165616);
+    __Pyx_GIVEREF(__pyx_int_158165616);
+    PyTuple_SET_ITEM(__pyx_t_11, 1, __pyx_int_158165616);
     __Pyx_INCREF(Py_None);
     __Pyx_GIVEREF(Py_None);
-    PyTuple_SET_ITEM(__pyx_t_9, 2, Py_None);
-    __pyx_t_7 = PyTuple_New(3); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 13, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_GIVEREF(__pyx_t_8);
-    PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_8);
-    __Pyx_GIVEREF(__pyx_t_9);
-    PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_t_9);
+    PyTuple_SET_ITEM(__pyx_t_11, 2, Py_None);
+    __pyx_t_9 = PyTuple_New(3); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 13, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_9);
+    __Pyx_GIVEREF(__pyx_t_10);
+    PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_10);
+    __Pyx_GIVEREF(__pyx_t_11);
+    PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_11);
     __Pyx_INCREF(__pyx_v_state);
     __Pyx_GIVEREF(__pyx_v_state);
-    PyTuple_SET_ITEM(__pyx_t_7, 2, __pyx_v_state);
-    __pyx_t_8 = 0;
+    PyTuple_SET_ITEM(__pyx_t_9, 2, __pyx_v_state);
+    __pyx_t_10 = 0;
+    __pyx_t_11 = 0;
+    __pyx_r = __pyx_t_9;
     __pyx_t_9 = 0;
-    __pyx_r = __pyx_t_7;
-    __pyx_t_7 = 0;
     goto __pyx_L0;
 
     /* "(tree fragment)":12
  *     else:
  *         use_setstate = False
  *     if use_setstate:             # <<<<<<<<<<<<<<
- *         return __pyx_unpickle_Missile2d, (type(self), 0x37d0dfb, None), state
+ *         return __pyx_unpickle_Missile2d, (type(self), 0x96d6a70, None), state
  *     else:
  */
   }
 
   /* "(tree fragment)":15
- *         return __pyx_unpickle_Missile2d, (type(self), 0x37d0dfb, None), state
+ *         return __pyx_unpickle_Missile2d, (type(self), 0x96d6a70, None), state
  *     else:
- *         return __pyx_unpickle_Missile2d, (type(self), 0x37d0dfb, state)             # <<<<<<<<<<<<<<
+ *         return __pyx_unpickle_Missile2d, (type(self), 0x96d6a70, state)             # <<<<<<<<<<<<<<
  * def __setstate_cython__(self, __pyx_state):
  *     __pyx_unpickle_Missile2d__set_state(self, __pyx_state)
  */
   /*else*/ {
     __Pyx_XDECREF(__pyx_r);
-    __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_pyx_unpickle_Missile2d); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 15, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_9 = PyTuple_New(3); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 15, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_n_s_pyx_unpickle_Missile2d); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 15, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
+    __pyx_t_11 = PyTuple_New(3); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 15, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_11);
     __Pyx_INCREF(((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
     __Pyx_GIVEREF(((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
-    PyTuple_SET_ITEM(__pyx_t_9, 0, ((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
-    __Pyx_INCREF(__pyx_int_58527227);
-    __Pyx_GIVEREF(__pyx_int_58527227);
-    PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_int_58527227);
+    PyTuple_SET_ITEM(__pyx_t_11, 0, ((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
+    __Pyx_INCREF(__pyx_int_158165616);
+    __Pyx_GIVEREF(__pyx_int_158165616);
+    PyTuple_SET_ITEM(__pyx_t_11, 1, __pyx_int_158165616);
     __Pyx_INCREF(__pyx_v_state);
     __Pyx_GIVEREF(__pyx_v_state);
-    PyTuple_SET_ITEM(__pyx_t_9, 2, __pyx_v_state);
-    __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 15, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __Pyx_GIVEREF(__pyx_t_7);
-    PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_7);
+    PyTuple_SET_ITEM(__pyx_t_11, 2, __pyx_v_state);
+    __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 15, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_10);
     __Pyx_GIVEREF(__pyx_t_9);
-    PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_t_9);
-    __pyx_t_7 = 0;
+    PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_9);
+    __Pyx_GIVEREF(__pyx_t_11);
+    PyTuple_SET_ITEM(__pyx_t_10, 1, __pyx_t_11);
     __pyx_t_9 = 0;
-    __pyx_r = __pyx_t_8;
-    __pyx_t_8 = 0;
+    __pyx_t_11 = 0;
+    __pyx_r = __pyx_t_10;
+    __pyx_t_10 = 0;
     goto __pyx_L0;
   }
 
@@ -15040,6 +15895,8 @@ static PyObject *__pyx_pf_5drone_9Missile2d_12__reduce_cython__(struct __pyx_obj
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
   __Pyx_XDECREF(__pyx_t_9);
+  __Pyx_XDECREF(__pyx_t_10);
+  __Pyx_XDECREF(__pyx_t_11);
   __Pyx_AddTraceback("drone.Missile2d.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -15052,26 +15909,26 @@ static PyObject *__pyx_pf_5drone_9Missile2d_12__reduce_cython__(struct __pyx_obj
 
 /* "(tree fragment)":16
  *     else:
- *         return __pyx_unpickle_Missile2d, (type(self), 0x37d0dfb, state)
+ *         return __pyx_unpickle_Missile2d, (type(self), 0x96d6a70, state)
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_Missile2d__set_state(self, __pyx_state)
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5drone_9Missile2d_15__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
-static char __pyx_doc_5drone_9Missile2d_14__setstate_cython__[] = "Missile2d.__setstate_cython__(self, __pyx_state)";
-static PyObject *__pyx_pw_5drone_9Missile2d_15__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pw_5drone_9Missile2d_17__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
+static char __pyx_doc_5drone_9Missile2d_16__setstate_cython__[] = "Missile2d.__setstate_cython__(self, __pyx_state)";
+static PyObject *__pyx_pw_5drone_9Missile2d_17__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__setstate_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_5drone_9Missile2d_14__setstate_cython__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
+  __pyx_r = __pyx_pf_5drone_9Missile2d_16__setstate_cython__(((struct __pyx_obj_5drone_Missile2d *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5drone_9Missile2d_14__setstate_cython__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_5drone_9Missile2d_16__setstate_cython__(struct __pyx_obj_5drone_Missile2d *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -15081,7 +15938,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_14__setstate_cython__(struct __pyx_o
   __Pyx_RefNannySetupContext("__setstate_cython__", 0);
 
   /* "(tree fragment)":17
- *         return __pyx_unpickle_Missile2d, (type(self), 0x37d0dfb, state)
+ *         return __pyx_unpickle_Missile2d, (type(self), 0x96d6a70, state)
  * def __setstate_cython__(self, __pyx_state):
  *     __pyx_unpickle_Missile2d__set_state(self, __pyx_state)             # <<<<<<<<<<<<<<
  */
@@ -15092,7 +15949,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_14__setstate_cython__(struct __pyx_o
 
   /* "(tree fragment)":16
  *     else:
- *         return __pyx_unpickle_Missile2d, (type(self), 0x37d0dfb, state)
+ *         return __pyx_unpickle_Missile2d, (type(self), 0x96d6a70, state)
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_Missile2d__set_state(self, __pyx_state)
  */
@@ -15110,7 +15967,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_14__setstate_cython__(struct __pyx_o
   return __pyx_r;
 }
 
-/* "drone.pyx":425
+/* "drone.pyx":434
  * 
  * 
  * cpdef real test(int a):             # <<<<<<<<<<<<<<
@@ -15130,19 +15987,19 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_5drone_test(int __pyx_v_a, CYTHON_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("test", 0);
 
-  /* "drone.pyx":426
+  /* "drone.pyx":435
  * 
  * cpdef real test(int a):
  *     cdef Vec2 v = Vec2(1,2)             # <<<<<<<<<<<<<<
  *     cdef real b = a
  *     return v.x + b
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_tuple_, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 426, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_7easyvec_7vectors_Vec2), __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 435, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_v = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "drone.pyx":427
+  /* "drone.pyx":436
  * cpdef real test(int a):
  *     cdef Vec2 v = Vec2(1,2)
  *     cdef real b = a             # <<<<<<<<<<<<<<
@@ -15150,7 +16007,7 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_5drone_test(int __pyx_v_a, CYTHON_
  */
   __pyx_v_b = __pyx_v_a;
 
-  /* "drone.pyx":428
+  /* "drone.pyx":437
  *     cdef Vec2 v = Vec2(1,2)
  *     cdef real b = a
  *     return v.x + b             # <<<<<<<<<<<<<<
@@ -15158,7 +16015,7 @@ static __pyx_t_7easyvec_7vectors_real __pyx_f_5drone_test(int __pyx_v_a, CYTHON_
   __pyx_r = (__pyx_v_v->x + __pyx_v_b);
   goto __pyx_L0;
 
-  /* "drone.pyx":425
+  /* "drone.pyx":434
  * 
  * 
  * cpdef real test(int a):             # <<<<<<<<<<<<<<
@@ -15189,7 +16046,7 @@ static PyObject *__pyx_pw_5drone_15test(PyObject *__pyx_self, PyObject *__pyx_ar
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("test (wrapper)", 0);
   assert(__pyx_arg_a); {
-    __pyx_v_a = __Pyx_PyInt_As_int(__pyx_arg_a); if (unlikely((__pyx_v_a == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 425, __pyx_L3_error)
+    __pyx_v_a = __Pyx_PyInt_As_int(__pyx_arg_a); if (unlikely((__pyx_v_a == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 434, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -15213,7 +16070,7 @@ static PyObject *__pyx_pf_5drone_14test(CYTHON_UNUSED PyObject *__pyx_self, int 
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("test", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5drone_test(__pyx_v_a, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 425, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_5drone_test(__pyx_v_a, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 434, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -15332,18 +16189,18 @@ static PyObject *__pyx_pf_5drone_16__pyx_unpickle_Drone2d(CYTHON_UNUSED PyObject
   /* "(tree fragment)":4
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
- *     if __pyx_checksum != 0xbe344c3:             # <<<<<<<<<<<<<<
+ *     if __pyx_checksum != 0xbdc517b:             # <<<<<<<<<<<<<<
  *         from pickle import PickleError as __pyx_PickleError
- *         raise __pyx_PickleError("Incompatible checksums (%s vs 0xbe344c3 = (Cx, F_max, J, L, g, m, mu_omega, state, t, tmp1, tmp2, tmp3, tmp4))" % __pyx_checksum)
+ *         raise __pyx_PickleError("Incompatible checksums (%s vs 0xbdc517b = (Cx, F_max, J, L, g, m, mu_omega, n, state, t, tmp1, tmp2, tmp3, tmp4))" % __pyx_checksum)
  */
-  __pyx_t_1 = ((__pyx_v___pyx_checksum != 0xbe344c3) != 0);
+  __pyx_t_1 = ((__pyx_v___pyx_checksum != 0xbdc517b) != 0);
   if (__pyx_t_1) {
 
     /* "(tree fragment)":5
  *     cdef object __pyx_result
- *     if __pyx_checksum != 0xbe344c3:
+ *     if __pyx_checksum != 0xbdc517b:
  *         from pickle import PickleError as __pyx_PickleError             # <<<<<<<<<<<<<<
- *         raise __pyx_PickleError("Incompatible checksums (%s vs 0xbe344c3 = (Cx, F_max, J, L, g, m, mu_omega, state, t, tmp1, tmp2, tmp3, tmp4))" % __pyx_checksum)
+ *         raise __pyx_PickleError("Incompatible checksums (%s vs 0xbdc517b = (Cx, F_max, J, L, g, m, mu_omega, n, state, t, tmp1, tmp2, tmp3, tmp4))" % __pyx_checksum)
  *     __pyx_result = Drone2d.__new__(__pyx_type)
  */
     __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 5, __pyx_L1_error)
@@ -15362,15 +16219,15 @@ static PyObject *__pyx_pf_5drone_16__pyx_unpickle_Drone2d(CYTHON_UNUSED PyObject
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
     /* "(tree fragment)":6
- *     if __pyx_checksum != 0xbe344c3:
+ *     if __pyx_checksum != 0xbdc517b:
  *         from pickle import PickleError as __pyx_PickleError
- *         raise __pyx_PickleError("Incompatible checksums (%s vs 0xbe344c3 = (Cx, F_max, J, L, g, m, mu_omega, state, t, tmp1, tmp2, tmp3, tmp4))" % __pyx_checksum)             # <<<<<<<<<<<<<<
+ *         raise __pyx_PickleError("Incompatible checksums (%s vs 0xbdc517b = (Cx, F_max, J, L, g, m, mu_omega, n, state, t, tmp1, tmp2, tmp3, tmp4))" % __pyx_checksum)             # <<<<<<<<<<<<<<
  *     __pyx_result = Drone2d.__new__(__pyx_type)
  *     if __pyx_state is not None:
  */
     __pyx_t_2 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 6, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_4 = __Pyx_PyString_Format(__pyx_kp_s_Incompatible_checksums_s_vs_0xbe, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 6, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyString_Format(__pyx_kp_s_Incompatible_checksums_s_vs_0xbd, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 6, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_INCREF(__pyx_v___pyx_PickleError);
@@ -15397,15 +16254,15 @@ static PyObject *__pyx_pf_5drone_16__pyx_unpickle_Drone2d(CYTHON_UNUSED PyObject
     /* "(tree fragment)":4
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
- *     if __pyx_checksum != 0xbe344c3:             # <<<<<<<<<<<<<<
+ *     if __pyx_checksum != 0xbdc517b:             # <<<<<<<<<<<<<<
  *         from pickle import PickleError as __pyx_PickleError
- *         raise __pyx_PickleError("Incompatible checksums (%s vs 0xbe344c3 = (Cx, F_max, J, L, g, m, mu_omega, state, t, tmp1, tmp2, tmp3, tmp4))" % __pyx_checksum)
+ *         raise __pyx_PickleError("Incompatible checksums (%s vs 0xbdc517b = (Cx, F_max, J, L, g, m, mu_omega, n, state, t, tmp1, tmp2, tmp3, tmp4))" % __pyx_checksum)
  */
   }
 
   /* "(tree fragment)":7
  *         from pickle import PickleError as __pyx_PickleError
- *         raise __pyx_PickleError("Incompatible checksums (%s vs 0xbe344c3 = (Cx, F_max, J, L, g, m, mu_omega, state, t, tmp1, tmp2, tmp3, tmp4))" % __pyx_checksum)
+ *         raise __pyx_PickleError("Incompatible checksums (%s vs 0xbdc517b = (Cx, F_max, J, L, g, m, mu_omega, n, state, t, tmp1, tmp2, tmp3, tmp4))" % __pyx_checksum)
  *     __pyx_result = Drone2d.__new__(__pyx_type)             # <<<<<<<<<<<<<<
  *     if __pyx_state is not None:
  *         __pyx_unpickle_Drone2d__set_state(<Drone2d> __pyx_result, __pyx_state)
@@ -15431,7 +16288,7 @@ static PyObject *__pyx_pf_5drone_16__pyx_unpickle_Drone2d(CYTHON_UNUSED PyObject
   __pyx_t_3 = 0;
 
   /* "(tree fragment)":8
- *         raise __pyx_PickleError("Incompatible checksums (%s vs 0xbe344c3 = (Cx, F_max, J, L, g, m, mu_omega, state, t, tmp1, tmp2, tmp3, tmp4))" % __pyx_checksum)
+ *         raise __pyx_PickleError("Incompatible checksums (%s vs 0xbdc517b = (Cx, F_max, J, L, g, m, mu_omega, n, state, t, tmp1, tmp2, tmp3, tmp4))" % __pyx_checksum)
  *     __pyx_result = Drone2d.__new__(__pyx_type)
  *     if __pyx_state is not None:             # <<<<<<<<<<<<<<
  *         __pyx_unpickle_Drone2d__set_state(<Drone2d> __pyx_result, __pyx_state)
@@ -15454,7 +16311,7 @@ static PyObject *__pyx_pf_5drone_16__pyx_unpickle_Drone2d(CYTHON_UNUSED PyObject
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
     /* "(tree fragment)":8
- *         raise __pyx_PickleError("Incompatible checksums (%s vs 0xbe344c3 = (Cx, F_max, J, L, g, m, mu_omega, state, t, tmp1, tmp2, tmp3, tmp4))" % __pyx_checksum)
+ *         raise __pyx_PickleError("Incompatible checksums (%s vs 0xbdc517b = (Cx, F_max, J, L, g, m, mu_omega, n, state, t, tmp1, tmp2, tmp3, tmp4))" % __pyx_checksum)
  *     __pyx_result = Drone2d.__new__(__pyx_type)
  *     if __pyx_state is not None:             # <<<<<<<<<<<<<<
  *         __pyx_unpickle_Drone2d__set_state(<Drone2d> __pyx_result, __pyx_state)
@@ -15467,7 +16324,7 @@ static PyObject *__pyx_pf_5drone_16__pyx_unpickle_Drone2d(CYTHON_UNUSED PyObject
  *         __pyx_unpickle_Drone2d__set_state(<Drone2d> __pyx_result, __pyx_state)
  *     return __pyx_result             # <<<<<<<<<<<<<<
  * cdef __pyx_unpickle_Drone2d__set_state(Drone2d __pyx_result, tuple __pyx_state):
- *     __pyx_result.Cx = __pyx_state[0]; __pyx_result.F_max = __pyx_state[1]; __pyx_result.J = __pyx_state[2]; __pyx_result.L = __pyx_state[3]; __pyx_result.g = __pyx_state[4]; __pyx_result.m = __pyx_state[5]; __pyx_result.mu_omega = __pyx_state[6]; __pyx_result.state = __pyx_state[7]; __pyx_result.t = __pyx_state[8]; __pyx_result.tmp1 = __pyx_state[9]; __pyx_result.tmp2 = __pyx_state[10]; __pyx_result.tmp3 = __pyx_state[11]; __pyx_result.tmp4 = __pyx_state[12]
+ *     __pyx_result.Cx = __pyx_state[0]; __pyx_result.F_max = __pyx_state[1]; __pyx_result.J = __pyx_state[2]; __pyx_result.L = __pyx_state[3]; __pyx_result.g = __pyx_state[4]; __pyx_result.m = __pyx_state[5]; __pyx_result.mu_omega = __pyx_state[6]; __pyx_result.n = __pyx_state[7]; __pyx_result.state = __pyx_state[8]; __pyx_result.t = __pyx_state[9]; __pyx_result.tmp1 = __pyx_state[10]; __pyx_result.tmp2 = __pyx_state[11]; __pyx_result.tmp3 = __pyx_state[12]; __pyx_result.tmp4 = __pyx_state[13]
  */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v___pyx_result);
@@ -15500,22 +16357,23 @@ static PyObject *__pyx_pf_5drone_16__pyx_unpickle_Drone2d(CYTHON_UNUSED PyObject
  *         __pyx_unpickle_Drone2d__set_state(<Drone2d> __pyx_result, __pyx_state)
  *     return __pyx_result
  * cdef __pyx_unpickle_Drone2d__set_state(Drone2d __pyx_result, tuple __pyx_state):             # <<<<<<<<<<<<<<
- *     __pyx_result.Cx = __pyx_state[0]; __pyx_result.F_max = __pyx_state[1]; __pyx_result.J = __pyx_state[2]; __pyx_result.L = __pyx_state[3]; __pyx_result.g = __pyx_state[4]; __pyx_result.m = __pyx_state[5]; __pyx_result.mu_omega = __pyx_state[6]; __pyx_result.state = __pyx_state[7]; __pyx_result.t = __pyx_state[8]; __pyx_result.tmp1 = __pyx_state[9]; __pyx_result.tmp2 = __pyx_state[10]; __pyx_result.tmp3 = __pyx_state[11]; __pyx_result.tmp4 = __pyx_state[12]
- *     if len(__pyx_state) > 13 and hasattr(__pyx_result, '__dict__'):
+ *     __pyx_result.Cx = __pyx_state[0]; __pyx_result.F_max = __pyx_state[1]; __pyx_result.J = __pyx_state[2]; __pyx_result.L = __pyx_state[3]; __pyx_result.g = __pyx_state[4]; __pyx_result.m = __pyx_state[5]; __pyx_result.mu_omega = __pyx_state[6]; __pyx_result.n = __pyx_state[7]; __pyx_result.state = __pyx_state[8]; __pyx_result.t = __pyx_state[9]; __pyx_result.tmp1 = __pyx_state[10]; __pyx_result.tmp2 = __pyx_state[11]; __pyx_result.tmp3 = __pyx_state[12]; __pyx_result.tmp4 = __pyx_state[13]
+ *     if len(__pyx_state) > 14 and hasattr(__pyx_result, '__dict__'):
  */
 
 static PyObject *__pyx_f_5drone___pyx_unpickle_Drone2d__set_state(struct __pyx_obj_5drone_Drone2d *__pyx_v___pyx_result, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   double __pyx_t_1;
-  __Pyx_memviewslice __pyx_t_2 = { 0, 0, { 0 }, { 0 }, { 0 } };
-  int __pyx_t_3;
-  Py_ssize_t __pyx_t_4;
-  int __pyx_t_5;
+  int __pyx_t_2;
+  __Pyx_memviewslice __pyx_t_3 = { 0, 0, { 0 }, { 0 }, { 0 } };
+  int __pyx_t_4;
+  Py_ssize_t __pyx_t_5;
   int __pyx_t_6;
-  PyObject *__pyx_t_7 = NULL;
+  int __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
   PyObject *__pyx_t_9 = NULL;
+  PyObject *__pyx_t_10 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -15524,9 +16382,9 @@ static PyObject *__pyx_f_5drone___pyx_unpickle_Drone2d__set_state(struct __pyx_o
   /* "(tree fragment)":12
  *     return __pyx_result
  * cdef __pyx_unpickle_Drone2d__set_state(Drone2d __pyx_result, tuple __pyx_state):
- *     __pyx_result.Cx = __pyx_state[0]; __pyx_result.F_max = __pyx_state[1]; __pyx_result.J = __pyx_state[2]; __pyx_result.L = __pyx_state[3]; __pyx_result.g = __pyx_state[4]; __pyx_result.m = __pyx_state[5]; __pyx_result.mu_omega = __pyx_state[6]; __pyx_result.state = __pyx_state[7]; __pyx_result.t = __pyx_state[8]; __pyx_result.tmp1 = __pyx_state[9]; __pyx_result.tmp2 = __pyx_state[10]; __pyx_result.tmp3 = __pyx_state[11]; __pyx_result.tmp4 = __pyx_state[12]             # <<<<<<<<<<<<<<
- *     if len(__pyx_state) > 13 and hasattr(__pyx_result, '__dict__'):
- *         __pyx_result.__dict__.update(__pyx_state[13])
+ *     __pyx_result.Cx = __pyx_state[0]; __pyx_result.F_max = __pyx_state[1]; __pyx_result.J = __pyx_state[2]; __pyx_result.L = __pyx_state[3]; __pyx_result.g = __pyx_state[4]; __pyx_result.m = __pyx_state[5]; __pyx_result.mu_omega = __pyx_state[6]; __pyx_result.n = __pyx_state[7]; __pyx_result.state = __pyx_state[8]; __pyx_result.t = __pyx_state[9]; __pyx_result.tmp1 = __pyx_state[10]; __pyx_result.tmp2 = __pyx_state[11]; __pyx_result.tmp3 = __pyx_state[12]; __pyx_result.tmp4 = __pyx_state[13]             # <<<<<<<<<<<<<<
+ *     if len(__pyx_state) > 14 and hasattr(__pyx_result, '__dict__'):
+ *         __pyx_result.__dict__.update(__pyx_state[14])
  */
   if (unlikely(__pyx_v___pyx_state == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
@@ -15574,113 +16432,119 @@ static PyObject *__pyx_f_5drone___pyx_unpickle_Drone2d__set_state(struct __pyx_o
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
     __PYX_ERR(1, 12, __pyx_L1_error)
   }
-  __pyx_t_2 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(PyTuple_GET_ITEM(__pyx_v___pyx_state, 7), PyBUF_WRITABLE); if (unlikely(!__pyx_t_2.memview)) __PYX_ERR(1, 12, __pyx_L1_error)
-  __PYX_XDEC_MEMVIEW(&__pyx_v___pyx_result->state, 0);
-  __pyx_v___pyx_result->state = __pyx_t_2;
-  __pyx_t_2.memview = NULL;
-  __pyx_t_2.data = NULL;
+  __pyx_t_2 = __Pyx_PyInt_As_int(PyTuple_GET_ITEM(__pyx_v___pyx_state, 7)); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 12, __pyx_L1_error)
+  __pyx_v___pyx_result->n = __pyx_t_2;
   if (unlikely(__pyx_v___pyx_state == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
     __PYX_ERR(1, 12, __pyx_L1_error)
   }
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(PyTuple_GET_ITEM(__pyx_v___pyx_state, 8)); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 12, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(PyTuple_GET_ITEM(__pyx_v___pyx_state, 8), PyBUF_WRITABLE); if (unlikely(!__pyx_t_3.memview)) __PYX_ERR(1, 12, __pyx_L1_error)
+  __PYX_XDEC_MEMVIEW(&__pyx_v___pyx_result->state, 0);
+  __pyx_v___pyx_result->state = __pyx_t_3;
+  __pyx_t_3.memview = NULL;
+  __pyx_t_3.data = NULL;
+  if (unlikely(__pyx_v___pyx_state == Py_None)) {
+    PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+    __PYX_ERR(1, 12, __pyx_L1_error)
+  }
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(PyTuple_GET_ITEM(__pyx_v___pyx_state, 9)); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 12, __pyx_L1_error)
   __pyx_v___pyx_result->t = __pyx_t_1;
   if (unlikely(__pyx_v___pyx_state == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
     __PYX_ERR(1, 12, __pyx_L1_error)
   }
-  __pyx_t_2 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(PyTuple_GET_ITEM(__pyx_v___pyx_state, 9), PyBUF_WRITABLE); if (unlikely(!__pyx_t_2.memview)) __PYX_ERR(1, 12, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(PyTuple_GET_ITEM(__pyx_v___pyx_state, 10), PyBUF_WRITABLE); if (unlikely(!__pyx_t_3.memview)) __PYX_ERR(1, 12, __pyx_L1_error)
   __PYX_XDEC_MEMVIEW(&__pyx_v___pyx_result->tmp1, 0);
-  __pyx_v___pyx_result->tmp1 = __pyx_t_2;
-  __pyx_t_2.memview = NULL;
-  __pyx_t_2.data = NULL;
+  __pyx_v___pyx_result->tmp1 = __pyx_t_3;
+  __pyx_t_3.memview = NULL;
+  __pyx_t_3.data = NULL;
   if (unlikely(__pyx_v___pyx_state == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
     __PYX_ERR(1, 12, __pyx_L1_error)
   }
-  __pyx_t_2 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(PyTuple_GET_ITEM(__pyx_v___pyx_state, 10), PyBUF_WRITABLE); if (unlikely(!__pyx_t_2.memview)) __PYX_ERR(1, 12, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(PyTuple_GET_ITEM(__pyx_v___pyx_state, 11), PyBUF_WRITABLE); if (unlikely(!__pyx_t_3.memview)) __PYX_ERR(1, 12, __pyx_L1_error)
   __PYX_XDEC_MEMVIEW(&__pyx_v___pyx_result->tmp2, 0);
-  __pyx_v___pyx_result->tmp2 = __pyx_t_2;
-  __pyx_t_2.memview = NULL;
-  __pyx_t_2.data = NULL;
+  __pyx_v___pyx_result->tmp2 = __pyx_t_3;
+  __pyx_t_3.memview = NULL;
+  __pyx_t_3.data = NULL;
   if (unlikely(__pyx_v___pyx_state == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
     __PYX_ERR(1, 12, __pyx_L1_error)
   }
-  __pyx_t_2 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(PyTuple_GET_ITEM(__pyx_v___pyx_state, 11), PyBUF_WRITABLE); if (unlikely(!__pyx_t_2.memview)) __PYX_ERR(1, 12, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(PyTuple_GET_ITEM(__pyx_v___pyx_state, 12), PyBUF_WRITABLE); if (unlikely(!__pyx_t_3.memview)) __PYX_ERR(1, 12, __pyx_L1_error)
   __PYX_XDEC_MEMVIEW(&__pyx_v___pyx_result->tmp3, 0);
-  __pyx_v___pyx_result->tmp3 = __pyx_t_2;
-  __pyx_t_2.memview = NULL;
-  __pyx_t_2.data = NULL;
+  __pyx_v___pyx_result->tmp3 = __pyx_t_3;
+  __pyx_t_3.memview = NULL;
+  __pyx_t_3.data = NULL;
   if (unlikely(__pyx_v___pyx_state == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
     __PYX_ERR(1, 12, __pyx_L1_error)
   }
-  __pyx_t_2 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(PyTuple_GET_ITEM(__pyx_v___pyx_state, 12), PyBUF_WRITABLE); if (unlikely(!__pyx_t_2.memview)) __PYX_ERR(1, 12, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(PyTuple_GET_ITEM(__pyx_v___pyx_state, 13), PyBUF_WRITABLE); if (unlikely(!__pyx_t_3.memview)) __PYX_ERR(1, 12, __pyx_L1_error)
   __PYX_XDEC_MEMVIEW(&__pyx_v___pyx_result->tmp4, 0);
-  __pyx_v___pyx_result->tmp4 = __pyx_t_2;
-  __pyx_t_2.memview = NULL;
-  __pyx_t_2.data = NULL;
+  __pyx_v___pyx_result->tmp4 = __pyx_t_3;
+  __pyx_t_3.memview = NULL;
+  __pyx_t_3.data = NULL;
 
   /* "(tree fragment)":13
  * cdef __pyx_unpickle_Drone2d__set_state(Drone2d __pyx_result, tuple __pyx_state):
- *     __pyx_result.Cx = __pyx_state[0]; __pyx_result.F_max = __pyx_state[1]; __pyx_result.J = __pyx_state[2]; __pyx_result.L = __pyx_state[3]; __pyx_result.g = __pyx_state[4]; __pyx_result.m = __pyx_state[5]; __pyx_result.mu_omega = __pyx_state[6]; __pyx_result.state = __pyx_state[7]; __pyx_result.t = __pyx_state[8]; __pyx_result.tmp1 = __pyx_state[9]; __pyx_result.tmp2 = __pyx_state[10]; __pyx_result.tmp3 = __pyx_state[11]; __pyx_result.tmp4 = __pyx_state[12]
- *     if len(__pyx_state) > 13 and hasattr(__pyx_result, '__dict__'):             # <<<<<<<<<<<<<<
- *         __pyx_result.__dict__.update(__pyx_state[13])
+ *     __pyx_result.Cx = __pyx_state[0]; __pyx_result.F_max = __pyx_state[1]; __pyx_result.J = __pyx_state[2]; __pyx_result.L = __pyx_state[3]; __pyx_result.g = __pyx_state[4]; __pyx_result.m = __pyx_state[5]; __pyx_result.mu_omega = __pyx_state[6]; __pyx_result.n = __pyx_state[7]; __pyx_result.state = __pyx_state[8]; __pyx_result.t = __pyx_state[9]; __pyx_result.tmp1 = __pyx_state[10]; __pyx_result.tmp2 = __pyx_state[11]; __pyx_result.tmp3 = __pyx_state[12]; __pyx_result.tmp4 = __pyx_state[13]
+ *     if len(__pyx_state) > 14 and hasattr(__pyx_result, '__dict__'):             # <<<<<<<<<<<<<<
+ *         __pyx_result.__dict__.update(__pyx_state[14])
  */
   if (unlikely(__pyx_v___pyx_state == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
     __PYX_ERR(1, 13, __pyx_L1_error)
   }
-  __pyx_t_4 = PyTuple_GET_SIZE(__pyx_v___pyx_state); if (unlikely(__pyx_t_4 == ((Py_ssize_t)-1))) __PYX_ERR(1, 13, __pyx_L1_error)
-  __pyx_t_5 = ((__pyx_t_4 > 13) != 0);
-  if (__pyx_t_5) {
+  __pyx_t_5 = PyTuple_GET_SIZE(__pyx_v___pyx_state); if (unlikely(__pyx_t_5 == ((Py_ssize_t)-1))) __PYX_ERR(1, 13, __pyx_L1_error)
+  __pyx_t_6 = ((__pyx_t_5 > 14) != 0);
+  if (__pyx_t_6) {
   } else {
-    __pyx_t_3 = __pyx_t_5;
+    __pyx_t_4 = __pyx_t_6;
     goto __pyx_L4_bool_binop_done;
   }
-  __pyx_t_5 = __Pyx_HasAttr(((PyObject *)__pyx_v___pyx_result), __pyx_n_s_dict); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(1, 13, __pyx_L1_error)
-  __pyx_t_6 = (__pyx_t_5 != 0);
-  __pyx_t_3 = __pyx_t_6;
+  __pyx_t_6 = __Pyx_HasAttr(((PyObject *)__pyx_v___pyx_result), __pyx_n_s_dict); if (unlikely(__pyx_t_6 == ((int)-1))) __PYX_ERR(1, 13, __pyx_L1_error)
+  __pyx_t_7 = (__pyx_t_6 != 0);
+  __pyx_t_4 = __pyx_t_7;
   __pyx_L4_bool_binop_done:;
-  if (__pyx_t_3) {
+  if (__pyx_t_4) {
 
     /* "(tree fragment)":14
- *     __pyx_result.Cx = __pyx_state[0]; __pyx_result.F_max = __pyx_state[1]; __pyx_result.J = __pyx_state[2]; __pyx_result.L = __pyx_state[3]; __pyx_result.g = __pyx_state[4]; __pyx_result.m = __pyx_state[5]; __pyx_result.mu_omega = __pyx_state[6]; __pyx_result.state = __pyx_state[7]; __pyx_result.t = __pyx_state[8]; __pyx_result.tmp1 = __pyx_state[9]; __pyx_result.tmp2 = __pyx_state[10]; __pyx_result.tmp3 = __pyx_state[11]; __pyx_result.tmp4 = __pyx_state[12]
- *     if len(__pyx_state) > 13 and hasattr(__pyx_result, '__dict__'):
- *         __pyx_result.__dict__.update(__pyx_state[13])             # <<<<<<<<<<<<<<
+ *     __pyx_result.Cx = __pyx_state[0]; __pyx_result.F_max = __pyx_state[1]; __pyx_result.J = __pyx_state[2]; __pyx_result.L = __pyx_state[3]; __pyx_result.g = __pyx_state[4]; __pyx_result.m = __pyx_state[5]; __pyx_result.mu_omega = __pyx_state[6]; __pyx_result.n = __pyx_state[7]; __pyx_result.state = __pyx_state[8]; __pyx_result.t = __pyx_state[9]; __pyx_result.tmp1 = __pyx_state[10]; __pyx_result.tmp2 = __pyx_state[11]; __pyx_result.tmp3 = __pyx_state[12]; __pyx_result.tmp4 = __pyx_state[13]
+ *     if len(__pyx_state) > 14 and hasattr(__pyx_result, '__dict__'):
+ *         __pyx_result.__dict__.update(__pyx_state[14])             # <<<<<<<<<<<<<<
  */
-    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v___pyx_result), __pyx_n_s_dict); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 14, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_update); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 14, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v___pyx_result), __pyx_n_s_dict); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 14, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+    __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_update); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 14, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_10);
+    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     if (unlikely(__pyx_v___pyx_state == Py_None)) {
       PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
       __PYX_ERR(1, 14, __pyx_L1_error)
     }
-    __pyx_t_8 = NULL;
-    if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_9))) {
-      __pyx_t_8 = PyMethod_GET_SELF(__pyx_t_9);
-      if (likely(__pyx_t_8)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_9);
-        __Pyx_INCREF(__pyx_t_8);
+    __pyx_t_9 = NULL;
+    if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_10))) {
+      __pyx_t_9 = PyMethod_GET_SELF(__pyx_t_10);
+      if (likely(__pyx_t_9)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_10);
+        __Pyx_INCREF(__pyx_t_9);
         __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_9, function);
+        __Pyx_DECREF_SET(__pyx_t_10, function);
       }
     }
-    __pyx_t_7 = (__pyx_t_8) ? __Pyx_PyObject_Call2Args(__pyx_t_9, __pyx_t_8, PyTuple_GET_ITEM(__pyx_v___pyx_state, 13)) : __Pyx_PyObject_CallOneArg(__pyx_t_9, PyTuple_GET_ITEM(__pyx_v___pyx_state, 13));
-    __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-    if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 14, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+    __pyx_t_8 = (__pyx_t_9) ? __Pyx_PyObject_Call2Args(__pyx_t_10, __pyx_t_9, PyTuple_GET_ITEM(__pyx_v___pyx_state, 14)) : __Pyx_PyObject_CallOneArg(__pyx_t_10, PyTuple_GET_ITEM(__pyx_v___pyx_state, 14));
+    __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
+    if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 14, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_8);
+    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
     /* "(tree fragment)":13
  * cdef __pyx_unpickle_Drone2d__set_state(Drone2d __pyx_result, tuple __pyx_state):
- *     __pyx_result.Cx = __pyx_state[0]; __pyx_result.F_max = __pyx_state[1]; __pyx_result.J = __pyx_state[2]; __pyx_result.L = __pyx_state[3]; __pyx_result.g = __pyx_state[4]; __pyx_result.m = __pyx_state[5]; __pyx_result.mu_omega = __pyx_state[6]; __pyx_result.state = __pyx_state[7]; __pyx_result.t = __pyx_state[8]; __pyx_result.tmp1 = __pyx_state[9]; __pyx_result.tmp2 = __pyx_state[10]; __pyx_result.tmp3 = __pyx_state[11]; __pyx_result.tmp4 = __pyx_state[12]
- *     if len(__pyx_state) > 13 and hasattr(__pyx_result, '__dict__'):             # <<<<<<<<<<<<<<
- *         __pyx_result.__dict__.update(__pyx_state[13])
+ *     __pyx_result.Cx = __pyx_state[0]; __pyx_result.F_max = __pyx_state[1]; __pyx_result.J = __pyx_state[2]; __pyx_result.L = __pyx_state[3]; __pyx_result.g = __pyx_state[4]; __pyx_result.m = __pyx_state[5]; __pyx_result.mu_omega = __pyx_state[6]; __pyx_result.n = __pyx_state[7]; __pyx_result.state = __pyx_state[8]; __pyx_result.t = __pyx_state[9]; __pyx_result.tmp1 = __pyx_state[10]; __pyx_result.tmp2 = __pyx_state[11]; __pyx_result.tmp3 = __pyx_state[12]; __pyx_result.tmp4 = __pyx_state[13]
+ *     if len(__pyx_state) > 14 and hasattr(__pyx_result, '__dict__'):             # <<<<<<<<<<<<<<
+ *         __pyx_result.__dict__.update(__pyx_state[14])
  */
   }
 
@@ -15688,18 +16552,18 @@ static PyObject *__pyx_f_5drone___pyx_unpickle_Drone2d__set_state(struct __pyx_o
  *         __pyx_unpickle_Drone2d__set_state(<Drone2d> __pyx_result, __pyx_state)
  *     return __pyx_result
  * cdef __pyx_unpickle_Drone2d__set_state(Drone2d __pyx_result, tuple __pyx_state):             # <<<<<<<<<<<<<<
- *     __pyx_result.Cx = __pyx_state[0]; __pyx_result.F_max = __pyx_state[1]; __pyx_result.J = __pyx_state[2]; __pyx_result.L = __pyx_state[3]; __pyx_result.g = __pyx_state[4]; __pyx_result.m = __pyx_state[5]; __pyx_result.mu_omega = __pyx_state[6]; __pyx_result.state = __pyx_state[7]; __pyx_result.t = __pyx_state[8]; __pyx_result.tmp1 = __pyx_state[9]; __pyx_result.tmp2 = __pyx_state[10]; __pyx_result.tmp3 = __pyx_state[11]; __pyx_result.tmp4 = __pyx_state[12]
- *     if len(__pyx_state) > 13 and hasattr(__pyx_result, '__dict__'):
+ *     __pyx_result.Cx = __pyx_state[0]; __pyx_result.F_max = __pyx_state[1]; __pyx_result.J = __pyx_state[2]; __pyx_result.L = __pyx_state[3]; __pyx_result.g = __pyx_state[4]; __pyx_result.m = __pyx_state[5]; __pyx_result.mu_omega = __pyx_state[6]; __pyx_result.n = __pyx_state[7]; __pyx_result.state = __pyx_state[8]; __pyx_result.t = __pyx_state[9]; __pyx_result.tmp1 = __pyx_state[10]; __pyx_result.tmp2 = __pyx_state[11]; __pyx_result.tmp3 = __pyx_state[12]; __pyx_result.tmp4 = __pyx_state[13]
+ *     if len(__pyx_state) > 14 and hasattr(__pyx_result, '__dict__'):
  */
 
   /* function exit code */
   __pyx_r = Py_None; __Pyx_INCREF(Py_None);
   goto __pyx_L0;
   __pyx_L1_error:;
-  __PYX_XDEC_MEMVIEW(&__pyx_t_2, 1);
-  __Pyx_XDECREF(__pyx_t_7);
+  __PYX_XDEC_MEMVIEW(&__pyx_t_3, 1);
   __Pyx_XDECREF(__pyx_t_8);
   __Pyx_XDECREF(__pyx_t_9);
+  __Pyx_XDECREF(__pyx_t_10);
   __Pyx_AddTraceback("drone.__pyx_unpickle_Drone2d__set_state", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
@@ -15810,18 +16674,18 @@ static PyObject *__pyx_pf_5drone_18__pyx_unpickle_Missile2d(CYTHON_UNUSED PyObje
   /* "(tree fragment)":4
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
- *     if __pyx_checksum != 0x37d0dfb:             # <<<<<<<<<<<<<<
+ *     if __pyx_checksum != 0x96d6a70:             # <<<<<<<<<<<<<<
  *         from pickle import PickleError as __pyx_PickleError
- *         raise __pyx_PickleError("Incompatible checksums (%s vs 0x37d0dfb = (alpha, ay, state, tmp1, tmp2, tmp3, tmp4, vel_len))" % __pyx_checksum)
+ *         raise __pyx_PickleError("Incompatible checksums (%s vs 0x96d6a70 = (alpha, ay, n, state, t, tmp1, tmp2, tmp3, tmp4, vel_len))" % __pyx_checksum)
  */
-  __pyx_t_1 = ((__pyx_v___pyx_checksum != 0x37d0dfb) != 0);
+  __pyx_t_1 = ((__pyx_v___pyx_checksum != 0x96d6a70) != 0);
   if (__pyx_t_1) {
 
     /* "(tree fragment)":5
  *     cdef object __pyx_result
- *     if __pyx_checksum != 0x37d0dfb:
+ *     if __pyx_checksum != 0x96d6a70:
  *         from pickle import PickleError as __pyx_PickleError             # <<<<<<<<<<<<<<
- *         raise __pyx_PickleError("Incompatible checksums (%s vs 0x37d0dfb = (alpha, ay, state, tmp1, tmp2, tmp3, tmp4, vel_len))" % __pyx_checksum)
+ *         raise __pyx_PickleError("Incompatible checksums (%s vs 0x96d6a70 = (alpha, ay, n, state, t, tmp1, tmp2, tmp3, tmp4, vel_len))" % __pyx_checksum)
  *     __pyx_result = Missile2d.__new__(__pyx_type)
  */
     __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 5, __pyx_L1_error)
@@ -15840,15 +16704,15 @@ static PyObject *__pyx_pf_5drone_18__pyx_unpickle_Missile2d(CYTHON_UNUSED PyObje
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
     /* "(tree fragment)":6
- *     if __pyx_checksum != 0x37d0dfb:
+ *     if __pyx_checksum != 0x96d6a70:
  *         from pickle import PickleError as __pyx_PickleError
- *         raise __pyx_PickleError("Incompatible checksums (%s vs 0x37d0dfb = (alpha, ay, state, tmp1, tmp2, tmp3, tmp4, vel_len))" % __pyx_checksum)             # <<<<<<<<<<<<<<
+ *         raise __pyx_PickleError("Incompatible checksums (%s vs 0x96d6a70 = (alpha, ay, n, state, t, tmp1, tmp2, tmp3, tmp4, vel_len))" % __pyx_checksum)             # <<<<<<<<<<<<<<
  *     __pyx_result = Missile2d.__new__(__pyx_type)
  *     if __pyx_state is not None:
  */
     __pyx_t_2 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 6, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_4 = __Pyx_PyString_Format(__pyx_kp_s_Incompatible_checksums_s_vs_0x37, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 6, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyString_Format(__pyx_kp_s_Incompatible_checksums_s_vs_0x96, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 6, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_INCREF(__pyx_v___pyx_PickleError);
@@ -15875,15 +16739,15 @@ static PyObject *__pyx_pf_5drone_18__pyx_unpickle_Missile2d(CYTHON_UNUSED PyObje
     /* "(tree fragment)":4
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
- *     if __pyx_checksum != 0x37d0dfb:             # <<<<<<<<<<<<<<
+ *     if __pyx_checksum != 0x96d6a70:             # <<<<<<<<<<<<<<
  *         from pickle import PickleError as __pyx_PickleError
- *         raise __pyx_PickleError("Incompatible checksums (%s vs 0x37d0dfb = (alpha, ay, state, tmp1, tmp2, tmp3, tmp4, vel_len))" % __pyx_checksum)
+ *         raise __pyx_PickleError("Incompatible checksums (%s vs 0x96d6a70 = (alpha, ay, n, state, t, tmp1, tmp2, tmp3, tmp4, vel_len))" % __pyx_checksum)
  */
   }
 
   /* "(tree fragment)":7
  *         from pickle import PickleError as __pyx_PickleError
- *         raise __pyx_PickleError("Incompatible checksums (%s vs 0x37d0dfb = (alpha, ay, state, tmp1, tmp2, tmp3, tmp4, vel_len))" % __pyx_checksum)
+ *         raise __pyx_PickleError("Incompatible checksums (%s vs 0x96d6a70 = (alpha, ay, n, state, t, tmp1, tmp2, tmp3, tmp4, vel_len))" % __pyx_checksum)
  *     __pyx_result = Missile2d.__new__(__pyx_type)             # <<<<<<<<<<<<<<
  *     if __pyx_state is not None:
  *         __pyx_unpickle_Missile2d__set_state(<Missile2d> __pyx_result, __pyx_state)
@@ -15909,7 +16773,7 @@ static PyObject *__pyx_pf_5drone_18__pyx_unpickle_Missile2d(CYTHON_UNUSED PyObje
   __pyx_t_3 = 0;
 
   /* "(tree fragment)":8
- *         raise __pyx_PickleError("Incompatible checksums (%s vs 0x37d0dfb = (alpha, ay, state, tmp1, tmp2, tmp3, tmp4, vel_len))" % __pyx_checksum)
+ *         raise __pyx_PickleError("Incompatible checksums (%s vs 0x96d6a70 = (alpha, ay, n, state, t, tmp1, tmp2, tmp3, tmp4, vel_len))" % __pyx_checksum)
  *     __pyx_result = Missile2d.__new__(__pyx_type)
  *     if __pyx_state is not None:             # <<<<<<<<<<<<<<
  *         __pyx_unpickle_Missile2d__set_state(<Missile2d> __pyx_result, __pyx_state)
@@ -15932,7 +16796,7 @@ static PyObject *__pyx_pf_5drone_18__pyx_unpickle_Missile2d(CYTHON_UNUSED PyObje
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
     /* "(tree fragment)":8
- *         raise __pyx_PickleError("Incompatible checksums (%s vs 0x37d0dfb = (alpha, ay, state, tmp1, tmp2, tmp3, tmp4, vel_len))" % __pyx_checksum)
+ *         raise __pyx_PickleError("Incompatible checksums (%s vs 0x96d6a70 = (alpha, ay, n, state, t, tmp1, tmp2, tmp3, tmp4, vel_len))" % __pyx_checksum)
  *     __pyx_result = Missile2d.__new__(__pyx_type)
  *     if __pyx_state is not None:             # <<<<<<<<<<<<<<
  *         __pyx_unpickle_Missile2d__set_state(<Missile2d> __pyx_result, __pyx_state)
@@ -15945,7 +16809,7 @@ static PyObject *__pyx_pf_5drone_18__pyx_unpickle_Missile2d(CYTHON_UNUSED PyObje
  *         __pyx_unpickle_Missile2d__set_state(<Missile2d> __pyx_result, __pyx_state)
  *     return __pyx_result             # <<<<<<<<<<<<<<
  * cdef __pyx_unpickle_Missile2d__set_state(Missile2d __pyx_result, tuple __pyx_state):
- *     __pyx_result.alpha = __pyx_state[0]; __pyx_result.ay = __pyx_state[1]; __pyx_result.state = __pyx_state[2]; __pyx_result.tmp1 = __pyx_state[3]; __pyx_result.tmp2 = __pyx_state[4]; __pyx_result.tmp3 = __pyx_state[5]; __pyx_result.tmp4 = __pyx_state[6]; __pyx_result.vel_len = __pyx_state[7]
+ *     __pyx_result.alpha = __pyx_state[0]; __pyx_result.ay = __pyx_state[1]; __pyx_result.n = __pyx_state[2]; __pyx_result.state = __pyx_state[3]; __pyx_result.t = __pyx_state[4]; __pyx_result.tmp1 = __pyx_state[5]; __pyx_result.tmp2 = __pyx_state[6]; __pyx_result.tmp3 = __pyx_state[7]; __pyx_result.tmp4 = __pyx_state[8]; __pyx_result.vel_len = __pyx_state[9]
  */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v___pyx_result);
@@ -15978,22 +16842,23 @@ static PyObject *__pyx_pf_5drone_18__pyx_unpickle_Missile2d(CYTHON_UNUSED PyObje
  *         __pyx_unpickle_Missile2d__set_state(<Missile2d> __pyx_result, __pyx_state)
  *     return __pyx_result
  * cdef __pyx_unpickle_Missile2d__set_state(Missile2d __pyx_result, tuple __pyx_state):             # <<<<<<<<<<<<<<
- *     __pyx_result.alpha = __pyx_state[0]; __pyx_result.ay = __pyx_state[1]; __pyx_result.state = __pyx_state[2]; __pyx_result.tmp1 = __pyx_state[3]; __pyx_result.tmp2 = __pyx_state[4]; __pyx_result.tmp3 = __pyx_state[5]; __pyx_result.tmp4 = __pyx_state[6]; __pyx_result.vel_len = __pyx_state[7]
- *     if len(__pyx_state) > 8 and hasattr(__pyx_result, '__dict__'):
+ *     __pyx_result.alpha = __pyx_state[0]; __pyx_result.ay = __pyx_state[1]; __pyx_result.n = __pyx_state[2]; __pyx_result.state = __pyx_state[3]; __pyx_result.t = __pyx_state[4]; __pyx_result.tmp1 = __pyx_state[5]; __pyx_result.tmp2 = __pyx_state[6]; __pyx_result.tmp3 = __pyx_state[7]; __pyx_result.tmp4 = __pyx_state[8]; __pyx_result.vel_len = __pyx_state[9]
+ *     if len(__pyx_state) > 10 and hasattr(__pyx_result, '__dict__'):
  */
 
 static PyObject *__pyx_f_5drone___pyx_unpickle_Missile2d__set_state(struct __pyx_obj_5drone_Missile2d *__pyx_v___pyx_result, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   double __pyx_t_1;
-  __Pyx_memviewslice __pyx_t_2 = { 0, 0, { 0 }, { 0 }, { 0 } };
-  int __pyx_t_3;
-  Py_ssize_t __pyx_t_4;
-  int __pyx_t_5;
+  int __pyx_t_2;
+  __Pyx_memviewslice __pyx_t_3 = { 0, 0, { 0 }, { 0 }, { 0 } };
+  int __pyx_t_4;
+  Py_ssize_t __pyx_t_5;
   int __pyx_t_6;
-  PyObject *__pyx_t_7 = NULL;
+  int __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
   PyObject *__pyx_t_9 = NULL;
+  PyObject *__pyx_t_10 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -16002,9 +16867,9 @@ static PyObject *__pyx_f_5drone___pyx_unpickle_Missile2d__set_state(struct __pyx
   /* "(tree fragment)":12
  *     return __pyx_result
  * cdef __pyx_unpickle_Missile2d__set_state(Missile2d __pyx_result, tuple __pyx_state):
- *     __pyx_result.alpha = __pyx_state[0]; __pyx_result.ay = __pyx_state[1]; __pyx_result.state = __pyx_state[2]; __pyx_result.tmp1 = __pyx_state[3]; __pyx_result.tmp2 = __pyx_state[4]; __pyx_result.tmp3 = __pyx_state[5]; __pyx_result.tmp4 = __pyx_state[6]; __pyx_result.vel_len = __pyx_state[7]             # <<<<<<<<<<<<<<
- *     if len(__pyx_state) > 8 and hasattr(__pyx_result, '__dict__'):
- *         __pyx_result.__dict__.update(__pyx_state[8])
+ *     __pyx_result.alpha = __pyx_state[0]; __pyx_result.ay = __pyx_state[1]; __pyx_result.n = __pyx_state[2]; __pyx_result.state = __pyx_state[3]; __pyx_result.t = __pyx_state[4]; __pyx_result.tmp1 = __pyx_state[5]; __pyx_result.tmp2 = __pyx_state[6]; __pyx_result.tmp3 = __pyx_state[7]; __pyx_result.tmp4 = __pyx_state[8]; __pyx_result.vel_len = __pyx_state[9]             # <<<<<<<<<<<<<<
+ *     if len(__pyx_state) > 10 and hasattr(__pyx_result, '__dict__'):
+ *         __pyx_result.__dict__.update(__pyx_state[10])
  */
   if (unlikely(__pyx_v___pyx_state == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
@@ -16022,113 +16887,125 @@ static PyObject *__pyx_f_5drone___pyx_unpickle_Missile2d__set_state(struct __pyx
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
     __PYX_ERR(1, 12, __pyx_L1_error)
   }
-  __pyx_t_2 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(PyTuple_GET_ITEM(__pyx_v___pyx_state, 2), PyBUF_WRITABLE); if (unlikely(!__pyx_t_2.memview)) __PYX_ERR(1, 12, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_As_int(PyTuple_GET_ITEM(__pyx_v___pyx_state, 2)); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 12, __pyx_L1_error)
+  __pyx_v___pyx_result->n = __pyx_t_2;
+  if (unlikely(__pyx_v___pyx_state == Py_None)) {
+    PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+    __PYX_ERR(1, 12, __pyx_L1_error)
+  }
+  __pyx_t_3 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(PyTuple_GET_ITEM(__pyx_v___pyx_state, 3), PyBUF_WRITABLE); if (unlikely(!__pyx_t_3.memview)) __PYX_ERR(1, 12, __pyx_L1_error)
   __PYX_XDEC_MEMVIEW(&__pyx_v___pyx_result->state, 0);
-  __pyx_v___pyx_result->state = __pyx_t_2;
-  __pyx_t_2.memview = NULL;
-  __pyx_t_2.data = NULL;
+  __pyx_v___pyx_result->state = __pyx_t_3;
+  __pyx_t_3.memview = NULL;
+  __pyx_t_3.data = NULL;
   if (unlikely(__pyx_v___pyx_state == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
     __PYX_ERR(1, 12, __pyx_L1_error)
   }
-  __pyx_t_2 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(PyTuple_GET_ITEM(__pyx_v___pyx_state, 3), PyBUF_WRITABLE); if (unlikely(!__pyx_t_2.memview)) __PYX_ERR(1, 12, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(PyTuple_GET_ITEM(__pyx_v___pyx_state, 4)); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 12, __pyx_L1_error)
+  __pyx_v___pyx_result->t = __pyx_t_1;
+  if (unlikely(__pyx_v___pyx_state == Py_None)) {
+    PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+    __PYX_ERR(1, 12, __pyx_L1_error)
+  }
+  __pyx_t_3 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(PyTuple_GET_ITEM(__pyx_v___pyx_state, 5), PyBUF_WRITABLE); if (unlikely(!__pyx_t_3.memview)) __PYX_ERR(1, 12, __pyx_L1_error)
   __PYX_XDEC_MEMVIEW(&__pyx_v___pyx_result->tmp1, 0);
-  __pyx_v___pyx_result->tmp1 = __pyx_t_2;
-  __pyx_t_2.memview = NULL;
-  __pyx_t_2.data = NULL;
+  __pyx_v___pyx_result->tmp1 = __pyx_t_3;
+  __pyx_t_3.memview = NULL;
+  __pyx_t_3.data = NULL;
   if (unlikely(__pyx_v___pyx_state == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
     __PYX_ERR(1, 12, __pyx_L1_error)
   }
-  __pyx_t_2 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(PyTuple_GET_ITEM(__pyx_v___pyx_state, 4), PyBUF_WRITABLE); if (unlikely(!__pyx_t_2.memview)) __PYX_ERR(1, 12, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(PyTuple_GET_ITEM(__pyx_v___pyx_state, 6), PyBUF_WRITABLE); if (unlikely(!__pyx_t_3.memview)) __PYX_ERR(1, 12, __pyx_L1_error)
   __PYX_XDEC_MEMVIEW(&__pyx_v___pyx_result->tmp2, 0);
-  __pyx_v___pyx_result->tmp2 = __pyx_t_2;
-  __pyx_t_2.memview = NULL;
-  __pyx_t_2.data = NULL;
+  __pyx_v___pyx_result->tmp2 = __pyx_t_3;
+  __pyx_t_3.memview = NULL;
+  __pyx_t_3.data = NULL;
   if (unlikely(__pyx_v___pyx_state == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
     __PYX_ERR(1, 12, __pyx_L1_error)
   }
-  __pyx_t_2 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(PyTuple_GET_ITEM(__pyx_v___pyx_state, 5), PyBUF_WRITABLE); if (unlikely(!__pyx_t_2.memview)) __PYX_ERR(1, 12, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(PyTuple_GET_ITEM(__pyx_v___pyx_state, 7), PyBUF_WRITABLE); if (unlikely(!__pyx_t_3.memview)) __PYX_ERR(1, 12, __pyx_L1_error)
   __PYX_XDEC_MEMVIEW(&__pyx_v___pyx_result->tmp3, 0);
-  __pyx_v___pyx_result->tmp3 = __pyx_t_2;
-  __pyx_t_2.memview = NULL;
-  __pyx_t_2.data = NULL;
+  __pyx_v___pyx_result->tmp3 = __pyx_t_3;
+  __pyx_t_3.memview = NULL;
+  __pyx_t_3.data = NULL;
   if (unlikely(__pyx_v___pyx_state == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
     __PYX_ERR(1, 12, __pyx_L1_error)
   }
-  __pyx_t_2 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(PyTuple_GET_ITEM(__pyx_v___pyx_state, 6), PyBUF_WRITABLE); if (unlikely(!__pyx_t_2.memview)) __PYX_ERR(1, 12, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_to_MemoryviewSlice_ds_double(PyTuple_GET_ITEM(__pyx_v___pyx_state, 8), PyBUF_WRITABLE); if (unlikely(!__pyx_t_3.memview)) __PYX_ERR(1, 12, __pyx_L1_error)
   __PYX_XDEC_MEMVIEW(&__pyx_v___pyx_result->tmp4, 0);
-  __pyx_v___pyx_result->tmp4 = __pyx_t_2;
-  __pyx_t_2.memview = NULL;
-  __pyx_t_2.data = NULL;
+  __pyx_v___pyx_result->tmp4 = __pyx_t_3;
+  __pyx_t_3.memview = NULL;
+  __pyx_t_3.data = NULL;
   if (unlikely(__pyx_v___pyx_state == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
     __PYX_ERR(1, 12, __pyx_L1_error)
   }
-  __pyx_t_1 = __pyx_PyFloat_AsDouble(PyTuple_GET_ITEM(__pyx_v___pyx_state, 7)); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 12, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsDouble(PyTuple_GET_ITEM(__pyx_v___pyx_state, 9)); if (unlikely((__pyx_t_1 == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 12, __pyx_L1_error)
   __pyx_v___pyx_result->vel_len = __pyx_t_1;
 
   /* "(tree fragment)":13
  * cdef __pyx_unpickle_Missile2d__set_state(Missile2d __pyx_result, tuple __pyx_state):
- *     __pyx_result.alpha = __pyx_state[0]; __pyx_result.ay = __pyx_state[1]; __pyx_result.state = __pyx_state[2]; __pyx_result.tmp1 = __pyx_state[3]; __pyx_result.tmp2 = __pyx_state[4]; __pyx_result.tmp3 = __pyx_state[5]; __pyx_result.tmp4 = __pyx_state[6]; __pyx_result.vel_len = __pyx_state[7]
- *     if len(__pyx_state) > 8 and hasattr(__pyx_result, '__dict__'):             # <<<<<<<<<<<<<<
- *         __pyx_result.__dict__.update(__pyx_state[8])
+ *     __pyx_result.alpha = __pyx_state[0]; __pyx_result.ay = __pyx_state[1]; __pyx_result.n = __pyx_state[2]; __pyx_result.state = __pyx_state[3]; __pyx_result.t = __pyx_state[4]; __pyx_result.tmp1 = __pyx_state[5]; __pyx_result.tmp2 = __pyx_state[6]; __pyx_result.tmp3 = __pyx_state[7]; __pyx_result.tmp4 = __pyx_state[8]; __pyx_result.vel_len = __pyx_state[9]
+ *     if len(__pyx_state) > 10 and hasattr(__pyx_result, '__dict__'):             # <<<<<<<<<<<<<<
+ *         __pyx_result.__dict__.update(__pyx_state[10])
  */
   if (unlikely(__pyx_v___pyx_state == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
     __PYX_ERR(1, 13, __pyx_L1_error)
   }
-  __pyx_t_4 = PyTuple_GET_SIZE(__pyx_v___pyx_state); if (unlikely(__pyx_t_4 == ((Py_ssize_t)-1))) __PYX_ERR(1, 13, __pyx_L1_error)
-  __pyx_t_5 = ((__pyx_t_4 > 8) != 0);
-  if (__pyx_t_5) {
+  __pyx_t_5 = PyTuple_GET_SIZE(__pyx_v___pyx_state); if (unlikely(__pyx_t_5 == ((Py_ssize_t)-1))) __PYX_ERR(1, 13, __pyx_L1_error)
+  __pyx_t_6 = ((__pyx_t_5 > 10) != 0);
+  if (__pyx_t_6) {
   } else {
-    __pyx_t_3 = __pyx_t_5;
+    __pyx_t_4 = __pyx_t_6;
     goto __pyx_L4_bool_binop_done;
   }
-  __pyx_t_5 = __Pyx_HasAttr(((PyObject *)__pyx_v___pyx_result), __pyx_n_s_dict); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(1, 13, __pyx_L1_error)
-  __pyx_t_6 = (__pyx_t_5 != 0);
-  __pyx_t_3 = __pyx_t_6;
+  __pyx_t_6 = __Pyx_HasAttr(((PyObject *)__pyx_v___pyx_result), __pyx_n_s_dict); if (unlikely(__pyx_t_6 == ((int)-1))) __PYX_ERR(1, 13, __pyx_L1_error)
+  __pyx_t_7 = (__pyx_t_6 != 0);
+  __pyx_t_4 = __pyx_t_7;
   __pyx_L4_bool_binop_done:;
-  if (__pyx_t_3) {
+  if (__pyx_t_4) {
 
     /* "(tree fragment)":14
- *     __pyx_result.alpha = __pyx_state[0]; __pyx_result.ay = __pyx_state[1]; __pyx_result.state = __pyx_state[2]; __pyx_result.tmp1 = __pyx_state[3]; __pyx_result.tmp2 = __pyx_state[4]; __pyx_result.tmp3 = __pyx_state[5]; __pyx_result.tmp4 = __pyx_state[6]; __pyx_result.vel_len = __pyx_state[7]
- *     if len(__pyx_state) > 8 and hasattr(__pyx_result, '__dict__'):
- *         __pyx_result.__dict__.update(__pyx_state[8])             # <<<<<<<<<<<<<<
+ *     __pyx_result.alpha = __pyx_state[0]; __pyx_result.ay = __pyx_state[1]; __pyx_result.n = __pyx_state[2]; __pyx_result.state = __pyx_state[3]; __pyx_result.t = __pyx_state[4]; __pyx_result.tmp1 = __pyx_state[5]; __pyx_result.tmp2 = __pyx_state[6]; __pyx_result.tmp3 = __pyx_state[7]; __pyx_result.tmp4 = __pyx_state[8]; __pyx_result.vel_len = __pyx_state[9]
+ *     if len(__pyx_state) > 10 and hasattr(__pyx_result, '__dict__'):
+ *         __pyx_result.__dict__.update(__pyx_state[10])             # <<<<<<<<<<<<<<
  */
-    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v___pyx_result), __pyx_n_s_dict); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 14, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_update); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 14, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v___pyx_result), __pyx_n_s_dict); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 14, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+    __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_update); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 14, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_10);
+    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     if (unlikely(__pyx_v___pyx_state == Py_None)) {
       PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
       __PYX_ERR(1, 14, __pyx_L1_error)
     }
-    __pyx_t_8 = NULL;
-    if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_9))) {
-      __pyx_t_8 = PyMethod_GET_SELF(__pyx_t_9);
-      if (likely(__pyx_t_8)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_9);
-        __Pyx_INCREF(__pyx_t_8);
+    __pyx_t_9 = NULL;
+    if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_10))) {
+      __pyx_t_9 = PyMethod_GET_SELF(__pyx_t_10);
+      if (likely(__pyx_t_9)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_10);
+        __Pyx_INCREF(__pyx_t_9);
         __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_9, function);
+        __Pyx_DECREF_SET(__pyx_t_10, function);
       }
     }
-    __pyx_t_7 = (__pyx_t_8) ? __Pyx_PyObject_Call2Args(__pyx_t_9, __pyx_t_8, PyTuple_GET_ITEM(__pyx_v___pyx_state, 8)) : __Pyx_PyObject_CallOneArg(__pyx_t_9, PyTuple_GET_ITEM(__pyx_v___pyx_state, 8));
-    __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-    if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 14, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+    __pyx_t_8 = (__pyx_t_9) ? __Pyx_PyObject_Call2Args(__pyx_t_10, __pyx_t_9, PyTuple_GET_ITEM(__pyx_v___pyx_state, 10)) : __Pyx_PyObject_CallOneArg(__pyx_t_10, PyTuple_GET_ITEM(__pyx_v___pyx_state, 10));
+    __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
+    if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 14, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_8);
+    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
     /* "(tree fragment)":13
  * cdef __pyx_unpickle_Missile2d__set_state(Missile2d __pyx_result, tuple __pyx_state):
- *     __pyx_result.alpha = __pyx_state[0]; __pyx_result.ay = __pyx_state[1]; __pyx_result.state = __pyx_state[2]; __pyx_result.tmp1 = __pyx_state[3]; __pyx_result.tmp2 = __pyx_state[4]; __pyx_result.tmp3 = __pyx_state[5]; __pyx_result.tmp4 = __pyx_state[6]; __pyx_result.vel_len = __pyx_state[7]
- *     if len(__pyx_state) > 8 and hasattr(__pyx_result, '__dict__'):             # <<<<<<<<<<<<<<
- *         __pyx_result.__dict__.update(__pyx_state[8])
+ *     __pyx_result.alpha = __pyx_state[0]; __pyx_result.ay = __pyx_state[1]; __pyx_result.n = __pyx_state[2]; __pyx_result.state = __pyx_state[3]; __pyx_result.t = __pyx_state[4]; __pyx_result.tmp1 = __pyx_state[5]; __pyx_result.tmp2 = __pyx_state[6]; __pyx_result.tmp3 = __pyx_state[7]; __pyx_result.tmp4 = __pyx_state[8]; __pyx_result.vel_len = __pyx_state[9]
+ *     if len(__pyx_state) > 10 and hasattr(__pyx_result, '__dict__'):             # <<<<<<<<<<<<<<
+ *         __pyx_result.__dict__.update(__pyx_state[10])
  */
   }
 
@@ -16136,18 +17013,18 @@ static PyObject *__pyx_f_5drone___pyx_unpickle_Missile2d__set_state(struct __pyx
  *         __pyx_unpickle_Missile2d__set_state(<Missile2d> __pyx_result, __pyx_state)
  *     return __pyx_result
  * cdef __pyx_unpickle_Missile2d__set_state(Missile2d __pyx_result, tuple __pyx_state):             # <<<<<<<<<<<<<<
- *     __pyx_result.alpha = __pyx_state[0]; __pyx_result.ay = __pyx_state[1]; __pyx_result.state = __pyx_state[2]; __pyx_result.tmp1 = __pyx_state[3]; __pyx_result.tmp2 = __pyx_state[4]; __pyx_result.tmp3 = __pyx_state[5]; __pyx_result.tmp4 = __pyx_state[6]; __pyx_result.vel_len = __pyx_state[7]
- *     if len(__pyx_state) > 8 and hasattr(__pyx_result, '__dict__'):
+ *     __pyx_result.alpha = __pyx_state[0]; __pyx_result.ay = __pyx_state[1]; __pyx_result.n = __pyx_state[2]; __pyx_result.state = __pyx_state[3]; __pyx_result.t = __pyx_state[4]; __pyx_result.tmp1 = __pyx_state[5]; __pyx_result.tmp2 = __pyx_state[6]; __pyx_result.tmp3 = __pyx_state[7]; __pyx_result.tmp4 = __pyx_state[8]; __pyx_result.vel_len = __pyx_state[9]
+ *     if len(__pyx_state) > 10 and hasattr(__pyx_result, '__dict__'):
  */
 
   /* function exit code */
   __pyx_r = Py_None; __Pyx_INCREF(Py_None);
   goto __pyx_L0;
   __pyx_L1_error:;
-  __PYX_XDEC_MEMVIEW(&__pyx_t_2, 1);
-  __Pyx_XDECREF(__pyx_t_7);
+  __PYX_XDEC_MEMVIEW(&__pyx_t_3, 1);
   __Pyx_XDECREF(__pyx_t_8);
   __Pyx_XDECREF(__pyx_t_9);
+  __Pyx_XDECREF(__pyx_t_10);
   __Pyx_AddTraceback("drone.__pyx_unpickle_Missile2d__set_state", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
@@ -16688,7 +17565,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
  * 
  * cdef inline int import_umath() except -1:
  */
-      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(2, 947, __pyx_L5_except_error)
+      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__3, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(2, 947, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_Raise(__pyx_t_8, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -16820,7 +17697,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
  * 
  * cdef inline int import_ufunc() except -1:
  */
-      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__3, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(2, 953, __pyx_L5_except_error)
+      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(2, 953, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_Raise(__pyx_t_8, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -16952,7 +17829,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
  * 
  * cdef extern from *:
  */
-      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__3, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(2, 959, __pyx_L5_except_error)
+      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(2, 959, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_Raise(__pyx_t_8, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -17376,7 +18253,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __
  * 
  *         if itemsize <= 0:
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 133, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 133, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17408,7 +18285,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __
  * 
  *         if not isinstance(format, bytes):
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 136, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__6, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 136, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17535,7 +18412,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __
  * 
  * 
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__6, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 148, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__7, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 148, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17809,7 +18686,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __
  * 
  *             if self.dtype_is_object:
  */
-      __pyx_t_10 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__7, NULL); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 176, __pyx_L1_error)
+      __pyx_t_10 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__8, NULL); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 176, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_Raise(__pyx_t_10, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -18053,7 +18930,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array_2__getbuffer__(stru
  *         info.buf = self.data
  *         info.len = self.len
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__8, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 192, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 192, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -18787,7 +19664,7 @@ static PyObject *__pyx_pf___pyx_array___reduce_cython__(CYTHON_UNUSED struct __p
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__10, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -18843,7 +19720,7 @@ static PyObject *__pyx_pf___pyx_array_2__setstate_cython__(CYTHON_UNUSED struct 
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__10, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__11, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -20553,7 +21430,7 @@ static int __pyx_memoryview___pyx_pf_15View_dot_MemoryView_10memoryview_6__setit
  * 
  *         have_slices, index = _unellipsify(index, self.view.ndim)
  */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__11, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 418, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__12, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 418, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -21601,7 +22478,7 @@ static PyObject *__pyx_memoryview_convert_item_to_object(struct __pyx_memoryview
  *         else:
  *             if len(self.view.format) == 1:
  */
-      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__12, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 495, __pyx_L5_except_error)
+      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__13, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 495, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_Raise(__pyx_t_6, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -21963,7 +22840,7 @@ static int __pyx_memoryview___pyx_pf_15View_dot_MemoryView_10memoryview_8__getbu
  * 
  *         if flags & PyBUF_ND:
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__13, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 520, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__14, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 520, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -22512,7 +23389,7 @@ static PyObject *__pyx_pf_15View_dot_MemoryView_10memoryview_7strides___get__(st
  * 
  *         return tuple([stride for stride in self.view.strides[:self.view.ndim]])
  */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__14, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 570, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__15, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 570, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -22629,7 +23506,7 @@ static PyObject *__pyx_pf_15View_dot_MemoryView_10memoryview_10suboffsets___get_
     __Pyx_XDECREF(__pyx_r);
     __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_self->view.ndim); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 577, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = PyNumber_Multiply(__pyx_tuple__15, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 577, __pyx_L1_error)
+    __pyx_t_3 = PyNumber_Multiply(__pyx_tuple__16, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 577, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_r = __pyx_t_3;
@@ -23667,7 +24544,7 @@ static PyObject *__pyx_pf___pyx_memoryview___reduce_cython__(CYTHON_UNUSED struc
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__16, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__17, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -23723,7 +24600,7 @@ static PyObject *__pyx_pf___pyx_memoryview_2__setstate_cython__(CYTHON_UNUSED st
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__17, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__18, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -24080,9 +24957,9 @@ static PyObject *_unellipsify(PyObject *__pyx_v_index, int __pyx_v_ndim) {
         __Pyx_GOTREF(__pyx_t_7);
         { Py_ssize_t __pyx_temp;
           for (__pyx_temp=0; __pyx_temp < ((__pyx_v_ndim - __pyx_t_8) + 1); __pyx_temp++) {
-            __Pyx_INCREF(__pyx_slice__18);
-            __Pyx_GIVEREF(__pyx_slice__18);
-            PyList_SET_ITEM(__pyx_t_7, __pyx_temp, __pyx_slice__18);
+            __Pyx_INCREF(__pyx_slice__19);
+            __Pyx_GIVEREF(__pyx_slice__19);
+            PyList_SET_ITEM(__pyx_t_7, __pyx_temp, __pyx_slice__19);
           }
         }
         __pyx_t_9 = __Pyx_PyList_Extend(__pyx_v_result, __pyx_t_7); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(1, 682, __pyx_L1_error)
@@ -24115,7 +24992,7 @@ static PyObject *_unellipsify(PyObject *__pyx_v_index, int __pyx_v_ndim) {
  *         else:
  */
       /*else*/ {
-        __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_result, __pyx_slice__18); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(1, 685, __pyx_L1_error)
+        __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_result, __pyx_slice__19); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(1, 685, __pyx_L1_error)
       }
       __pyx_L7:;
 
@@ -24255,9 +25132,9 @@ static PyObject *_unellipsify(PyObject *__pyx_v_index, int __pyx_v_ndim) {
     __Pyx_GOTREF(__pyx_t_3);
     { Py_ssize_t __pyx_temp;
       for (__pyx_temp=0; __pyx_temp < __pyx_v_nslices; __pyx_temp++) {
-        __Pyx_INCREF(__pyx_slice__18);
-        __Pyx_GIVEREF(__pyx_slice__18);
-        PyList_SET_ITEM(__pyx_t_3, __pyx_temp, __pyx_slice__18);
+        __Pyx_INCREF(__pyx_slice__19);
+        __Pyx_GIVEREF(__pyx_slice__19);
+        PyList_SET_ITEM(__pyx_t_3, __pyx_temp, __pyx_slice__19);
       }
     }
     __pyx_t_9 = __Pyx_PyList_Extend(__pyx_v_result, __pyx_t_3); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(1, 696, __pyx_L1_error)
@@ -24384,7 +25261,7 @@ static PyObject *assert_direct_dimensions(Py_ssize_t *__pyx_v_suboffsets, int __
  * 
  * 
  */
-      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__19, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 703, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__20, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 703, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_Raise(__pyx_t_5, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -26568,7 +27445,7 @@ static PyObject *__pyx_pf___pyx_memoryviewslice___reduce_cython__(CYTHON_UNUSED 
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__20, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__21, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -26624,7 +27501,7 @@ static PyObject *__pyx_pf___pyx_memoryviewslice_2__setstate_cython__(CYTHON_UNUS
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__21, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__22, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -30367,6 +31244,20 @@ static int __pyx_setprop_5drone_7Drone2d_mu_omega(PyObject *o, PyObject *v, CYTH
   }
 }
 
+static PyObject *__pyx_getprop_5drone_7Drone2d_n(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_5drone_7Drone2d_1n_1__get__(o);
+}
+
+static int __pyx_setprop_5drone_7Drone2d_n(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
+  if (v) {
+    return __pyx_pw_5drone_7Drone2d_1n_3__set__(o, v);
+  }
+  else {
+    PyErr_SetString(PyExc_NotImplementedError, "__del__");
+    return -1;
+  }
+}
+
 static PyObject *__pyx_getprop_5drone_7Drone2d_state(PyObject *o, CYTHON_UNUSED void *x) {
   return __pyx_pw_5drone_7Drone2d_5state_1__get__(o);
 }
@@ -30471,6 +31362,7 @@ static struct PyGetSetDef __pyx_getsets_5drone_Drone2d[] = {
   {(char *)"t", __pyx_getprop_5drone_7Drone2d_t, __pyx_setprop_5drone_7Drone2d_t, (char *)"t: 'double'", 0},
   {(char *)"g", __pyx_getprop_5drone_7Drone2d_g, __pyx_setprop_5drone_7Drone2d_g, (char *)"g: 'double'", 0},
   {(char *)"mu_omega", __pyx_getprop_5drone_7Drone2d_mu_omega, __pyx_setprop_5drone_7Drone2d_mu_omega, (char *)"mu_omega: 'double'", 0},
+  {(char *)"n", __pyx_getprop_5drone_7Drone2d_n, __pyx_setprop_5drone_7Drone2d_n, (char *)"n: 'int'", 0},
   {(char *)"state", __pyx_getprop_5drone_7Drone2d_state, __pyx_setprop_5drone_7Drone2d_state, (char *)"state: 'double[:]'", 0},
   {(char *)"tmp1", __pyx_getprop_5drone_7Drone2d_tmp1, __pyx_setprop_5drone_7Drone2d_tmp1, (char *)"tmp1: 'double[:]'", 0},
   {(char *)"tmp2", __pyx_getprop_5drone_7Drone2d_tmp2, __pyx_setprop_5drone_7Drone2d_tmp2, (char *)"tmp2: 'double[:]'", 0},
@@ -30650,6 +31542,34 @@ static int __pyx_setprop_5drone_9Missile2d_alpha(PyObject *o, PyObject *v, CYTHO
   }
 }
 
+static PyObject *__pyx_getprop_5drone_9Missile2d_t(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_5drone_9Missile2d_1t_1__get__(o);
+}
+
+static int __pyx_setprop_5drone_9Missile2d_t(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
+  if (v) {
+    return __pyx_pw_5drone_9Missile2d_1t_3__set__(o, v);
+  }
+  else {
+    PyErr_SetString(PyExc_NotImplementedError, "__del__");
+    return -1;
+  }
+}
+
+static PyObject *__pyx_getprop_5drone_9Missile2d_n(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_5drone_9Missile2d_1n_1__get__(o);
+}
+
+static int __pyx_setprop_5drone_9Missile2d_n(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
+  if (v) {
+    return __pyx_pw_5drone_9Missile2d_1n_3__set__(o, v);
+  }
+  else {
+    PyErr_SetString(PyExc_NotImplementedError, "__del__");
+    return -1;
+  }
+}
+
 static PyObject *__pyx_getprop_5drone_9Missile2d_state(PyObject *o, CYTHON_UNUSED void *x) {
   return __pyx_pw_5drone_9Missile2d_5state_1__get__(o);
 }
@@ -30726,8 +31646,9 @@ static PyMethodDef __pyx_methods_5drone_Missile2d[] = {
   {"to_dict", (PyCFunction)__pyx_pw_5drone_9Missile2d_7to_dict, METH_NOARGS, __pyx_doc_5drone_9Missile2d_6to_dict},
   {"from_dict", (PyCFunction)__pyx_pw_5drone_9Missile2d_9from_dict, METH_O, __pyx_doc_5drone_9Missile2d_8from_dict},
   {"to_numpy", (PyCFunction)__pyx_pw_5drone_9Missile2d_11to_numpy, METH_NOARGS, __pyx_doc_5drone_9Missile2d_10to_numpy},
-  {"__reduce_cython__", (PyCFunction)__pyx_pw_5drone_9Missile2d_13__reduce_cython__, METH_NOARGS, __pyx_doc_5drone_9Missile2d_12__reduce_cython__},
-  {"__setstate_cython__", (PyCFunction)__pyx_pw_5drone_9Missile2d_15__setstate_cython__, METH_O, __pyx_doc_5drone_9Missile2d_14__setstate_cython__},
+  {"from_numpy", (PyCFunction)__pyx_pw_5drone_9Missile2d_13from_numpy, METH_O, __pyx_doc_5drone_9Missile2d_12from_numpy},
+  {"__reduce_cython__", (PyCFunction)__pyx_pw_5drone_9Missile2d_15__reduce_cython__, METH_NOARGS, __pyx_doc_5drone_9Missile2d_14__reduce_cython__},
+  {"__setstate_cython__", (PyCFunction)__pyx_pw_5drone_9Missile2d_17__setstate_cython__, METH_O, __pyx_doc_5drone_9Missile2d_16__setstate_cython__},
   {0, 0, 0, 0}
 };
 
@@ -30740,6 +31661,8 @@ static struct PyGetSetDef __pyx_getsets_5drone_Missile2d[] = {
   {(char *)"vel_len", __pyx_getprop_5drone_9Missile2d_vel_len, __pyx_setprop_5drone_9Missile2d_vel_len, (char *)"vel_len: 'double'", 0},
   {(char *)"ay", __pyx_getprop_5drone_9Missile2d_ay, __pyx_setprop_5drone_9Missile2d_ay, (char *)"ay: 'double'", 0},
   {(char *)"alpha", __pyx_getprop_5drone_9Missile2d_alpha, __pyx_setprop_5drone_9Missile2d_alpha, (char *)"alpha: 'double'", 0},
+  {(char *)"t", __pyx_getprop_5drone_9Missile2d_t, __pyx_setprop_5drone_9Missile2d_t, (char *)"t: 'double'", 0},
+  {(char *)"n", __pyx_getprop_5drone_9Missile2d_n, __pyx_setprop_5drone_9Missile2d_n, (char *)"n: 'int'", 0},
   {(char *)"state", __pyx_getprop_5drone_9Missile2d_state, __pyx_setprop_5drone_9Missile2d_state, (char *)"state: 'double[:]'", 0},
   {(char *)"tmp1", __pyx_getprop_5drone_9Missile2d_tmp1, __pyx_setprop_5drone_9Missile2d_tmp1, (char *)"tmp1: 'double[:]'", 0},
   {(char *)"tmp2", __pyx_getprop_5drone_9Missile2d_tmp2, __pyx_setprop_5drone_9Missile2d_tmp2, (char *)"tmp2: 'double[:]'", 0},
@@ -30779,7 +31702,7 @@ static PyTypeObject __pyx_type_5drone_Missile2d = {
   0, /*tp_setattro*/
   0, /*tp_as_buffer*/
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
-  "Missile2d(vel_len, ay, alpha)", /*tp_doc*/
+  "Missile2d(pos0, pos_trg, vel_len, ay, alpha)", /*tp_doc*/
   0, /*tp_traverse*/
   0, /*tp_clear*/
   0, /*tp_richcompare*/
@@ -31604,9 +32527,9 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_F2, __pyx_k_F2, sizeof(__pyx_k_F2), 0, 0, 1, 1},
   {&__pyx_n_s_F_max, __pyx_k_F_max, sizeof(__pyx_k_F_max), 0, 0, 1, 1},
   {&__pyx_n_s_ImportError, __pyx_k_ImportError, sizeof(__pyx_k_ImportError), 0, 0, 1, 1},
-  {&__pyx_kp_s_Incompatible_checksums_s_vs_0x37, __pyx_k_Incompatible_checksums_s_vs_0x37, sizeof(__pyx_k_Incompatible_checksums_s_vs_0x37), 0, 0, 1, 0},
+  {&__pyx_kp_s_Incompatible_checksums_s_vs_0x96, __pyx_k_Incompatible_checksums_s_vs_0x96, sizeof(__pyx_k_Incompatible_checksums_s_vs_0x96), 0, 0, 1, 0},
   {&__pyx_kp_s_Incompatible_checksums_s_vs_0xb0, __pyx_k_Incompatible_checksums_s_vs_0xb0, sizeof(__pyx_k_Incompatible_checksums_s_vs_0xb0), 0, 0, 1, 0},
-  {&__pyx_kp_s_Incompatible_checksums_s_vs_0xbe, __pyx_k_Incompatible_checksums_s_vs_0xbe, sizeof(__pyx_k_Incompatible_checksums_s_vs_0xbe), 0, 0, 1, 0},
+  {&__pyx_kp_s_Incompatible_checksums_s_vs_0xbd, __pyx_k_Incompatible_checksums_s_vs_0xbd, sizeof(__pyx_k_Incompatible_checksums_s_vs_0xbd), 0, 0, 1, 0},
   {&__pyx_n_s_IndexError, __pyx_k_IndexError, sizeof(__pyx_k_IndexError), 0, 0, 1, 1},
   {&__pyx_kp_s_Indirect_dimensions_not_supporte, __pyx_k_Indirect_dimensions_not_supporte, sizeof(__pyx_k_Indirect_dimensions_not_supporte), 0, 0, 1, 0},
   {&__pyx_kp_s_Invalid_mode_expected_c_or_fortr, __pyx_k_Invalid_mode_expected_c_or_fortr, sizeof(__pyx_k_Invalid_mode_expected_c_or_fortr), 0, 0, 1, 0},
@@ -31667,6 +32590,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
   {&__pyx_n_s_itemsize, __pyx_k_itemsize, sizeof(__pyx_k_itemsize), 0, 0, 1, 1},
   {&__pyx_kp_s_itemsize_0_for_cython_array, __pyx_k_itemsize_0_for_cython_array, sizeof(__pyx_k_itemsize_0_for_cython_array), 0, 0, 1, 0},
+  {&__pyx_n_s_len, __pyx_k_len, sizeof(__pyx_k_len), 0, 0, 1, 1},
   {&__pyx_n_s_linspace, __pyx_k_linspace, sizeof(__pyx_k_linspace), 0, 0, 1, 1},
   {&__pyx_n_s_m, __pyx_k_m, sizeof(__pyx_k_m), 0, 0, 1, 1},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
@@ -31681,6 +32605,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_ndim, __pyx_k_ndim, sizeof(__pyx_k_ndim), 0, 0, 1, 1},
   {&__pyx_n_s_new, __pyx_k_new, sizeof(__pyx_k_new), 0, 0, 1, 1},
   {&__pyx_kp_s_no_default___reduce___due_to_non, __pyx_k_no_default___reduce___due_to_non, sizeof(__pyx_k_no_default___reduce___due_to_non), 0, 0, 1, 0},
+  {&__pyx_n_s_norm, __pyx_k_norm, sizeof(__pyx_k_norm), 0, 0, 1, 1},
   {&__pyx_n_s_np, __pyx_k_np, sizeof(__pyx_k_np), 0, 0, 1, 1},
   {&__pyx_n_s_numpy, __pyx_k_numpy, sizeof(__pyx_k_numpy), 0, 0, 1, 1},
   {&__pyx_kp_u_numpy_core_multiarray_failed_to, __pyx_k_numpy_core_multiarray_failed_to, sizeof(__pyx_k_numpy_core_multiarray_failed_to), 0, 1, 0, 0},
@@ -31691,6 +32616,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_pickle, __pyx_k_pickle, sizeof(__pyx_k_pickle), 0, 0, 1, 1},
   {&__pyx_n_s_pos, __pyx_k_pos, sizeof(__pyx_k_pos), 0, 0, 1, 1},
   {&__pyx_n_u_pos, __pyx_k_pos, sizeof(__pyx_k_pos), 0, 1, 0, 1},
+  {&__pyx_n_s_pos0, __pyx_k_pos0, sizeof(__pyx_k_pos0), 0, 0, 1, 1},
   {&__pyx_n_s_pos_trg, __pyx_k_pos_trg, sizeof(__pyx_k_pos_trg), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_PickleError, __pyx_k_pyx_PickleError, sizeof(__pyx_k_pyx_PickleError), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_checksum, __pyx_k_pyx_checksum, sizeof(__pyx_k_pyx_checksum), 0, 0, 1, 1},
@@ -31760,16 +32686,27 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "drone.pyx":426
+  /* "drone.pyx":333
+ *         D = pos_trg - pos0
+ *         vel = D.norm() * vel_len
+ *         self.state[2] = Vec2(1,0).angle_to(vel)             # <<<<<<<<<<<<<<
+ *         self.state[3] = 0
+ *         self.t = 0
+ */
+  __pyx_tuple_ = PyTuple_Pack(2, __pyx_int_1, __pyx_int_0); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 333, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple_);
+  __Pyx_GIVEREF(__pyx_tuple_);
+
+  /* "drone.pyx":435
  * 
  * cpdef real test(int a):
  *     cdef Vec2 v = Vec2(1,2)             # <<<<<<<<<<<<<<
  *     cdef real b = a
  *     return v.x + b
  */
-  __pyx_tuple_ = PyTuple_Pack(2, __pyx_int_1, __pyx_int_2); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 426, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple_);
-  __Pyx_GIVEREF(__pyx_tuple_);
+  __pyx_tuple__2 = PyTuple_Pack(2, __pyx_int_1, __pyx_int_2); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 435, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__2);
+  __Pyx_GIVEREF(__pyx_tuple__2);
 
   /* "../../env_neuro_missile/lib/site-packages/numpy/__init__.pxd":947
  *         __pyx_import_array()
@@ -31778,9 +32715,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * cdef inline int import_umath() except -1:
  */
-  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_u_numpy_core_multiarray_failed_to); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(2, 947, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__2);
-  __Pyx_GIVEREF(__pyx_tuple__2);
+  __pyx_tuple__3 = PyTuple_Pack(1, __pyx_kp_u_numpy_core_multiarray_failed_to); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(2, 947, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__3);
+  __Pyx_GIVEREF(__pyx_tuple__3);
 
   /* "../../env_neuro_missile/lib/site-packages/numpy/__init__.pxd":953
  *         _import_umath()
@@ -31789,9 +32726,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * cdef inline int import_ufunc() except -1:
  */
-  __pyx_tuple__3 = PyTuple_Pack(1, __pyx_kp_u_numpy_core_umath_failed_to_impor); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(2, 953, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__3);
-  __Pyx_GIVEREF(__pyx_tuple__3);
+  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_kp_u_numpy_core_umath_failed_to_impor); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(2, 953, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__4);
+  __Pyx_GIVEREF(__pyx_tuple__4);
 
   /* "View.MemoryView":133
  * 
@@ -31800,9 +32737,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         if itemsize <= 0:
  */
-  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_kp_s_Empty_shape_tuple_for_cython_arr); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(1, 133, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__4);
-  __Pyx_GIVEREF(__pyx_tuple__4);
+  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_kp_s_Empty_shape_tuple_for_cython_arr); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(1, 133, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__5);
+  __Pyx_GIVEREF(__pyx_tuple__5);
 
   /* "View.MemoryView":136
  * 
@@ -31811,9 +32748,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         if not isinstance(format, bytes):
  */
-  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_kp_s_itemsize_0_for_cython_array); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(1, 136, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__5);
-  __Pyx_GIVEREF(__pyx_tuple__5);
+  __pyx_tuple__6 = PyTuple_Pack(1, __pyx_kp_s_itemsize_0_for_cython_array); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(1, 136, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__6);
+  __Pyx_GIVEREF(__pyx_tuple__6);
 
   /* "View.MemoryView":148
  * 
@@ -31822,9 +32759,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * 
  */
-  __pyx_tuple__6 = PyTuple_Pack(1, __pyx_kp_s_unable_to_allocate_shape_and_str); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(1, 148, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__6);
-  __Pyx_GIVEREF(__pyx_tuple__6);
+  __pyx_tuple__7 = PyTuple_Pack(1, __pyx_kp_s_unable_to_allocate_shape_and_str); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(1, 148, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__7);
+  __Pyx_GIVEREF(__pyx_tuple__7);
 
   /* "View.MemoryView":176
  *             self.data = <char *>malloc(self.len)
@@ -31833,9 +32770,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *             if self.dtype_is_object:
  */
-  __pyx_tuple__7 = PyTuple_Pack(1, __pyx_kp_s_unable_to_allocate_array_data); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(1, 176, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__7);
-  __Pyx_GIVEREF(__pyx_tuple__7);
+  __pyx_tuple__8 = PyTuple_Pack(1, __pyx_kp_s_unable_to_allocate_array_data); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(1, 176, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__8);
+  __Pyx_GIVEREF(__pyx_tuple__8);
 
   /* "View.MemoryView":192
  *             bufmode = PyBUF_F_CONTIGUOUS | PyBUF_ANY_CONTIGUOUS
@@ -31844,9 +32781,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         info.buf = self.data
  *         info.len = self.len
  */
-  __pyx_tuple__8 = PyTuple_Pack(1, __pyx_kp_s_Can_only_create_a_buffer_that_is); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(1, 192, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__8);
-  __Pyx_GIVEREF(__pyx_tuple__8);
+  __pyx_tuple__9 = PyTuple_Pack(1, __pyx_kp_s_Can_only_create_a_buffer_that_is); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(1, 192, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__9);
+  __Pyx_GIVEREF(__pyx_tuple__9);
 
   /* "(tree fragment)":2
  * def __reduce_cython__(self):
@@ -31854,18 +32791,18 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_tuple__9 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(1, 2, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__9);
-  __Pyx_GIVEREF(__pyx_tuple__9);
+  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__10);
+  __Pyx_GIVEREF(__pyx_tuple__10);
 
   /* "(tree fragment)":4
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(1, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__10);
-  __Pyx_GIVEREF(__pyx_tuple__10);
+  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__11);
+  __Pyx_GIVEREF(__pyx_tuple__11);
 
   /* "View.MemoryView":418
  *     def __setitem__(memoryview self, object index, object value):
@@ -31874,9 +32811,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         have_slices, index = _unellipsify(index, self.view.ndim)
  */
-  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_kp_s_Cannot_assign_to_read_only_memor); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(1, 418, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__11);
-  __Pyx_GIVEREF(__pyx_tuple__11);
+  __pyx_tuple__12 = PyTuple_Pack(1, __pyx_kp_s_Cannot_assign_to_read_only_memor); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(1, 418, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__12);
+  __Pyx_GIVEREF(__pyx_tuple__12);
 
   /* "View.MemoryView":495
  *             result = struct.unpack(self.view.format, bytesitem)
@@ -31885,9 +32822,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         else:
  *             if len(self.view.format) == 1:
  */
-  __pyx_tuple__12 = PyTuple_Pack(1, __pyx_kp_s_Unable_to_convert_item_to_object); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(1, 495, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__12);
-  __Pyx_GIVEREF(__pyx_tuple__12);
+  __pyx_tuple__13 = PyTuple_Pack(1, __pyx_kp_s_Unable_to_convert_item_to_object); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(1, 495, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__13);
+  __Pyx_GIVEREF(__pyx_tuple__13);
 
   /* "View.MemoryView":520
  *     def __getbuffer__(self, Py_buffer *info, int flags):
@@ -31896,9 +32833,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         if flags & PyBUF_ND:
  */
-  __pyx_tuple__13 = PyTuple_Pack(1, __pyx_kp_s_Cannot_create_writable_memory_vi); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(1, 520, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__13);
-  __Pyx_GIVEREF(__pyx_tuple__13);
+  __pyx_tuple__14 = PyTuple_Pack(1, __pyx_kp_s_Cannot_create_writable_memory_vi); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(1, 520, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__14);
+  __Pyx_GIVEREF(__pyx_tuple__14);
 
   /* "View.MemoryView":570
  *         if self.view.strides == NULL:
@@ -31907,9 +32844,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         return tuple([stride for stride in self.view.strides[:self.view.ndim]])
  */
-  __pyx_tuple__14 = PyTuple_Pack(1, __pyx_kp_s_Buffer_view_does_not_expose_stri); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(1, 570, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__14);
-  __Pyx_GIVEREF(__pyx_tuple__14);
+  __pyx_tuple__15 = PyTuple_Pack(1, __pyx_kp_s_Buffer_view_does_not_expose_stri); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(1, 570, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__15);
+  __Pyx_GIVEREF(__pyx_tuple__15);
 
   /* "View.MemoryView":577
  *     def suboffsets(self):
@@ -31918,12 +32855,12 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         return tuple([suboffset for suboffset in self.view.suboffsets[:self.view.ndim]])
  */
-  __pyx_tuple__15 = PyTuple_New(1); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(1, 577, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__15);
+  __pyx_tuple__16 = PyTuple_New(1); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(1, 577, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__16);
   __Pyx_INCREF(__pyx_int_neg_1);
   __Pyx_GIVEREF(__pyx_int_neg_1);
-  PyTuple_SET_ITEM(__pyx_tuple__15, 0, __pyx_int_neg_1);
-  __Pyx_GIVEREF(__pyx_tuple__15);
+  PyTuple_SET_ITEM(__pyx_tuple__16, 0, __pyx_int_neg_1);
+  __Pyx_GIVEREF(__pyx_tuple__16);
 
   /* "(tree fragment)":2
  * def __reduce_cython__(self):
@@ -31931,18 +32868,18 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_tuple__16 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(1, 2, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__16);
-  __Pyx_GIVEREF(__pyx_tuple__16);
+  __pyx_tuple__17 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__17);
+  __Pyx_GIVEREF(__pyx_tuple__17);
 
   /* "(tree fragment)":4
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__17 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(1, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__17);
-  __Pyx_GIVEREF(__pyx_tuple__17);
+  __pyx_tuple__18 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__18);
+  __Pyx_GIVEREF(__pyx_tuple__18);
 
   /* "View.MemoryView":682
  *         if item is Ellipsis:
@@ -31951,9 +32888,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *                 seen_ellipsis = True
  *             else:
  */
-  __pyx_slice__18 = PySlice_New(Py_None, Py_None, Py_None); if (unlikely(!__pyx_slice__18)) __PYX_ERR(1, 682, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_slice__18);
-  __Pyx_GIVEREF(__pyx_slice__18);
+  __pyx_slice__19 = PySlice_New(Py_None, Py_None, Py_None); if (unlikely(!__pyx_slice__19)) __PYX_ERR(1, 682, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_slice__19);
+  __Pyx_GIVEREF(__pyx_slice__19);
 
   /* "View.MemoryView":703
  *     for suboffset in suboffsets[:ndim]:
@@ -31962,9 +32899,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * 
  */
-  __pyx_tuple__19 = PyTuple_Pack(1, __pyx_kp_s_Indirect_dimensions_not_supporte); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(1, 703, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__19);
-  __Pyx_GIVEREF(__pyx_tuple__19);
+  __pyx_tuple__20 = PyTuple_Pack(1, __pyx_kp_s_Indirect_dimensions_not_supporte); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(1, 703, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__20);
+  __Pyx_GIVEREF(__pyx_tuple__20);
 
   /* "(tree fragment)":2
  * def __reduce_cython__(self):
@@ -31972,32 +32909,32 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_tuple__20 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(1, 2, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__20);
-  __Pyx_GIVEREF(__pyx_tuple__20);
+  __pyx_tuple__21 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__21);
+  __Pyx_GIVEREF(__pyx_tuple__21);
 
   /* "(tree fragment)":4
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__21 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(1, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__21);
-  __Pyx_GIVEREF(__pyx_tuple__21);
+  __pyx_tuple__22 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__22);
+  __Pyx_GIVEREF(__pyx_tuple__22);
 
   /* "(tree fragment)":1
  * def __pyx_unpickle_Drone2d(__pyx_type, long __pyx_checksum, __pyx_state):             # <<<<<<<<<<<<<<
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
  */
-  __pyx_tuple__22 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__22);
-  __Pyx_GIVEREF(__pyx_tuple__22);
-  __pyx_codeobj__23 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__22, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_Drone2d, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__23)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_tuple__24 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__24);
-  __Pyx_GIVEREF(__pyx_tuple__24);
-  __pyx_codeobj__25 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__24, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_Missile2d, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__25)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_tuple__23 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__23)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__23);
+  __Pyx_GIVEREF(__pyx_tuple__23);
+  __pyx_codeobj__24 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__23, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_Drone2d, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__24)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_tuple__25 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__25)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__25);
+  __Pyx_GIVEREF(__pyx_tuple__25);
+  __pyx_codeobj__26 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__25, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_Missile2d, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__26)) __PYX_ERR(1, 1, __pyx_L1_error)
 
   /* "View.MemoryView":286
  *         return self.name
@@ -32006,9 +32943,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * cdef strided = Enum("<strided and direct>") # default
  * cdef indirect = Enum("<strided and indirect>")
  */
-  __pyx_tuple__26 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct_or_indirect); if (unlikely(!__pyx_tuple__26)) __PYX_ERR(1, 286, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__26);
-  __Pyx_GIVEREF(__pyx_tuple__26);
+  __pyx_tuple__27 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct_or_indirect); if (unlikely(!__pyx_tuple__27)) __PYX_ERR(1, 286, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__27);
+  __Pyx_GIVEREF(__pyx_tuple__27);
 
   /* "View.MemoryView":287
  * 
@@ -32017,9 +32954,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * cdef indirect = Enum("<strided and indirect>")
  * 
  */
-  __pyx_tuple__27 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct); if (unlikely(!__pyx_tuple__27)) __PYX_ERR(1, 287, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__27);
-  __Pyx_GIVEREF(__pyx_tuple__27);
+  __pyx_tuple__28 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct); if (unlikely(!__pyx_tuple__28)) __PYX_ERR(1, 287, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__28);
+  __Pyx_GIVEREF(__pyx_tuple__28);
 
   /* "View.MemoryView":288
  * cdef generic = Enum("<strided and direct or indirect>")
@@ -32028,9 +32965,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * 
  */
-  __pyx_tuple__28 = PyTuple_Pack(1, __pyx_kp_s_strided_and_indirect); if (unlikely(!__pyx_tuple__28)) __PYX_ERR(1, 288, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__28);
-  __Pyx_GIVEREF(__pyx_tuple__28);
+  __pyx_tuple__29 = PyTuple_Pack(1, __pyx_kp_s_strided_and_indirect); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(1, 288, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__29);
+  __Pyx_GIVEREF(__pyx_tuple__29);
 
   /* "View.MemoryView":291
  * 
@@ -32039,9 +32976,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * cdef indirect_contiguous = Enum("<contiguous and indirect>")
  * 
  */
-  __pyx_tuple__29 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_direct); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(1, 291, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__29);
-  __Pyx_GIVEREF(__pyx_tuple__29);
+  __pyx_tuple__30 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_direct); if (unlikely(!__pyx_tuple__30)) __PYX_ERR(1, 291, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__30);
+  __Pyx_GIVEREF(__pyx_tuple__30);
 
   /* "View.MemoryView":292
  * 
@@ -32050,19 +32987,19 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * 
  */
-  __pyx_tuple__30 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_indirect); if (unlikely(!__pyx_tuple__30)) __PYX_ERR(1, 292, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__30);
-  __Pyx_GIVEREF(__pyx_tuple__30);
+  __pyx_tuple__31 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_indirect); if (unlikely(!__pyx_tuple__31)) __PYX_ERR(1, 292, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__31);
+  __Pyx_GIVEREF(__pyx_tuple__31);
 
   /* "(tree fragment)":1
  * def __pyx_unpickle_Enum(__pyx_type, long __pyx_checksum, __pyx_state):             # <<<<<<<<<<<<<<
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
  */
-  __pyx_tuple__31 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__31)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__31);
-  __Pyx_GIVEREF(__pyx_tuple__31);
-  __pyx_codeobj__32 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__31, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_Enum, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__32)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_tuple__32 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__32)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__32);
+  __Pyx_GIVEREF(__pyx_tuple__32);
+  __pyx_codeobj__33 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__32, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_Enum, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__33)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -32083,9 +33020,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitGlobals(void) {
   __pyx_int_33 = PyInt_FromLong(33); if (unlikely(!__pyx_int_33)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_42 = PyInt_FromLong(42); if (unlikely(!__pyx_int_42)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_100 = PyInt_FromLong(100); if (unlikely(!__pyx_int_100)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __pyx_int_58527227 = PyInt_FromLong(58527227L); if (unlikely(!__pyx_int_58527227)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_158165616 = PyInt_FromLong(158165616L); if (unlikely(!__pyx_int_158165616)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_184977713 = PyInt_FromLong(184977713L); if (unlikely(!__pyx_int_184977713)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __pyx_int_199443651 = PyInt_FromLong(199443651L); if (unlikely(!__pyx_int_199443651)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_198988155 = PyInt_FromLong(198988155L); if (unlikely(!__pyx_int_198988155)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_neg_1 = PyInt_FromLong(-1); if (unlikely(!__pyx_int_neg_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
@@ -32160,16 +33097,16 @@ static int __Pyx_modinit_type_init_code(void) {
   __pyx_vtable_5drone_Missile2d.step = (void (*)(struct __pyx_obj_5drone_Missile2d *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch, struct __pyx_opt_args_5drone_9Missile2d_step *__pyx_optional_args))__pyx_f_5drone_9Missile2d_step;
   __pyx_vtable_5drone_Missile2d.to_dict = (PyObject *(*)(struct __pyx_obj_5drone_Missile2d *, int __pyx_skip_dispatch))__pyx_f_5drone_9Missile2d_to_dict;
   __pyx_vtable_5drone_Missile2d.from_dict = (void (*)(struct __pyx_obj_5drone_Missile2d *, PyObject *, int __pyx_skip_dispatch))__pyx_f_5drone_9Missile2d_from_dict;
-  if (PyType_Ready(&__pyx_type_5drone_Missile2d) < 0) __PYX_ERR(0, 317, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_5drone_Missile2d) < 0) __PYX_ERR(0, 310, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_5drone_Missile2d.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_5drone_Missile2d.tp_dictoffset && __pyx_type_5drone_Missile2d.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_5drone_Missile2d.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (__Pyx_SetVtable(__pyx_type_5drone_Missile2d.tp_dict, __pyx_vtabptr_5drone_Missile2d) < 0) __PYX_ERR(0, 317, __pyx_L1_error)
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Missile2d, (PyObject *)&__pyx_type_5drone_Missile2d) < 0) __PYX_ERR(0, 317, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_5drone_Missile2d) < 0) __PYX_ERR(0, 317, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_5drone_Missile2d.tp_dict, __pyx_vtabptr_5drone_Missile2d) < 0) __PYX_ERR(0, 310, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Missile2d, (PyObject *)&__pyx_type_5drone_Missile2d) < 0) __PYX_ERR(0, 310, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_5drone_Missile2d) < 0) __PYX_ERR(0, 310, __pyx_L1_error)
   __pyx_ptype_5drone_Missile2d = &__pyx_type_5drone_Missile2d;
   __pyx_vtabptr_array = &__pyx_vtable_array;
   __pyx_vtable_array.get_memview = (PyObject *(*)(struct __pyx_array_obj *))__pyx_array_get_memview;
@@ -32244,6 +33181,7 @@ static int __Pyx_modinit_type_import_code(void) {
   __pyx_vtabptr_7easyvec_7vectors_Vec2 = (struct __pyx_vtabstruct_7easyvec_7vectors_Vec2*)__Pyx_GetVtable(__pyx_ptype_7easyvec_7vectors_Vec2->tp_dict); if (unlikely(!__pyx_vtabptr_7easyvec_7vectors_Vec2)) __PYX_ERR(3, 15, __pyx_L1_error)
   __pyx_ptype_7easyvec_7vectors_Vec3 = __Pyx_ImportType(__pyx_t_1, "easyvec.vectors", "Vec3", sizeof(struct __pyx_obj_7easyvec_7vectors_Vec3), __Pyx_ImportType_CheckSize_Warn);
    if (!__pyx_ptype_7easyvec_7vectors_Vec3) __PYX_ERR(3, 154, __pyx_L1_error)
+  __pyx_vtabptr_7easyvec_7vectors_Vec3 = (struct __pyx_vtabstruct_7easyvec_7vectors_Vec3*)__Pyx_GetVtable(__pyx_ptype_7easyvec_7vectors_Vec3->tp_dict); if (unlikely(!__pyx_vtabptr_7easyvec_7vectors_Vec3)) __PYX_ERR(3, 154, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = PyImport_ImportModule(__Pyx_BUILTIN_MODULE_NAME); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -32580,8 +33518,8 @@ if (!__Pyx_RefNanny) {
  *         __pyx_unpickle_Drone2d__set_state(<Drone2d> __pyx_result, __pyx_state)
  *     return __pyx_result
  * cdef __pyx_unpickle_Drone2d__set_state(Drone2d __pyx_result, tuple __pyx_state):             # <<<<<<<<<<<<<<
- *     __pyx_result.Cx = __pyx_state[0]; __pyx_result.F_max = __pyx_state[1]; __pyx_result.J = __pyx_state[2]; __pyx_result.L = __pyx_state[3]; __pyx_result.g = __pyx_state[4]; __pyx_result.m = __pyx_state[5]; __pyx_result.mu_omega = __pyx_state[6]; __pyx_result.state = __pyx_state[7]; __pyx_result.t = __pyx_state[8]; __pyx_result.tmp1 = __pyx_state[9]; __pyx_result.tmp2 = __pyx_state[10]; __pyx_result.tmp3 = __pyx_state[11]; __pyx_result.tmp4 = __pyx_state[12]
- *     if len(__pyx_state) > 13 and hasattr(__pyx_result, '__dict__'):
+ *     __pyx_result.Cx = __pyx_state[0]; __pyx_result.F_max = __pyx_state[1]; __pyx_result.J = __pyx_state[2]; __pyx_result.L = __pyx_state[3]; __pyx_result.g = __pyx_state[4]; __pyx_result.m = __pyx_state[5]; __pyx_result.mu_omega = __pyx_state[6]; __pyx_result.n = __pyx_state[7]; __pyx_result.state = __pyx_state[8]; __pyx_result.t = __pyx_state[9]; __pyx_result.tmp1 = __pyx_state[10]; __pyx_result.tmp2 = __pyx_state[11]; __pyx_result.tmp3 = __pyx_state[12]; __pyx_result.tmp4 = __pyx_state[13]
+ *     if len(__pyx_state) > 14 and hasattr(__pyx_result, '__dict__'):
  */
   __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_5drone_19__pyx_unpickle_Missile2d, NULL, __pyx_n_s_drone); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -32618,7 +33556,7 @@ if (!__Pyx_RefNanny) {
  * cdef strided = Enum("<strided and direct>") # default
  * cdef indirect = Enum("<strided and indirect>")
  */
-  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__26, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 286, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__27, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 286, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_XGOTREF(generic);
   __Pyx_DECREF_SET(generic, __pyx_t_2);
@@ -32632,7 +33570,7 @@ if (!__Pyx_RefNanny) {
  * cdef indirect = Enum("<strided and indirect>")
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__27, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 287, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__28, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 287, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_XGOTREF(strided);
   __Pyx_DECREF_SET(strided, __pyx_t_2);
@@ -32646,7 +33584,7 @@ if (!__Pyx_RefNanny) {
  * 
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__28, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 288, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__29, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 288, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_XGOTREF(indirect);
   __Pyx_DECREF_SET(indirect, __pyx_t_2);
@@ -32660,7 +33598,7 @@ if (!__Pyx_RefNanny) {
  * cdef indirect_contiguous = Enum("<contiguous and indirect>")
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__29, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 291, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__30, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 291, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_XGOTREF(contiguous);
   __Pyx_DECREF_SET(contiguous, __pyx_t_2);
@@ -32674,7 +33612,7 @@ if (!__Pyx_RefNanny) {
  * 
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__30, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 292, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__31, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 292, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_XGOTREF(indirect_contiguous);
   __Pyx_DECREF_SET(indirect_contiguous, __pyx_t_2);
@@ -33804,20 +34742,6 @@ static CYTHON_INLINE PyObject *__Pyx_GetAttr3(PyObject *o, PyObject *n, PyObject
     PyObject *r = __Pyx_GetAttr(o, n);
     return (likely(r)) ? r : __Pyx_GetAttr3Default(d);
 }
-
-/* PyObjectSetAttrStr */
-#if CYTHON_USE_TYPE_SLOTS
-static CYTHON_INLINE int __Pyx_PyObject_SetAttrStr(PyObject* obj, PyObject* attr_name, PyObject* value) {
-    PyTypeObject* tp = Py_TYPE(obj);
-    if (likely(tp->tp_setattro))
-        return tp->tp_setattro(obj, attr_name, value);
-#if PY_MAJOR_VERSION < 3
-    if (likely(tp->tp_setattr))
-        return tp->tp_setattr(obj, PyString_AS_STRING(attr_name), value);
-#endif
-    return PyObject_SetAttr(obj, attr_name, value);
-}
-#endif
 
 /* ExtTypeTest */
 static CYTHON_INLINE int __Pyx_TypeTest(PyObject *obj, PyTypeObject *type) {
@@ -35327,6 +36251,28 @@ __pyx_capsule_create(void *p, CYTHON_UNUSED const char *sig)
     return cobj;
 }
 
+/* CIntFromPyVerify */
+#define __PYX_VERIFY_RETURN_INT(target_type, func_type, func_value)\
+    __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 0)
+#define __PYX_VERIFY_RETURN_INT_EXC(target_type, func_type, func_value)\
+    __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+#define __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, exc)\
+    {\
+        func_type value = func_value;\
+        if (sizeof(target_type) < sizeof(func_type)) {\
+            if (unlikely(value != (func_type) (target_type) value)) {\
+                func_type zero = 0;\
+                if (exc && unlikely(value == (func_type)-1 && PyErr_Occurred()))\
+                    return (target_type) -1;\
+                if (is_unsigned && unlikely(value < zero))\
+                    goto raise_neg_overflow;\
+                else\
+                    goto raise_overflow;\
+            }\
+        }\
+        return (target_type) value;\
+    }
+
 /* MemviewDtypeToObject */
 static CYTHON_INLINE PyObject *__pyx_memview_get_double(const char *itemp) {
     return (PyObject *) PyFloat_FromDouble(*(double *) itemp);
@@ -36097,28 +37043,6 @@ __pyx_fail:
     return result;
 }
 
-/* CIntFromPyVerify */
-  #define __PYX_VERIFY_RETURN_INT(target_type, func_type, func_value)\
-    __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 0)
-#define __PYX_VERIFY_RETURN_INT_EXC(target_type, func_type, func_value)\
-    __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
-#define __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, exc)\
-    {\
-        func_type value = func_value;\
-        if (sizeof(target_type) < sizeof(func_type)) {\
-            if (unlikely(value != (func_type) (target_type) value)) {\
-                func_type zero = 0;\
-                if (exc && unlikely(value == (func_type)-1 && PyErr_Occurred()))\
-                    return (target_type) -1;\
-                if (is_unsigned && unlikely(value < zero))\
-                    goto raise_neg_overflow;\
-                else\
-                    goto raise_overflow;\
-            }\
-        }\
-        return (target_type) value;\
-    }
-
 /* ToPyCTupleUtility */
   static PyObject* __pyx_convert__to_py___pyx_ctuple_double__and_double(__pyx_ctuple_double__and_double value) {
     PyObject* item = NULL;
@@ -36569,6 +37493,44 @@ no_fail:
     return new_mvs;
 }
 
+/* CIntToPy */
+  static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value) {
+#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+    const int neg_one = (int) -1, const_zero = (int) 0;
+#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
+#pragma GCC diagnostic pop
+#endif
+    const int is_unsigned = neg_one > const_zero;
+    if (is_unsigned) {
+        if (sizeof(int) < sizeof(long)) {
+            return PyInt_FromLong((long) value);
+        } else if (sizeof(int) <= sizeof(unsigned long)) {
+            return PyLong_FromUnsignedLong((unsigned long) value);
+#ifdef HAVE_LONG_LONG
+        } else if (sizeof(int) <= sizeof(unsigned PY_LONG_LONG)) {
+            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
+#endif
+        }
+    } else {
+        if (sizeof(int) <= sizeof(long)) {
+            return PyInt_FromLong((long) value);
+#ifdef HAVE_LONG_LONG
+        } else if (sizeof(int) <= sizeof(PY_LONG_LONG)) {
+            return PyLong_FromLongLong((PY_LONG_LONG) value);
+#endif
+        }
+    }
+    {
+        int one = 1; int little = (int)*(unsigned char *)&one;
+        unsigned char *bytes = (unsigned char *)&value;
+        return _PyLong_FromByteArray(bytes, sizeof(int),
+                                     little, !is_unsigned);
+    }
+}
+
 /* CIntFromPy */
   static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *x) {
 #ifdef __Pyx_HAS_GCC_DIAGNOSTIC
@@ -36961,82 +37923,6 @@ raise_neg_overflow:
     return (long) -1;
 }
 
-/* CIntToPy */
-  static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value) {
-#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wconversion"
-#endif
-    const int neg_one = (int) -1, const_zero = (int) 0;
-#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
-#pragma GCC diagnostic pop
-#endif
-    const int is_unsigned = neg_one > const_zero;
-    if (is_unsigned) {
-        if (sizeof(int) < sizeof(long)) {
-            return PyInt_FromLong((long) value);
-        } else if (sizeof(int) <= sizeof(unsigned long)) {
-            return PyLong_FromUnsignedLong((unsigned long) value);
-#ifdef HAVE_LONG_LONG
-        } else if (sizeof(int) <= sizeof(unsigned PY_LONG_LONG)) {
-            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
-#endif
-        }
-    } else {
-        if (sizeof(int) <= sizeof(long)) {
-            return PyInt_FromLong((long) value);
-#ifdef HAVE_LONG_LONG
-        } else if (sizeof(int) <= sizeof(PY_LONG_LONG)) {
-            return PyLong_FromLongLong((PY_LONG_LONG) value);
-#endif
-        }
-    }
-    {
-        int one = 1; int little = (int)*(unsigned char *)&one;
-        unsigned char *bytes = (unsigned char *)&value;
-        return _PyLong_FromByteArray(bytes, sizeof(int),
-                                     little, !is_unsigned);
-    }
-}
-
-/* CIntToPy */
-  static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value) {
-#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wconversion"
-#endif
-    const long neg_one = (long) -1, const_zero = (long) 0;
-#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
-#pragma GCC diagnostic pop
-#endif
-    const int is_unsigned = neg_one > const_zero;
-    if (is_unsigned) {
-        if (sizeof(long) < sizeof(long)) {
-            return PyInt_FromLong((long) value);
-        } else if (sizeof(long) <= sizeof(unsigned long)) {
-            return PyLong_FromUnsignedLong((unsigned long) value);
-#ifdef HAVE_LONG_LONG
-        } else if (sizeof(long) <= sizeof(unsigned PY_LONG_LONG)) {
-            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
-#endif
-        }
-    } else {
-        if (sizeof(long) <= sizeof(long)) {
-            return PyInt_FromLong((long) value);
-#ifdef HAVE_LONG_LONG
-        } else if (sizeof(long) <= sizeof(PY_LONG_LONG)) {
-            return PyLong_FromLongLong((PY_LONG_LONG) value);
-#endif
-        }
-    }
-    {
-        int one = 1; int little = (int)*(unsigned char *)&one;
-        unsigned char *bytes = (unsigned char *)&value;
-        return _PyLong_FromByteArray(bytes, sizeof(long),
-                                     little, !is_unsigned);
-    }
-}
-
 /* CIntFromPy */
   static CYTHON_INLINE size_t __Pyx_PyInt_As_size_t(PyObject *x) {
 #ifdef __Pyx_HAS_GCC_DIAGNOSTIC
@@ -37231,6 +38117,44 @@ raise_neg_overflow:
     PyErr_SetString(PyExc_OverflowError,
         "can't convert negative value to size_t");
     return (size_t) -1;
+}
+
+/* CIntToPy */
+  static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value) {
+#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+    const long neg_one = (long) -1, const_zero = (long) 0;
+#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
+#pragma GCC diagnostic pop
+#endif
+    const int is_unsigned = neg_one > const_zero;
+    if (is_unsigned) {
+        if (sizeof(long) < sizeof(long)) {
+            return PyInt_FromLong((long) value);
+        } else if (sizeof(long) <= sizeof(unsigned long)) {
+            return PyLong_FromUnsignedLong((unsigned long) value);
+#ifdef HAVE_LONG_LONG
+        } else if (sizeof(long) <= sizeof(unsigned PY_LONG_LONG)) {
+            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
+#endif
+        }
+    } else {
+        if (sizeof(long) <= sizeof(long)) {
+            return PyInt_FromLong((long) value);
+#ifdef HAVE_LONG_LONG
+        } else if (sizeof(long) <= sizeof(PY_LONG_LONG)) {
+            return PyLong_FromLongLong((PY_LONG_LONG) value);
+#endif
+        }
+    }
+    {
+        int one = 1; int little = (int)*(unsigned char *)&one;
+        unsigned char *bytes = (unsigned char *)&value;
+        return _PyLong_FromByteArray(bytes, sizeof(long),
+                                     little, !is_unsigned);
+    }
 }
 
 /* CIntFromPy */

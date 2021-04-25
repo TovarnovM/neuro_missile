@@ -83,6 +83,7 @@ cdef class Drone2d:
         return cls(m=m, J=J, F_max=42, L=L, Cx=0.2, g=9.81, mu_omega=1.0)
 
     cdef public double m, J, F_max, L, Cx, t, g, mu_omega
+    cdef public int n
     cdef public double[:] state, tmp1, tmp2, tmp3, tmp4
     # [0, 1, 2,  3,  4,     5,     6]
     # [x, y, Vx, Vy, alpha, omega, t]
@@ -94,12 +95,12 @@ cdef class Drone2d:
         self.L = L
         self.Cx = Cx
         self.g = g
-        n = 7
-        self.state = np.zeros(n)
-        self.tmp1 = np.zeros(n)
-        self.tmp2 = np.zeros(n)
-        self.tmp3 = np.zeros(n)
-        self.tmp4 = np.zeros(n)
+        self.n = 7
+        self.state = np.zeros(self.n)
+        self.tmp1 = np.zeros(self.n)
+        self.tmp2 = np.zeros(self.n)
+        self.tmp3 = np.zeros(self.n)
+        self.tmp4 = np.zeros(self.n)
         self.t = 0
         self.mu_omega = mu_omega
 
@@ -278,14 +279,6 @@ cdef class Drone2d:
                 t3 = t2
 
         return t2
-        
-             
-            
-
-            
-        
-
-
 
     @property
     def vel(self):
@@ -315,21 +308,30 @@ cdef class Drone2d:
 
 
 cdef class Missile2d:
-    cdef public double vel_len, ay, alpha
+    cdef public double vel_len, ay, alpha, t
+    cdef public int n
     cdef public double[:] state, tmp1, tmp2, tmp3, tmp4
     # [0, 1, 2,     3]
     # [x, y, theta, t]
     
-    def __init__(self, vel_len, ay, alpha):
+    def __init__(self, pos0, pos_trg, vel_len, ay, alpha):
         self.vel_len = vel_len
         self.ay = ay
         self.alpha = alpha
-        n = 4
-        self.state = np.zeros(n)
-        self.tmp1 = np.zeros(n)
-        self.tmp2 = np.zeros(n)
-        self.tmp3 = np.zeros(n)
-        self.tmp4 = np.zeros(n)
+        self.n = 4
+        self.state = np.zeros(self.n)
+        self.tmp1 = np.zeros(self.n)
+        self.tmp2 = np.zeros(self.n)
+        self.tmp3 = np.zeros(self.n)
+        self.tmp4 = np.zeros(self.n)
+
+        self.state[0] = pos0[0]
+        self.state[1] = pos0[1]
+
+        D = pos_trg - pos0
+        vel = D.norm() * vel_len
+        self.state[2] = Vec2(1,0).angle_to(vel)
+        self.state[3] = 0
         self.t = 0
 
     cpdef void fill_dy(self, Vec2 aim, double[:] dy):
@@ -338,11 +340,12 @@ cdef class Missile2d:
 
         cdef Vec2 r_vis = aim.sub_vec(pos).norm()
         cdef double angle = vel.angle_to(r_vis)
-        if abs(angle) < 3 * 3.14/ 180:
+        if abs(angle) < 2 * 3.14/ 180:
             dy[2] = 0
         elif angle > 0:
             dy[2] = self.ay/self.vel_len
-
+        else:
+            dy[2] = -self.ay/self.vel_len
         dy[0] = vel.x                    # dx = vx
         dy[1] = vel.y                    # dy = vy
 
@@ -358,7 +361,7 @@ cdef class Missile2d:
         for i in range(n):
             t = dt * i
             drone_pos_t = drone_pos + t * drone_vel
-            fly_time = (drone_pos_t - self.pos).vel() / self.vel_len
+            fly_time = (drone_pos_t - self.pos).len() / self.vel_len
             aim = drone_pos_t + fly_time * self.alpha * drone_vel 
             self.fill_dy(aim, self.tmp1) # k1
             for j in range(self.tmp1.shape[0]):
@@ -366,7 +369,7 @@ cdef class Missile2d:
 
             t = dt * i + 0.5*dt
             drone_pos_t = drone_pos + t * drone_vel
-            fly_time = (drone_pos_t - self.pos).vel() / self.vel_len
+            fly_time = (drone_pos_t - self.pos).len() / self.vel_len
             aim = drone_pos_t + fly_time * self.alpha * drone_vel 
             self.fill_dy(aim, self.tmp2) # k2
             for j in range(self.state.shape[0]):
@@ -395,6 +398,12 @@ cdef class Missile2d:
 
     def to_numpy(self):
         return np.array(self.state)
+
+    def from_numpy(self, state):
+        cdef size_t i 
+        for i in range(self.state.shape[0]):
+            self.state[i] = state[i]
+        self.t = self.state[6]
 
 
     @property
