@@ -18,9 +18,9 @@ cpdef Vec2 get_B(double delta_t, Vec2 A, Vec2 vA):
 cpdef Vec2 get_C(double delta_t, Vec2 D, Vec2 vD): 
     return  D.sub_vec(vD.mul_num(delta_t / 3))
 
-cpdef double get_max_a(double delta_t, Vec2 A, Vec2 B, Vec2 C, Vec2 D):
-    cdef Vec2 a1 = (C.sub_vec(B)).mul_num(6).sub_vec((B.sub_vec(A)).mul_num(6))
-    cdef Vec2 a2 = (D.sub_vec(C)).mul_num(6).sub_vec((C.sub_vec(B)).mul_num(6))
+cpdef double get_max_a(double delta_t, Vec2 A, Vec2 B, Vec2 C, Vec2 D, Vec2 g):
+    cdef Vec2 a1 = ((C.sub_vec(B)).mul_num(6).sub_vec((B.sub_vec(A)).mul_num(6))).sub_vec(g)
+    cdef Vec2 a2 = ((D.sub_vec(C)).mul_num(6).sub_vec((C.sub_vec(B)).mul_num(6))).sub_vec(g)
     return fmax(a1.len(), a2.len())/delta_t/delta_t
 
 cpdef (double, double) get_min_max_v(double delta_t, Vec2 A, Vec2 B, Vec2 C, Vec2 D, int n=42):
@@ -43,7 +43,7 @@ cpdef (double, double) get_min_max_v(double delta_t, Vec2 A, Vec2 B, Vec2 C, Vec
     return min_v, max_v
 
 
-cpdef (double, double) get_max_v_a(double delta_t, Vec2 A, Vec2 B, Vec2 C, Vec2 D, int n=33, int rounds=3):
+cpdef (double, double) get_max_v_a(double delta_t, Vec2 A, Vec2 B, Vec2 C, Vec2 D, int n=33, int rounds=3, bint inc_g=False):
     cdef Vec2 BA = B.sub_vec(A)
     cdef Vec2 CB = C.sub_vec(B)
     cdef Vec2 DC = D.sub_vec(C)
@@ -69,8 +69,11 @@ cpdef (double, double) get_max_v_a(double delta_t, Vec2 A, Vec2 B, Vec2 C, Vec2 
             t0 = 0.0
         if t1 > 1:
             t1 = 1.0
-    cdef Vec2 a1 = (CB.mul_num(6)).sub_vec(BA.mul_num(6))
-    cdef Vec2 a2 = (DC.mul_num(6)).sub_vec(CB.mul_num(6))
+    cdef Vec2 g = Vec2(0, 0)
+    if inc_g:
+        g.y = -9.81
+    cdef Vec2 a1 = ((CB.mul_num(6)).sub_vec(BA.mul_num(6))).sub_vec(g)
+    cdef Vec2 a2 = ((DC.mul_num(6)).sub_vec(CB.mul_num(6))).sub_vec(g)
     return max_v, fmax(a1.len(), a2.len())/delta_t/delta_t
 
 
@@ -132,6 +135,35 @@ cdef class Drone2d:
         dy[6] = 1   # dt
         # print(f'rho={rho} F_coeff={F_coeff} F1={F1} F2={F2} V={V} F_Cx={F_Cx} F_Cx_x={F_Cx_x} F_Cx_y={F_Cx_y} F_x={F_x} F_y={F_y}')
 
+
+    cpdef void step2(self, double F_sum, double delta_F, double tau=0.1, int n=10):
+        cdef double F1, F2
+        F_sum *= 1.2
+        if delta_F > 1:
+            delta_F = 1
+        elif delta_F < -1:
+            delta_F = -1
+
+        if F_sum > 1:
+            F_sum = 1
+        elif F_sum < -1:
+            F_sum = -1
+
+        F1 = F_sum - delta_F*0.05
+        F2 = F_sum + delta_F*0.05
+        if F1 > 1:
+            F1 = 1
+        elif F1 < -1:
+            F1 = -1
+        
+        if F2 > 1:
+            F2 = 1
+        elif F2 < -1:
+            F2 = -1
+
+        self.step(F1, F2, tau, n)
+
+
     cpdef void step(self, double F1, double F2, double tau=0.1, int n=10):
         """
         F1 [-1, 1]
@@ -191,24 +223,30 @@ cdef class Drone2d:
             self.state[i] = state[i]
         self.t = self.state[6]
 
-    cpdef (double, double, double) get_vmin_vmax_amax(self, double delta_t, Vec2 pos_trg, Vec2 vel_trg, int n_vel_search=25):
+    cpdef (double, double, double) get_vmin_vmax_amax(self, double delta_t, Vec2 pos_trg, Vec2 vel_trg, int n_vel_search=25, bint inc_g=False):
         cdef Vec2 D = pos_trg
         cdef Vec2 A = Vec2(self.state[0], self.state[1])
         cdef Vec2 velA = Vec2(self.state[2], self.state[3])
         cdef Vec2 B = get_B(delta_t, A, velA)
         cdef Vec2 C = get_C(delta_t, D, vel_trg)
-        cdef double amax = get_max_a(delta_t, A, B, C, D)
+        cdef Vec2 g = Vec2(0, 0)
+        if inc_g:
+            g.y = -9.81
+        cdef double amax = get_max_a(delta_t, A, B, C, D, g)
         cdef double vmin, vmax
         vmin, vmax = get_min_max_v(delta_t, A, B, C, D, n_vel_search)
         return vmin, vmax, amax
 
-    cpdef double get_amax(self, double delta_t, Vec2 pos_trg, Vec2 vel_trg):
+    cpdef double get_amax(self, double delta_t, Vec2 pos_trg, Vec2 vel_trg, bint inc_g=False):
         cdef Vec2 D = pos_trg
         cdef Vec2 A = Vec2(self.state[0], self.state[1])
         cdef Vec2 velA = Vec2(self.state[2], self.state[3])
         cdef Vec2 B = get_B(delta_t, A, velA)
         cdef Vec2 C = get_C(delta_t, D, vel_trg)
-        cdef double amax = get_max_a(delta_t, A, B, C, D)
+        cdef Vec2 g = Vec2(0, 0)
+        if inc_g:
+            g.y = -9.81
+        cdef double amax = get_max_a(delta_t, A, B, C, D, g)
         return amax
 
     def get_traject(self, delta_t, pos_trg, vel_trg, n_points=100):
@@ -237,7 +275,7 @@ cdef class Drone2d:
             for t in ts
         ])
 
-    def get_delta_t_minimum(self, pos_trg, vel_trg, vmax, amax, t_tol, n=33, rounds=3):
+    def get_delta_t_minimum(self, pos_trg, vel_trg, vmax, amax, t_tol, n=33, rounds=3, inc_g=True):
         cdef double t1, t2, t3, vmax_fact, amax_fact, vmax_, amax_, t_tol_
         cdef Vec2 A, VelA, B, C, D, velD
         cdef int t1_flag, t2_flag, t3_flag
@@ -262,7 +300,7 @@ cdef class Drone2d:
         while True:
             B = get_B(t3, A, velA)
             C = get_C(t3, D, velD)
-            vmax_fact, amax_fact = get_max_v_a(t3, A, B, C, D, n_, rounds_)
+            vmax_fact, amax_fact = get_max_v_a(t3, A, B, C, D, n_, rounds_, inc_g)
             if vmax_fact > vmax_ or amax_fact > amax_:
                 t3 *= 1.618
             else:
@@ -272,7 +310,7 @@ cdef class Drone2d:
             t2 = (t1 + t3)/2
             B = get_B(t2, A, velA)
             C = get_C(t2, D, velD)
-            vmax_fact, amax_fact = get_max_v_a(t2, A, B, C, D, n_, rounds_)
+            vmax_fact, amax_fact = get_max_v_a(t2, A, B, C, D, n_, rounds_, inc_g)
             if vmax_fact > vmax_ or amax_fact > amax_:
                 t1 = t2
             else:

@@ -4,6 +4,7 @@ import torch.nn.functional as F
 import numpy as np
 from buffer import ReplayBuffer
 from sac_networks import ActorNetwork, CriticNetwork, ValueNetwork
+from sac_networks3layers import ActorNetwork3layers, CriticNetwork3layers, ValueNetwork3layers
 
 class Agent():
     def __init__(self, alpha=0.0003, beta=0.0003, input_dims=[8],
@@ -291,6 +292,162 @@ class AgentParallel:
         self.target_value.load_state_dict(d['target_value'])
         self.critic_1.load_state_dict(d['critic_1'])
         self.critic_2.load_state_dict(d['critic_2'])
+
+
+
+class AgentParallel3layers:
+    def __init__(self, input_dims, n_actions, action_space_high, **kwargs):
+        self.alpha = kwargs.get('alpha', 0.0003)
+        self.beta = kwargs.get('beta', 0.0003)   
+        self.tau = kwargs.get('tau', 0.005)   
+        self.input_dims = input_dims
+        self.n_actions = n_actions
+        self.action_space_high = action_space_high
+        self.reward_scale=kwargs.get('reward_scale', 4)
+        self.gamma = kwargs.get('gamma', 0.99)
+
+        self.actor_fc1_dims = kwargs.get('actor_fc1_dims', 256)
+        self.actor_fc2_dims = kwargs.get('actor_fc2_dims', 256)
+        self.actor_fc3_dims = kwargs.get('actor_fc3_dims', 256)
+        
+        self.critic_fc1_dims = kwargs.get('critic_fc1_dims', 256)
+        self.critic_fc2_dims = kwargs.get('critic_fc2_dims', 256)
+        self.critic_fc3_dims = kwargs.get('critic_fc3_dims', 256)
+
+        self.value_fc1_dims = kwargs.get('value_fc1_dims', 256)
+        self.value_fc2_dims = kwargs.get('value_fc2_dims', 256)
+        self.value_fc3_dims = kwargs.get('value_fc3_dims', 256)
+
+        self.device_name = kwargs.get('device_name', 'cuda:0' if T.cuda.is_available() else 'cpu')
+
+        self.actor = ActorNetwork3layers(self.alpha, self.input_dims, n_actions=self.n_actions,
+                    name='actor', max_action=self.action_space_high,
+                    fc1_dims=self.actor_fc1_dims, fc2_dims=self.actor_fc2_dims, fc3_dims=self.actor_fc3_dims,
+                    device_name=self.device_name)
+        
+        self.critic_1 = CriticNetwork3layers(self.beta, self.input_dims, n_actions=self.n_actions,
+                    name='critic_1', fc1_dims=self.critic_fc1_dims, fc2_dims=self.critic_fc2_dims, 
+                    fc3_dims=self.critic_fc3_dims, device_name=self.device_name)
+        self.critic_2 = CriticNetwork3layers(self.beta, self.input_dims, n_actions=self.n_actions,
+                    name='critic_2', fc1_dims=self.critic_fc2_dims, fc2_dims=self.critic_fc2_dims, 
+                    fc3_dims=self.critic_fc3_dims,device_name=self.device_name)
+       
+        self.value = ValueNetwork3layers(self.beta, self.input_dims, name='value', 
+                    fc1_dims=self.value_fc1_dims, fc2_dims=self.value_fc2_dims, 
+                    fc3_dims=self.value_fc3_dims, device_name=self.device_name)
+        self.target_value = ValueNetwork3layers(self.beta, self.input_dims, name='target_value',
+                    fc1_dims=self.value_fc1_dims, fc2_dims=self.value_fc2_dims, 
+                    fc3_dims=self.value_fc3_dims, device_name=self.device_name)
+        
+        self.update_network_parameters(tau=1)
+
+
+    def change_lr(self, alpha, beta):
+        self.actor.change_lr(alpha)
+
+        self.critic_1.change_lr(beta)
+        self.critic_2.change_lr(beta)
+
+        self.value.change_lr(beta)
+        self.target_value.change_lr(beta)
+
+
+    def choose_action(self, observation):
+        state = T.Tensor([observation]).to(self.actor.device)
+        actions, _ = self.actor.sample_normal(state, reparameterize=False)
+
+        return actions.cpu().detach().numpy()[0]
+
+    
+    def update_network_parameters(self, tau=None):
+        if tau is None:
+            tau = self.tau
+
+        target_value_params = self.target_value.named_parameters()
+        value_params = self.value.named_parameters()
+
+        target_value_state_dict = dict(target_value_params)
+        value_state_dict = dict(value_params)
+
+        for name in value_state_dict:
+            value_state_dict[name] = tau*value_state_dict[name].clone() + \
+                    (1-tau)*target_value_state_dict[name].clone()
+
+        self.target_value.load_state_dict(value_state_dict)
+
+    
+
+    def learn(self, state, action, reward, new_state, done):
+        state_ = new_state
+        value = self.value(state).view(-1)
+        value_ = self.target_value(state_).view(-1)
+        value_[done] = 0.0
+
+        actions, log_probs = self.actor.sample_normal(state, reparameterize=False)
+        log_probs = log_probs.view(-1)
+        q1_new_policy = self.critic_1.forward(state, actions)
+        q2_new_policy = self.critic_2.forward(state, actions)
+        critic_value = T.min(q1_new_policy, q2_new_policy)
+        critic_value = critic_value.view(-1)
+
+        self.value.optimizer.zero_grad()
+        value_target = critic_value - log_probs
+        value_loss = 0.5 * F.mse_loss(value, value_target)
+        value_loss.backward(retain_graph=True)
+        self.value.optimizer.step()
+
+        actions, log_probs = self.actor.sample_normal(state, reparameterize=True)
+        log_probs = log_probs.view(-1)
+        q1_new_policy = self.critic_1.forward(state, actions)
+        q2_new_policy = self.critic_2.forward(state, actions)
+        critic_value = T.min(q1_new_policy, q2_new_policy)
+        critic_value = critic_value.view(-1)
+        
+        actor_loss = log_probs - critic_value
+        actor_loss = T.mean(actor_loss)
+        self.actor.optimizer.zero_grad()
+        actor_loss.backward(retain_graph=True)
+        self.actor.optimizer.step()
+
+        self.critic_1.optimizer.zero_grad()
+        self.critic_2.optimizer.zero_grad()
+        q_hat = self.reward_scale*reward + self.gamma*value_
+        q1_old_policy = self.critic_1.forward(state, action).view(-1)
+        q2_old_policy = self.critic_2.forward(state, action).view(-1)
+        critic_1_loss = 0.5 * F.mse_loss(q1_old_policy, q_hat)
+        critic_2_loss = 0.5 * F.mse_loss(q2_old_policy, q_hat)
+
+        critic_loss = critic_1_loss + critic_2_loss
+        critic_loss.backward()
+        self.critic_1.optimizer.step()
+        self.critic_2.optimizer.step()
+
+        self.update_network_parameters()
+        return np.array([
+            value_loss.cpu().detach().numpy(), 
+            actor_loss.cpu().detach().numpy(), 
+            critic_loss.cpu().detach().numpy() ])
+
+
+    def to_dict(self):
+        res = {
+            'actor': self.actor.state_dict(),
+            'value': self.value.state_dict(),
+            'target_value': self.target_value.state_dict(),
+            'critic_1': self.critic_1.state_dict(),
+            'critic_2': self.critic_2.state_dict()
+        }
+        for ss in res:
+            res[ss] = {k: v.cpu() for k, v in res[ss].items()}
+        return res
+
+    def from_dict(self, d):
+        self.actor.load_state_dict(d['actor'],)
+        self.value.load_state_dict(d['value'])
+        self.target_value.load_state_dict(d['target_value'])
+        self.critic_1.load_state_dict(d['critic_1'])
+        self.critic_2.load_state_dict(d['critic_2'])
+
 
 
 class BufferParallel:
