@@ -76,6 +76,31 @@ cpdef (double, double) get_max_v_a(double delta_t, Vec2 A, Vec2 B, Vec2 C, Vec2 
     cdef Vec2 a2 = ((DC.mul_num(6)).sub_vec(CB.mul_num(6))).sub_vec(g)
     return max_v, fmax(a1.len(), a2.len())/delta_t/delta_t
 
+cpdef (double, double) Fsumdelta2F12(double F_sum, double delta_F):
+    F_sum *= 1.2
+    if delta_F > 1:
+        delta_F = 1
+    elif delta_F < -1:
+        delta_F = -1
+
+    if F_sum > 1:
+        F_sum = 1
+    elif F_sum < -1:
+        F_sum = -1
+
+    cdef double F1 = F_sum - delta_F*0.05
+    cdef double F2 = F_sum + delta_F*0.05
+    if F1 > 1:
+        F1 = 1
+    elif F1 < -1:
+        F1 = -1
+    
+    if F2 > 1:
+        F2 = 1
+    elif F2 < -1:
+        F2 = -1
+    return F1, F2
+
 
 cdef class Drone2d:
     @classmethod
@@ -138,29 +163,7 @@ cdef class Drone2d:
 
     cpdef void step2(self, double F_sum, double delta_F, double tau=0.1, int n=10):
         cdef double F1, F2
-        F_sum *= 1.2
-        if delta_F > 1:
-            delta_F = 1
-        elif delta_F < -1:
-            delta_F = -1
-
-        if F_sum > 1:
-            F_sum = 1
-        elif F_sum < -1:
-            F_sum = -1
-
-        F1 = F_sum - delta_F*0.05
-        F2 = F_sum + delta_F*0.05
-        if F1 > 1:
-            F1 = 1
-        elif F1 < -1:
-            F1 = -1
-        
-        if F2 > 1:
-            F2 = 1
-        elif F2 < -1:
-            F2 = -1
-
+        F1, F2 = Fsumdelta2F12(F_sum, delta_F)
         self.step(F1, F2, tau, n)
 
 
@@ -302,6 +305,7 @@ cdef class Drone2d:
             C = get_C(t3, D, velD)
             vmax_fact, amax_fact = get_max_v_a(t3, A, B, C, D, n_, rounds_, inc_g)
             if vmax_fact > vmax_ or amax_fact > amax_:
+                t1 = t3
                 t3 *= 1.618
             else:
                 break
@@ -315,6 +319,62 @@ cdef class Drone2d:
                 t1 = t2
             else:
                 t3 = t2
+
+        return t2
+
+
+    def get_delta_t_minimum_moving_trg(self, pos_moving, vel_moving, vel_trg, vmax, amax, t_tol, n=33, rounds=3, inc_g=True):
+        cdef double t1, t2, t3, vmax_fact, amax_fact, vmax_, amax_, t_tol_
+        cdef Vec2 A, VelA, B, C, D, velD, D0, vel_target
+        cdef int t1_flag, t2_flag, t3_flag
+        cdef int n_ = n
+        cdef int rounds_ = rounds
+        vmax_ = vmax
+        amax_ = amax
+        t_tol_ = t_tol
+
+        A = Vec2(self.state[0], self.state[1])
+        velA = Vec2(self.state[2], self.state[3])
+        D0 = Vec2(pos_moving[0], pos_moving[1])
+        velD = Vec2(vel_trg[0], vel_trg[1])
+        vel_target = Vec2(vel_moving[0], vel_moving[1])
+
+        
+
+        t1 = 0
+        t3 = (D0.sub_vec(A)).len()/(vmax_ + velA.len() + vel_target.len())
+        # print(f'Norm t3={t3}')
+        if velD.len() > vmax_:
+            vmax_ = velD.len()*1.01
+        if velA.len() > vmax_:
+            vmax_ = velA.len()*1.01
+        
+
+        while True:
+            D = D0.add_vec(vel_target.mul_num(t3))
+            B = get_B(t3, A, velA)
+            C = get_C(t3, D, velD)
+            vmax_fact, amax_fact = get_max_v_a(t3, A, B, C, D, n_, rounds_, inc_g)
+            if vmax_fact > vmax_ or amax_fact > amax_:
+                t1 = t3 
+                t3 *= 1.618
+            else:
+                break
+
+        # print(f'Norm t1={t1} t3={t3}')
+        
+        while t3 - t1 > t_tol_:
+            t2 = (t1 + t3)/2
+            D = D0.add_vec(vel_target.mul_num(t2))
+            B = get_B(t2, A, velA)
+            C = get_C(t2, D, velD)
+            vmax_fact, amax_fact = get_max_v_a(t2, A, B, C, D, n_, rounds_, inc_g)
+            if vmax_fact > vmax_ or amax_fact > amax_:
+                t1 = t2
+            else:
+                t3 = t2
+
+        # print(f'Norm t1={t1} t3={t3}')
 
         return t2
 

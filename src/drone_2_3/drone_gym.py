@@ -1,7 +1,7 @@
 import numpy as np
 import sys 
 sys.path.append(r'D:\neuro_missile\src\cydrone')
-from drone import Drone2d, Missile2d
+from drone import Drone2d, Missile2d, Fsumdelta2F12
 from easyvec import Vec2, Mat2
 from scipy.optimize import minimize, Bounds, minimize_scalar, root_scalar
 from gym.spaces.box import Box
@@ -126,7 +126,7 @@ class DroneGym2:
         self.missile.from_numpy(state[self.drone.n:])
         self.time_curr = self.drone.t
 
-    def reset(self):
+    def reset(self, state0=None):
         self.drone = self.drone_foo()
         self.pos0, self.pos_trg = self.pos0_pos_trg_foo()
 
@@ -144,6 +144,8 @@ class DroneGym2:
         self.missile = Missile2d(mpos0, self.pos0, mvel_len, ay, alpha)
 
         self.history = []
+        if state0 is not None:
+            self.set_state(state0)
         return self.get_observ()
 
     def get_state(self):
@@ -319,14 +321,15 @@ class DroneGym2:
             ax.plot(points[:,0], points[:,1], **drone_kw)
 
             if actions is not None:
-                F1 = np.array([0, L * (actions[0] * 0.5 + 0.5)])
+                F1, F2 = Fsumdelta2F12(actions[0], actions[1]) 
+                F1 = np.array([0, L * (F1 * 0.5 + 0.5)])
                 F1 =  F1 @ M_rot
                 F01 =  np.array([-L, 0]) @M_rot + pos
-                actions_kw = {'width': 0.05 * L, 'color': 'red'}
+                actions_kw = {'width': 0.05 * L, 'color': 'orange'}
                 actions_kw = dict(actions_kw, **kwargs.get('actions_kw', {}))
                 ax.arrow(F01[0], F01[1], F1[0], F1[1], **actions_kw)
 
-                F2 = np.array([0, L * (actions[1]* 0.5 + 0.5)])
+                F2 = np.array([0, L * (F2* 0.5 + 0.5)])
                 F2 =  F2 @ M_rot
                 F02 = np.array([L, 0]) @ M_rot + pos
                 ax.arrow(F02[0], F02[1], F2[0], F2[1], **actions_kw)     
@@ -335,7 +338,7 @@ class DroneGym2:
             vel = self.drone.vel * vec_mashtb
             pos = self.drone.pos
 
-            vel_kw = {'width': 0.05 * vel.len(), 'color': 'green'}
+            vel_kw = {'width': 0.05 * vel.len(), 'color': 'blue'}
             vel_kw = dict(vel_kw, **kwargs.get('vel_kw', {}))
             ax.arrow(pos.x, pos.y, vel.x, vel.y, **vel_kw)
         
@@ -346,6 +349,14 @@ class DroneGym2:
             ideal_traj_kw = {'ls': ':', 'color': 'green'}
             ideal_traj_kw = dict(ideal_traj_kw, **kwargs.get('ideal_traj_kw', {}))
             ax.plot(traject[:,0], traject[:,1], **ideal_traj_kw)
+
+            if vec_mashtb:
+                vel = self.vel_trg * vec_mashtb
+                pos = self.pos_trg
+
+                vel_kw = {'width': 0.05 * vel.len(), 'color': 'green', 'alpha':0.3}
+                vel_kw = dict(vel_kw, **kwargs.get('vel_kw', {}))
+                ax.arrow(pos.x, pos.y, vel.x, vel.y, **vel_kw)
 
         if missile_vec_mshtb:
             vel = self.missile.vel * vec_mashtb
@@ -365,7 +376,6 @@ class DroneGym2:
         if state0:
             self.set_state(state0)
         
-
 
 if __name__ == '__main__':
     gym = DroneGym2.make()
