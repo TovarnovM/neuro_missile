@@ -278,7 +278,7 @@ cdef class Drone2d:
             for t in ts
         ])
 
-    def get_delta_t_minimum(self, pos_trg, vel_trg, vmax, amax, t_tol, n=33, rounds=3, inc_g=True):
+    def get_delta_t_minimum(self, pos_trg, vel_trg, vmax, amax, t_tol, n=42, rounds=3, inc_g=True):
         cdef double t1, t2, t3, vmax_fact, amax_fact, vmax_, amax_, t_tol_
         cdef Vec2 A, VelA, B, C, D, velD
         cdef int t1_flag, t2_flag, t3_flag
@@ -294,11 +294,12 @@ cdef class Drone2d:
         velD = Vec2(vel_trg[0], vel_trg[1])
 
         t1 = 0
+        
+        if velD.len()*3 > vmax_:
+            vmax_ = velD.len()*3 
+        if velA.len()*3  > vmax_:
+            vmax_ = velA.len()*3
         t3 = A.sub_vec(velD).len() / vmax_
-        if velD.len() > vmax_:
-            vmax_ = velD.len()*1.01
-        if velA.len() > vmax_:
-            vmax_ = velA.len()*1.01
 
         while True:
             B = get_B(t3, A, velA)
@@ -309,6 +310,7 @@ cdef class Drone2d:
                 t3 *= 1.618
             else:
                 break
+        
         
         while t3 - t1 > t_tol_:
             t2 = (t1 + t3)/2
@@ -323,7 +325,7 @@ cdef class Drone2d:
         return t2
 
 
-    def get_delta_t_minimum_moving_trg(self, pos_moving, vel_moving, vel_trg, vmax, amax, t_tol, n=33, rounds=3, inc_g=True):
+    def get_delta_t_minimum_moving_trg(self, pos_moving, vel_moving, vel_trg, vmax, amax, t_tol, n=42, rounds=3, inc_g=True):
         cdef double t1, t2, t3, vmax_fact, amax_fact, vmax_, amax_, t_tol_
         cdef Vec2 A, VelA, B, C, D, velD, D0, vel_target
         cdef int t1_flag, t2_flag, t3_flag
@@ -342,19 +344,22 @@ cdef class Drone2d:
         
 
         t1 = 0
-        t3 = (D0.sub_vec(A)).len()/(vmax_ + velA.len() + vel_target.len())
-        # print(f'Norm t3={t3}')
-        if velD.len() > vmax_:
-            vmax_ = velD.len()*1.01
-        if velA.len() > vmax_:
-            vmax_ = velA.len()*1.01
         
+        
+        if velD.len()*3 > vmax_:
+            vmax_ = velD.len()*3
+        if velA.len()*3 > vmax_:
+            vmax_ = velA.len()*3
+        
+        t3 = (D0.sub_vec(A)).len()/(vmax_ + velA.len() + vel_target.len())
+        # print(f'Norm0 t3={t3} {velA.len()} {velD.len()} {vmax_}')
 
         while True:
             D = D0.add_vec(vel_target.mul_num(t3))
             B = get_B(t3, A, velA)
             C = get_C(t3, D, velD)
             vmax_fact, amax_fact = get_max_v_a(t3, A, B, C, D, n_, rounds_, inc_g)
+            # print(f'    t3={t3} {vmax_fact} {amax_fact}')
             if vmax_fact > vmax_ or amax_fact > amax_:
                 t1 = t3 
                 t3 *= 1.618
@@ -374,7 +379,7 @@ cdef class Drone2d:
             else:
                 t3 = t2
 
-        # print(f'Norm t1={t1} t3={t3}')
+        # print(f'Norm2 t1={t1} t3={t3}')
 
         return t2
 

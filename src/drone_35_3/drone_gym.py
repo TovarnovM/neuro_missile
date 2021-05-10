@@ -275,9 +275,9 @@ class DroneGym3:
                 dir_diff = -(drone_vel.norm() * self.vel_trg.norm() -1)  # 0 .. 2                
                 vel_diff = (self.vel_trg - drone_vel).len() / self.vel_trg.len() # 0 .. 2+
 
-                r_pos = 5 * (1-pos_diff)
-                r_dir = 5 * (2-dir_diff)
-                r_vel = 2 * (3 - vel_diff)
+                r_pos = 10 * (1-pos_diff)
+                r_dir = 10 * (2-dir_diff)
+                r_vel = 5 * (3 - vel_diff)
                 final_reward = r_pos + r_dir + r_vel
                 return True, final_reward, {
                     'result': 'success', 
@@ -287,13 +287,13 @@ class DroneGym3:
                     'vel_diff': vel_diff
                     }
         if self.antiflip and abs(self.drone.alpha) > np.pi * 0.75:
-            return True, -20, {'result': 'flip over'}
+            return True, -40, {'result': 'flip over'}
         if drone_pos.y < self.xy_bounds[1][0] or drone_pos.y > self.xy_bounds[1][1]:
-            return True, -20, {'result': 'out of Y bounds'}
+            return True, -40, {'result': 'out of Y bounds'}
         if drone_pos.x < self.xy_bounds[0][0] or drone_pos.x > self.xy_bounds[0][1]:
-            return True, -20, {'result': 'out of X bounds'}
+            return True, -40, {'result': 'out of X bounds'}
         if abs(self.drone.omega) > self.omega_max:
-            return True, -20, {'result': f'omega too mutch {self.drone.omega}'}
+            return True, -40, {'result': f'omega too mutch {self.drone.omega}'}
         return False, 0, {}
 
     def is_done_missiledrone(self):
@@ -307,13 +307,13 @@ class DroneGym3:
                 'info_md': 'missiledrone win'
                 }
         if self.antiflip and abs(self.missiledrone.alpha) > np.pi * 0.75:
-            return True, -20, {'result_md': 'flip over'}
+            return True, -40, {'result_md': 'flip over'}
         if drone_pos.y < self.xy_bounds[1][0] or drone_pos.y > self.xy_bounds[1][1]:
-            return True, -20, {'result_md': 'out of Y bounds'}
+            return True, -40, {'result_md': 'out of Y bounds'}
         if drone_pos.x < self.xy_bounds[0][0] or drone_pos.x > self.xy_bounds[0][1]:
-            return True, -20, {'result_md': 'out of X bounds'}
+            return True, -40, {'result_md': 'out of X bounds'}
         if abs(self.missiledrone.omega) > self.omega_max:
-            return True, -20, {'result_md': f'omega too mutch {self.missiledrone.omega}'}
+            return True, -40, {'result_md': f'omega too mutch {self.missiledrone.omega}'}
 
         return False, 0, {}
 
@@ -344,15 +344,15 @@ class DroneGym3:
         reward = (delta_t0 - delta_t1)
         reward_md = (delta_t0_missiledrone - delta_t1_missiledrone)
         
-        if reward > 1:
-            reward = 1
-        if reward < -1:
-            reward = -1
+        if reward > 3:
+            reward = 3
+        if reward < -3:
+            reward = -3
 
-        if reward_md > 1:
-            reward_md = 1
-        if reward_md < -1:
-            reward_md = -1
+        if reward_md > 3:
+            reward_md = 3
+        if reward_md < -3:
+            reward_md = -3
 
         observation_ = self.get_observ()
         done, add_reward, info = self.is_done()

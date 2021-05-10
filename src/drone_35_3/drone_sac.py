@@ -15,7 +15,7 @@ class AgentParallel3layers:
         self.input_dims = input_dims
         self.n_actions = n_actions
         self.action_space_high = action_space_high
-        self.reward_scale=kwargs.get('reward_scale', 20)
+        self.reward_scale=kwargs.get('reward_scale', 10)
         self.gamma = kwargs.get('gamma', 0.99)
 
         self.actor_fc1_dims = kwargs.get('actor_fc1_dims', 512)

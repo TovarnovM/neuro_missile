@@ -131,6 +131,7 @@ class DroneGym3:
 
         d = self.drone.to_dict()
         d['pos'] = self.pos0
+        d['pos'].y = np.random.uniform(0.1,1.3) * d['pos'].y
         self.drone.from_dict(d)
 
         d2 = self.missiledrone.to_dict()
@@ -259,7 +260,7 @@ class DroneGym3:
 
     def get_delta_t_missiledrone(self):
         try:
-            delta_t = self.missiledrone.get_delta_t_minimum(self.drone.pos, self.drone.vel*1.5, self.vel_max, self.a_max, 1e-5)
+            delta_t = self.missiledrone.get_delta_t_minimum(self.drone.pos, -self.drone.vel*0.5, self.vel_max, self.a_max, 1e-5)
             return delta_t
         except Exception as e:
             print(f'При подсчете get_delta_t_missiledrone была ошибка {e}')
@@ -344,15 +345,15 @@ class DroneGym3:
         reward = (delta_t0 - delta_t1)
         reward_md = (delta_t0_missiledrone - delta_t1_missiledrone)
         
-        if reward > 1:
-            reward = 1
-        if reward < -1:
-            reward = -1
+        if reward > 3:
+            reward = 3
+        if reward < -3:
+            reward = -3
 
-        if reward_md > 1:
-            reward_md = 1
-        if reward_md < -1:
-            reward_md = -1
+        if reward_md > 3:
+            reward_md = 3
+        if reward_md < -3:
+            reward_md = -3
 
         observation_ = self.get_observ()
         done, add_reward, info = self.is_done()
