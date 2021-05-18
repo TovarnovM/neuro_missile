@@ -1232,8 +1232,6 @@ struct __pyx_array_obj;
 struct __pyx_MemviewEnum_obj;
 struct __pyx_memoryview_obj;
 struct __pyx_memoryviewslice_obj;
-struct __pyx_opt_args_7easyvec_7vectors_4Vec2_norm_;
-struct __pyx_opt_args_7easyvec_7vectors_4Vec2_norm;
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_round_;
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_round;
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_ceil_;
@@ -1246,47 +1244,10 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_angle_to_xy;
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_angle_to;
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_rotate_;
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_rotate;
-struct __pyx_opt_args_7easyvec_7vectors_4Vec3_norm_;
-struct __pyx_opt_args_7easyvec_7vectors_4Vec3_norm;
-struct __pyx_opt_args_7easyvec_7vectors_4Vec3_round_;
-struct __pyx_opt_args_7easyvec_7vectors_4Vec3_round;
-struct __pyx_opt_args_7easyvec_7vectors_4Vec3_ceil_;
-struct __pyx_opt_args_7easyvec_7vectors_4Vec3_ceil;
-struct __pyx_opt_args_7easyvec_7vectors_4Vec3_floor_;
-struct __pyx_opt_args_7easyvec_7vectors_4Vec3_floor;
-struct __pyx_opt_args_7easyvec_7vectors_4Vec3_trunc_;
-struct __pyx_opt_args_7easyvec_7vectors_4Vec3_trunc;
-struct __pyx_opt_args_7easyvec_7vectors_4Vec3_angle_to;
-struct __pyx_opt_args_7easyvec_7vectors_4Vec3_rotate_;
-struct __pyx_opt_args_7easyvec_7vectors_4Vec3_rotate;
-
-/* "easyvec/vectors.pxd":128
- *     cpdef Vec2 abs_(self)
- *     cpdef Vec2 abs(self)
- *     cpdef Vec2 norm_(self, bint raise_zero_len_error=*)             # <<<<<<<<<<<<<<
- *     cpdef Vec2 norm(self, bint raise_zero_len_error=*)
- *     cpdef Vec2 round_(self, int ndigits=*)
- */
-struct __pyx_opt_args_7easyvec_7vectors_4Vec2_norm_ {
-  int __pyx_n;
-  int raise_zero_len_error;
-};
-
-/* "easyvec/vectors.pxd":129
- *     cpdef Vec2 abs(self)
- *     cpdef Vec2 norm_(self, bint raise_zero_len_error=*)
- *     cpdef Vec2 norm(self, bint raise_zero_len_error=*)             # <<<<<<<<<<<<<<
- *     cpdef Vec2 round_(self, int ndigits=*)
- *     cpdef Vec2 round(self, int ndigits=*)
- */
-struct __pyx_opt_args_7easyvec_7vectors_4Vec2_norm {
-  int __pyx_n;
-  int raise_zero_len_error;
-};
 
 /* "easyvec/vectors.pxd":130
- *     cpdef Vec2 norm_(self, bint raise_zero_len_error=*)
- *     cpdef Vec2 norm(self, bint raise_zero_len_error=*)
+ *     cpdef Vec2 norm_(self)
+ *     cpdef Vec2 norm(self)
  *     cpdef Vec2 round_(self, int ndigits=*)             # <<<<<<<<<<<<<<
  *     cpdef Vec2 round(self, int ndigits=*)
  *     cpdef Vec2 ceil_(self, int ndigits=*)
@@ -1297,7 +1258,7 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_round_ {
 };
 
 /* "easyvec/vectors.pxd":131
- *     cpdef Vec2 norm(self, bint raise_zero_len_error=*)
+ *     cpdef Vec2 norm(self)
  *     cpdef Vec2 round_(self, int ndigits=*)
  *     cpdef Vec2 round(self, int ndigits=*)             # <<<<<<<<<<<<<<
  *     cpdef Vec2 ceil_(self, int ndigits=*)
@@ -1383,25 +1344,25 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_trunc {
 /* "easyvec/vectors.pxd":142
  *     cpdef real cross_xy(self, real x, real y)
  * 
- *     cpdef real angle_to_xy(self, real x, real y, int degrees=*)             # <<<<<<<<<<<<<<
- *     cpdef real angle_to(self, Vec2 vec, int degrees=*)
+ *     cpdef real angle_to_xy(self, real x, real y, int degree=*)             # <<<<<<<<<<<<<<
+ *     cpdef real angle_to(self, Vec2 vec, int degree=*)
  * 
  */
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_angle_to_xy {
   int __pyx_n;
-  int degrees;
+  int degree;
 };
 
 /* "easyvec/vectors.pxd":143
  * 
- *     cpdef real angle_to_xy(self, real x, real y, int degrees=*)
- *     cpdef real angle_to(self, Vec2 vec, int degrees=*)             # <<<<<<<<<<<<<<
+ *     cpdef real angle_to_xy(self, real x, real y, int degree=*)
+ *     cpdef real angle_to(self, Vec2 vec, int degree=*)             # <<<<<<<<<<<<<<
  * 
  *     cpdef Vec2 rotate90_(self)
  */
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_angle_to {
   int __pyx_n;
-  int degrees;
+  int degree;
 };
 
 /* "easyvec/vectors.pxd":150
@@ -1424,161 +1385,6 @@ struct __pyx_opt_args_7easyvec_7vectors_4Vec2_rotate_ {
  * 
  */
 struct __pyx_opt_args_7easyvec_7vectors_4Vec2_rotate {
-  int __pyx_n;
-  int degrees;
-};
-
-/* "easyvec/vectors.pxd":256
- *     cpdef Vec3 abs_(self)
- *     cpdef Vec3 abs(self)
- *     cpdef Vec3 norm_(self, bint raise_zero_len_error=*)             # <<<<<<<<<<<<<<
- *     cpdef Vec3 norm(self, bint raise_zero_len_error=*)
- *     cpdef Vec3 round_(self, int ndigits=*)
- */
-struct __pyx_opt_args_7easyvec_7vectors_4Vec3_norm_ {
-  int __pyx_n;
-  int raise_zero_len_error;
-};
-
-/* "easyvec/vectors.pxd":257
- *     cpdef Vec3 abs(self)
- *     cpdef Vec3 norm_(self, bint raise_zero_len_error=*)
- *     cpdef Vec3 norm(self, bint raise_zero_len_error=*)             # <<<<<<<<<<<<<<
- *     cpdef Vec3 round_(self, int ndigits=*)
- *     cpdef Vec3 round(self, int ndigits=*)
- */
-struct __pyx_opt_args_7easyvec_7vectors_4Vec3_norm {
-  int __pyx_n;
-  int raise_zero_len_error;
-};
-
-/* "easyvec/vectors.pxd":258
- *     cpdef Vec3 norm_(self, bint raise_zero_len_error=*)
- *     cpdef Vec3 norm(self, bint raise_zero_len_error=*)
- *     cpdef Vec3 round_(self, int ndigits=*)             # <<<<<<<<<<<<<<
- *     cpdef Vec3 round(self, int ndigits=*)
- *     cpdef Vec3 ceil_(self, int ndigits=*)
- */
-struct __pyx_opt_args_7easyvec_7vectors_4Vec3_round_ {
-  int __pyx_n;
-  int ndigits;
-};
-
-/* "easyvec/vectors.pxd":259
- *     cpdef Vec3 norm(self, bint raise_zero_len_error=*)
- *     cpdef Vec3 round_(self, int ndigits=*)
- *     cpdef Vec3 round(self, int ndigits=*)             # <<<<<<<<<<<<<<
- *     cpdef Vec3 ceil_(self, int ndigits=*)
- *     cpdef Vec3 ceil(self, int ndigits=*)
- */
-struct __pyx_opt_args_7easyvec_7vectors_4Vec3_round {
-  int __pyx_n;
-  int ndigits;
-};
-
-/* "easyvec/vectors.pxd":260
- *     cpdef Vec3 round_(self, int ndigits=*)
- *     cpdef Vec3 round(self, int ndigits=*)
- *     cpdef Vec3 ceil_(self, int ndigits=*)             # <<<<<<<<<<<<<<
- *     cpdef Vec3 ceil(self, int ndigits=*)
- *     cpdef Vec3 floor_(self, int ndigits=*)
- */
-struct __pyx_opt_args_7easyvec_7vectors_4Vec3_ceil_ {
-  int __pyx_n;
-  int ndigits;
-};
-
-/* "easyvec/vectors.pxd":261
- *     cpdef Vec3 round(self, int ndigits=*)
- *     cpdef Vec3 ceil_(self, int ndigits=*)
- *     cpdef Vec3 ceil(self, int ndigits=*)             # <<<<<<<<<<<<<<
- *     cpdef Vec3 floor_(self, int ndigits=*)
- *     cpdef Vec3 floor(self, int ndigits=*)
- */
-struct __pyx_opt_args_7easyvec_7vectors_4Vec3_ceil {
-  int __pyx_n;
-  int ndigits;
-};
-
-/* "easyvec/vectors.pxd":262
- *     cpdef Vec3 ceil_(self, int ndigits=*)
- *     cpdef Vec3 ceil(self, int ndigits=*)
- *     cpdef Vec3 floor_(self, int ndigits=*)             # <<<<<<<<<<<<<<
- *     cpdef Vec3 floor(self, int ndigits=*)
- *     cpdef Vec3 trunc_(self, int ndigits=*)
- */
-struct __pyx_opt_args_7easyvec_7vectors_4Vec3_floor_ {
-  int __pyx_n;
-  int ndigits;
-};
-
-/* "easyvec/vectors.pxd":263
- *     cpdef Vec3 ceil(self, int ndigits=*)
- *     cpdef Vec3 floor_(self, int ndigits=*)
- *     cpdef Vec3 floor(self, int ndigits=*)             # <<<<<<<<<<<<<<
- *     cpdef Vec3 trunc_(self, int ndigits=*)
- *     cpdef Vec3 trunc(self, int ndigits=*)
- */
-struct __pyx_opt_args_7easyvec_7vectors_4Vec3_floor {
-  int __pyx_n;
-  int ndigits;
-};
-
-/* "easyvec/vectors.pxd":264
- *     cpdef Vec3 floor_(self, int ndigits=*)
- *     cpdef Vec3 floor(self, int ndigits=*)
- *     cpdef Vec3 trunc_(self, int ndigits=*)             # <<<<<<<<<<<<<<
- *     cpdef Vec3 trunc(self, int ndigits=*)
- *     cpdef Vec3 cross(self, Vec3 right)
- */
-struct __pyx_opt_args_7easyvec_7vectors_4Vec3_trunc_ {
-  int __pyx_n;
-  int ndigits;
-};
-
-/* "easyvec/vectors.pxd":265
- *     cpdef Vec3 floor(self, int ndigits=*)
- *     cpdef Vec3 trunc_(self, int ndigits=*)
- *     cpdef Vec3 trunc(self, int ndigits=*)             # <<<<<<<<<<<<<<
- *     cpdef Vec3 cross(self, Vec3 right)
- *     cpdef Vec3 cross_xy(self, real x, real y, real z)
- */
-struct __pyx_opt_args_7easyvec_7vectors_4Vec3_trunc {
-  int __pyx_n;
-  int ndigits;
-};
-
-/* "easyvec/vectors.pxd":268
- *     cpdef Vec3 cross(self, Vec3 right)
- *     cpdef Vec3 cross_xy(self, real x, real y, real z)
- *     cpdef real angle_to(self, Vec3 vec, bint degrees=*)             # <<<<<<<<<<<<<<
- *     cpdef Vec3 rotate_(self, Vec3 axis, real angle, int degrees=*)
- *     cpdef Vec3 rotate(self, real angle, int degrees=*)
- */
-struct __pyx_opt_args_7easyvec_7vectors_4Vec3_angle_to {
-  int __pyx_n;
-  int degrees;
-};
-
-/* "easyvec/vectors.pxd":269
- *     cpdef Vec3 cross_xy(self, real x, real y, real z)
- *     cpdef real angle_to(self, Vec3 vec, bint degrees=*)
- *     cpdef Vec3 rotate_(self, Vec3 axis, real angle, int degrees=*)             # <<<<<<<<<<<<<<
- *     cpdef Vec3 rotate(self, real angle, int degrees=*)
- * 
- */
-struct __pyx_opt_args_7easyvec_7vectors_4Vec3_rotate_ {
-  int __pyx_n;
-  int degrees;
-};
-
-/* "easyvec/vectors.pxd":270
- *     cpdef real angle_to(self, Vec3 vec, bint degrees=*)
- *     cpdef Vec3 rotate_(self, Vec3 axis, real angle, int degrees=*)
- *     cpdef Vec3 rotate(self, real angle, int degrees=*)             # <<<<<<<<<<<<<<
- * 
- */
-struct __pyx_opt_args_7easyvec_7vectors_4Vec3_rotate {
   int __pyx_n;
   int degrees;
 };
@@ -1748,12 +1554,10 @@ struct __pyx_obj_7easyvec_7vectors_Vec2 {
  * 
  * 
  * cdef class Vec3:             # <<<<<<<<<<<<<<
- *     cdef public real x, y, z
- *     cpdef Vec3 clone(self)
+ *     cdef real x, y, z
  */
 struct __pyx_obj_7easyvec_7vectors_Vec3 {
   PyObject_HEAD
-  struct __pyx_vtabstruct_7easyvec_7vectors_Vec3 *__pyx_vtab;
   __pyx_t_7easyvec_7vectors_real x;
   __pyx_t_7easyvec_7vectors_real y;
   __pyx_t_7easyvec_7vectors_real z;
@@ -1984,8 +1788,8 @@ struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 {
   __pyx_t_7easyvec_7vectors_real (*len_sqared)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*abs_)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*abs)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec2 *(*norm_)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec2_norm_ *__pyx_optional_args);
-  struct __pyx_obj_7easyvec_7vectors_Vec2 *(*norm)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec2_norm *__pyx_optional_args);
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *(*norm_)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
+  struct __pyx_obj_7easyvec_7vectors_Vec2 *(*norm)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*round_)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec2_round_ *__pyx_optional_args);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*round)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec2_round *__pyx_optional_args);
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*ceil_)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec2_ceil_ *__pyx_optional_args);
@@ -2071,186 +1875,6 @@ struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 {
   struct __pyx_obj_7easyvec_7vectors_Vec2 *(*__pyx_fuse_4mod_arr)(struct __pyx_obj_7easyvec_7vectors_Vec2 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *__pyx_vtabptr_7easyvec_7vectors_Vec2;
-
-
-/* "easyvec/vectors.pxd":154
- * 
- * 
- * cdef class Vec3:             # <<<<<<<<<<<<<<
- *     cdef public real x, y, z
- *     cpdef Vec3 clone(self)
- */
-
-struct __pyx_vtabstruct_7easyvec_7vectors_Vec3 {
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*clone)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*copy)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  int (*is_eq)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*add_num_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*add_num)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*add_vec_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*add)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*add_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*add_vec)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*add_xy_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*add_xy)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*add_tup_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*add_tup)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*add_list_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*add_list)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*neg_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*neg)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  PyObject *(*keys)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  PyObject *(*as_tuple)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*sub_num_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*sub_num)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*sub_vec_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*sub_vec)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*sub_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*sub)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*sub_xy_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*sub_xy)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*sub_tup_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*sub_tup)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*sub_list_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*sub_list)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mul_num_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mul_num)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mul_vec_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mul_vec)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mul_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mul)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mul_xy_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mul_xy)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mul_tup_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mul_tup)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mul_list_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mul_list)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
-  __pyx_t_7easyvec_7vectors_real (*dot)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  __pyx_t_7easyvec_7vectors_real (*dot_xy)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
-  __pyx_t_7easyvec_7vectors_real (*dot_tup)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
-  __pyx_t_7easyvec_7vectors_real (*dot_list)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*div_num_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*div_num)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*div_vec_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*div_vec)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*div_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*div)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*div_xy_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*div_xy)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*div_tup_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*div_tup)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*div_list_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*div_list)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*floordiv_num_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*floordiv_num)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*floordiv_vec_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*floordiv_vec)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*floordiv_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*floordiv)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*floordiv_xy_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*floordiv_xy)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*floordiv_tup_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*floordiv_tup)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*floordiv_list_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*floordiv_list)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mod_num_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mod_num)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mod_vec_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mod_vec)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mod_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mod)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mod_xy_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mod_xy)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mod_tup_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mod_tup)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mod_list_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*mod_list)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, PyObject *, int __pyx_skip_dispatch);
-  __pyx_t_7easyvec_7vectors_real (*len)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  __pyx_t_7easyvec_7vectors_real (*len_sqared)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*abs_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*abs)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*norm_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec3_norm_ *__pyx_optional_args);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*norm)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec3_norm *__pyx_optional_args);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*round_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec3_round_ *__pyx_optional_args);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*round)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec3_round *__pyx_optional_args);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*ceil_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec3_ceil_ *__pyx_optional_args);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*ceil)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec3_ceil *__pyx_optional_args);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*floor_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec3_floor_ *__pyx_optional_args);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*floor)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec3_floor *__pyx_optional_args);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*trunc_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec3_trunc_ *__pyx_optional_args);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*trunc)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec3_trunc *__pyx_optional_args);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*cross)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*cross_xy)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch);
-  __pyx_t_7easyvec_7vectors_real (*angle_to)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec3_angle_to *__pyx_optional_args);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*rotate_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec3_rotate_ *__pyx_optional_args);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*rotate)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __pyx_t_7easyvec_7vectors_real, int __pyx_skip_dispatch, struct __pyx_opt_args_7easyvec_7vectors_4Vec3_rotate *__pyx_optional_args);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_0add_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_1add_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_2add_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_3add_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_4add_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_0add_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_1add_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_2add_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_3add_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_4add_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_0sub_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_1sub_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_2sub_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_3sub_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_4sub_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_0sub_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_1sub_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_2sub_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_3sub_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_4sub_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_0mul_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_1mul_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_2mul_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_3mul_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_4mul_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_0mul_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_1mul_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_2mul_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_3mul_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_4mul_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  __pyx_t_7easyvec_7vectors_real (*__pyx_fuse_0dot_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  __pyx_t_7easyvec_7vectors_real (*__pyx_fuse_1dot_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  __pyx_t_7easyvec_7vectors_real (*__pyx_fuse_2dot_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  __pyx_t_7easyvec_7vectors_real (*__pyx_fuse_3dot_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  __pyx_t_7easyvec_7vectors_real (*__pyx_fuse_4dot_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_0div_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_1div_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_2div_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_3div_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_4div_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_0div_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_1div_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_2div_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_3div_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_4div_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_0floordiv_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_1floordiv_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_2floordiv_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_3floordiv_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_4floordiv_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_0floordiv_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_1floordiv_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_2floordiv_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_3floordiv_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_4floordiv_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_0mod_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_1mod_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_2mod_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_3mod_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_4mod_arr_)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_0mod_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_1mod_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_2mod_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_3mod_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  struct __pyx_obj_7easyvec_7vectors_Vec3 *(*__pyx_fuse_4mod_arr)(struct __pyx_obj_7easyvec_7vectors_Vec3 *, __Pyx_memviewslice, int __pyx_skip_dispatch);
-};
-static struct __pyx_vtabstruct_7easyvec_7vectors_Vec3 *__pyx_vtabptr_7easyvec_7vectors_Vec3;
 
 
 /* "drone.pyx":105
@@ -14671,7 +14295,7 @@ static void __pyx_f_5drone_9Missile2d_fill_dy(struct __pyx_obj_5drone_Missile2d 
  */
   __pyx_t_4 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)__pyx_v_aim->__pyx_vtab)->sub_vec(__pyx_v_aim, __pyx_v_pos, 0)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 444, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_2 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_4)->__pyx_vtab)->norm(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_4), 0, NULL)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 444, __pyx_L1_error)
+  __pyx_t_2 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_4)->__pyx_vtab)->norm(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_4), 0)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 444, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_r_vis = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2);
@@ -34974,7 +34598,6 @@ static int __Pyx_modinit_type_import_code(void) {
   __pyx_vtabptr_7easyvec_7vectors_Vec2 = (struct __pyx_vtabstruct_7easyvec_7vectors_Vec2*)__Pyx_GetVtable(__pyx_ptype_7easyvec_7vectors_Vec2->tp_dict); if (unlikely(!__pyx_vtabptr_7easyvec_7vectors_Vec2)) __PYX_ERR(3, 15, __pyx_L1_error)
   __pyx_ptype_7easyvec_7vectors_Vec3 = __Pyx_ImportType(__pyx_t_1, "easyvec.vectors", "Vec3", sizeof(struct __pyx_obj_7easyvec_7vectors_Vec3), __Pyx_ImportType_CheckSize_Warn);
    if (!__pyx_ptype_7easyvec_7vectors_Vec3) __PYX_ERR(3, 154, __pyx_L1_error)
-  __pyx_vtabptr_7easyvec_7vectors_Vec3 = (struct __pyx_vtabstruct_7easyvec_7vectors_Vec3*)__Pyx_GetVtable(__pyx_ptype_7easyvec_7vectors_Vec3->tp_dict); if (unlikely(!__pyx_vtabptr_7easyvec_7vectors_Vec3)) __PYX_ERR(3, 154, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = PyImport_ImportModule(__Pyx_BUILTIN_MODULE_NAME); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);

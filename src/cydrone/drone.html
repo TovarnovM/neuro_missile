@@ -8737,7 +8737,7 @@ static PyObject *__pyx_pf_5drone_9Missile2d_2fill_dy(struct __pyx_obj_5drone_Mis
 <pre class="cython line score-1" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">444</span>:         <span class="k">cdef</span> <span class="kt">Vec2</span> <span class="nf">r_vis</span> <span class="o">=</span> <span class="n">aim</span><span class="o">.</span><span class="n">sub_vec</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span></pre>
 <pre class='cython code score-1 '>  __pyx_t_4 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)__pyx_v_aim-&gt;__pyx_vtab)-&gt;sub_vec(__pyx_v_aim, __pyx_v_pos, 0));<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 444, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_4);
-  __pyx_t_2 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_4)-&gt;__pyx_vtab)-&gt;norm(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_4), 0, NULL));<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 444, __pyx_L1_error)</span>
+  __pyx_t_2 = ((PyObject *)((struct __pyx_vtabstruct_7easyvec_7vectors_Vec2 *)((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_4)-&gt;__pyx_vtab)-&gt;norm(((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_4), 0));<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 444, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_r_vis = ((struct __pyx_obj_7easyvec_7vectors_Vec2 *)__pyx_t_2);
